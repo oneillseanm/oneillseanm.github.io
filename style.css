@@ -89,6 +89,23 @@ header {
 	padding: 0 0 105px 0;
 }
 
+.logo {
+	font-family: "Outfit", sans-serif;
+	font-weight: 900;
+	text-transform: none;
+}
+
+.logoDot {
+	position: relative;
+	top: 3px;
+	right: 1px;
+	padding-left: 1px;
+}
+
+.logo a {
+	text-decoration: none;
+}
+
 nav {
 	padding: 0 0 48px 0;
 }
@@ -269,19 +286,6 @@ img.refferal_badge {
 .title {
 	font-size: 48px;
 	line-height: 60px;
-}
-
-.logo {
-	font-family: "Outfit", sans-serif;
-	font-weight: 900;
-	text-transform: none;
-}
-
-.logoDot {
-	position: relative;
-	top: 3px;
-	right: 1px;
-	padding-left: 1px;
 }
 
 .stepComplete {
