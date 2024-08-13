@@ -139,12 +139,17 @@ nav li {
 	border-top: 1px solid rgb(180,180,180);
 }
 
+#projects a {
+	display: grid;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	text-decoration: none;
+}
+
 #projects section.projectThumbnail {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 0;
-	grid-column-start: 1;
-	grid-column-end: 3;
 }
 
 .projectThumbnail div {
@@ -153,13 +158,13 @@ nav li {
 	grid-column-end: 4;
 }
 
-#projects .projectThumbnail h3, #projects .projectThumbnail p {
+#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
 	display: grid;
 	grid-column-start: 1;
 	grid-column-end: 3;
 }
 
-#projects .projectThumbnail p {
+#projects a .projectThumbnail p {
 	font-size: 17px;
 	line-height: 21px;
 }
@@ -326,7 +331,7 @@ footer {
 		grid-gap: 0 60px;
 	}
 	
-	#projects section, #about section, #connect section {
+	#projects a section, #about section, #connect section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 0 60px;
@@ -431,33 +436,9 @@ footer {
 		grid-column-end: 4;
 	}
 	
-	table {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 0 60px;
-		padding-bottom: 15px;
-	}
-
-	td {
-		padding-bottom: 15px;
-	}
-
-
 	img {
 		display: block;
 		padding-bottom: 15px;
-	}
-	
-	#heroImage {
-		padding-bottom: 135px;
-	}
-	
-	#heroImage section {
-		display: grid;
-	}
-
-	#heroImage img {
-		padding-bottom: 60px;
 	}
 	
 	#projects, #about, #connect {
@@ -475,10 +456,14 @@ footer {
 		display: block;
 	}
 	
-	#projects section.projectThumbnail {
+	#projects a {
 		display: grid;
 		grid-column-start: 2;
 		grid-column-end: 4;
+	}
+	
+	#projects a section.projectThumbnail {
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		padding-bottom: 45px;
 	}
@@ -493,13 +478,13 @@ footer {
 		padding-bottom: 30px;
 	}
 	
-	#projects .projectThumbnail h3, #projects .projectThumbnail p {
+	#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
 		display: grid;
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
 	
-	#projects .projectThumbnail p {
+	#projects a .projectThumbnail p {
 		font-size: 20px;
 		line-height: 24px;
 	}
