@@ -20,7 +20,7 @@ p, h1, h3 {
 }
 
 h1 {
-	font-weight: 900;
+	font-weight: 800;
 }
 
 h2 {
@@ -53,7 +53,7 @@ div {
 	margin: 0;
 }
 
-img {
+img, video {
 	width: 100%;
 	height: auto;
 	object-fit: contain;
@@ -87,7 +87,11 @@ td {
 }
 
 header {
-	padding: 0 0 105px 0;
+	padding: 0;
+}
+
+header.index {
+	padding-bottom: 72px;
 }
 
 .logo {
@@ -136,52 +140,91 @@ nav li {
 	display: none;
 }
 
-#projects {
-	border-top: 1px solid rgb(180,180,180);
+#heroImage {
+	padding-bottom: 108px;
 }
 
-#projects a {
+#heroImage img {
+	padding-bottom: 48px;
+}
+
+#development section {
+	padding: 0 0 24px 0;
+}
+
+#development div {
+	padding: 0 0 24px 0;
+}
+
+#development ul li {
+	list-style: circle outside;
+	margin-left: 24px;
+}
+
+#features {
+	padding-bottom: 0;
+}
+
+#features section {
+	padding: 0 0 72px 0;
+}
+
+#features div {
 	display: grid;
-	grid-column-start: 1;
-	grid-column-end: 3;
-	text-decoration: none;
 }
 
-#projects section.projectThumbnail {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 0;
+#features div img, #features div video {
+		padding-bottom: 24px;
 }
 
-.projectThumbnail div {
-	display: grid;
-	grid-column-start: 1;
-	grid-column-end: 4;
+#features p {
+	padding-bottom: 24px;
 }
 
-#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
-	display: grid;
-	grid-column-start: 1;
-	grid-column-end: 3;
+#sale {
+	padding-bottom: 84px;
 }
 
-#projects a .projectThumbnail p {
-	font-size: 17px;
-	line-height: 21px;
+#sale table tr td:nth-child(1) {
+	padding-right: 12px;
 }
 
-.projectThumbnail div img {
+#techSpecs {
+	background: radial-gradient(ellipse, rgb(245,242,236) 50%, rgb(240,237,231));
+	margin-bottom: 96px;
+}
+
+#techSpecs h2, #techSpecs h3, #techSpecs div, #techSpecs ul {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#techSpecs table tr td:nth-child(2) {
+	padding-right: 12px;
+}
+
+#techSpecs table tr td:nth-child(1) {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#techSpecs section {
+	padding: 0 0 48px 0;
+}
+
+#techSpecs img {
 	padding-bottom: 24px;
 }
 
 #about {
+	border-top: 1px solid rgb(180,180,180);
 }
 
-#projects section, #about section, #connect section {
+#about section, #connect section, #projects section {
 	padding-bottom: 45px;
 }
 
-#projects p, #about p, #connect p {
+#sale p, #about p, #connect p, #projects p {
 	grid-column-start: 1;
 	grid-column-end: 4;
 }
@@ -301,7 +344,7 @@ img.refferal_badge {
 #sale table {
 	margin: 15px 0 30px 0;
 	padding: 24px 12px 12px 12px;
-	background: radial-gradient(ellipse, rgb(245,245,245) 50%, rgb(240,240,240));
+	background: radial-gradient(ellipse, rgb(245,242,236) 50%, rgb(240,237,231));
 	border-style: solid;
 	border-color: rgb(180,180,180);
 	border-width: 1px 0;
@@ -314,6 +357,44 @@ footer {
 	padding-top: 12px;
 }
 
+#projects {
+	border-top: 1px solid rgb(180,180,180);
+}
+
+#projects a {
+	display: grid;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	text-decoration: none;
+}
+
+#projects section.projectThumbnail {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 0;
+}
+
+.projectThumbnail div {
+	display: grid;
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
+	display: grid;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+#projects a .projectThumbnail p {
+	font-size: 17px;
+	line-height: 21px;
+}
+
+.projectThumbnail div img {
+	padding-bottom: 24px;
+}
+
 @media only screen and (min-width: 500px) {
 	
 	table {
@@ -321,18 +402,55 @@ footer {
 		grid-gap: 0 48px;
 	}
 
-	#about p, #connect p {
+	#heroImage {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 0 48px;
+	}
+	
+	#heroImage p {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
 	
-	#projects {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 0 60px;
+	#heroImage h1 {
+		grid-column-start: 1;
+		grid-column-end: 4;
 	}
 	
-	#projects a section, #about section, #connect section {
+	#heroImage div {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	#development {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 0 48px;
+	}
+
+	#development section {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#sale section {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 0 48px;
+	}
+
+	#sale table {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#sale p, #about p, #connect p {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#about section, #connect section, #projects section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 0 60px;
@@ -352,6 +470,59 @@ footer {
 	input.button {
 	}
 
+	#features section {
+		display: grid;
+		grid-gap: 0 60px;
+	}
+	
+	.fullWidth {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.fullWidth div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.fullWidth div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	.leftImage {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.leftImage div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.leftImage div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	.rightImage {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.rightImage div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.rightImage div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+
+	#projects {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 0 60px;
+	}
+	
 }
 
 @media only screen and (min-width: 700px) {
@@ -416,6 +587,10 @@ footer {
 		grid-gap: 0 60px;
 	}
 
+	header.index {
+		padding-bottom: 90px;
+	}
+
 	nav {
 		display: grid;
 		grid-column-start: 2;
@@ -437,16 +612,211 @@ footer {
 		grid-column-end: 4;
 	}
 	
-	img {
+	table {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0 60px;
+		padding-bottom: 15px;
+	}
+
+	td {
+		padding-bottom: 15px;
+	}
+
+
+	img, img {
 		display: block;
 		padding-bottom: 15px;
 	}
 	
-	#projects, #about, #connect {
+	#heroImage {
+		padding-bottom: 135px;
+	}
+	
+	#heroImage section {
+		display: grid;
+	}
+
+	#heroImage img {
+		padding-bottom: 60px;
+	}
+	
+	#development {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 0 60px;
 		border-style: none;
 	}
 	
-	#about section, #connect section {
+	#development div, #development section {
+		padding-bottom: 30px;
+	}
+
+	#development section {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+	
+	#development h2 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	#features section {
+		padding: 0 0 90px 0;
+		border-style: none;
+	}
+	
+	.fullWidth {
+		grid-gap: 15px 60px;
+	}
+	
+	.fullWidth div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.fullWidth div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	.leftImage {
+		grid-gap: 60px;
+	}
+	
+	.leftImage div.featureText {
+		grid-column-start: 3;
+		grid-column-end: 4;
+		margin: auto 0;
+	}
+	
+	.leftImage div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.rightImage {
+		grid-template-columns: 1fr 2fr;
+		grid-gap: 60px;
+	}
+	
+	.rightImage div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		margin: auto 0;
+		text-align: right;
+	}
+	
+	.rightImage div.featureImage {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+	
+	#features .leftAligned h3, #features .leftAligned p {
+		text-align: right;
+		padding-right: 30px;
+	}
+		
+	#features .rightAligned h3, #features .rightAligned p {
+		text-align: left;
+		padding-left: 30px;
+	}
+	
+	.imageOnly div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	#features div img, #features div video {
+			padding-bottom: 30px;
+	}
+
+	#features p {
+		padding-bottom: 30px;
+	}
+
+	#sale {
+		padding-bottom: 105px;
+		border-style: none;
+		grid-gap: 0 60px;
+	}
+
+	#sale section {
+		display: grid;
+		grid-column-start: 2;
+		grid-column-end: 4;
+		grid-template-columns: 1fr;
+	}
+	
+	#sale h2 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+	
+	#sale p {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#sale table {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0 60px;
+		padding: 30px 15px 15px 15px;
+	}
+
+	#sale table tr td:nth-child(1) {
+		padding-right: 12px;
+	}
+
+	#techSpecs {
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: rgb(180,180,180);
+		margin-bottom: 120px;
+	}
+		
+	#techSpecs section {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 60px;
+		padding-bottom: 60px;
+	}
+	
+	#techSpecs div, #techSpecs ul, #techSpecs table {
+		padding-left: 0;
+		padding-right: 15px;
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+	
+	#techSpecs h3 {
+		padding-right: 0;
+	}
+	
+	#techSpecs table tr td:nth-child(2) {
+		padding-right: 15px;
+	}
+
+
+	#techSpecs table tr td:nth-child(1) {
+		padding-left: 0;
+		padding-right: 15px;
+	}
+
+	#techSpecs img {
+		padding-bottom: 30px;
+	}
+
+	#about, #connect, #projects {
+		border-style: none;
+	}
+	
+	#about section, #connect section, #projects section {
 		grid-column-start: 2;
 		grid-column-end: 4;
 		display: block;
@@ -455,39 +825,6 @@ footer {
 	
 	#sale p, #about p, #connect p {
 		display: block;
-	}
-	
-	#projects a {
-		display: grid;
-		grid-column-start: 2;
-		grid-column-end: 4;
-	}
-	
-	#projects a section.projectThumbnail {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		padding-bottom: 45px;
-	}
-	
-	.projectThumbnail div {
-		display: grid;
-		grid-column-start: 1;
-		grid-column-end: 4;
-	}
-	
-	.projectThumbnail div img {
-		padding-bottom: 30px;
-	}
-	
-	#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
-		display: grid;
-		grid-column-start: 1;
-		grid-column-end: 3;
-	}
-	
-	#projects a .projectThumbnail p {
-		font-size: 20px;
-		line-height: 24px;
 	}
 	
 	div#mc_embed_shell {
@@ -542,6 +879,40 @@ footer {
 	
 	footer p {
 		grid-column-start: 1;
+	}
+	
+	#projects a {
+		display: grid;
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+	
+	#projects a section.projectThumbnail {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		padding-bottom: 45px;
+	}
+	
+	.projectThumbnail div {
+		display: grid;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
+	.projectThumbnail div img {
+		padding-bottom: 30px;
+	}
+	
+	#projects a .projectThumbnail h3, #projects a .projectThumbnail p {
+		display: grid;
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	#projects a .projectThumbnail p {
+		font-size: 20px;
+		line-height: 24px;
+	}	
 
 }
 
