@@ -401,7 +401,7 @@ footer {
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 0 48px;
 	}
-
+	
 	#heroImage {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -606,7 +606,12 @@ footer {
 	header.index {
 		padding-bottom: 90px;
 	}
-
+	
+	header p {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+	
 	nav {
 		display: grid;
 		grid-column-start: 2;
