@@ -273,6 +273,7 @@ div.mc-field-group label {
 input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 	display: block;
 	height: 40px;
+	width: 100%;
 	box-shadow: 5px 5px 0 rgb(120,120,120);
 	border-style: solid;
 	border-width: 1px 0 1px 1px;
@@ -285,7 +286,7 @@ input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 	padding-left: 10px;
 	margin: 0 15px 15px 0;
 	font-family: "Source Sans 3", sans-serif;
-	width: 100%;
+	box-sizing: border-box;
 }
 
 div.optionalParent {
@@ -313,6 +314,7 @@ input.button {
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
+	box-sizing: border-box;
 }
 
 input.button:hover {
