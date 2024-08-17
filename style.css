@@ -493,6 +493,16 @@ footer {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 	
+	.fullWidthBottomImage div.featureText {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	
+	.fullWidthBottomImage div.featureImage {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
 	.leftImage {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
@@ -512,11 +522,13 @@ footer {
 	}
 	
 	.rightImage div.featureText {
+		grid-row-start: 2;
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
 	
 	.rightImage div.featureImage {
+		grid-row-start: 1;
 		grid-column-start: 1;
 		grid-column-end: 4;
 	}
@@ -722,6 +734,7 @@ footer {
 	}
 	
 	.rightImage div.featureText {
+		grid-row-start: 1;
 		grid-column-start: 1;
 		grid-column-end: 2;
 		margin: auto 0;
