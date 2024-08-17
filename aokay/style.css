@@ -31,6 +31,10 @@ h2 {
 	text-transform: lowercase;
 }
 
+#index h2 {
+	padding-bottom: 12px;
+}
+
 h3 {
 	font-weight: 900;
 	text-transform: uppercase;
@@ -90,8 +94,8 @@ header {
 	padding: 0;
 }
 
-header.index {
-	padding-bottom: 72px;
+#index header {
+	padding-bottom: 84px;
 }
 
 .logo {
@@ -192,6 +196,7 @@ nav li {
 #techSpecs {
 	background: radial-gradient(ellipse, rgb(245,242,236) 50%, rgb(240,237,231));
 	margin-bottom: 96px;
+	padding-bottom: 24px;
 }
 
 #techSpecs h2, #techSpecs h3, #techSpecs div, #techSpecs ul {
@@ -221,7 +226,7 @@ nav li {
 }
 
 #about section, #connect section, #projects section {
-	padding-bottom: 45px;
+	padding-bottom: 36px;
 }
 
 #sale p, #about p, #connect p, #projects p {
@@ -454,7 +459,6 @@ footer {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 0 60px;
-		padding-bottom: 45px;
 	}
 	
 	div#mc_embed_shell {
@@ -552,14 +556,18 @@ footer {
 		line-height: 30px;
 	}
 	
-	h2 {
-		padding: 0 30px 120px 0;
-	}
-
 	p, h1, h3 {
 		padding-bottom: 15px;
 	}
 	
+	h2 {
+		padding: 0 30px 120px 0;
+	}
+
+	#index h2 {
+		padding-bottom: 15px;
+	}
+
 	h3 {
 		font-size: 18px;
 		line-height: 30px;
@@ -603,8 +611,8 @@ footer {
 		grid-gap: 0 60px;
 	}
 
-	header.index {
-		padding-bottom: 90px;
+	#index header {
+		padding-bottom: 105px;
 	}
 	
 	header p {
