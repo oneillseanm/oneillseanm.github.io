@@ -178,11 +178,52 @@ nav li {
 }
 
 #features div img, #features div video {
-		padding-bottom: 24px;
+	padding-bottom: 24px;
 }
 
 #features p {
 	padding-bottom: 24px;
+}
+
+#features p.hasFollowUp {
+	padding-bottom: 12px;
+}
+
+.fullWidthBottomImage {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.fullWidthBottomImage div.featureText {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+}
+
+.emptyImage {
+	aspect-ratio: 3/2;
+	border-style: solid;
+	background-color: rgb(247, 247, 247);
+	border-color: rgb(128, 128, 128);
+	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	border-width: 1px;
+	border-radius: 10px;
+	grid-row-start: 2;
+	grid-column-start: 1;
+	grid-column-end: 2;
+}
+
+#features .emptyImage p {
+	margin: auto 30px;
+	padding-bottom: 0;
+}
+
+.emptyImage p, .emptyImage a {
+	font-size: 15px;
+	line-height: 18px;
+	font-family: "Courier Prime", monospace;
+	font-style: normal;
+	font-optical-sizing: auto;
 }
 
 #sale {
@@ -266,26 +307,31 @@ form#mc-embedded-subscribe-form {
 div.mc-field-group label {
 	padding-right: 12px;
 	line-height: 30px;
+	font-family: "Courier Prime", monospace;
+	font-style: normal;
+	font-optical-sizing: auto;
 	font-size: 15px;
 	color: rgb(40,40,40);
 }
 
 input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 	display: block;
-	height: 40px;
+	height: 42px;
 	width: 100%;
-	box-shadow: 5px 5px 0 rgb(120,120,120);
-	border-style: solid;
-	border-width: 1px 0 1px 1px;
-	border-color: rgb(40,40,40);
-	border-radius: 0;
-	background-color: rgb(255,255,255);
-	line-height: 30px;
-	font-size: 15px;
-	color: rgb(40,40,40);
-	padding-left: 10px;
 	margin: 0 15px 15px 0;
-	font-family: "Source Sans 3", sans-serif;
+	padding: 13px 0 10px 12px;
+	border-style: solid;
+	background-color: rgb(247, 247, 247);
+	border-color: rgb(128, 128, 128);
+	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	border-width: 1px 0 1px 1px;
+	border-radius: 10px 0 0 10px;
+	line-height: 17px;
+	color: rgb(40,40,40);
+	font-size: 15px;
+	font-family: "Courier Prime", monospace;
+	font-style: normal;
+	font-optical-sizing: auto;
 	box-sizing: border-box;
 }
 
@@ -297,28 +343,29 @@ div.optionalParent {
 
 input.button {
 	display: inline-flex;
-	padding-bottom: 0;
+	height: 42px;
+	width: 100%;
+	padding: 13px 0 10px 0;
 	margin: 0 0 12px 0;
 	border-style: solid;
+	background-color: rgb(247, 247, 247);
+	border-color: rgb(128, 128, 128);
+	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
 	border-width: 1px;
-	border-color: rgb(40,40,40);
-	border-radius: 0;
-	background-color: rgb(230,230,230);
-	width: 100%;
-	height: 40px;
-	box-shadow: 5px 5px 0 rgb(120,120,120);
-	line-height: 30px;
+	border-radius: 0 10px 10px 0;
+	line-height: 17px;
 	font-size: 15px;
-	color: rgb(40,40,40);
-	font-family: "Source Sans 3", sans-serif;
-	font-optical-sizing: auto;
+	color: rgb(60,60,60);
+	font-family: "Courier Prime", monospace;
 	font-weight: 400;
 	font-style: normal;
+	font-optical-sizing: auto;
+	text-align: center;
 	box-sizing: border-box;
 }
 
 input.button:hover {
-	background-color: rgb(180,180,180);
+	background-color: rgb(240,240,240);
 }
 
 input.button:active {
@@ -395,7 +442,7 @@ footer {
 
 #projects a .projectThumbnail p {
 	font-size: 17px;
-	line-height: 21px;
+	line-height: 22px;
 }
 
 .projectThumbnail div img {
@@ -460,7 +507,7 @@ footer {
 	#about section, #connect section, #projects section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 0 60px;
+		grid-gap: 0 48px;
 	}
 	
 	div#mc_embed_shell {
@@ -478,7 +525,7 @@ footer {
 
 	#features section {
 		display: grid;
-		grid-gap: 0 60px;
+		grid-gap: 0 48px;
 	}
 	
 	.fullWidth {
@@ -502,11 +549,19 @@ footer {
 	.fullWidthBottomImage div.featureText {
 		grid-column-start: 1;
 		grid-column-end: 3;
+		grid-row-start: 1;
 	}
 	
 	.fullWidthBottomImage div.featureImage {
 		grid-column-start: 1;
 		grid-column-end: 4;
+		grid-row-start: 2;
+	}
+	
+	.emptyImage {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 2;
 	}
 	
 	.leftImage {
@@ -696,6 +751,7 @@ footer {
 	#features section {
 		padding: 0 0 90px 0;
 		border-style: none;
+		grid-gap: 0 60px;
 	}
 	
 	.fullWidth {
@@ -727,7 +783,12 @@ footer {
 		grid-column-start: 1;
 		grid-column-end: 4;
 	}
-		
+	
+	.emptyImage p, .emptyImage a {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	
 	.leftImage {
 		grid-gap: 60px;
 	}
@@ -783,6 +844,11 @@ footer {
 	#features p {
 		padding-bottom: 30px;
 	}
+
+	#features p.hasFollowUp {
+		padding-bottom: 15px;
+	}
+
 
 	#sale {
 		padding-bottom: 105px;
@@ -869,6 +935,7 @@ footer {
 		grid-column-end: 4;
 		display: block;
 		padding-bottom: 45px;
+		grid-gap: 0 60px;
 	}
 	
 	#sale p, #about p, #connect p {
@@ -891,9 +958,9 @@ footer {
 	}
 
 	input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
-		width: 100%;
+		height: 44px;
 		margin: 0 12px 12px 0;
-		line-height: 40px;
+		line-height: 18px;
 		font-size: 18px;
 	}
 	
@@ -904,9 +971,9 @@ footer {
 	}
 	
 	input.button {
-		width: 50%
+		height: 44px;
 		margin-bottom: 15px;
-		line-height: 40px;
+		line-height: 18px;
 		font-size: 18px;
 	}
 
