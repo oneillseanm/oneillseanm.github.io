@@ -198,7 +198,10 @@ nav li {
 	grid-row-start: 1;
 }
 
-.emptyImage {
+#features div.emptyImage {
+	display: grid;
+	margin-bottom: 24px;
+	padding: 24px;
 	aspect-ratio: 16/9;
 	border-style: solid;
 	background-color: rgb(243, 239, 232);
@@ -213,12 +216,12 @@ nav li {
 
 #features .emptyImage div {
 	display: block;
-	width: 60%;
-	margin: auto;
+	margin: auto 0;
 }
 
 #features .emptyImage p {
 	padding-bottom: 12px;
+	width: 80%;
 }
 
 .emptyImage p, .emptyImage a {
@@ -235,7 +238,7 @@ nav li {
 
 #sale table {
 	margin: 15px 0 30px 0;
-	padding: 24px 12px 12px 12px;
+	padding: 36px 24px 48px 24px;
 	background-color: rgb(243, 239, 232);
 	border-style: solid;
 	border-color: rgb(180,180,180);
@@ -283,8 +286,8 @@ nav li {
 }
 
 #techSpecs h3, #techSpecs div, #techSpecs ul {
-	padding-left: 12px;
-	padding-right: 12px;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
 #techSpecs h3 {
@@ -299,11 +302,11 @@ nav li {
 }
 
 #techSpecs table tr td:nth-child(2) {
-	padding-right: 12px;
+	padding-right: 24px;
 }
 
 #techSpecs table tr td:nth-child(1) {
-	padding-left: 12px;
+	padding-left: 24px;
 	padding-right: 12px;
 }
 
@@ -331,6 +334,12 @@ div#mc_embed_shell {
 div#mc_embed_signup_scroll {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+	border-style: solid;
+	background-color: rgb(243, 239, 232);
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
+	border-width: 1px;
+	border-radius: 10px;
 }
 
 div#mce-responses {
@@ -353,7 +362,9 @@ form#mc-embedded-subscribe-form {
 }
 
 div.mc-field-group label {
-	padding-right: 12px;
+	display: block;
+	padding-top: 24px;
+	padding-left: 24px;
 	line-height: 30px;
 	font-family: "Courier Prime", monospace;
 	font-style: normal;
@@ -367,13 +378,12 @@ input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 	height: 42px;
 	width: 100%;
 	margin: 0 15px 15px 0;
-	padding: 13px 0 10px 12px;
+	padding: 13px 0 10px 24px;
 	border-style: solid;
 	background-color: rgb(247, 247, 247);
 	border-color: rgb(180,180,180);
-	box-shadow: 5px 5px 0 0 rgb(215,215,215);
-	border-width: 1px 0 1px 1px;
-	border-radius: 10px 0 0 10px;
+	border-width: 1px 0;
+	border-radius: 0;
 	line-height: 17px;
 	color: rgb(40,40,40);
 	font-size: 15px;
@@ -384,7 +394,7 @@ input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 }
 
 div.optionalParent {
-	padding-top: 30px;
+	padding-top: 54px;
 	grid-column-start: 2;
 	grid-column-end: 3;
 }
@@ -395,12 +405,11 @@ input.button {
 	width: 100%;
 	padding: 13px 0 10px 0;
 	margin: 0 0 12px 0;
-	background-color: rgb(243, 239, 232);
+	background-color: rgb(239, 234, 225);
 	border-style: solid;
 	border-color: rgb(180,180,180);
-	box-shadow: 5px 5px 0 0 rgb(215,215,215);
-	border-width: 1px;
-	border-radius: 0 10px 10px 0;
+	border-width: 1px 0 1px 1px;
+	border-radius: 0;
 	line-height: 17px;
 	font-size: 15px;
 	color: rgb(60,60,60);
@@ -413,11 +422,11 @@ input.button {
 }
 
 input.button:hover {
-	background-color: rgb(239, 234, 225);
+	background-color: rgb(243, 239, 232);
 }
 
 input.button:active {
-	background-color: rgb(230,230,230);
+	background-color: rgb(239, 234, 225);
 }
 
 div.clear.foot p {
@@ -528,6 +537,11 @@ footer {
 		grid-column-end: 3;
 	}
 	
+	#development h2 {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	
 	#sale section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -598,7 +612,7 @@ footer {
 		grid-row-start: 2;
 	}
 	
-	.emptyImage {
+	#features div.emptyImage {
 		grid-column-start: 1;
 		grid-column-end: 3;
 		grid-row-start: 2;
@@ -648,7 +662,7 @@ footer {
 		padding: 30px;
 	}
 	
-	p, h1, h2, a, li, table {
+	p, h1, h2, h3, a, li, table {
 		font-size: 24px;
 		line-height: 30px;
 	}
@@ -824,6 +838,11 @@ footer {
 		grid-column-start: 1;
 		grid-column-end: 4;
 	}
+	
+	#features div.emptyImage {
+		margin-bottom: 30px;
+		padding: 24px;
+	}
 		
 	#features .emptyImage div {
 	}
@@ -909,6 +928,7 @@ footer {
 		grid-column-start: 2;
 		grid-column-end: 4;
 		grid-template-columns: 1fr;
+		grid-gap: 0;
 	}
 	
 	#sale h2 {
@@ -925,8 +945,8 @@ footer {
 		grid-column-start: 1;
 		grid-column-end: 3;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: 0 60px;
-		padding: 30px 15px 15px 15px;
+		grid-gap: 0 30px;
+		padding: 45px 30px 60px 30px;
 		font-size: 18px;
 		line-height: 22px;
 	}
@@ -957,17 +977,17 @@ footer {
 
 	#techSpecs div, #techSpecs ul, #techSpecs table {
 		padding-left: 0;
-		padding-right: 15px;
+		padding-right: 30px;
 		grid-column-start: 2;
 		grid-column-end: 4;
 	}
 	
-	#techSpecs li, #techSpecs td {
+	#techSpecs li, #techSpecs td, #techSpecs h3 {
 		font-size: 18px;
 		line-height: 22px;
 	}
 	#techSpecs h3 {
-		padding-left: 15px;
+		padding-left: 30px;
 		padding-right: 0;
 	}
 	
@@ -1024,7 +1044,7 @@ footer {
 	}
 	
 	div.optionalParent {
-		padding-top: 40px;
+		padding-top: 64px;
 		grid-column-start: 2;
 		grid-column-end: 3;
 	}
