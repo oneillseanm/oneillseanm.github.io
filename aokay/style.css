@@ -92,7 +92,7 @@ header {
 	padding: 0;
 }
 
-#index header {
+#index header, #thankYou header {
 	padding-bottom: 84px;
 }
 
@@ -498,6 +498,14 @@ footer {
 	padding-bottom: 24px;
 }
 
+#thankYou section {
+	border-width: 1px 0;
+}
+
+#thankYou footer {
+	border-style: none;
+}
+
 @media only screen and (min-width: 500px) {
 	
 	table {
@@ -675,7 +683,7 @@ footer {
 		padding: 0 30px 120px 0;
 	}
 
-	#index h2 {
+	#index h2, #thankYou h2 {
 		padding-bottom: 15px;
 	}
 
@@ -717,7 +725,7 @@ footer {
 		grid-gap: 0 60px;
 	}
 
-	#index header {
+	#index header, #thankYou header {
 		padding-bottom: 105px;
 	}
 	
@@ -1107,6 +1115,14 @@ footer {
 		font-size: 20px;
 		line-height: 24px;
 	}	
+
+	#thankYou section {
+		border-width: 0;
+	}
+
+	#thankYou footer {
+		border-style: solid;
+	}
 
 }
 
