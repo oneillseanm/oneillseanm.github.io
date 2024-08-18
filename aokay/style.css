@@ -9,7 +9,7 @@ body {
 	font-style: normal;
 }
 
-p, h1, h2, a, li, table {
+p, h1, h2, h3, a, li, table {
 	font-size: 20px;
 	line-height: 24px;
 }
@@ -19,28 +19,26 @@ p, h1, h3 {
 	margin: 0;
 }
 
-h1 {
+h1, h2, h3 {
 	font-weight: 800;
 }
 
+h2, h3 {
+	letter-spacing: 1px;
+}
+
 h2 {
-	font-weight: 800;
 	padding: 0 24px 96px 0;
 	margin: 0;
-	letter-spacing: 1px;
-	text-transform: lowercase;
 }
 
 #index h2 {
 	padding-bottom: 12px;
+	font-weight: 800;
 }
 
 h3 {
-	font-weight: 900;
-	text-transform: uppercase;
-	font-size: 15px;
-	line-height: 24px;
-	letter-spacing: 1px;
+	text-transform: lowercase;
 }
 
 a {
@@ -106,9 +104,9 @@ header {
 
 .logoDot {
 	position: relative;
-	top: 3px;
+	top: 2px;
 	right: 1px;
-	padding-left: 1px;
+	padding-left: 2px;
 }
 
 .logo a {
@@ -201,11 +199,11 @@ nav li {
 }
 
 .emptyImage {
-	aspect-ratio: 3/2;
+	aspect-ratio: 16/9;
 	border-style: solid;
-	background-color: rgb(247, 247, 247);
-	border-color: rgb(128, 128, 128);
-	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	background-color: rgb(243, 239, 232);
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
 	border-width: 1px;
 	border-radius: 10px;
 	grid-row-start: 2;
@@ -213,9 +211,14 @@ nav li {
 	grid-column-end: 2;
 }
 
+#features .emptyImage div {
+	display: block;
+	width: 60%;
+	margin: auto;
+}
+
 #features .emptyImage p {
-	margin: auto 30px;
-	padding-bottom: 0;
+	padding-bottom: 12px;
 }
 
 .emptyImage p, .emptyImage a {
@@ -230,34 +233,69 @@ nav li {
 	padding-bottom: 84px;
 }
 
+#sale table {
+	margin: 15px 0 30px 0;
+	padding: 24px 12px 12px 12px;
+	background-color: rgb(243, 239, 232);
+	border-style: solid;
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
+	border-width: 1px;
+	border-radius: 10px;
+	font-family: "Courier Prime", monospace;
+	font-weight: 400;
+	font-style: normal;
+	font-optical-sizing: auto;
+	font-size: 15px;
+	line-height: 18px;
+}
+
 #sale table tr td:nth-child(1) {
 	padding-right: 12px;
 }
 
 #techSpecs {
-	margin-bottom: 96px;
-	padding-bottom: 24px;
+}
+
+#techSpecs > section {
+	margin-bottom: 48px;
+	padding-top: 72px;
+	padding-bottom: 0;
 	background-color: rgb(243, 239, 232);
 	border-style: solid;
-	border-color: rgb(128, 128, 128);
-	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
 	border-width: 1px;
 	border-radius: 10px;
-	color: rgb(60,60,60);
+	font-family: "Courier Prime", monospace;
+	font-style: normal;
+	font-optical-sizing: auto;
+}
+
+#techSpecs section section {
+	padding: 0 0 48px 0;
 }
 
 #techSpecs li, #techSpecs td, #techSpecs a {
-	font-family: "Courier Prime", monospace;
 	font-weight: 400;
-	font-style: normal;
-	font-optical-sizing: auto;
-	line-height: 17px;
 	font-size: 15px;
+	line-height: 18px;
 }
 
-#techSpecs h2, #techSpecs h3, #techSpecs div, #techSpecs ul {
+#techSpecs h3, #techSpecs div, #techSpecs ul {
 	padding-left: 12px;
 	padding-right: 12px;
+}
+
+#techSpecs h3 {
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 18px;
+	text-transform: none;
+}
+
+#techSpecs h3 {
+	text-transform: lowercase;
 }
 
 #techSpecs table tr td:nth-child(2) {
@@ -269,16 +307,11 @@ nav li {
 	padding-right: 12px;
 }
 
-#techSpecs section {
-	padding: 0 0 48px 0;
-}
-
 #techSpecs img {
 	padding-bottom: 24px;
 }
 
 #about {
-	border-top: 1px solid rgb(180,180,180);
 }
 
 #about section, #connect section, #projects section {
@@ -337,8 +370,8 @@ input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
 	padding: 13px 0 10px 12px;
 	border-style: solid;
 	background-color: rgb(247, 247, 247);
-	border-color: rgb(128, 128, 128);
-	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
 	border-width: 1px 0 1px 1px;
 	border-radius: 10px 0 0 10px;
 	line-height: 17px;
@@ -364,8 +397,8 @@ input.button {
 	margin: 0 0 12px 0;
 	background-color: rgb(243, 239, 232);
 	border-style: solid;
-	border-color: rgb(128, 128, 128);
-	box-shadow: 5px 5px 0 0 rgb(204, 204, 204);
+	border-color: rgb(180,180,180);
+	box-shadow: 5px 5px 0 0 rgb(215,215,215);
 	border-width: 1px;
 	border-radius: 0 10px 10px 0;
 	line-height: 17px;
@@ -410,15 +443,6 @@ img.refferal_badge {
 	text-decoration: line-through;
 }
 
-#sale table {
-	margin: 15px 0 30px 0;
-	padding: 24px 12px 12px 12px;
-	background: radial-gradient(ellipse, rgb(245,242,236) 50%, rgb(240,237,231));
-	border-style: solid;
-	border-color: rgb(180,180,180);
-	border-width: 1px 0;
-}
-
 footer {
 	border-style: solid;
 	border-color: rgb(180,180,180);
@@ -453,6 +477,7 @@ footer {
 	display: grid;
 	grid-column-start: 1;
 	grid-column-end: 3;
+	text-transform: none;
 }
 
 #projects a .projectThumbnail p {
@@ -640,11 +665,6 @@ footer {
 		padding-bottom: 15px;
 	}
 
-	h3 {
-		font-size: 18px;
-		line-height: 30px;
-	}
-
 	ul {
 		padding-bottom: 15px;
 	}
@@ -687,6 +707,12 @@ footer {
 		padding-bottom: 105px;
 	}
 	
+	.logoDot {
+		top: 3px;
+		right: 2px;
+		padding-left: 2px;
+	}
+
 	header p {
 		grid-column-start: 2;
 		grid-column-end: 4;
@@ -798,6 +824,13 @@ footer {
 		grid-column-start: 1;
 		grid-column-end: 4;
 	}
+		
+	#features .emptyImage div {
+	}
+
+	#features .emptyImage p {
+		padding-bottom: 15px;
+	}
 	
 	.emptyImage p, .emptyImage a {
 		font-size: 18px;
@@ -894,6 +927,8 @@ footer {
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 0 60px;
 		padding: 30px 15px 15px 15px;
+		font-size: 18px;
+		line-height: 22px;
 	}
 
 	#sale table tr td:nth-child(1) {
@@ -901,18 +936,25 @@ footer {
 	}
 
 	#techSpecs {
-		margin-bottom: 120px;
 	}
-		
-	#techSpecs section {
+	
+	#techSpecs > section {
+		margin-bottom: 60px;
+		padding-top: 90px;
+	}
+
+	#techSpecs section section {
 		grid-column-start: 1;
 		grid-column-end: 4;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 60px;
-		padding-bottom: 60px;
 	}
 	
+	#techSpecs section section {
+		padding: 0 0 60px 0;
+	}
+
 	#techSpecs div, #techSpecs ul, #techSpecs table {
 		padding-left: 0;
 		padding-right: 15px;
@@ -921,10 +963,11 @@ footer {
 	}
 	
 	#techSpecs li, #techSpecs td {
-		line-height: 22px;
 		font-size: 18px;
+		line-height: 22px;
 	}
 	#techSpecs h3 {
+		padding-left: 15px;
 		padding-right: 0;
 	}
 	
