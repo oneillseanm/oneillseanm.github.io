@@ -262,8 +262,8 @@ p.fillInType {
 
 .specs p.stamp {
 	display: inline-block;
-	padding: 3px 7px 0 7px;
-	border: solid 4px rgb(255,0,0);
+	padding: 2px 6px 0 6px;
+	border: solid 5px rgb(255,0,0);
 	border-radius: 6px;
 	color: rgb(255,0,0);
 	font-family: "Source Sans 3", sans-serif;
@@ -295,7 +295,7 @@ p.stamp.tbd {
 	rotate: -5deg;
 	position: absolute;
 	top: 90%;
-	left: 10%;
+	left: 5%;
 }
 
 p.stamp.release {
@@ -693,6 +693,51 @@ footer {
 		padding: 30px;
 	}
 	
+	#a p, #a h1, #a h2, #a h3, #a a {
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	#a .specs, #a .specs p, #a .specs h3 {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	#a .title {
+		font-size: 60px;
+		line-height: 75px;
+	}
+
+	#a p a, #a td a {
+		letter-spacing: 1px;
+	}
+
+	#a p a {
+		font-size: 22px;
+	}
+
+	#a td a {
+		font-size: 16px;
+	}
+
+	#a .specs p.redType {
+		font-size: 24px;
+		line-height: 24px;
+	}
+	
+	#a .specs p.stamp {
+		padding: 3px 7px 0 7px;
+		border: solid 6px rgb(255,0,0);
+		border-radius: 6px;
+		font-size: 36px;
+		line-height: 36px;
+	}
+
+	#a p.stamp.tbd {
+		font-size: 48px;
+		line-height: 48px;
+	}
+	
 	h2 {
 		padding-bottom: 0;
 		grid-column-start: 1;
@@ -845,6 +890,13 @@ footer {
 		object-fit: contain;
 	}
 
+	table.fillIn tr td:nth-child(1) {
+		width: 90px;
+	}
+
+	table.fillIn tr td:nth-child(2) {
+		width: 90px;
+	}
 	footer {
 		padding-top: 15px;
 		display: grid;
