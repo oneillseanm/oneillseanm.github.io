@@ -743,6 +743,10 @@ footer {
 		grid-column-start: 1;
 		grid-column-end: 2;
 	}
+	
+	#features h2 {
+		padding-bottom: 120px;
+	}
 
 	#index h2, #thankYou h2 {
 		padding-bottom: 15px;
@@ -959,3 +963,4 @@ footer {
 		padding: 30px;
 	}
 	
+,
