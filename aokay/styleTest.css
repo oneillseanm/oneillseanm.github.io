@@ -68,95 +68,78 @@ body {
 		padding-left: 2px;
 	}
 
+nav.specs {
+	background-color: var(--colorFieldEmphasis);
+	box-shadow: 2px 5px 9px -4px rgba(0,0,0,.1);
+}
 
+	nav.specs::before {
+		background-image: linear-gradient(
+			to right,
+			var(--transparent),
+			60%,
+			var(--shade) 70%,
+			80%,
+			var(--transparent)
+		);
+		content: '';
+		height: 100%;
+		left: -.4em;
+		position: absolute;
+		top: 0;
+		width: calc(100% + .8em);
+		z-index: 1;
+		mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+	}
 
+	nav.specs * {
+		margin: 0;
+		padding: 0;
+	}
+	
+	nav.specs ul {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: .4em 1em .3em 1em;
+	}
+	
 	header nav li {
 		border-style: none;
 		list-style-type: none;
-		padding: 0 0 .7rem 0;
 		text-indent: 0;
 	}
 
-	nav li a {
-		font-family: var(--fontSans);
-		font-size: var(--fontSizeBody);
-		font-weight: 400;
-		letter-spacing: 0;
-		list-style-type: none;
-		text-decoration: none;
-		text-transform: lowercase;
-	}
-
-
-
-
-
-
-		nav.specs {
-			background-color: var(--colorFieldEmphasis);
+		nav.specs a {
+			font-family: inherit;
 			font-size: var(--fontSizeLink);
-			box-shadow: 2px 5px 9px -4px rgba(0,0,0,.1);
+			font-weight: 400;
+			text-decoration: none;
 		}
+		
+	nav.specs ul { /* side perforation */
 
-			nav.specs::before {
-				background-image: linear-gradient(
-					to right,
-					var(--transparent),
-					60%,
-					var(--shade) 70%,
-					80%,
-					var(--transparent)
-				);
-				content: '';
-				height: 100%;
-				left: -.4em;
-				position: absolute;
-				top: 0;
-				width: calc(100% + .8em);
-				z-index: 1;
-				mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
-			}
-
-			nav.specs * {
-				margin: 0;
-				padding: 0;
-			}
-			
-			nav.specs ul {
-				display: flex;
-				justify-content: space-between;
-				margin: 0;
-				padding: .4em 1em .3em 1em;
-			}
-			
-				nav.specs a {
-					font-family: inherit;
-					font-size: var(--fontSizeLink);
-				}
-				
-			nav.specs ul { /* side perforation */
-
-				&:before,
-				&:after {
-					content: '';
-					position: absolute;
-					left: 0;
-					height: 100%;
-					width: .4rem;
-				}
-				
-				&:before {
-					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) -.2em 0 / 100% .4rem repeat-y;
-					left: -.2rem;
-					top: 0;
-				}
-				
-				&:after {
-					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) .2em 0 / 100% .4rem repeat-y;
-					left: calc(100% - .2em);
-					top: 0;
-				}
-			}
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: .4rem;
+		}
+		
+		&:before {
+			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) -.2em 0 / 100% .4rem repeat-y;
+			left: -.2rem;
+			top: 0;
+		}
+		
+		&:after {
+			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) .2em 0 / 100% .4rem repeat-y;
+			left: calc(100% - .2em);
+			top: 0;
+		}
+	}
 
 
 
@@ -179,8 +162,8 @@ section {
 	margin: 0 0 2.1rem 0;
 }
 
-		section > :last-child {
-			margin: 0;
+		main article section > :last-child {
+			margin-bottom: 0;
 		}
 	section:last-child, section.specs:last-child {	
 		margin: 0 0 5.6rem 0;
@@ -297,8 +280,8 @@ div img, div video {
 	ul li {
 		border-bottom: 1px solid var(--colorBorderPaper);
 		list-style: circle none inside;
-		padding: .7rem .7rem .7rem 2.3rem;
-		text-indent: -1.35rem;
+		padding: .7rem .7rem .7rem 1.8rem;
+		text-indent: -1rem;
 	}
 	
 	ul li::marker {
@@ -419,13 +402,13 @@ div img, div video {
 	/* accessories */
 	
 	.stamp {
-		border: solid .15rem var(--colorStamp);
-		border-radius: .2rem;
+		border: solid .15em var(--colorStamp);
+		border-radius: .2em;
 		color: rgb(255,0,0);
 		display: inline-block;
 		font-size: 2rem;
 		font-weight: 900;
-		line-height: .9rem;
+		line-height: .9em;
 		mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
 		mix-blend-mode: multiply;
 		opacity: .2;
@@ -467,7 +450,7 @@ div img, div video {
 		color: var(--colorTextEmphasis);
 		font-style: italic;
 		font-weight: 600;
-		margin: 0 .7rem 0 0;
+		margin-right: .7rem;
 		text-align: right;
 	}
 	
@@ -508,6 +491,10 @@ div img, div video {
 		margin: 0 0 .7rem 0;
 	}
 
+
+div.emptyImage {
+	aspect-ratio: 16/9;
+}
 
 
 
@@ -725,23 +712,6 @@ div img, div video {
 	padding-bottom: 84px;
 }
 
-
-.leftBorderGrid {
-	display: none;
-}
-
-.leftBorder {
-	display: none;
-}
-
-
-#features div.emptyImage {
-	margin-bottom: 24px;
-	aspect-ratio: 16/9;
-	grid-row-start: 2;
-	grid-column-start: 1;
-	grid-column-end: 2;
-}
 
 .rightSmallImage .emptyImage section {
 	display: grid;
