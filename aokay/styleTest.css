@@ -68,10 +68,7 @@ body {
 		padding-left: 2px;
 	}
 
-nav ul {
-	margin: 0 0 1.4rem 0;
-	padding: 0;
-}
+
 
 	header nav li {
 		border-style: none;
@@ -89,6 +86,83 @@ nav ul {
 		text-decoration: none;
 		text-transform: lowercase;
 	}
+
+
+
+
+
+
+		nav.specs {
+			background-color: var(--colorFieldEmphasis);
+			font-size: var(--fontSizeLink);
+			box-shadow: 2px 5px 9px -4px rgba(0,0,0,.1);
+		}
+
+			nav.specs::before {
+				background-image: linear-gradient(
+					to right,
+					var(--transparent),
+					60%,
+					var(--shade) 70%,
+					80%,
+					var(--transparent)
+				);
+				content: '';
+				height: 100%;
+				left: -.4em;
+				position: absolute;
+				top: 0;
+				width: calc(100% + .8em);
+				z-index: 1;
+				mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+			}
+
+			nav.specs * {
+				margin: 0;
+				padding: 0;
+			}
+			
+			nav.specs ul {
+				display: flex;
+				justify-content: space-between;
+				margin: 0;
+				padding: .4em 1em .3em 1em;
+			}
+			
+				nav.specs a {
+					font-family: inherit;
+					font-size: var(--fontSizeLink);
+				}
+				
+			nav.specs ul { /* side perforation */
+
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					height: 100%;
+					width: .4rem;
+				}
+				
+				&:before {
+					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) -.2em 0 / 100% .4rem repeat-y;
+					left: -.2rem;
+					top: 0;
+				}
+				
+				&:after {
+					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) .2em 0 / 100% .4rem repeat-y;
+					left: calc(100% - .2em);
+					top: 0;
+				}
+			}
+
+
+
+
+
+
 
 main {
 	margin: 0;
@@ -326,18 +400,18 @@ div img, div video {
 			content: '';
 			position: absolute;
 			left: 0;
-			height: .4rem;
+			height: .2rem;
 			width: 100%;
 		}
 		
 		&:before {
-			top: -.4rem;
-			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) center bottom / .8rem .8rem repeat-x;
+			top: -.2rem;
+			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) center bottom / .4rem .4rem repeat-x;
 		}
 		
 		&:after {
-			bottom: -.4rem;
-			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldPaper) 50%, var(--colorFieldPaper) 100% ) center top / .8rem .8rem repeat-x;
+			bottom: -.2rem;
+			background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldPaper) 50%, var(--colorFieldPaper) 100% ) center top / .4rem .4rem repeat-x;
 		}
 	}
 		
@@ -439,6 +513,16 @@ div img, div video {
 
 @media only screen and (min-width: 500px) {
 
+	header {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+		nav.specs {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}		
+
 	article {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 0 1.4rem;
@@ -483,87 +567,17 @@ div img, div video {
 @media only screen and (min-width: 700px) {
 
 	:root {
-
 		font-size: 24px;
-		
 	}
 
 	body {
 		padding: 30px;
 	}
 	
-	header {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	
-		nav.specs {
-			background-color: var(--colorFieldEmphasis);
-			font-size: var(--fontSizeLink);
-			grid-column-start: 2;
-			grid-column-end: 4;
-			box-shadow: 2px 5px 9px -4px rgba(0,0,0,.1);
-		}
-
-			nav.specs::before {
-				background-image: linear-gradient(
-					to right,
-					var(--transparent),
-					60%,
-					var(--shade) 70%,
-					80%,
-					var(--transparent)
-				);
-				content: '';
-				height: 100%;
-				left: -.4em;
-				position: absolute;
-				top: 0;
-				width: calc(100% + .8em);
-				z-index: 1;
-				mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
-			}
-
-			nav.specs * {
-				margin: 0;
-				padding: 0;
-			}
-			
-			nav.specs ul {
-				display: flex;
-				justify-content: space-between;
-				padding: .4em 1em .3em 1em;
-			}
-			
-				nav.specs a {
-					font-family: inherit;
-					font-size: var(--fontSizeLink);
-				}
-				
-			nav.specs ul { /* side perforation */
-
-				&:before,
-				&:after {
-					content: '';
-					position: absolute;
-					left: 0;
-					height: 100%;
-					width: .4rem;
-				}
-				
-				&:before {
-					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) -.2em 0 / 100% .4rem repeat-y;
-					left: -.2rem;
-					top: 0;
-				}
-				
-				&:after {
-					background: radial-gradient(circle, transparent, transparent 50%, var(--colorFieldEmphasis) 50%, var(--colorFieldEmphasis) 100% ) .2em 0 / 100% .4rem repeat-y;
-					left: calc(100% - .2em);
-					top: 0;
-				}
-			}
-
+	nav.specs {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}		
 		
 	article {
 		border-image: linear-gradient(to right, var(--colorBorderBase) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
