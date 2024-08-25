@@ -20,6 +20,7 @@
 	
 	--fontSans: "Source Sans 3", sans-serif;
 	--fontSerif: "Courier Prime", monospace;
+	--fontLogo: "Outfit", sans-serif;
 
 	--fontSizeBody: 1rem;
 	--fontSizeDetail: .75rem;
@@ -34,8 +35,8 @@
 
 body {
 	background: var(--colorFieldBase);
-	margin: 0 0 .7rem 0;
-	padding: 12px;
+	margin: 0 0 1rem 0;
+	padding: 1rem;
 	color: rgb(40,40,40);
 	font-family: var(--fontSans);;
 	font-optical-sizing: auto;
@@ -46,14 +47,16 @@ body {
 }
 
 .logo {
-	font-size: var(--fontSizeBody);
-	line-height: var(--lineHeight);
 	margin: 0 0 .7rem 0;
 }
 
-.logo a {
-	font-family: "Outfit", sans-serif;
+.logo a,
+span.logo {
+	font-family: var(--fontLogo);
+	font-size: var(--fontSizeBody);
 	font-weight: 900;
+	letter-spacing: 0;
+	line-height: var(--lineHeight);
 	text-decoration: none;
 	text-transform: none;
 }
@@ -133,9 +136,14 @@ section {
 		main article section > :last-child {
 			margin-bottom: 0;
 		}
-	section:last-child, section.specs:last-child {	
+	section:last-child,
+	section.specs:last-child {	
 		margin: 0 0 5.6rem 0;
 	}
+	
+		#features section.specs.card:last-child {
+			margin: 0;
+		}
 	
 	section.specs {
 		margin: 0 0 1rem 0;
@@ -209,6 +217,14 @@ h3 {
 		text-transform: uppercase;
 	}
 	
+		.specs.card h3 {
+			background: none;
+			border-style: none;
+			color: var(--colorTextBody);
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+	
 p {
 	margin: inherit;
 }
@@ -232,6 +248,10 @@ p {
 		p.quote:after {
 			content: '"';
 		}
+	
+	.specs.card p {
+		padding: .7rem;
+	}
 	
 a {
 	color: inherit;
@@ -318,6 +338,13 @@ div video {
 	position: relative;
 }
 
+	#features .specs.card {
+		aspect-ratio: 16/9;
+		display: grid;
+		font-family: var(--fontSerif);
+		grid-template-columns: 1fr 1fr;
+	}
+	
 	/* creases */
 	
 	section.specs::before {
@@ -339,36 +366,62 @@ div video {
 		mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
 	}
 		
-	section.specs::after {
-		background: linear-gradient(
-				var(--transparent),
-				40%,
-				var(--fold) 50%,
-				var(--transparent) 50.5%
-			),
-			linear-gradient(
-				to right,
-				var(--transparent),
-				40%,
-				var(--fold) 50%,
-				var(--transparent) 50.5%
-		);
-		content: '';
-		height: calc(100% + .2rem);
-		left: 0;
-		pointer-events: none;
-		position: absolute;
-		rotate: .6deg;
-		top: -.1rem;
-		width: 100%;
-	}
-	
+		section.specs::after {
+			background: linear-gradient(
+					.6deg,
+					var(--transparent),
+					40%,
+					var(--fold) 50%,
+					var(--transparent) 50.5%
+				),
+				linear-gradient(
+					90.6deg,
+					var(--transparent),
+					40%,
+					var(--fold) 50%,
+					var(--transparent) 50.5%
+			);
+			content: '';
+			height: calc(100% + .2rem);
+			left: 0;
+			pointer-events: none;
+			position: absolute;
+			top: -.1rem;
+			width: 100%;
+		}
+		
 		section.specs.card::after {
 			top: 0;
 		}
 		
-		section.specs.form::after {
-			background-image: none;
+		section.specs.form::after,
+		section.specs.noFold::after {
+			background-image: linear-gradient(
+					to bottom right,
+					var(--shade),
+					5%,
+					var(--transparent)
+				);
+		}
+
+		section.specs.cornerFold::after {
+			background-image: linear-gradient(
+					to bottom right,
+					var(--transparent),
+					14%,
+					var(--shade) 15%,
+					var(--transparent) 15.5%
+				);
+		}
+	
+		section.specs.cornerFoldLow::after {
+			background-image: linear-gradient(
+					120deg,
+					var(--transparent),
+					75%,
+					var(--shade) 85%,
+					var(--transparent) 85.5%
+				);
 		}
 	
 	/* perforation */
@@ -410,7 +463,8 @@ div video {
 		}
 	}
 	
-		section.specs.stub h3 {
+		section.specs.stub h3,
+		section.specs.card h3 {
 		
 			&:before {
 				top: -.2rem;
@@ -435,7 +489,7 @@ div video {
 					center top / .4rem .4rem repeat-x;
 			}
 		}
-
+		
 		/* side perforation */
 	
 		header nav.specs ul {
@@ -529,6 +583,7 @@ div video {
 	}
 	
 	.specs p.redType {
+		bottom: 2rem;
 		color: var(--colorTextRed);
 		display: inline;
 		font-family: var(--fontSerif);
@@ -565,11 +620,6 @@ div video {
 		margin: 0 0 .7rem 0;
 	}
 
-
-div.emptyImage {
-	aspect-ratio: 16/9;
-}
-
 /* mailchimp signup form */
 
 section.specs.form {
@@ -587,12 +637,14 @@ section.specs.form {
 		}
 		
 		section.specs.form.stub p {
+			font-weight: 600;
 			padding: 0 0 0 .7rem;
 		}
 
-		.specs.stub p.redType {
+		section.specs.form.stub p.redType {
+			bottom: 0;
+			font-weight: 400;
 			position: relative;
-			rotate: 4deg;
 		}
 		
 div#mc_embed_shell {
@@ -755,6 +807,17 @@ div#mc_embed_shell {
 			grid-column-end: 4;
 		}
 		
+		.rightSmallImage div.featureImage {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+		
+		.rightSmallImage div.featureText {
+			grid-row-start: 2;
+		}
+		
+
+		
 	h2 {
 			grid-column-start: 1;
 			grid-column-end: 4;
@@ -770,7 +833,7 @@ div#mc_embed_shell {
 	}
 
 	body {
-		padding: 30px;
+		padding: 1rem;
 	}
 	
 	nav.specs {
@@ -796,7 +859,7 @@ div#mc_embed_shell {
 		}
 		
 		#techSpecs section:nth-of-type(1) {
-			margin-top: .7rem;
+			margin-top: .4rem;
 		}
 		
 	div {
@@ -842,7 +905,6 @@ div#mc_embed_shell {
 				grid-column-start: 1;
 				grid-column-end: 3;
 			}
-			
 		
 	h2 {
 			grid-column-start: 1;
@@ -855,9 +917,8 @@ div#mc_embed_shell {
 @media only screen and (min-width: 900px) {
 
 	body {
-		width: 840px;
-		margin: auto;
-		padding: 30px;
+		width: 35.5rem;
+		margin: 0 auto;
 	}
 	
 
@@ -1155,12 +1216,6 @@ article section *::after {
 		padding-bottom: 105px;
 	}
 	
-	.logoDot {
-		top: 3px;
-		right: 2px;
-		padding-left: 2px;
-	}
-
 	#heroImage {
 		padding-bottom: 135px;
 	}
@@ -1225,17 +1280,7 @@ article section *::after {
 	table.fillIn tr td:nth-child(2) {
 		width: 90px;
 	}
-	footer {
-		padding-top: 15px;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 0 60px;
-	}
-	
-	footer p {
-		grid-column-start: 1;
-	}
-	
+
 	#projects a {
 		display: grid;
 		grid-column-start: 2;
