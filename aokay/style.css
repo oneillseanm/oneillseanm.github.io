@@ -205,6 +205,8 @@ section {
 
 footer {
 	border-top: var(--borderBase);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	padding-top: .7rem;
 }
 
@@ -237,6 +239,10 @@ h1 {
 	main h1 {
 		grid-column-start: 1;
 		grid-column-end: 4;
+	}
+	
+	footer h1 {
+		grid-row-start: 1;
 	}
 
 h2 {
@@ -315,6 +321,12 @@ p {
 		word-spacing: 0;
 	}
 	
+	p.topLink {
+		grid-column-start: 2;
+		grid-row-start: 1;
+		text-align: right;
+	}
+	
 a {
 	color: inherit;
 	font-family: var(--fontSerif);
@@ -336,7 +348,7 @@ a {
 		text-decoration: none;
 		text-transform: none;
 	}
-
+	
 div img,
 div video {
 	display: block;
