@@ -145,6 +145,11 @@ article {
 	padding-top: .7rem;
 }
 
+	.project article:first-child {
+		border-color: transparent;
+		border-image: none;
+	}
+
 section {
 	margin: 0 0 2.1rem 0;
 }
@@ -228,6 +233,11 @@ h1 {
 	line-height: var(--lineHeight);
 	margin: inherit;
 }
+
+	main h1 {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
 
 h2 {
 	font-size: inherit;
@@ -908,11 +918,6 @@ div#mc_embed_shell {
 		border-image: linear-gradient(to right, var(--colorBorderBase) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
 	}
 	
-		.project article:first-child {
-			border-color: transparent;
-			border-image: none;
-		}
-
 	section {
 	}
 
