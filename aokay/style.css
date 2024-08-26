@@ -152,6 +152,7 @@ section {
 		main article section > :last-child {
 			margin-bottom: 0;
 		}
+		
 	section:last-child,
 	section.specs:last-child {	
 		margin: 0 0 5.6rem 0;
@@ -979,8 +980,9 @@ div#mc_embed_shell {
 			}
 		
 	h2 {
-			grid-column-start: 1;
-			grid-column-end: 2;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		margin: 0;
 	}
 	
 
