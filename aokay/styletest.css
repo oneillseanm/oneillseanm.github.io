@@ -489,11 +489,14 @@ div video {
 		}
 		
 		section.specs.crumple::before {
-			background-image: linear-gradient(
-					to bottom right,
-					red,
-					red
-				);
+		background-image: radial-gradient(
+			circle at center,
+			var(--shade),
+			20%,
+			var(--transparent),
+			90%,
+			var(--transparent)
+		);
 		mask-image: url('images/kb40a/crumple3.png');
 		}
 
