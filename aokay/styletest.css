@@ -492,8 +492,6 @@ div video {
 		background-image: radial-gradient(
 			circle at center,
 			var(--shade),
-			20%,
-			var(--transparent),
 			90%,
 			var(--transparent)
 		);
