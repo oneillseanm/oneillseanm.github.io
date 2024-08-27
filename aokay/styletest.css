@@ -491,7 +491,7 @@ div video {
 		section.specs.crumple::before {
 		background-image: radial-gradient(
 			circle at center,
-			var(--shade),
+			rgba(0,0,0,.7),
 			90%,
 			var(--transparent)
 		);
