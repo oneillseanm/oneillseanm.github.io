@@ -491,11 +491,10 @@ div video {
 		section.specs.crumple::before {
 		background-image: radial-gradient(
 			circle at center,
-			rgba(0,0,0,.5),
+			rgba(0,0,0,.4),
 			90%,
 			var(--transparent)
 		);
-		mask-mode: luminance;
 		mask-image: url('images/kb40a/crumple3.png');
 		}
 
