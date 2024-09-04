@@ -169,7 +169,7 @@ section {
 	
 	section.specs {
 		margin: 0 0 1rem 0;
-		padding: 0 0 2.1rem 0;
+		padding: .3rem .3rem 2.1rem .3rem;
 	}
 		
 		:nth-last-child(1 of .specs) {
@@ -267,7 +267,8 @@ h3 {
 
 	.specs h3 {
 		background-color: var(--colorFieldEmphasis);
-		border-bottom: 1px solid var(--colorBorderPaper);
+		border: 1px solid var(--colorBorderPaper);
+		border-radius: 5px 5px 0 0;
 		color: var(--colorTextEmphasis);
 		padding: .7rem;
 		text-transform: uppercase;
@@ -373,9 +374,14 @@ div video {
 	}
 		
 	ul li {
-		border-bottom: 1px solid var(--colorBorderPaper);
+		border: 1px solid var(--colorBorderPaper);
+		border-width: 0 1px 1px 1px;
 		list-style: none;
-		padding: .7rem;
+		padding: .35rem .7rem;
+	}
+	
+	ul li:last-child {
+		border-radius: 0 0 5px 5px;
 	}
 	
 	ul li::marker {
@@ -388,7 +394,8 @@ div video {
 	}
 
 .specs table {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
 	font-family: var(--fontSerif);
 	margin: 0 0 .7rem 0;
 	width: 100%;
@@ -396,19 +403,28 @@ div video {
 
 	td {
 		border-bottom: 1px solid var(--colorBorderPaper);
-		padding: .7rem;
+		border-right: 1px solid var(--colorBorderPaper);
+		padding: .35rem .7rem;
 		width: 50%;
 		vertical-align: top;
 	}
 	
 		td:nth-child(1) {
 			background-color: var(--colorFieldEmphasis);
-			border-right: 1px solid var(--colorBorderPaper);
+			border-left: 1px solid var(--colorBorderPaper);
 			color: var(--colorTextEmphasis);
 			font-family: var(--fontSans);
 			font-weight: 600;
 		}
-
+		
+		tr:last-child td:nth-child(1) {
+			border-radius: 0 0 0 5px;
+		}
+		
+		tr:last-child td:nth-child(2) {
+			border-radius: 0 0 5px 0;
+		}
+		
 /* classes */
 
 .specs {
@@ -478,13 +494,24 @@ div video {
 		}
 		
 		section.specs.form::after,
-		section.specs.noFold::after {
+		section.specs.noFold::after,
+		section.specs.crumple::after {
 			background-image: linear-gradient(
 					to bottom right,
 					var(--shade),
 					5%,
 					var(--transparent)
 				);
+		}
+		
+		section.specs.crumple::before {
+		background-image: radial-gradient(
+			circle at center,
+			rgba(0,0,0,.2),
+			90%,
+			var(--transparent)
+		);
+		mask-image: url('images/kb40a/crumple3.png');
 		}
 
 		section.specs.cornerFold::after {
@@ -527,8 +554,8 @@ div video {
 					circle,
 					transparent,
 					transparent 50%,
-					var(--colorFieldEmphasis) 50%,
-					var(--colorFieldEmphasis) 100%
+					var(--colorFieldPaper) 50%,
+					var(--colorFieldPaper) 100%
 				)
 				center bottom / .4rem .4rem repeat-x;
 		}
@@ -682,7 +709,13 @@ div video {
 		width: fit-content;
 	}
 	
+		.fillIn tr {
+			border-image: linear-gradient(to right, transparent 50%, var(--colorBorderPaper) 50%) 100% 1;
+		}
+
+	
 		.fillIn td {
+			border-style: none;
 			padding: 0 0 0 .7rem;
 		}
 			
@@ -698,7 +731,9 @@ div video {
 		}
 	
 	div.specsImage {
-		border-bottom: 1px solid var(--colorBorderPaper);
+		border: solid var(--colorBorderPaper);
+		border-width: 0 1px 1px 1px;
+		border-radius: 0 0 5px 5px;
 		padding: 2.1rem .7rem;
 		margin: 0 0 .7rem 0;
 	}
@@ -707,7 +742,7 @@ div video {
 
 section.specs.form {
 	color: var(--colorTextEmphasis);
-	padding: 0 0 1.4rem 0;
+	padding: .3rem .3rem 1.4rem .3rem;
 }
 
 	section.specs.form.stub {
@@ -731,6 +766,9 @@ section.specs.form {
 		}
 		
 div#mc_embed_shell {
+	border: solid var(--colorBorderPaper);
+	border-width: 0 1px 1px 1px;
+	border-radius: 0 0 5px 5px;
 	grid-column-start: 1;
 	grid-column-end: 4;
 }
@@ -999,7 +1037,6 @@ div#mc_embed_shell {
 	h2 {
 		grid-column-start: 1;
 		grid-column-end: 2;
-		margin: 0;
 	}
 	
 
