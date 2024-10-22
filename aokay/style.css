@@ -265,6 +265,10 @@ h3 {
 	text-transform: lowercase;
 }
 
+	h3.titleCase {
+		text-transform: none;
+	}
+	
 	.specs h3 {
 		background-color: var(--colorFieldEmphasis);
 		border: 1px solid var(--colorBorderPaper);
