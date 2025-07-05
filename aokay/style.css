@@ -18,9 +18,9 @@
 	--shade: rgba(0,0,0,.03);
 	--fold: rgba(0,0,0,.05);
 	
-	--fontSans: "Source Sans 3", sans-serif;
+	--fontSans: "IBM Plex Sans", sans-serif;
 	--fontSerif: "Courier Prime", monospace;
-	--fontLogo: "Outfit", sans-serif;
+	--fontLogo: "Montserrat", sans-serif;
 
 	--fontSizeBody: 1rem;
 	--fontSizeDetail: .75rem;
