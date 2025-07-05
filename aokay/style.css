@@ -245,6 +245,10 @@ h1 {
 		grid-row-start: 1;
 	}
 
+	.subtitle {
+		color: red;
+	}
+	
 h2 {
 	font-size: inherit;
 	font-weight: 800;
