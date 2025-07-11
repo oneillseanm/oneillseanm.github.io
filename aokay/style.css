@@ -7,6 +7,7 @@
 	--colorTextEmphasis: rgba(100,155,200,1);
 	--colorTextRed: rgba(204,51,51,1);
 	--colorLinkHover: rgba(0,0,0,.05);
+	--colorLinkHoverRed: rgba(204,51,51,.7);
 	
 	--colorBorderBase: rgba(180,180,180,1);
 	--colorBorderPaper: rgba(100,155,200,1);
@@ -200,22 +201,33 @@ nav {
 											}
 
 
-	nav a {
-		align-items: center;
-		box-sizing: border-box;
-		display: flex;
-		letter-spacing: inherit;
-		flex: 1;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		height: 100%;
-		justify-content: center;
-		padding: .3rem .6rem;
-		text-decoration: inherit;
-		text-transform: none;
-		width: 100%;
-	}
+												nav a {
+													align-items: center;
+													box-sizing: border-box;
+													display: flex;
+													letter-spacing: inherit;
+													flex: 1;
+													font-family: inherit;
+													font-size: inherit;
+													font-weight: inherit;
+													height: 100%;
+													justify-content: center;
+													padding: .3rem .6rem;
+													text-decoration: inherit;
+													text-transform: none;
+													transition: transform .1s ease;
+													width: 100%;
+												}
+															
+															
+															nav a:hover {
+																text-shadow: 0 0 1.5px var(--colorLinkHoverRed);
+															}
+															
+															nav a:active {
+																transform: rotate(-1deg) translate(0px, 1px);
+															}
+
 
 main {
 	margin: 0;
@@ -514,7 +526,13 @@ div video {
 	}
 	
 	.multiImageContainer {
-		background-color: var(--colorFieldEmphasis);
+		background: linear-gradient(
+				to bottom,
+				var(--colorFieldEmphasis) 0rem,
+				var(--colorFieldBase) 2rem,
+				var(--colorFieldBase) 2rem,
+				var(--colorFieldEmphasis) 100%
+			);
 		border: 5px solid var(--colorBorderPaper);
 		box-sizing: border-box;
 		border-radius: 20px;
@@ -560,11 +578,11 @@ div video {
 																		.starburstWrapper {
 																			animation: breathe 3s ease-in-out infinite;
 																			aspect-ratio: 1;
-																			bottom: -10%;
+																			top: -10%;
 																			/*filter: drop-shadow(1px 1px 2px rgba(0,0,0,.5));*/
 																			font-size: 1vw;
 																			position: absolute;
-																			right: 5%;
+																			left: 5%;
 																			width: 15%;
 																		}
 																		
@@ -610,8 +628,41 @@ div video {
 																			position: absolute;
 																			text-align: center;
 																			top: 50%;
-																			transform: translate(-50%,-50%) rotateZ(5deg);
+																			transform: translate(-50%,-50%) rotate(-7deg);
 																		}
+																		
+																		
+																		
+																		
+																		.ribbons {
+																			inset: 0;
+																			overflow: hidden;
+																			position: absolute;
+																			z-index: 1;
+																			pointer-events: none;
+																		}
+																		
+																		.ribbon {
+																			position: absolute;
+																			top: 85%;
+																			right: -5%;
+																			background: var(--colorBorderPaper);
+																			color: white;
+																			font-family: var(--fontSans);
+																			font-size: .6rem;
+																			font-weight: 400;
+																			padding: .1rem 1.5rem .1rem 4rem;
+																			box-shadow: 2px 2px 0 rgba(0,0,0,.2);
+																			line-height: 1rem;
+																			white-space: nowrap;
+																			transform: rotate(-22deg);
+																		}
+																		
+																		
+	
+	
+	
+	
 	
 	
 	
