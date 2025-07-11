@@ -2,6 +2,7 @@
 	--colorFieldBase: rgba(245,242,236,1);
 	--colorFieldPaper: rgba(239,234,225,1);
 	--colorFieldEmphasis: rgba(215,233,247,1);
+	--colorFieldWhite: rgba(246,246,242,1);
 
 	--colorTextBody: rgba(60,60,60,1);
 	--colorTextEmphasis: rgba(100,155,200,1);
@@ -265,7 +266,7 @@ div.productTitleWrap {
 		text-transform: uppercase;
 	}
 
-	.productTitleWrap div.subtitleStack {
+	div.productTitleWrap div.subtitleStack {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -631,6 +632,82 @@ div video {
 																			transform: translate(-50%,-50%) rotate(-7deg);
 																		}
 																		
+																		
+																		
+																		
+																		.accessorized {
+																			position: relative;
+																		}
+																		
+																		.priceTagWrapper {
+																			display: inline-block;
+																			overflow: visible;
+																			position: relative;
+																			width: 0;
+																		}
+																		
+																		.priceTagWrapper span.priceTag {
+																			background:
+																				linear-gradient(to bottom, var(--colorBorderPaper) 0% 30%, var(--colorFieldWhite) 30% 100%),
+																				radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
+																				radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 0);
+																			background-size: auto, 2px 2px, 3px 3px;
+																			background-repeat: no-repeat, repeat, repeat;
+
+																			box-shadow:
+																				inset 0 0 2px rgba(0, 0, 0, 0.05), /* subtle wear inside edge */
+																				2px 2px 3px 1px rgba(0, 0, 0, 0.15);
+																			display: inline-block;
+																			font-family: var(--fontSerif);
+																			font-size: var(--fontSizeBody);
+																			letter-spacing: 0;
+																			line-height: 1em;
+																			overflow: hidden;   /* Ensures scuff stays contained */
+																			padding: 1.5rem .3rem .3rem 1.5rem;
+																			position: absolute;
+																			left: 0.5rem;
+																			top: -1.3rem;
+																			transform: rotate(2deg);
+																			transform-origin: center;
+																			text-shadow: 0 0 1.5px rgba(60, 60, 60, 0.7);
+																			white-space: nowrap;
+																		}
+																		
+																		
+																		.priceTag::before {
+																			content: "A.Okay";
+																			position: absolute;
+																			top: -.15em;
+																			left: 1.5em;
+																			font-family: var(--fontLogo);
+																			font-size: 0.6em;
+																			font-weight: 900;
+																			color: white;
+																			letter-spacing: 0.04em;
+																			text-transform: uppercase;
+																			pointer-events: none;
+																		}
+																		
+																		.priceTagWrapper .priceTag::after {
+																			content: "";
+																			position: absolute;
+																			top: 0;
+																			left: 0;
+																			width: 100%;
+																			height: 100%;
+																			pointer-events: none;
+																			background: 
+																				linear-gradient(to bottom, rgba(0, 0, 0, 0.04), transparent 25%),
+																				repeating-linear-gradient(
+																					-45deg,
+																					rgba(0, 0, 0, 0.03),
+																					rgba(0, 0, 0, 0.03) 1px,
+																					transparent 1px,
+																					transparent 3px
+																				);
+																			mix-blend-mode: multiply;
+																			opacity: 0.35;
+																		}
 																		
 													
 	
