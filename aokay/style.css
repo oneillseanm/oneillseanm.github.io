@@ -424,9 +424,9 @@ h3 {
 		border-radius: 10px;
 		color: var(--colorTextEmphasis);
 		margin: 0;
-		padding: .7rem;
+		padding: .3rem .7rem;
+		text-align: center;
 		text-transform: uppercase;
-		width: calc(50% - 1.4rem);
 	}
 	
 		.specs.card h3 {
@@ -632,35 +632,7 @@ div video {
 																		}
 																		
 																		
-																		
-																		
-																		.ribbons {
-																			inset: 0;
-																			overflow: hidden;
-																			position: absolute;
-																			z-index: 1;
-																			pointer-events: none;
-																		}
-																		
-																		.ribbon {
-																			position: absolute;
-																			top: 85%;
-																			right: -5%;
-																			background: var(--colorBorderPaper);
-																			color: white;
-																			font-family: var(--fontSans);
-																			font-size: .6rem;
-																			font-weight: 400;
-																			padding: .1rem 1.5rem .1rem 4rem;
-																			box-shadow: 2px 2px 0 rgba(0,0,0,.2);
-																			line-height: 1rem;
-																			white-space: nowrap;
-																			transform: rotate(-22deg);
-																		}
-																		
-																		
-	
-	
+													
 	
 	
 	
