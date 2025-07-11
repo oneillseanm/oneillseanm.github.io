@@ -98,18 +98,20 @@ nav {
 		padding: 0;
 	}
 	
-	nav ul {
-		align-self: center;
-		border: 2px solid var(--colorBorderPaper);
-		border-radius: 10px;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		margin: 0;
-		overflow: hidden;
-		padding: 0;
-		width: calc(100% - 4px);
-	}
+									nav ul {
+										align-self: center;
+										border: 1.5px solid var(--colorBorderPaper);
+										border-radius: 10px;
+										box-shadow: 0 0 1.5px rgba(100,155,200,1),
+											inset 0 1.5px rgba(100,155,200,1);
+										display: flex;
+										flex-wrap: wrap;
+										justify-content: flex-start;
+										margin: 0;
+										overflow: hidden;
+										padding: 0;
+										width: calc(100% - 4px);
+									}
 	
 										.specs ul {
 											align-self: center;
@@ -125,26 +127,28 @@ nav {
 										}
 		
 	
-	header nav li {
-		border-left: 2px solid var(--colorBorderPaper);
-		border-top: 2px solid var(--colorBorderPaper);
-		box-sizing: border-box;
-		display: flex;
-		flex: 1 1 auto;
-		font-family: var(--fontSerif);
-		font-size: var(--fontSizeDetail);
-		letter-spacing: 0;
-		line-height: 1em;
-		list-style-type: none;
-		margin: -2px 0 0 -2px;
-		overflow: hidden;
-		position: relative;
-		text-align: center;
-		text-decoration: none;
-		text-indent: 0;
-		text-shadow: 0 0 1.5px rgb(60,60,60,.7);
-		z-index: 1;
-	}
+								header nav li {
+									border-left: 1.5px solid var(--colorBorderPaper);
+									border-top: 1.5px solid var(--colorBorderPaper);
+									box-shadow: 0 0 1px rgba(100,155,200,1),
+										inset 0 0 1px rgba(100,155,200,1);
+									box-sizing: border-box;
+									display: flex;
+									flex: 1 1 auto;
+									font-family: var(--fontSerif);
+									font-size: var(--fontSizeDetail);
+									letter-spacing: 0;
+									line-height: 1em;
+									list-style-type: none;
+									margin: -1.5px 1.5px 1.5px -1.5px;
+									overflow: hidden;
+									position: relative;
+									text-align: center;
+									text-decoration: none;
+									text-indent: 0;
+									text-shadow: 0 0 1.5px rgb(60,60,60,.7);
+									z-index: 1;
+								}
 	
 										.specs li {
 											border-left: 2px solid var(--colorBorderPaper);
@@ -173,19 +177,21 @@ nav {
 																padding: 1.1rem 0;
 															}
 										
-	li.navHeader {
-		color: var(--colorTextEmphasis);
-		background-color: var(--colorFieldEmphasis);
-		flex: 1 1 100%;
-		font-family: var(--fontSans);
-		font-size: var(--fontSizeDetailHeading);
-		font-weight: 600;
-		justify-content: center;
-		letter-spacing: .01rem;
-		padding: .15rem .7rem;
-		text-shadow: none;
-		text-transform: uppercase;
-	}
+												li.navHeader {
+													color: var(--colorTextEmphasis);
+													background-color: var(--colorFieldEmphasis);
+													box-shadow: 0 0 1px rgba(100,155,200,1),
+														inset 0 0 1px rgba(100,155,200,1);
+													flex: 1 1 100%;
+													font-family: var(--fontSans);
+													font-size: var(--fontSizeDetailHeading);
+													font-weight: 600;
+													justify-content: center;
+													letter-spacing: .01rem;
+													padding: .15rem .7rem;
+													text-shadow: 0 0 1px rgb(100,155,200,1);
+													text-transform: uppercase;
+												}
 
 											.specs li:first-child {
 												color: var(--colorTextEmphasis);
