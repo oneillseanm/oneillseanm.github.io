@@ -100,8 +100,8 @@ nav {
 										align-self: center;
 										border: 1.5px solid var(--colorBorderPaper);
 										border-radius: 10px;
-										box-shadow: 0 0 1.5px rgba(100,155,200,1),
-											inset 0 1.5px rgba(100,155,200,1);
+										box-shadow: 0 0 1.5px var(--colorBorderPaper),
+											inset 0 1.5px var(--colorBorderPaper);
 										display: flex;
 										flex-wrap: wrap;
 										justify-content: flex-start;
@@ -114,6 +114,8 @@ nav {
 										.specs ul {
 											align-self: center;
 											border: 2px solid var(--colorBorderPaper);
+											box-shadow: 0 0 1.5px var(--colorBorderPaper),
+												inset 0 1.5px var(--colorBorderPaper);
 											border-radius: 10px;
 											display: flex;
 											flex-direction: column;
@@ -203,6 +205,7 @@ nav {
 												padding: .15rem .7rem;
 												text-shadow: none;
 												text-transform: uppercase;
+												text-shadow: 0 0 1.5px var(--colorTextEmphasis);
 											}
 
 
@@ -667,7 +670,7 @@ div video {
 																			letter-spacing: 0;
 																			line-height: 1em;
 																			overflow: hidden;   /* Ensures scuff stays contained */
-																			padding: 1.5rem .3rem .3rem 1.5rem;
+																			padding: 1.5rem .3rem .3rem .5rem;
 																			position: absolute;
 																			left: 0.5rem;
 																			top: -1.3rem;
@@ -683,14 +686,16 @@ div video {
 																			content: "A.Okay";
 																			position: absolute;
 																			top: -.15em;
-																			left: 1.5em;
+																			left: 0;
 																			font-family: var(--fontLogo);
 																			font-size: 0.6em;
 																			font-weight: 900;
 																			color: white;
 																			letter-spacing: 0.04em;
+																			text-align: center;
 																			text-transform: uppercase;
 																			pointer-events: none;
+																			width: 100%;
 																		}
 																		
 																		.priceTagWrapper .priceTag::after {
@@ -723,19 +728,26 @@ div video {
 																		li.layout-container {
 																			display: block;
 																			overflow: hidden;
-																			padding: 1.4rem calc(.6rem + 4px) 1.4rem .6rem;
+																			padding: 1.4rem calc(.6rem + 4px) 2.1rem .6rem;
 																			width: calc(100% + 4px);
 																		}
 																		
 																		
 																		article section ul li.layout-container div.keyboard-wrapper {
 																			width: 100%;
-																			aspect-ratio: 12 / 4;
 																			line-height: 0;
 																			margin: 0;
 																			position: relative;
 																			line-height: 0;
 																		}
+																			
+																			div.keyboard-wrapper.all-rows {
+																				aspect-ratio: 12 / 4;
+																			}
+
+																			div.keyboard-wrapper.bottom-row {
+																				aspect-ratio: 12 / 1;
+																			}
 																		
 																		.keyboard {
 																			display: grid;
@@ -751,8 +763,8 @@ div video {
 																			align-items: center;
 																			border: 1px solid var(--colorTextBody);
 																			border-radius: 3px;
-																			box-shadow: 0 0 1px var(--colorTextBody),
-																				inset 0 0 1px var(--colorTextBody);
+																			box-shadow: 0 0 1.5px var(--colorTextBody),
+																				inset 0 0 1.5px var(--colorTextBody);
 																			box-sizing: border-box;
 																			color: var(--colorTextBody);
 																			display: flex;
@@ -778,16 +790,21 @@ div video {
 																			transform: translate(0,1px);
 																		}
 																		
+																		.key.empty {
+																			visibility: hidden;
+																		}
+																		
 																		
 
-																		.u-1     { grid-column: span 4; }
-																		.u-1-25  { grid-column: span 5; }
-																		.u-1-5   { grid-column: span 6; }
-																		.u-1-75  { grid-column: span 7; }
-																		.u-2     { grid-column: span 8; }
-																		.u-2-25  { grid-column: span 9; }
-																		.u-2-5   { grid-column: span 10; }
-																		.u-2-75  { grid-column: span 11; }
+																		.u-1			{ grid-column: span 4; }
+																		.u-1-25		{ grid-column: span 5; }
+																		.u-1-5		{ grid-column: span 6; }
+																		.u-1-75		{ grid-column: span 7; }
+																		.u-2			{ grid-column: span 8; }
+																		.u-2-25		{ grid-column: span 9; }
+																		.u-2-5		{ grid-column: span 10; }
+																		.u-2-75		{ grid-column: span 11; }
+																		.u-7-0		{ grid-column: span 28; }
 																		
 																		
 																		
