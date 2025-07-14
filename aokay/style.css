@@ -128,6 +128,7 @@ nav {
 		
 	
 								header nav li {
+									color: white;
 									border: 2px solid var(--colorBorderPaper);
 									box-shadow: 0 0 1px rgba(100,155,200,1),
 										inset 0 0 1px rgba(100,155,200,1);
