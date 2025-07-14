@@ -132,7 +132,7 @@ nav {
 																border-radius: inherit;
 																box-shadow: 0 0 1px red;
 																pointer-events: none;
-																z-index: 0;
+																z-index: 1;
 															}
 															
 															ul::before {
