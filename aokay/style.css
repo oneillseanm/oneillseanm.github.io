@@ -108,14 +108,13 @@ nav {
 										margin: 0;
 										overflow: hidden;
 										padding: 0;
+										position: relative;
 										width: calc(100% - 4px);
 									}
 	
 										.specs ul {
 											align-self: center;
 											border: 1px solid var(--colorBorderPaper);
-											box-shadow: 0 0 1px var(--colorBorderPaper),
-												inset 0 2px var(--colorBorderPaper);
 											border-radius: 10px;
 											display: flex;
 											flex-direction: column;
@@ -125,6 +124,16 @@ nav {
 											padding: 0;
 											width: calc(100% - 4px);
 										}
+										
+															ul::before {
+																content: '';
+																box-shadow: 0 0 1px var(--colorBorderPaper),
+																	inset 0 2px var(--colorBorderPaper);
+																position: absolute;
+																inset: 0;
+																border-radius: inherit;
+																pointer-events: none;
+															}
 		
 	
 								header nav li {
