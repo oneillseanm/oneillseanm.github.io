@@ -38,7 +38,7 @@
 }
 
 body {
-	background: var(--colorFieldBase);
+	background: hotpink;
 	margin: 0 0 1rem 0;
 	padding: 1rem;
 	color: var(--colorTextBody);
