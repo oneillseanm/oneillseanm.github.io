@@ -100,8 +100,6 @@ nav {
 										align-self: center;
 										border: 1px solid var(--colorBorderPaper);
 										border-radius: 10px;
-										box-shadow: 0 0 1px var(--colorBorderPaper),
-											inset 0 2px var(--colorBorderPaper);
 										display: flex;
 										flex-wrap: wrap;
 										justify-content: flex-start;
@@ -122,6 +120,7 @@ nav {
 											margin: 0;
 											overflow: hidden;
 											padding: 0;
+											position: relative;
 											width: calc(100% - 4px);
 										}
 										
