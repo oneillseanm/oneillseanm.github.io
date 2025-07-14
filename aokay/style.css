@@ -130,7 +130,7 @@ nav {
 																position: absolute;
 																inset: 0;
 																border-radius: inherit;
-																box-shadow: 0 0 1px var(--colorBorderPaper);
+																box-shadow: 0 0 1px red;
 																pointer-events: none;
 																z-index: 0;
 															}
