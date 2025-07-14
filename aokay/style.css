@@ -128,8 +128,8 @@ nav {
 															ul::after {
 																content: '';
 																position: absolute;
-																inset: -1px;
-																border-radius: 9px;
+																inset: 0;
+																border-radius: inherit;
 																box-shadow: 0 0 1px var(--colorBorderPaper);
 																pointer-events: none;
 																z-index: 0;
