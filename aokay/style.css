@@ -128,7 +128,7 @@ nav {
 																content: '';
 																border: 1px solid var(--colorBorderPaper);
 																box-shadow: 0 0 1px var(--colorBorderPaper),
-																	inset 0 2px var(--colorBorderPaper);
+																	inset 0 0 2px var(--colorBorderPaper);
 																position: absolute;
 																inset: 0;
 																border-radius: inherit;
