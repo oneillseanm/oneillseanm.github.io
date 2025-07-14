@@ -131,7 +131,7 @@ nav {
 																	inset 0 0 2px var(--colorBorderPaper);
 																position: absolute;
 																inset: 0;
-																border-radius: inherit;
+																border-radius: 9;
 																pointer-events: none;
 															}
 		
