@@ -104,7 +104,7 @@ nav {
 										flex-wrap: wrap;
 										justify-content: flex-start;
 										margin: 0;
-										overflow: hidden;
+										overflow: visible;
 										padding: 0;
 										position: relative;
 										width: calc(100% - 4px);
@@ -118,7 +118,7 @@ nav {
 											flex-direction: column;
 											justify-content: flex-start;
 											margin: 0;
-											overflow: hidden;
+											overflow: visible;
 											padding: 0;
 											position: relative;
 											width: calc(100% - 4px);
