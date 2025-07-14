@@ -128,7 +128,6 @@ nav {
 		
 	
 								header nav li {
-									color: white;
 									border: 2px solid var(--colorBorderPaper);
 									box-shadow: 0 0 1px rgba(100,155,200,1),
 										inset 0 0 1px rgba(100,155,200,1);
@@ -147,7 +146,6 @@ nav {
 									text-decoration: none;
 									text-indent: 0;
 									text-shadow: 0 0 1.5px var(--colorTextBody);
-									z-index: 1;
 								}
 	
 										.specs li {
