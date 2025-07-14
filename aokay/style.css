@@ -113,7 +113,7 @@ nav {
 	
 										.specs ul {
 											align-self: center;
-											border: 2px solid var(--colorBorderPaper);
+											border: 1px solid var(--colorBorderPaper);
 											box-shadow: 0 0 1px var(--colorBorderPaper),
 												inset 0 2px var(--colorBorderPaper);
 											border-radius: 10px;
@@ -128,8 +128,7 @@ nav {
 		
 	
 								header nav li {
-									border-left: 2px solid var(--colorBorderPaper);
-									border-top: 2px solid var(--colorBorderPaper);
+									border: 2px solid var(--colorBorderPaper);
 									box-shadow: 0 0 1px rgba(100,155,200,1),
 										inset 0 0 1px rgba(100,155,200,1);
 									box-sizing: border-box;
@@ -151,8 +150,7 @@ nav {
 								}
 	
 										.specs li {
-											border-left: 2px solid var(--colorBorderPaper);
-											border-top: 2px solid var(--colorBorderPaper);
+											border: 2px solid var(--colorBorderPaper);
 											box-sizing: border-box;
 											display: flex;
 											flex: 1 1 auto;
@@ -188,7 +186,6 @@ nav {
 													font-weight: 600;
 													justify-content: center;
 													letter-spacing: .01rem;
-													margin: -1px;
 													padding: .15rem .7rem;
 													text-shadow: 0 0 1px rgb(100,155,200,1);
 													text-transform: uppercase;
@@ -203,7 +200,6 @@ nav {
 												font-weight: 600;
 												justify-content: center;
 												letter-spacing: .01rem;
-												margin: -1px;
 												padding: .15rem .7rem;
 												text-shadow: none;
 												text-transform: uppercase;
