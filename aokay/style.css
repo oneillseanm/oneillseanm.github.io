@@ -98,13 +98,12 @@ nav {
 	
 									nav ul {
 										align-self: center;
-										border: 1px solid var(--colorBorderPaper);
 										border-radius: 10px;
 										display: flex;
 										flex-wrap: wrap;
 										justify-content: flex-start;
 										margin: 0;
-										overflow: visible;
+										overflow: hidden;
 										padding: 0;
 										position: relative;
 										width: calc(100% - 4px);
@@ -112,13 +111,12 @@ nav {
 	
 										.specs ul {
 											align-self: center;
-											border: 1px solid var(--colorBorderPaper);
 											border-radius: 10px;
 											display: flex;
 											flex-direction: column;
 											justify-content: flex-start;
 											margin: 0;
-											overflow: visible;
+											overflow: hidden;
 											padding: 0;
 											position: relative;
 											width: calc(100% - 4px);
