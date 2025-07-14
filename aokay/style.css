@@ -125,7 +125,7 @@ nav {
 										}
 										
 										
-															il::after {
+															ul::after {
 																content: '';
 																position: absolute;
 																insert: -1px;
