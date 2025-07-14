@@ -120,7 +120,7 @@ nav {
 											display: flex;
 											flex-direction: column;
 											justify-content: flex-start;
-											margin: -2px 0 0 0;
+											margin: 0;
 											overflow: hidden;
 											padding: 0;
 											width: calc(100% - 4px);
@@ -140,7 +140,7 @@ nav {
 									letter-spacing: 0;
 									line-height: 1em;
 									list-style-type: none;
-									margin: -2px;
+									margin: -1px;
 									overflow: hidden;
 									position: relative;
 									text-align: center;
@@ -161,7 +161,7 @@ nav {
 											letter-spacing: 0;
 											line-height: 1em;
 											list-style-type: none;
-											margin: -2px;
+											margin: -1px;
 											overflow: hidden;
 											padding: .3rem .6rem;
 											position: relative;
@@ -188,7 +188,7 @@ nav {
 													font-weight: 600;
 													justify-content: center;
 													letter-spacing: .01rem;
-													margin: -2px;
+													margin: -1px;
 													padding: .15rem .7rem;
 													text-shadow: 0 0 1px rgb(100,155,200,1);
 													text-transform: uppercase;
@@ -203,7 +203,7 @@ nav {
 												font-weight: 600;
 												justify-content: center;
 												letter-spacing: .01rem;
-												margin: -2px;
+												margin: -1px;
 												padding: .15rem .7rem;
 												text-shadow: none;
 												text-transform: uppercase;
