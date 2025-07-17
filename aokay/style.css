@@ -1,18 +1,11 @@
 :root {
-	--colorFieldBase: rgba(245,242,236,1);
-	--colorFieldPaper: rgba(239,234,225,1);
-	--colorFieldEmphasis: rgba(215,233,247,1);
-	--colorFieldWhite: rgba(246,246,242,1);
-
-	--colorTextBody: rgba(60,60,60,1);
-	--colorTextEmphasis: rgba(100,155,200,1);
-	--colorTextRed: rgba(204,51,51,1);
-	
-	--colorBorder1: rgba(60,60,60,1);
-	--colorBorder2: rgba(180,180,180,1);
-	--colorBorderPaper: rgba(100,155,200,1);
-
-	--colorStamp: rgba(255,0,0,1);
+	--colorBlack: rgba(60,60,60,1);
+	--colorEmphasis: rgba(85,140,185,1);
+	--colorEmphasisField: rgba(229,241,248,1);
+	--colorGrey: rgba(180,180,180,1);
+	--colorPage: rgba(245,242,236,1);
+	--colorRed: rgba(204,51,51,1);
+	--colorWhite: rgba(246,246,242,1);
 	
 	--transparent: rgba(255,255,255,0);
 	--shade: rgba(0,0,0,.03);
@@ -33,17 +26,17 @@
 	--lineHeight: 1.4em;
 	--lineHeightProductTitle: 1em;
 	
-	--border1: 1px solid var(--colorBorder1);
-	--border2: 1px solid var(--colorBorder2);
+	--border1: 1px solid var(--colorBlack);
+	--border2: 1px solid var(--colorGrey);
 
 	font-size: 20px;
 }
 
 body {
-	background: var(--colorFieldBase);
+	background: var(--colorPage);
 	margin: 0 0 1rem 0;
 	padding: 1rem;
-	color: var(--colorTextBody);
+	color: var(--colorBlack);
 	font-family: var(--fontSans);;
 	font-optical-sizing: auto;
 	font-weight: 400;
@@ -112,9 +105,9 @@ nav ul {
 	
 	.list-wrapper {
 		border-radius: 10px;
-		box-shadow: 0 0 1px var(--colorBorderPaper),
-			inset 0 0 1px 1px var(--colorBorderPaper);
-		border: 1px solid var(--colorBorderPaper);
+		box-shadow: 0 0 1px var(--colorEmphasis),
+			inset 0 0 1px 1px var(--colorEmphasis);
+		border: 1px solid var(--colorEmphasis);
 		display: flex;
 		flex-wrap: wrap;
 		height: 100%;
@@ -142,9 +135,9 @@ nav ul {
 	}
 	
 	header nav li {
-		border: 2px solid var(--colorBorderPaper);
-		box-shadow: 0 0 1px var(--colorBorderPaper);
-			inset: 0 0 1px var(--colorBorderPaper);
+		border: 2px solid var(--colorEmphasis);
+		box-shadow: 0 0 1px var(--colorEmphasis);
+			inset: 0 0 1px var(--colorEmphasis);
 		box-sizing: border-box;
 		display: flex;
 		flex: 1 1 auto;
@@ -160,13 +153,13 @@ nav ul {
 		text-align: center;
 		text-decoration: none;
 		text-indent: 0;
-		text-shadow: 0 0 1.5px var(--colorTextBody);
+		text-shadow: 0 0 1.5px var(--colorBlack);
 	}
 	
 										.specs li {
-											border: 2px solid var(--colorBorderPaper);
-											box-shadow: 0 0 1px var(--colorBorderPaper);
-												inset: 0 0 1px var(--colorBorderPaper);
+											border: 2px solid var(--colorEmphasis);
+											box-shadow: 0 0 1px var(--colorEmphasis);
+												inset: 0 0 1px var(--colorEmphasis);
 											box-sizing: border-box;
 											display: flex;
 											flex: 1 1 auto;
@@ -182,7 +175,7 @@ nav ul {
 											text-align: left;
 											text-decoration: none;
 											text-indent: 0;
-											text-shadow: 0 0 1.5px var(--colorTextBody);
+											text-shadow: 0 0 1.5px var(--colorBlack);
 										}
 										
 										
@@ -192,8 +185,8 @@ nav ul {
 															}
 										
 												li.navHeader {
-													color: var(--colorTextEmphasis);
-													background-color: var(--colorFieldEmphasis);
+													color: var(--colorEmphasis);
+													background-color: var(--colorEmphasisField);
 													box-shadow: 0 0 1px rgba(100,155,200,1),
 														inset 0 0 1px rgba(100,155,200,1);
 													flex: 1 1 100%;
@@ -203,14 +196,14 @@ nav ul {
 													justify-content: center;
 													letter-spacing: .01rem;
 													padding: .15rem .7rem;
-													text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+													text-shadow: 0 0 1.5px var(--colorEmphasis);
 													text-transform: uppercase;
 													z-index: -1;
 												}
 
 											.specs li:first-child {
-												color: var(--colorTextEmphasis);
-												background-color: var(--colorFieldEmphasis);
+												color: var(--colorEmphasis);
+												background-color: var(--colorEmphasisField);
 												flex: 1 1 100%;
 												font-family: var(--fontSans);
 												font-size: var(--fontSizeDetailHeading);
@@ -220,7 +213,7 @@ nav ul {
 												padding: .15rem .7rem;
 												text-shadow: none;
 												text-transform: uppercase;
-												text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+												text-shadow: 0 0 1.5px var(--colorEmphasis);
 												z-index: -1;
 											}
 
@@ -245,7 +238,7 @@ nav ul {
 															
 															
 															nav a:hover {
-																text-shadow: 0 0 1.5px var(--colorTextRed);
+																text-shadow: 0 0 1.5px var(--colorRed);
 															}
 															
 															nav a:active {
@@ -450,23 +443,23 @@ h3 {
 	}
 	
 	.specs h3 {
-		background-color: var(--colorFieldEmphasis);
-		border: 2px solid var(--colorBorderPaper);
-		box-shadow: 0 0 1px var(--colorBorderPaper);
-			inset: 0 0 1px var(--colorBorderPaper);
+		background-color: var(--colorEmphasisField);
+		border: 2px solid var(--colorEmphasis);
+		box-shadow: 0 0 1px var(--colorEmphasis);
+			inset: 0 0 1px var(--colorEmphasis);
 		border-radius: 10px;
-		color: var(--colorTextEmphasis);
+		color: var(--colorEmphasis);
 		margin: 0;
 		padding: .3rem .7rem;
 		text-align: center;
-		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+		text-shadow: 0 0 1.5px var(--colorEmphasis);
 		text-transform: uppercase;
 	}
 	
 		.specs.card h3 {
 			background: none;
 			border-style: none;
-			color: var(--colorTextBody);
+			color: var(--colorBlack);
 			font-weight: 400;
 			letter-spacing: 0;
 		}
@@ -531,7 +524,7 @@ a {
 }
 
 	a:hover {
-		color: var(--colorTextRed);
+		color: var(--colorRed);
 	}
 	
 	#projects a {
@@ -543,12 +536,12 @@ a {
 	}
 	
 	p a {
-		text-shadow: 0 0 1.5px var(--colorTextBody);
+		text-shadow: 0 0 1.5px var(--colorBlack);
 		text-underline-offset: 0.15rem;
 	}
 	
 		p a:hover {
-			text-shadow: 0 0 1.5px var(--colorTextRed);
+			text-shadow: 0 0 1.5px var(--colorRed);
 		}
 
 	
@@ -568,14 +561,14 @@ div video {
 	.multiImageContainer {
 		background: linear-gradient(
 				to bottom,
-				var(--colorFieldEmphasis) 0rem,
-				var(--colorFieldBase) 2rem,
-				var(--colorFieldBase) 2rem,
-				var(--colorFieldEmphasis) 100%
+				var(--colorEmphasisField) 0rem,
+				var(--colorPage) 2rem,
+				var(--colorPage) 2rem,
+				var(--colorEmphasisField) 100%
 			);
-		border: 5px solid var(--colorBorderPaper);
-		box-shadow: 0 0 2px var(--colorBorderPaper),
-			inset 0 0 2px var(--colorBorderPaper);
+		border: 5px solid var(--colorEmphasis);
+		box-shadow: 0 0 2px var(--colorEmphasis),
+			inset 0 0 2px var(--colorEmphasis);
 		box-sizing: border-box;
 		border-radius: 20px;
 		display: inline-block;
@@ -620,7 +613,7 @@ div video {
 .starburst-wrapper {
 	animation: breathe 3s ease-in-out infinite;
 	aspect-ratio: 1;
-	filter: drop-shadow(0 0 1px var(--colorBorderPaper));
+	filter: drop-shadow(0 0 1px var(--colorEmphasis));
 	top: -10%;
 	font-size: 1vw;
 	position: absolute;
@@ -634,7 +627,7 @@ div video {
 	}
 	
 	.starburst {
-		background-color: var(--colorBorderPaper);
+		background-color: var(--colorEmphasis);
 		height: 100%;
 		position: relative;
 		width: 100%;
@@ -642,13 +635,13 @@ div video {
 	}
 	
 	.inner-starburst-wrapper {
-		filter: drop-shadow(0 0 1px var(--colorFieldBase));
+		filter: drop-shadow(0 0 1px var(--colorPage));
 		height: 100%;
 		width: 100%;
 	}
 	
 	.inner-starburst {
-		background-color: var(--colorFieldBase);
+		background-color: var(--colorPage);
 		height: 90%;
 		left: 50%;
 		position: absolute;
@@ -659,7 +652,7 @@ div video {
 	}
 	
 	.starburst-wrapper p {
-		color: var(--colorTextEmphasis);
+		color: var(--colorEmphasis);
 		font-family: var(--fontLogo);
 		font-size: 2em;
 		font-weight: 900;
@@ -667,7 +660,7 @@ div video {
 		line-height: 1em;
 		position: absolute;
 		text-align: center;
-		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+		text-shadow: 0 0 1.5px var(--colorEmphasis);
 		top: 50%;
 		transform: translate(-50%,-50%) rotate(-7deg);
 	}
@@ -688,7 +681,7 @@ div video {
 	
 	.priceTagWrapper span.priceTag {
 		background:
-			linear-gradient(to bottom, var(--colorBorderPaper) 0% 30%, var(--colorFieldWhite) 30% 100%),
+			linear-gradient(to bottom, var(--colorEmphasis) 0% 30%, var(--colorWhite) 30% 100%),
 			radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
 			radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 0);
 		background-size: auto, 2px 2px, 3px 3px;
@@ -708,7 +701,7 @@ div video {
 		top: -1.3rem;
 		transform: rotate(2deg);
 		transform-origin: center;
-		text-shadow: 0 0 1.5px var(--colorTextBody);
+		text-shadow: 0 0 1.5px var(--colorBlack);
 		white-space: nowrap;
 	}
 		
@@ -799,12 +792,12 @@ div video {
 
 																		.key {
 																			align-items: center;
-																			border: 1px solid var(--colorTextBody);
+																			border: 1px solid var(--colorBlack);
 																			border-radius: 3px;
-																			box-shadow: 0 0 1.5px var(--colorTextBody),
-																				inset 0 0 1.5px var(--colorTextBody);
+																			box-shadow: 0 0 1.5px var(--colorBlack),
+																				inset 0 0 1.5px var(--colorBlack);
 																			box-sizing: border-box;
-																			color: var(--colorTextBody);
+																			color: var(--colorBlack);
 																			display: flex;
 																			font-size: 10cqh;
 																			justify-content: center;
@@ -820,11 +813,11 @@ div video {
 																			}
 																		
 																		.key:hover {
-																			border: 1px solid var(--colorTextRed);
+																			border: 1px solid var(--colorRed);
 																			border-radius: 3px;
-																			box-shadow: 0 0 1px var(--colorTextRed),
-																				inset 0 0 1px var(--colorTextRed);
-																			color: var(--colorTextRed);
+																			box-shadow: 0 0 1px var(--colorRed),
+																				inset 0 0 1px var(--colorRed);
+																			color: var(--colorRed);
 																			cursor: pointer;
 																		}
 																		
@@ -864,7 +857,7 @@ div video {
 	
 	
 	.stamp {
-		border: solid .15em var(--colorStamp);
+		border: solid .15em var(--colorRed);
 		border-radius: .2em;
 		color: rgb(255,0,0);
 		display: inline-block;
@@ -909,30 +902,30 @@ div video {
 			
 	
 	.footer.right {
-		border: 2px solid var(--colorTextEmphasis);
+		border: 2px solid var(--colorEmphasis);
 		box-shadow: 0 0 1px rgba(100,155,200,1),
 			inset 0 0 1px rgba(100,155,200,1);
 		border-radius: 10px;
-		color: var(--colorTextEmphasis);
+		color: var(--colorEmphasis);
 		font-style: italic;
 		font-weight: 600;
 		margin: -2px 0 0 0;
 		padding: .7rem;
 		text-align: right;
-		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+		text-shadow: 0 0 1.5px var(--colorEmphasis);
 		width: calc(100% - 1.4rem - 4px);
 	}
 	
 	.specs p.redType {
 		bottom: 2rem;
-		color: var(--colorTextRed);
+		color: var(--colorRed);
 		display: inline;
 		font-family: var(--fontSerif);
 		letter-spacing: -.03rem;
 		padding: .3rem 0 0 1rem;
 		position: absolute;
 		rotate: 4deg;
-		text-shadow: 0 0 1.5px var(--colorTextRed);
+		text-shadow: 0 0 1.5px var(--colorRed);
 	}
 		
 	table.fillIn {
@@ -942,7 +935,7 @@ div video {
 	}
 	
 		.fillIn tr {
-			border-image: linear-gradient(to right, transparent 50%, var(--colorBorderPaper) 50%) 100% 1;
+			border-image: linear-gradient(to right, transparent 50%, var(--colorEmphasis) 50%) 100% 1;
 		}
 
 	
@@ -969,16 +962,16 @@ div video {
 /* mailchimp signup form */
 
 section.specs.form {
-	color: var(--colorTextEmphasis);
+	color: var(--colorEmphasis);
 	padding: .3rem .3rem 1.4rem .3rem;
 }
 
 	section.specs.form.stub {
-		background-color: var(--colorFieldPaper);
+		background-color: var(--colorEmphasisField);
 	}
 	
 		section.specs.form.stub h3 {
-			background-color: var(--colorFieldPaper);
+			background-color: var(--colorEmphasisField);
 			border-style: none;
 		}
 		
@@ -994,7 +987,7 @@ section.specs.form {
 		}
 		
 div#mc_embed_shell {
-	border: solid var(--colorBorderPaper);
+	border: solid var(--colorEmphasis);
 	border-width: 0 2px 2px 2px;
 	border-radius: 0 0 5px 5px;
 	grid-column-start: 1;
@@ -1026,8 +1019,8 @@ div#mc_embed_shell {
 	}
 
 	div.mc-field-group label {
-		background-color: var(--colorFieldEmphasis);
-		color: var(--colorTextEmphasis);
+		background-color: var(--colorEmphasisField);
+		color: var(--colorEmphasis);
 		display: block;
 		font-family: var(--fontSans);
 		font-weight: 600;
@@ -1035,13 +1028,13 @@ div#mc_embed_shell {
 	}
 
 	input#mce-EMAIL.required.email, input#mce-EMAIL.required.email:focus-visible {
-		background-color: var(--colorFieldPaper);
+		background-color: var(--colorEmphasisField);
 		border-style: solid;
-		border-color: var(--colorBorderPaper);
+		border-color: var(--colorEmphasis);
 		border-width: 2px 0;
 		border-radius: 0;
 		box-sizing: border-box;
-		color: var(--colorTextBody);
+		color: var(--colorBlack);
 		display: block;
 		font-family: var(--fontSerif);
 		font-size: var(--fontSizeDetail);
@@ -1056,19 +1049,19 @@ div#mc_embed_shell {
 		margin-top: calc(.7rem + var(--lineHeight));
 		grid-column-start: 2;
 		grid-column-end: 3;
-		box-shadow: 0 calc(-.7rem - var(--lineHeight)) var(--colorFieldEmphasis);
+		box-shadow: 0 calc(-.7rem - var(--lineHeight)) var(--colorEmphasisField);
 	}
 
 	input.button {
-		background-color: var(--colorFieldEmphasis);
-		color: var(--colorTextEmphasis);
+		background-color: var(--colorEmphasisField);
+		color: var(--colorEmphasis);
 		display: block;
 		height: 42px;
 		width: 100%;
 		padding: 13px 0 10px 0;
 		margin: 0 0 12px 0;
 		border-style: solid;
-		border-color: var(--colorBorderPaper);
+		border-color: var(--colorEmphasis);
 		border-width: 2px 0 2px 2px;
 		border-radius: 0;
 		font-family: var(--fontSans);
@@ -1082,11 +1075,11 @@ div#mc_embed_shell {
 	}
 
 	input.button:hover {
-		background-color: var(--colorFieldPaper);
+		background-color: var(--colorEmphasisField);
 	}
 
 	input.button:active {
-		background-color: var(--colorFieldEmphasis);
+		background-color: var(--colorEmphasisField);
 	}
 
 	div.clear.foot p {
@@ -1112,7 +1105,7 @@ div#mc_embed_shell {
 /* product cards */
 
 a.card {
-	background-color: var(--colorFieldBase);
+	background-color: var(--colorPage);
 	cursor: pointer;
 	font-family: inherit;
 	margin: 0;
@@ -1139,7 +1132,7 @@ section.otherProduct {
 	border-bottom: var(--border2);
 	border-top: var(--border2);
 	box-sizing: border-box;
-	color: var(--colorTextEmphasis);
+	color: var(--colorEmphasis);
 	font-size: var(--fontSizeDetail);
 	line-height: var(--lineHeight);
 	margin: -1px 0 0 0;
@@ -1164,7 +1157,7 @@ section.otherProduct {
 }
 
 .otherProduct div .priceTagWrapper .priceTag {
-	color: var(--colorTextBody);
+	color: var(--colorBlack);
 	transform: rotate(-4deg);
 }
 
@@ -1284,7 +1277,7 @@ section.otherProduct {
 		
 	article {
 		border-top: 1px solid transparent;
-		border-image: linear-gradient(to right, var(--colorBorder1) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
+		border-image: linear-gradient(to right, var(--colorBlack) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
 		padding: 0.7rem 0 0 0;
 	}
 	
