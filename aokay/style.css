@@ -116,14 +116,18 @@ nav ul {
 			inset 0 0 1px 1px var(--colorBorderPaper);
 		border: 1px solid var(--colorBorderPaper);
 		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		justify-content: inherit;
 		margin: 0;
+		overflow: hidden;
 		padding: 0;
 		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		flex-wrap: wrap;
-		justify-content: inherit;
-	}	
+	}
+	
+		.specs .list-wrapper {
+			flex-direction: column;
+		}
 	
 	.specs ul {
 		align-self: center;
@@ -332,6 +336,10 @@ section {
 		margin: 0 0 5.6rem 0;
 	}
 	
+	section.specs:last-child {
+		padding: 0;
+	}
+	
 		#features section.specs.card:last-child {
 			margin: 0;
 		}
@@ -534,6 +542,16 @@ a {
 		text-transform: none;
 	}
 	
+	p a {
+		text-shadow: 0 0 1.5px var(--colorTextBody);
+		text-underline-offset: 0.15rem;
+	}
+	
+		p a:hover {
+			text-shadow: 0 0 1.5px var(--colorTextRed);
+		}
+
+	
 div img,
 div video {
 	display: block;
@@ -662,11 +680,12 @@ div video {
 	}
 																		
 	.priceTagWrapper {
-		display: inline-block;
 		overflow: visible;
 		position: relative;
 		width: 0;
+		z-index: 1;
 	}									
+	
 	.priceTagWrapper span.priceTag {
 		background:
 			linear-gradient(to bottom, var(--colorBorderPaper) 0% 30%, var(--colorFieldWhite) 30% 100%),
@@ -767,6 +786,9 @@ div video {
 																		
 																		.keyboard {
 																			display: grid;
+																			container-type: size;
+																			container-name: keyboard;
+																			font-size: 1rem;
 																			gap: 2px;
 																			height: 100%;
 																			grid-auto-rows: 1fr;
@@ -784,7 +806,7 @@ div video {
 																			box-sizing: border-box;
 																			color: var(--colorTextBody);
 																			display: flex;
-																			font-size: min(.8em, 1.5vw);
+																			font-size: 10cqh;
 																			justify-content: center;
 																			line-height: 1;
 																			margin: 0;
@@ -792,6 +814,10 @@ div video {
 																			padding: .2em;
 																			text-align: center;
 																		}
+																		
+																			.bottom-row .key {
+																				font-size: 40cqh;
+																			}
 																		
 																		.key:hover {
 																			border: 1px solid var(--colorTextRed);
@@ -893,6 +919,7 @@ div video {
 		margin: -2px 0 0 0;
 		padding: .7rem;
 		text-align: right;
+		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
 		width: calc(100% - 1.4rem - 4px);
 	}
 	
@@ -905,6 +932,7 @@ div video {
 		padding: .3rem 0 0 1rem;
 		position: absolute;
 		rotate: 4deg;
+		text-shadow: 0 0 1.5px var(--colorTextRed);
 	}
 		
 	table.fillIn {
@@ -1130,12 +1158,9 @@ section.otherProduct {
 
 .otherProduct p {
 	margin: 0 5px .7rem 5px;
-}
-
-.otherProduct p {
 	position: absolute;
-	right: 25%;
-	bottom: 5%;
+	right: 45%;
+	bottom: 25%;
 }
 
 .otherProduct div .priceTagWrapper .priceTag {
@@ -1330,15 +1355,41 @@ section.otherProduct {
 				grid-column-start: 1;
 				grid-column-end: 3;
 			}
-		
-																
-																
-															a.card {
-																grid-column: 2 / 4;
-															}
-															
-															.otherProduct img {
-															}
+
+
+
+	article a.card,
+	a.card:last-child {
+		display: flex;
+		grid-column: auto;
+		margin: 0;
+	}
+	
+	#system {
+		padding-bottom: 5.6rem;
+		align-items: stretch;
+	}
+	
+	section.otherProduct {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+	}
+	
+	.card-title-wrapper {
+		margin-top: auto;
+	}
+	
+	.otherProduct p {
+		right: 45%;
+		bottom: 30%;
+	}
+
+	.otherProduct div .priceTagWrapper .priceTag {
+		transform: rotate(5deg);
+	}
+
+
 
 	h2 {
 		border-top: none;
@@ -1350,6 +1401,8 @@ section.otherProduct {
 		h2.productTitle {
 			grid-column-end: 3;
 		}
+		
+
 	
 }
 
