@@ -2,7 +2,7 @@
 <html lang='en'>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css?v=6">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -27,15 +27,17 @@
 	<h1 class="logo"><a href="aokay.html">A.Okay!</a></h1>
 	<nav>
 		<ul>
-			<li class="navHeader">MID-1 Menu</li>
-			<li><a href="#availability">Availability</a></li>
-			<li><a href="#story">Story</a></li>
-			<li><a href="#system">System</a></li>
-			<li><a href="#features">Features</a></li>
-			<li><a href="#techSpecs">Specs</a></li>
-			<li><a href="#promise">Promise</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#connect">Connect</a></li>
+			<div class="list-wrapper">
+				<li class="navHeader">MID-1 Menu</li>
+				<li><a href="#availability">Availability</a></li>
+				<li><a href="#story">Story</a></li>
+				<li><a href="#system">System</a></li>
+				<li><a href="#features">Features</a></li>
+				<li><a href="#techSpecs">Specs</a></li>
+				<li><a href="#promise">Promise</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#connect">Connect</a></li>
+			</div>
 		</ul>
 	</nav>
 </header>
@@ -48,16 +50,17 @@
 				<div class="featureImage multiImageContainer">
 					<img src="images/mid1/Perspective grid.svg" class="underlayImage" alt="Perspective grid">
 					<img src="images/mid1/2024-08-12-19-17-00.png" class="overlayImage" alt="Keyboard">
-					<div class="starburstWrapper">
+					<div class="starburst-wrapper">
 						<div class="starburst">
-							<div class="innerStarburst">
-								<p>Our most okay model ever!</p>
-								<!--
-								QWERTY Compatible
-								Our most okay model ever!
-								Great for computers!
-								--!>
-							</div>
+							<div class="inner-starburst-wrapper">
+								<div class="inner-starburst">
+									<p>Our most okay model ever!</p>
+									<!--
+									QWERTY Compatible
+									Our most okay model ever!
+									Great for computers!
+									--!>
+								</div>
 						</div>
 					</div>
 					<!--<div class="ribbons">
@@ -114,10 +117,8 @@
 		</article>
 
 		<article id="story">
-			<h2>The story</h2>
-			
+			<h2>Purposely built differently</h2>
 			<section class="textOnly">
-				<h3>Purpose-built, purposely built differently</h3>
 				<p>This wasn’t designed to be minimal, flashy, or inspired by a sunrise. It was designed like a building—structure first. Bent stainless steel, visible fasteners, no decorative nonsense. You can see how it’s put together, and you can take it apart the same way. There’s some toolbox in its DNA. Some architecture. A nod to old desk lamps, too—the kind with heavy bases and indirect light that subtly illuminates. The MID-1’s lighting system borrows that idea: functional, atmospheric, a little industrial. It invites you to handle it, build it, live with it. Nothing is hidden, nothing is over-designed, and nothing is precious—just solid parts, chosen to last, assembled with intent.</p>
 			</section>
 			
@@ -237,151 +238,161 @@
 			<section class="specs">
 				<h3>Supported layouts</h3>
 				<ul>
-					<li>Standard layout</li>
-					<li class="layout-container">
-						<div class="keyboard-wrapper all-rows">
-							<div class="keyboard">
-								<!-- Row 1 -->
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">Q</div>
-								<div class="key u-1">W</div>
-								<div class="key u-1">E</div>
-								<div class="key u-1">R</div>
-								<div class="key u-1">T</div>
-								<div class="key u-1">Y</div>
-								<div class="key u-1">U</div>
-								<div class="key u-1">I</div>
-								<div class="key u-1">O</div>
-								<div class="key u-1">P</div>
-								<div class="key u-1">1.0</div>
-								<!-- Row 2 -->
-								<div class="key u-1-25">1.25</div>
-								<div class="key u-1">A</div>
-								<div class="key u-1">S</div>
-								<div class="key u-1">D</div>
-								<div class="key u-1">F</div>
-								<div class="key u-1">G</div>
-								<div class="key u-1">H</div>
-								<div class="key u-1">J</div>
-								<div class="key u-1">K</div>
-								<div class="key u-1">L</div>
-								<div class="key u-1-75">1.75</div>
-								<!-- Row 3 -->
-								<div class="key u-1-75">1.75</div>
-								<div class="key u-1">Z</div>
-								<div class="key u-1">X</div>
-								<div class="key u-1">C</div>
-								<div class="key u-1">V</div>
-								<div class="key u-1">B</div>
-								<div class="key u-1">N</div>
-								<div class="key u-1">M</div>
-								<div class="key u-1">, &lt;</div>
-								<div class="key u-1">. &gt;</div>
-								<div class="key u-1-25">1.25</div>
-								<!-- Row 4 -->
-								<div class="key u-1-5">1.50</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-2-75">2.75</div>
-								<div class="key u-2-25">2.25</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1-5">1.50</div>
+					<div class="list-wrapper">
+						<li>Standard layout</li>
+						<li class="layout-container">
+							<div class="keyboard-wrapper all-rows">
+								<div class="keyboard">
+									<!-- Row 1 -->
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">Q</div>
+									<div class="key u-1">W</div>
+									<div class="key u-1">E</div>
+									<div class="key u-1">R</div>
+									<div class="key u-1">T</div>
+									<div class="key u-1">Y</div>
+									<div class="key u-1">U</div>
+									<div class="key u-1">I</div>
+									<div class="key u-1">O</div>
+									<div class="key u-1">P</div>
+									<div class="key u-1">1.0</div>
+									<!-- Row 2 -->
+									<div class="key u-1-25">1.25</div>
+									<div class="key u-1">A</div>
+									<div class="key u-1">S</div>
+									<div class="key u-1">D</div>
+									<div class="key u-1">F</div>
+									<div class="key u-1">G</div>
+									<div class="key u-1">H</div>
+									<div class="key u-1">J</div>
+									<div class="key u-1">K</div>
+									<div class="key u-1">L</div>
+									<div class="key u-1-75">1.75</div>
+									<!-- Row 3 -->
+									<div class="key u-1-75">1.75</div>
+									<div class="key u-1">Z</div>
+									<div class="key u-1">X</div>
+									<div class="key u-1">C</div>
+									<div class="key u-1">V</div>
+									<div class="key u-1">B</div>
+									<div class="key u-1">N</div>
+									<div class="key u-1">M</div>
+									<div class="key u-1">, &lt;</div>
+									<div class="key u-1">. &gt;</div>
+									<div class="key u-1-25">1.25</div>
+									<!-- Row 4 -->
+									<div class="key u-1-5">1.50</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-2-75">2.75</div>
+									<div class="key u-2-25">2.25</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1-5">1.50</div>
+								</div>
 							</div>
-						</div>
-					</li>
+						</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Optional bottom row layouts</li>
-					<li class="layout-container">
-						<div class="keyboard-wrapper bottom-row">
-							<div class="keyboard">
-								<!-- Row 4 -->
-								<div class="key u-1-5">1.50</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-7-0">7.0</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1-5">1.50</div>
+					<div class="list-wrapper">
+						<li>Optional bottom row layouts</li>
+						<li class="layout-container">
+							<div class="keyboard-wrapper bottom-row">
+								<div class="keyboard">
+									<!-- Row 4 -->
+									<div class="key u-1-5">1.50</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-7-0">7.0</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1-5">1.50</div>
+								</div>
 							</div>
-						</div>
-					</li>
+						</li>
+					</div>	
 				</ul>
 				<ul>
-					<li>Optional corner blocker layout</li>
-					<li class="layout-container">
-						<div class="keyboard-wrapper all-rows">
-							<div class="keyboard">
-								<!-- Row 1 -->
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">Q</div>
-								<div class="key u-1">W</div>
-								<div class="key u-1">E</div>
-								<div class="key u-1">R</div>
-								<div class="key u-1">T</div>
-								<div class="key u-1">Y</div>
-								<div class="key u-1">U</div>
-								<div class="key u-1">I</div>
-								<div class="key u-1">O</div>
-								<div class="key u-1">P</div>
-								<div class="key u-1">1.0</div>
-								<!-- Row 2 -->
-								<div class="key u-1-25">1.25</div>
-								<div class="key u-1">A</div>
-								<div class="key u-1">S</div>
-								<div class="key u-1">D</div>
-								<div class="key u-1">F</div>
-								<div class="key u-1">G</div>
-								<div class="key u-1">H</div>
-								<div class="key u-1">J</div>
-								<div class="key u-1">K</div>
-								<div class="key u-1">L</div>
-								<div class="key u-1-75">1.75</div>
-								<!-- Row 3 -->
-								<div class="key u-1-75">1.75</div>
-								<div class="key u-1">Z</div>
-								<div class="key u-1">X</div>
-								<div class="key u-1">C</div>
-								<div class="key u-1">V</div>
-								<div class="key u-1">B</div>
-								<div class="key u-1">N</div>
-								<div class="key u-1">M</div>
-								<div class="key u-1">, &lt;</div>
-								<div class="key u-1">. &gt;</div>
-								<div class="key u-1-25">1.25</div>
-								<!-- Row 4 -->
-								<div class="key u-1-5 empty"></div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-2-75">2.75</div>
-								<div class="key u-2-25">2.25</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1">1.0</div>
-								<div class="key u-1-5 empty"></div>
+					<div class="list-wrapper">
+						<li>Optional corner blocker layout</li>
+						<li class="layout-container">
+							<div class="keyboard-wrapper all-rows">
+								<div class="keyboard">
+									<!-- Row 1 -->
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">Q</div>
+									<div class="key u-1">W</div>
+									<div class="key u-1">E</div>
+									<div class="key u-1">R</div>
+									<div class="key u-1">T</div>
+									<div class="key u-1">Y</div>
+									<div class="key u-1">U</div>
+									<div class="key u-1">I</div>
+									<div class="key u-1">O</div>
+									<div class="key u-1">P</div>
+									<div class="key u-1">1.0</div>
+									<!-- Row 2 -->
+									<div class="key u-1-25">1.25</div>
+									<div class="key u-1">A</div>
+									<div class="key u-1">S</div>
+									<div class="key u-1">D</div>
+									<div class="key u-1">F</div>
+									<div class="key u-1">G</div>
+									<div class="key u-1">H</div>
+									<div class="key u-1">J</div>
+									<div class="key u-1">K</div>
+									<div class="key u-1">L</div>
+									<div class="key u-1-75">1.75</div>
+									<!-- Row 3 -->
+									<div class="key u-1-75">1.75</div>
+									<div class="key u-1">Z</div>
+									<div class="key u-1">X</div>
+									<div class="key u-1">C</div>
+									<div class="key u-1">V</div>
+									<div class="key u-1">B</div>
+									<div class="key u-1">N</div>
+									<div class="key u-1">M</div>
+									<div class="key u-1">, &lt;</div>
+									<div class="key u-1">. &gt;</div>
+									<div class="key u-1-25">1.25</div>
+									<!-- Row 4 -->
+									<div class="key u-1-5 empty"></div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-2-75">2.75</div>
+									<div class="key u-2-25">2.25</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1">1.0</div>
+									<div class="key u-1-5 empty"></div>
+								</div>
 							</div>
-						</div>
-					</li>
+						</li>
+					</div>	
 				</ul>
 				<ul>
-					<li>Drawn by / Checked by / Remarks</li>
-					<li>SMO / RMK / Good!</li>
+					<div class="list-wrapper">
+						<li>Drawn by / Checked by / Remarks</li>
+						<li>SMO / RMK / Good!</li>
+					</div>
 				</ul>
 			</section>
 			
 			<section class="specs">
 				<h3>Inventory</h3>
 				<ul>
-					<li>Included with kit</li>
-					<li>Powder coated stainless steel case bottom and case top</li>
-					<li>Additional case top with corner blockers for alternate layout</li>
-					<li>Matching stainless steel plate</li>
-					<li>Custom hotswap PCB with dual rotary encoders and auxiliary lighting module</li>
-					<li>Fasteners</li>
-					<li>Hex keys</li>
-					<li>Feet for flat and 4° typing angle</li>
-					<li>PCB gaskets</li>
-					<li>Rotary encoder knobs</li>
-					<li>Sound dampening</li>
-					<li>Hex key screwdrivers</li>
+					<div class="list-wrapper">
+						<li>Included with kit</li>
+						<li>Powder coated stainless steel case bottom and case top</li>
+						<li>Additional case top with corner blockers for alternate layout</li>
+						<li>Matching stainless steel plate</li>
+						<li>Custom hotswap PCB with dual rotary encoders and auxiliary lighting module</li>
+						<li>Fasteners</li>
+						<li>Hex keys</li>
+						<li>Feet for flat and 4° typing angle</li>
+						<li>PCB gaskets</li>
+						<li>Rotary encoder knobs</li>
+						<li>Sound dampening</li>
+						<li>Hex key screwdrivers</li>
+					</div>
 				</ul>
 				<p class="redType">0057</p>
 				<p class="stamp approved">Approved</p>
@@ -391,32 +402,46 @@
 			<section class="specs">
 				<h3>Measurements</h3>
 				<ul>
-					<li>Typing angle</li>
-					<li>Flat or 2°</li>
+					<div class="list-wrapper">
+						<li>Typing angle</li>
+						<li>Flat or 2°</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Width</li>
-					<li>236&nbsp;mm (9&nbsp;5/16")</li>
+					<div class="list-wrapper">
+						<li>Width</li>
+						<li>236&nbsp;mm (9&nbsp;5/16")</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Length</li>
-					<li>142&nbsp;mm (5&nbsp;5/8")</li>
+					<div class="list-wrapper">
+						<li>Length</li>
+						<li>142&nbsp;mm (5&nbsp;5/8")</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Front height (including feet)</li>
-					<li>21&nbsp;mm (13/16")</li>
+					<div class="list-wrapper">
+						<li>Front height (including feet)</li>
+						<li>21&nbsp;mm (13/16")</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Overall height (to top of case)</li>
-					<li>23&nbsp;mm (15/16")</li>
+					<div class="list-wrapper">
+						<li>Overall height (to top of case)</li>
+						<li>23&nbsp;mm (15/16")</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Overall height (including knob)</li>
-					<li>32&nbsp;mm (1&nbsp;1/4")</li>
+					<div class="list-wrapper">
+						<li>Overall height (including knob)</li>
+						<li>32&nbsp;mm (1&nbsp;1/4")</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Weight</li>
-					<li>985&nbsp;g (2.17&nbsp;lbs)</li>
+					<div class="list-wrapper">
+						<li>Weight</li>
+						<li>985&nbsp;g (2.17&nbsp;lbs)</li>
+					</div>
 				</ul>
 				<p class="footer right">"Measure twice ... cut once"</p>
 			</section>
@@ -424,35 +449,49 @@
 			<section class="specs">
 				<h3>PCB</h3>
 						<ul>
-							<li>Thickness</li>
-							<li>1.6 mm</li>
+							<div class="list-wrapper">
+								<li>Thickness</li>
+								<li>1.6 mm</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Connectivity</li>
-							<li>USB-C</li>
-							<li>No wireless option</li>
+							<div class="list-wrapper">
+								<li>Connectivity</li>
+								<li>USB-C</li>
+								<li>No wireless option</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Switch connection</li>
-							<li>Kailh hot swap sockets</li>
-							<li>Supports MX switches only</li>
+							<div class="list-wrapper">
+								<li>Switch connection</li>
+								<li>Kailh hot swap sockets</li>
+								<li>Supports MX switches only</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Mounting</li>
-							<li>Tray mount with rubber gaskets</li>
+							<div class="list-wrapper">
+								<li>Mounting</li>
+								<li>Tray mount with rubber gaskets</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Flex</li>
-							<li>No flex cuts</li>
+							<div class="list-wrapper">
+								<li>Flex</li>
+								<li>No flex cuts</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Firmware</li>
-							<li>Built with QMK, Via pre-installed</li>
-							<li>Written by Robert Kleemann (sizezero on Discord and&ensp;<a href="https://github.com/sizezero">Github</a>)</li>
+							<div class="list-wrapper">
+								<li>Firmware</li>
+								<li>Built with QMK, Via pre-installed</li>
+								<li>Written by Robert Kleemann (sizezero on Discord and&ensp;<a href="https://github.com/sizezero">Github</a>)</li>
+							</div>
 						</ul>
 						<ul>
-							<li>Designed by</li>
-							<li>A.Okay!</li>
+							<div class="list-wrapper">
+								<li>Designed by</li>
+								<li>A.Okay!</li>
+							</div>
 						</ul>
 				<p class="redType">E49-2049.7</p>
 				<p class="footer right">2775001.1</p>
@@ -461,29 +500,34 @@
 			<section class="specs">
 				<h3>Materials</h3>
 				<ul>
-					<li>Case top, case bottom, and plate</li>
-					<li>Stainless steel, matte black powder coating (Recyclable)</li>
+					<div class="list-wrapper">
+						<li>Case top, case bottom, and plate</li>
+						<li>Stainless steel, matte black powder coating (Recyclable)</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Fasteners</li>
-					<li>Stainless steel (Recyclable)</li>
+					<div class="list-wrapper">
+						<li>Fasteners</li>
+						<li>Stainless steel (Recyclable)</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Feet and PCB gaskets</li>
-					<li>SBR synthetic rubber (Auto tire rubber, recyclable depending on locality)</li>
+					<div class="list-wrapper">
+						<li>Feet and PCB gaskets</li>
+						<li>SBR synthetic rubber (Auto tire rubber, recyclable depending on locality)</li>
+					</div>
 				</ul>
 				<ul>
-					<li>Sound dampening</li>
-					<li>Wool felt case padding (Compostable)</li>
-					<li>IXPE PCB foam (Non-recyclable)</li>
+					<div class="list-wrapper">
+						<li>PCB</li>
+						<li>Standard FR4 with immersion gold finish (Partially recyclable depending on locality)</li>
+					</div>
 				</ul>
 				<ul>
-					<li>PCB</li>
-					<li>Standard FR4 with immersion gold finish (Partially recyclable depending on locality)</li>
-				</ul>
-				<ul>
-					<li>Packaging</li>
-					<li>100% cardboard and paper, except foil PCB bag (Recyclable)</li>
+					<div class="list-wrapper">
+						<li>Packaging</li>
+						<li>100% cardboard and paper, except foil PCB bag (Recyclable)</li>
+					</div>
 				</ul>
 				<p class="footer right">"Reduce, reuse, recycle"</p>
 			</section>
@@ -503,6 +547,11 @@
 					<div>
 						<h3><span class="titleOfSomething">MID-1-LID<br>
 						Latching Input Deflector</span></h3>
+						<p class="accessorized">
+							<span class="priceTagWrapper">
+								<span class="priceTag">$&emsp;175</span>
+							</span>
+						</p>
 					</div>
 				</section>
 			</a>
@@ -513,6 +562,11 @@
 					<div>
 						<h3><span class="titleOfSomething">MOD-1-PTC<br>
 						Protective Textile Cover</span></h3>
+						<p class="accessorized">
+							<span class="priceTagWrapper">
+								<span class="priceTag">$&emsp;&nbsp;75</span>
+							</span>
+						</p>
 					</div>
 				</section>
 			</a>
@@ -523,6 +577,11 @@
 					<div>
 						<h3><span class="titleOfSomething">MID-1-DTC<br>
 						Desk Tray Companion</span></h3>
+						<p class="accessorized">
+							<span class="priceTagWrapper">
+								<span class="priceTag">$&emsp;&nbsp;45</span>
+							</span>
+						</p>
 					</div>
 				</section>
 			</a>

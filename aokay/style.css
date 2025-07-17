@@ -8,7 +8,8 @@
 	--colorTextEmphasis: rgba(100,155,200,1);
 	--colorTextRed: rgba(204,51,51,1);
 	
-	--colorBorderBase: rgba(180,180,180,1);
+	--colorBorder1: rgba(60,60,60,1);
+	--colorBorder2: rgba(180,180,180,1);
 	--colorBorderPaper: rgba(100,155,200,1);
 
 	--colorStamp: rgba(255,0,0,1);
@@ -32,7 +33,8 @@
 	--lineHeight: 1.4em;
 	--lineHeightProductTitle: 1em;
 	
-	--borderBase: 1px solid var(--colorBorderBase);
+	--border1: 1px solid var(--colorBorder1);
+	--border2: 1px solid var(--colorBorder2);
 
 	font-size: 20px;
 }
@@ -96,63 +98,71 @@ nav {
 		padding: 0;
 	}
 	
-									nav ul {
-										align-self: center;
-										border: 1.5px solid var(--colorBorderPaper);
-										border-radius: 10px;
-										box-shadow: 0 0 1.5px var(--colorBorderPaper),
-											inset 0 1.5px var(--colorBorderPaper);
-										display: flex;
-										flex-wrap: wrap;
-										justify-content: flex-start;
-										margin: 0;
-										overflow: hidden;
-										padding: 0;
-										width: calc(100% - 4px);
-									}
+nav ul {
+	align-self: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
 	
-										.specs ul {
-											align-self: center;
-											border: 2px solid var(--colorBorderPaper);
-											box-shadow: 0 0 1.5px var(--colorBorderPaper),
-												inset 0 1.5px var(--colorBorderPaper);
-											border-radius: 10px;
-											display: flex;
-											flex-direction: column;
-											justify-content: flex-start;
-											margin: -2px 0 0 0;
-											overflow: hidden;
-											padding: 0;
-											width: calc(100% - 4px);
-										}
-		
+	.list-wrapper {
+		border-radius: 10px;
+		box-shadow: 0 0 1px var(--colorBorderPaper),
+			inset 0 0 1px 1px var(--colorBorderPaper);
+		border: 1px solid var(--colorBorderPaper);
+		display: flex;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		flex-wrap: wrap;
+		justify-content: inherit;
+	}	
 	
-								header nav li {
-									border-left: 1.5px solid var(--colorBorderPaper);
-									border-top: 1.5px solid var(--colorBorderPaper);
-									box-shadow: 0 0 1px rgba(100,155,200,1),
-										inset 0 0 1px rgba(100,155,200,1);
-									box-sizing: border-box;
-									display: flex;
-									flex: 1 1 auto;
-									font-family: var(--fontSerif);
-									font-size: var(--fontSizeDetail);
-									letter-spacing: 0;
-									line-height: 1em;
-									list-style-type: none;
-									margin: -1.5px 1.5px 1.5px -1.5px;
-									overflow: hidden;
-									position: relative;
-									text-align: center;
-									text-decoration: none;
-									text-indent: 0;
-									text-shadow: 0 0 1.5px var(--colorTextBody);
-									z-index: 1;
-								}
+	.specs ul {
+		align-self: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin: -2px 0 0 0;
+		overflow: visible;
+		padding: 0;
+		position: relative;
+		width: calc(100% - 2px);
+	}
+	
+	header nav li {
+		border: 2px solid var(--colorBorderPaper);
+		box-shadow: 0 0 1px var(--colorBorderPaper);
+			inset: 0 0 1px var(--colorBorderPaper);
+		box-sizing: border-box;
+		display: flex;
+		flex: 1 1 auto;
+		font-family: var(--fontSerif);
+		font-size: var(--fontSizeDetail);
+		letter-spacing: 0;
+		line-height: 1em;
+		list-style-type: none;
+		margin: -1px;
+		overflow: hidden;
+		padding: .2rem 0 0 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		text-indent: 0;
+		text-shadow: 0 0 1.5px var(--colorTextBody);
+	}
 	
 										.specs li {
-											border-left: 2px solid var(--colorBorderPaper);
-											border-top: 2px solid var(--colorBorderPaper);
+											border: 2px solid var(--colorBorderPaper);
+											box-shadow: 0 0 1px var(--colorBorderPaper);
+												inset: 0 0 1px var(--colorBorderPaper);
 											box-sizing: border-box;
 											display: flex;
 											flex: 1 1 auto;
@@ -161,9 +171,9 @@ nav {
 											letter-spacing: 0;
 											line-height: 1em;
 											list-style-type: none;
-											margin: -2px 0 0 -2px;
+											margin: -1px;
 											overflow: hidden;
-											padding: .3rem .6rem;
+											padding: .5rem .6rem .3rem .6rem;
 											position: relative;
 											text-align: left;
 											text-decoration: none;
@@ -189,8 +199,9 @@ nav {
 													justify-content: center;
 													letter-spacing: .01rem;
 													padding: .15rem .7rem;
-													text-shadow: 0 0 1px rgb(100,155,200,1);
+													text-shadow: 0 0 1.5px var(--colorTextEmphasis);
 													text-transform: uppercase;
+													z-index: -1;
 												}
 
 											.specs li:first-child {
@@ -206,6 +217,7 @@ nav {
 												text-shadow: none;
 												text-transform: uppercase;
 												text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+												z-index: -1;
 											}
 
 
@@ -242,10 +254,8 @@ main {
 }
 
 article {
-	border-top: var(--borderBase);
 	display: grid;
 	margin: 0;
-	padding-top: .7rem;
 }
 
 	.project article:first-child {
@@ -262,6 +272,7 @@ div.productTitleWrap {
 }
 
 	h2.productTitle {
+		border: none;
 		display: inline-block;
 		font-family: var(--fontLogo);
 		font-size: var(--fontSizeProductTitle);
@@ -270,6 +281,7 @@ div.productTitleWrap {
 		letter-spacing: -.03em;
 		line-height: var(--lineHeightProductTitle);
 		margin: 0;
+		padding: 0;
 		text-transform: uppercase;
 	}
 
@@ -361,7 +373,7 @@ section {
 		
 
 footer {
-	border-top: var(--borderBase);
+	border-top: var(--border1);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding-top: .7rem;
@@ -403,11 +415,14 @@ h1 {
 	}
 
 h2 {
+	border-top: var(--border1);
 	font-size: inherit;
 	font-weight: 800;
 	letter-spacing: .06rem;
 	margin: 0 0 5.6rem 0;
+	padding: .7rem 0 0 0;
 	text-transform: lowercase;
+	width: fit-content;
 }
 
 	h2:first-letter {
@@ -429,11 +444,14 @@ h3 {
 	.specs h3 {
 		background-color: var(--colorFieldEmphasis);
 		border: 2px solid var(--colorBorderPaper);
+		box-shadow: 0 0 1px var(--colorBorderPaper);
+			inset: 0 0 1px var(--colorBorderPaper);
 		border-radius: 10px;
 		color: var(--colorTextEmphasis);
 		margin: 0;
 		padding: .3rem .7rem;
 		text-align: center;
+		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
 		text-transform: uppercase;
 	}
 	
@@ -461,10 +479,6 @@ p {
 	margin: inherit;
 }
 
-	td p:first-child {
-		margin: 0 0 .7rem 0;
-	}
-	
 	p.quote {
 		font-family: var(--fontSerif);
 		font-size: var(--fontSizeDetail);
@@ -542,6 +556,8 @@ div video {
 				var(--colorFieldEmphasis) 100%
 			);
 		border: 5px solid var(--colorBorderPaper);
+		box-shadow: 0 0 2px var(--colorBorderPaper),
+			inset 0 0 2px var(--colorBorderPaper);
 		box-sizing: border-box;
 		border-radius: 20px;
 		display: inline-block;
@@ -583,141 +599,141 @@ div video {
 	/* accessories */
 	
 	
-																		.starburstWrapper {
-																			animation: breathe 3s ease-in-out infinite;
-																			aspect-ratio: 1;
-																			top: -10%;
-																			/*filter: drop-shadow(1px 1px 2px rgba(0,0,0,.5));*/
-																			font-size: 1vw;
-																			position: absolute;
-																			left: 5%;
-																			width: 15%;
-																		}
-																		
-																		@keyframes breathe {
-																			0%, 100% { transform: scale(1); }
-																			50% { transform: scale(1.02); }
-																		}
+.starburst-wrapper {
+	animation: breathe 3s ease-in-out infinite;
+	aspect-ratio: 1;
+	filter: drop-shadow(0 0 1px var(--colorBorderPaper));
+	top: -10%;
+	font-size: 1vw;
+	position: absolute;
+	left: 5%;
+	width: 15%;
+}
 
-																		.starburst {
-																			/*background: linear-gradient(
-																					135deg,
-																					rgba(240,235,210,1),
-																					rgba(215,205,160,1),
-																					rgba(190,180,130,1)
-																				);*/
-																			background-color: var(--colorBorderPaper);
-																			height: 100%;
-																			position: relative;
-																			width: 100%;
-																			clip-path: polygon(100% 50%,93.76% 54.6%,98.91% 60.4%,91.85% 63.6%,95.68% 70.34%,88.11% 72%,90.45% 79.39%,82.7% 79.44%,83.46% 87.16%,75.86% 85.6%,75% 93.3%,67.9% 90.2%,65.45% 97.55%,59.15% 93.04%,55.23% 99.73%,50% 94%,44.77% 99.73%,40.85% 93.04%,34.55% 97.55%,32.1% 90.2%,25% 93.3%,24.14% 85.6%,16.54% 87.16%,17.3% 79.44%,9.55% 79.39%,11.89% 72%,4.32% 70.34%,8.15% 63.6%,1.09% 60.4%,6.24% 54.6%,0% 50%,6.24% 45.4%,1.09% 39.6%,8.15% 36.4%,4.32% 29.66%,11.89% 28%,9.55% 20.61%,17.3% 20.56%,16.54% 12.84%,24.14% 14.4%,25% 6.7%,32.1% 9.8%,34.55% 2.45%,40.85% 6.96%,44.77% 0.27%,50% 6%,55.23% 0.27%,59.15% 6.96%,65.45% 2.45%,67.9% 9.8%,75% 6.7%,75.86% 14.4%,83.46% 12.84%,82.7% 20.56%,90.45% 20.61%,88.11% 28%,95.68% 29.66%,91.85% 36.4%,98.91% 39.6%,93.76% 45.4%);
-																		}
+	@keyframes breathe {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.02); }
+	}
 	
-																		.innerStarburst {
-																			/*background-color: rgba(255,255,255,1);*/
-																			background-color: var(--colorFieldBase);
-																			height: 90%;
-																			left: 50%;
-																			position: absolute;
-																			top: 50%;
-																			transform: translate(-50%,-50%);
-																			width: 90%;
-																			clip-path: polygon(100% 50%,93.76% 54.6%,98.91% 60.4%,91.85% 63.6%,95.68% 70.34%,88.11% 72%,90.45% 79.39%,82.7% 79.44%,83.46% 87.16%,75.86% 85.6%,75% 93.3%,67.9% 90.2%,65.45% 97.55%,59.15% 93.04%,55.23% 99.73%,50% 94%,44.77% 99.73%,40.85% 93.04%,34.55% 97.55%,32.1% 90.2%,25% 93.3%,24.14% 85.6%,16.54% 87.16%,17.3% 79.44%,9.55% 79.39%,11.89% 72%,4.32% 70.34%,8.15% 63.6%,1.09% 60.4%,6.24% 54.6%,0% 50%,6.24% 45.4%,1.09% 39.6%,8.15% 36.4%,4.32% 29.66%,11.89% 28%,9.55% 20.61%,17.3% 20.56%,16.54% 12.84%,24.14% 14.4%,25% 6.7%,32.1% 9.8%,34.55% 2.45%,40.85% 6.96%,44.77% 0.27%,50% 6%,55.23% 0.27%,59.15% 6.96%,65.45% 2.45%,67.9% 9.8%,75% 6.7%,75.86% 14.4%,83.46% 12.84%,82.7% 20.56%,90.45% 20.61%,88.11% 28%,95.68% 29.66%,91.85% 36.4%,98.91% 39.6%,93.76% 45.4%);
-																		}
+	.starburst {
+		background-color: var(--colorBorderPaper);
+		height: 100%;
+		position: relative;
+		width: 100%;
+		clip-path: polygon(100% 50%,93.76% 54.6%,98.91% 60.4%,91.85% 63.6%,95.68% 70.34%,88.11% 72%,90.45% 79.39%,82.7% 79.44%,83.46% 87.16%,75.86% 85.6%,75% 93.3%,67.9% 90.2%,65.45% 97.55%,59.15% 93.04%,55.23% 99.73%,50% 94%,44.77% 99.73%,40.85% 93.04%,34.55% 97.55%,32.1% 90.2%,25% 93.3%,24.14% 85.6%,16.54% 87.16%,17.3% 79.44%,9.55% 79.39%,11.89% 72%,4.32% 70.34%,8.15% 63.6%,1.09% 60.4%,6.24% 54.6%,0% 50%,6.24% 45.4%,1.09% 39.6%,8.15% 36.4%,4.32% 29.66%,11.89% 28%,9.55% 20.61%,17.3% 20.56%,16.54% 12.84%,24.14% 14.4%,25% 6.7%,32.1% 9.8%,34.55% 2.45%,40.85% 6.96%,44.77% 0.27%,50% 6%,55.23% 0.27%,59.15% 6.96%,65.45% 2.45%,67.9% 9.8%,75% 6.7%,75.86% 14.4%,83.46% 12.84%,82.7% 20.56%,90.45% 20.61%,88.11% 28%,95.68% 29.66%,91.85% 36.4%,98.91% 39.6%,93.76% 45.4%);
+	}
+	
+	.inner-starburst-wrapper {
+		filter: drop-shadow(0 0 1px var(--colorFieldBase));
+		height: 100%;
+		width: 100%;
+	}
+	
+	.inner-starburst {
+		background-color: var(--colorFieldBase);
+		height: 90%;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		width: 90%;
+		clip-path: polygon(100% 50%,93.76% 54.6%,98.91% 60.4%,91.85% 63.6%,95.68% 70.34%,88.11% 72%,90.45% 79.39%,82.7% 79.44%,83.46% 87.16%,75.86% 85.6%,75% 93.3%,67.9% 90.2%,65.45% 97.55%,59.15% 93.04%,55.23% 99.73%,50% 94%,44.77% 99.73%,40.85% 93.04%,34.55% 97.55%,32.1% 90.2%,25% 93.3%,24.14% 85.6%,16.54% 87.16%,17.3% 79.44%,9.55% 79.39%,11.89% 72%,4.32% 70.34%,8.15% 63.6%,1.09% 60.4%,6.24% 54.6%,0% 50%,6.24% 45.4%,1.09% 39.6%,8.15% 36.4%,4.32% 29.66%,11.89% 28%,9.55% 20.61%,17.3% 20.56%,16.54% 12.84%,24.14% 14.4%,25% 6.7%,32.1% 9.8%,34.55% 2.45%,40.85% 6.96%,44.77% 0.27%,50% 6%,55.23% 0.27%,59.15% 6.96%,65.45% 2.45%,67.9% 9.8%,75% 6.7%,75.86% 14.4%,83.46% 12.84%,82.7% 20.56%,90.45% 20.61%,88.11% 28%,95.68% 29.66%,91.85% 36.4%,98.91% 39.6%,93.76% 45.4%);
+	}
+	
+	.starburst-wrapper p {
+		color: var(--colorTextEmphasis);
+		font-family: var(--fontLogo);
+		font-size: 2em;
+		font-weight: 900;
+		left: 50%;
+		line-height: 1em;
+		position: absolute;
+		text-align: center;
+		text-shadow: 0 0 1.5px var(--colorTextEmphasis);
+		top: 50%;
+		transform: translate(-50%,-50%) rotate(-7deg);
+	}
+	
 																		
-																		.starburstWrapper p {
-																			/*color: rgba(215,205,160,1);*/
-																			color: var(--colorTextEmphasis);
-																			font-family: var(--fontLogo);
-																			font-size: 2em;
-																			font-weight: 900;
-																			left: 50%;
-																			line-height: 1em;
-																			position: absolute;
-																			text-align: center;
-																			top: 50%;
-																			transform: translate(-50%,-50%) rotate(-7deg);
-																		}
 																		
 																		
+	.accessorized {
+		position: relative;
+	}
 																		
-																		
-																		.accessorized {
-																			position: relative;
-																		}
-																		
-																		.priceTagWrapper {
-																			display: inline-block;
-																			overflow: visible;
-																			position: relative;
-																			width: 0;
-																		}
-																		
-																		.priceTagWrapper span.priceTag {
-																			background:
-																				linear-gradient(to bottom, var(--colorBorderPaper) 0% 30%, var(--colorFieldWhite) 30% 100%),
-																				radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
-																				radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 0);
-																			background-size: auto, 2px 2px, 3px 3px;
-																			background-repeat: no-repeat, repeat, repeat;
+	.priceTagWrapper {
+		display: inline-block;
+		overflow: visible;
+		position: relative;
+		width: 0;
+	}									
+	.priceTagWrapper span.priceTag {
+		background:
+			linear-gradient(to bottom, var(--colorBorderPaper) 0% 30%, var(--colorFieldWhite) 30% 100%),
+			radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 0),
+			radial-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 0);
+		background-size: auto, 2px 2px, 3px 3px;
+		background-repeat: no-repeat, repeat, repeat;
+		box-shadow:
+			inset 0 0 2px rgba(0, 0, 0, 0.05), /* subtle wear inside edge */
+			2px 2px 3px 1px rgba(0, 0, 0, 0.15);
+		display: inline-block;
+		font-family: var(--fontSerif);
+		font-size: var(--fontSizeBody);
+		letter-spacing: 0;
+		line-height: 1em;
+		overflow: hidden;   /* Ensures scuff stays contained */
+		padding: 1.5rem .3rem .3rem .5rem;
+		position: absolute;
+		left: 0.5rem;
+		top: -1.3rem;
+		transform: rotate(2deg);
+		transform-origin: center;
+		text-shadow: 0 0 1.5px var(--colorTextBody);
+		white-space: nowrap;
+	}
+		
+	.priceTag::before {
+		box-shadow: none;
+		content: "A.Okay";
+		position: absolute;
+		top: -.15em;
+		left: 0;
+		font-family: var(--fontLogo);
+		font-size: 0.6em;
+		font-weight: 900;
+		color: white;
+		letter-spacing: 0.04em;
+		text-align: center;
+		text-transform: uppercase;
+		pointer-events: none;
+		width: 100%;
+	}
+	
+	.priceTagWrapper .priceTag::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		background: 
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.04), transparent 25%),
+			repeating-linear-gradient(
+				-45deg,
+				rgba(0, 0, 0, 0.03),
+				rgba(0, 0, 0, 0.03) 1px,
+				transparent 1px,
+				transparent 3px
+			);
+		mix-blend-mode: multiply;
+		opacity: 0.35;
+	}
 
-																			box-shadow:
-																				inset 0 0 2px rgba(0, 0, 0, 0.05), /* subtle wear inside edge */
-																				2px 2px 3px 1px rgba(0, 0, 0, 0.15);
-																			display: inline-block;
-																			font-family: var(--fontSerif);
-																			font-size: var(--fontSizeBody);
-																			letter-spacing: 0;
-																			line-height: 1em;
-																			overflow: hidden;   /* Ensures scuff stays contained */
-																			padding: 1.5rem .3rem .3rem .5rem;
-																			position: absolute;
-																			left: 0.5rem;
-																			top: -1.3rem;
-																			transform: rotate(2deg);
-																			transform-origin: center;
-																			text-shadow: 0 0 1.5px rgba(60, 60, 60, 0.7);
-																			white-space: nowrap;
-																		}
-																		
-																		
-																		.priceTag::before {
-																			box-shadow: none;
-																			content: "A.Okay";
-																			position: absolute;
-																			top: -.15em;
-																			left: 0;
-																			font-family: var(--fontLogo);
-																			font-size: 0.6em;
-																			font-weight: 900;
-																			color: white;
-																			letter-spacing: 0.04em;
-																			text-align: center;
-																			text-transform: uppercase;
-																			pointer-events: none;
-																			width: 100%;
-																		}
-																		
-																		.priceTagWrapper .priceTag::after {
-																			content: "";
-																			position: absolute;
-																			top: 0;
-																			left: 0;
-																			width: 100%;
-																			height: 100%;
-																			pointer-events: none;
-																			background: 
-																				linear-gradient(to bottom, rgba(0, 0, 0, 0.04), transparent 25%),
-																				repeating-linear-gradient(
-																					-45deg,
-																					rgba(0, 0, 0, 0.03),
-																					rgba(0, 0, 0, 0.03) 1px,
-																					transparent 1px,
-																					transparent 3px
-																				);
-																			mix-blend-mode: multiply;
-																			opacity: 0.35;
-																		}
+			
+			
+				
 																		
 																		
 																		
@@ -868,6 +884,8 @@ div video {
 	
 	.footer.right {
 		border: 2px solid var(--colorTextEmphasis);
+		box-shadow: 0 0 1px rgba(100,155,200,1),
+			inset 0 0 1px rgba(100,155,200,1);
 		border-radius: 10px;
 		color: var(--colorTextEmphasis);
 		font-style: italic;
@@ -1063,63 +1081,74 @@ div#mc_embed_shell {
 
 
 
-														a.card {
-															cursor: pointer;
-															font-family: inherit;
-															margin: 0 0 .7rem 0;
-															text-transform: inherit;
-															word-spacing: inherit;
-															transition: transform 0.15s ease-in-out 0s;
-															will-change: transform;
-															text-shadow: none;
-														}
-														
-															a.card:hover {
-																transform: rotateZ(.5deg);
-															}
-															
-															a.card:active {
-																transform: rotateZ(0deg);
-																transition: transform 0.1s ease;
-															}
+/* product cards */
 
-															
-														section.otherProduct {
-															background-color: var(--colorFieldEmphasis);
-															border: 5px solid var(--colorBorderPaper);
-															border-radius: 20px;
-															box-sizing: border-box;
-															color: var(--colorTextEmphasis);
-															display: grid;
-															font-size: var(--fontSizeDetail);
-															grid-gap: .7rem;
-															grid-template-columns: 1fr 1fr;
-															line-height: var(--lineHeight);
-															margin: 0;
-															padding: .35rem;
-														}
-														
-														.otherProduct img {
-															border: 5px solid var(--colorFieldBase);
-															border-radius: 10px;
-															margin: 0;
-															width: calc(100% - 10px);
-														}
+a.card {
+	background-color: var(--colorFieldBase);
+	cursor: pointer;
+	font-family: inherit;
+	margin: 0;
+	text-transform: inherit;
+	word-spacing: inherit;
+	transition: transform 0.15s ease-in-out 0s;
+	will-change: transform;
+	text-shadow: none;
+	transition: transform .2s ease, box-shadow .2s ease;
+	will-change: transform;
+}
 
-																	.otherProduct h3 {
-																		margin: 0 5px;
-																	}
-																	
-																	.otherProduct p {
-																		margin: 0 5px .7rem 5px;
-																	}
-																	
-																	
-																	
-																	
-																	
-																	
-																	
+a.card:hover,
+a.card:focus {
+	transform: translate3d(0,-4px,0);
+	box-shadow: 0 8px 16px rgba(0,0,0,.15);
+	z-index: 1;
+}
+		
+a.card:active {
+}
+
+section.otherProduct {
+	border-bottom: var(--border2);
+	border-top: var(--border2);
+	box-sizing: border-box;
+	color: var(--colorTextEmphasis);
+	font-size: var(--fontSizeDetail);
+	line-height: var(--lineHeight);
+	margin: -1px 0 0 0;
+	padding: 1.4rem .7rem .7rem .7rem;
+}
+
+.otherProduct img {
+	border-radius: 20px;
+	margin: 0 0 2.8rem 0;
+	width: 100%;
+}
+
+.otherProduct h3 {
+	margin: 0;
+}
+
+.otherProduct p {
+	margin: 0 5px .7rem 5px;
+}
+
+.otherProduct p {
+	position: absolute;
+	right: 25%;
+	bottom: 5%;
+}
+
+.otherProduct div .priceTagWrapper .priceTag {
+	color: var(--colorTextBody);
+	transform: rotate(-4deg);
+}
+
+
+
+
+
+
+
 
 
 
@@ -1196,8 +1225,8 @@ div#mc_embed_shell {
 		}
 		
 	h2 {
-			grid-column-start: 1;
-			grid-column-end: 4;
+		grid-column-start: 1;
+		grid-column-end: 4;
 	}
 
 
@@ -1229,7 +1258,9 @@ div#mc_embed_shell {
 	}		
 		
 	article {
-		border-image: linear-gradient(to right, var(--colorBorderBase) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
+		border-top: 1px solid transparent;
+		border-image: linear-gradient(to right, var(--colorBorder1) calc(33.33% - .9em), transparent calc(33.33% - .9em)) 100% 1;
+		padding: 0.7rem 0 0 0;
 	}
 	
 		article.breatherImage {
@@ -1311,8 +1342,10 @@ div#mc_embed_shell {
 															}
 
 	h2 {
+		border-top: none;
 		grid-column-start: 1;
 		grid-column-end: 2;
+		padding: 0;
 	}
 	
 		h2.productTitle {
