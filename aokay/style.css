@@ -559,6 +559,14 @@ div video {
 	width: 100%;
 }
 
+	section.divider-image {
+		margin: 0 -1rem 5.6rem -1rem;
+	}
+	
+		.divider-image img {
+			margin: 0;
+		}
+
 	.projectThumbnail img {
 		margin: 0;
 	}
@@ -1206,8 +1214,8 @@ section.otherProduct {
 		grid-gap: inherit;
 	}
 
-		#features section,
-		#heroImage section {
+		#features .fullWidth,
+		#heroImage .fullWidth {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
