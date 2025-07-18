@@ -6,10 +6,11 @@
 :root {
 	--color-black: #3c3c3c;
 	--color-emphasis: #b3b3b3;
+	--color-emphasis-lighter: #cccccc;
 	--color-page: #e5e5e5;
 	--color-red: #cc3333;
-	--color-shade: rgba(0,0,0,0.02);
 	--color-white: #f5f5f5;
+	--color-white-shade: #f2f2f2;
 	--font-display: "Montserrat", sans-serif;
 	--font-sans: "IBM Plex Sans", sans-serif;
 	--font-serif: "Courier Prime", monospace;
@@ -113,11 +114,56 @@ a {
 		width: 100%;
 	}
 
-	a:active,
 	a:hover {
-		background-color: var(--color-shade);
 		color: var(--color-red);
 	}
+	
+	a:active {
+	}
+	
+	.button-wrapper {
+		background-color: var(--color-emphasis-lighter);
+		border-color: var(--color-emphasis);
+		border-style: solid;
+		border-width: 0 0 1px 0;
+		margin: 3rem -1rem;
+	}
+		
+	a.button {
+		background-color: var(--color-white);
+		border-color: inherit;
+		border-style: solid;
+		border-width: 1px 0;
+		display: block;
+		font-family: var(--font-sans);
+		margin: 0 0 -1px 0;
+		padding: 1.5rem 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+		z-index: 1;
+	}
+	
+		nav a:hover,
+		a.button:hover {
+			background-color: var(--color-white-shade);
+		}
+
+		nav a:active,
+		a.button:active {
+			background-color: var(--color-white);
+		}
+		
+		a.button:hover {
+			transform: translate(0, -6px);
+		}
+		
+		a.button:active {
+			transform: translate(0, -3px);
+		}
+		
 
 .list-wrapper {
 	overflow: hidden;
@@ -192,6 +238,10 @@ dd,
 	
 		nav li {
 			border-width: 1px 0 0 1px;
+		}
+		
+		nav li:hover {
+			transform: translate(0, -5px);
 		}
 
 	#specs li {
@@ -275,6 +325,7 @@ article section dl dd.layout-container div.keyboard-wrapper {
 
 .key {
 	align-items: center;
+	background-color: var(--color-white-shade);
 	border: 1px solid var(--color-black);
 	border-radius: 0.2rem;
 	box-sizing: border-box;
@@ -322,10 +373,11 @@ footer {
 	border-color: var(--color-emphasis);
 	border-style: solid;
 	border-width: 1px 0 0 0;
-	padding: 0 1rem;
 	margin: 3rem 0;
+	padding: 0 1rem;
 }
 
+	.button-wrapper + article,
 	article#intro {
 		border-style: none;
 	}
@@ -346,6 +398,7 @@ h3,
 p {
 	margin: 0.5rem 0;
 }
+
 
 
 
