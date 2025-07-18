@@ -5,9 +5,9 @@
 
 :root {
 	--color-black: rgba(60,60,60,1);
-	--color-emphasis: rgba(100,150,180,1);
+	--color-emphasis: #3d68d2;
 	--color-emphasis-field: rgba(230,246,254,1);
-	--color-page: rgba(245,242,236,1);
+	--color-page: #ffffff;
 	--color-red: rgba(204,51,51,1);
 	--font-display: "Montserrat", sans-serif;
 	--font-sans: "IBM Plex Sans", sans-serif;
@@ -50,6 +50,7 @@ a,
 li:not(:first-child),
 dd {
 	font-family: var(--font-serif);
+	font-weight: 600;
 }
 
 h1,
@@ -180,7 +181,7 @@ dd,
 		border-radius: 0.7rem 0.7rem 0 0;
 		color: var(--color-page);
 		font-size: var(--font-size-small-caps);
-		font-weight: 600;
+		font-weight: 800;
 		margin: 0;
 		padding: 0.1rem 0.6rem;
 		text-align: center;
@@ -217,9 +218,6 @@ dt,
 img {
 	width: 100%;
 }
-
-
-
 
 dd.layout-container {
 	display: block;
