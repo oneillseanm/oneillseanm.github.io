@@ -57,9 +57,10 @@ dd,
 }
 
 nav,
-#specs,
+#specs > :not(h2),
 footer,
-.newsletter-form {
+.newsletter-form,
+figure {
 	font-size: var(--font-size-small);
 }
 
@@ -113,10 +114,14 @@ a {
 	}
 	
 	header .logo {
-		margin: 1rem 0;
+		margin: 1rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
 	}
 	
-	li a:not(header a),
+	li a:not(nav a),
 	p a {
 		font-size: var(--font-size-caps);
 		letter-spacing: 0.05em;
@@ -130,7 +135,7 @@ a {
 		line-height: 1.4rem;
 	}
 
-	header li a {
+	nav li a {
 		align-items: center;
 		display: flex;
 		flex: 1;
@@ -210,6 +215,13 @@ a {
 		.product-card:active,
 		a.button:active {
 			transform: translate3d(0, -3px, 0);
+		}
+		
+		.top-link {
+			display: block;
+			align-self: stretch;
+			text-align: right;
+			width: 100%;
 		}
 		
 .italic {
@@ -447,8 +459,12 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		margin: 3rem 0 0 0;
-		padding: 1rem 1rem 4rem 1rem;
+		padding: 1rem 1rem 2rem 1rem;
 	}
+	
+		footer > * {
+			flex: 1 1 50%;
+		}
 	
 	.button-wrapper + article,
 	#system + article,
@@ -457,8 +473,13 @@ footer {
 	}
 	
 	header {
-		padding: 0 1rem;
+		padding: 0;
+		position: relative;
 	}
+
+nav {
+	margin: 1rem 1rem 3rem 1rem;
+}
 
 section,
 figure {
@@ -469,7 +490,8 @@ figure {
 		margin: 3rem -1rem;
 	}
 
-figure {
+figcaption {
+	width: 60%;
 }
 
 h3,
@@ -532,12 +554,25 @@ p {
 	
 	
 	
+	.hero-spacer,
 	.hero-image-wrapper-test {
-		aspect-ratio: 1 / 2;
-		margin: 0 -1rem 3rem -1rem;
-		overflow: hidden;
+		aspect-ratio: 1 / 1.75;
+		height: auto;
+		margin: 0;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+	}
+	
+	.hero-spacer {
 		position: relative;
+	}
 
+	.hero-image-wrapper-test {
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
 	}
 	
 	.hero-image-wrapper-test img {
@@ -552,6 +587,7 @@ p {
 		transform: translateX(-50%);
 		width: auto;
 	}
+	
 		
 		
 		
@@ -648,35 +684,9 @@ p {
 		padding: .45em 0;
 	}
 
-/*
 
-	h2.productTitle {
-		border: none;
-		display: inline-block;
-		font-family: var(--fontLogo);
-		line-height: var(--lineHeightProductTitle);
-		margin: 0;
-		padding: 0;
-		text-transform: uppercase;
-	}
-	
-	div.productTitleWrap div.subtitleStack {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		font-family: var(--fontProductTitle);
-		font-size: var(--fontSizeProductSubtitle);
-		min-height: 2.7rem;
-		font-style: italic;
-		font-weight: 500;
-		letter-spacing: -.04em;
-		line-height: 1em;
-		margin: auto 0;
-		padding: .05em 0 0 0;
-		transform: skewX(-12deg);
-		text-transform: uppercase;
-	}
-*/
+
+
 
 
 
