@@ -5,10 +5,10 @@
 
 :root {
 	--color-black: #3c3c3c;
-	--color-emphasis: #b3b3b3;
+	--color-emphasis: #ababab;
 	--color-emphasis-lighter: #cccccc;
 	--color-page: #e5e5e5;
-	--color-red: #cc3333;
+	--color-alert: #1264b9;
 	--color-white: #f5f5f5;
 	--color-white-shade: #f2f2f2;
 	--font-display: "Montserrat", sans-serif;
@@ -48,7 +48,8 @@ body {
 
 a,
 li,
-dd {
+dd,
+.price-tag {
 	font-family: var(--font-serif);
 	font-weight: 400;
 }
@@ -79,6 +80,12 @@ h3 {
 	font-size: inherit;
 	font-weight: 600;
 }
+
+	.product-card h3 {
+		font-family: var(--font-display);
+		font-style: italic;
+		font-weight: 900;
+	}
 
 a {
 	color: inherit;
@@ -115,7 +122,7 @@ a {
 	}
 
 	a:hover {
-		color: var(--color-red);
+		color: var(--color-alert);
 	}
 	
 	a:active {
@@ -129,39 +136,47 @@ a {
 		margin: 3rem 0;
 	}
 		
-	a.button {
+	.product-card,
+	a.button {	/* 3D button button effect */	
 		background-color: var(--color-white);
 		border-color: inherit;
 		border-style: solid;
-		border-width: 1px 0;
 		display: block;
 		font-family: var(--font-sans);
-		margin: 0 0 -1px 0;
-		padding: 1.5rem 0;
 		position: relative;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
 		transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 		z-index: 1;
 	}
 	
+		a.button {
+			border-width: 1px 0;
+			margin: 0 0 -1px 0;
+			padding: 1.5rem 0;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	
 		nav a:hover,
+		.product-card:hover,
 		a.button:hover {
-			background-color: var(--color-white-shade);
+			background-color: var(--color-white);
 		}
 
 		nav a:active,
+		.product-card:hover,
 		a.button:active {
 			background-color: var(--color-white);
 		}
 		
+		.product-card:hover,
 		a.button:hover {
-			transform: translate(0, -6px);
+			transform: translate3d(0, -6px, 0);
 		}
 		
+		.product-card:active,
 		a.button:active {
-			transform: translate(0, -3px);
+			transform: translate3d(0, -3px, 0);
 		}
 		
 
@@ -241,7 +256,6 @@ dd,
 		}
 		
 		nav li:hover {
-			transform: translate(0, -5px);
 		}
 
 	#specs li {
@@ -345,8 +359,8 @@ article section dl dd.layout-container div.keyboard-wrapper {
 	}
 
 .key:hover {
-	border: 1px solid var(--color-red);
-	color: var(--color-red);
+	border: 1px solid var(--color-alert);
+	color: var(--color-alert);
 	cursor: pointer;
 }
 
@@ -378,6 +392,7 @@ footer {
 }
 
 	.button-wrapper + article,
+	#system + article,
 	article#intro {
 		border-style: none;
 	}
@@ -391,6 +406,10 @@ figure {
 	margin: 3rem 0;
 }
 
+	section.product-array {
+		margin: 3rem -1rem;
+	}
+
 figure {
 }
 
@@ -399,10 +418,115 @@ p {
 	margin: 0.5rem 0;
 }
 
+#system {
+}
 
+.product-array {
+	background-color: var(--color-emphasis-lighter);
+	border-color: var(--color-emphasis);
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	font-size: var(--font-size-small);
+}
 
+	.product-card {
+		background-color: var(--color-white);
+		border-style: inherit;
+		border-width: 1px 0;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		margin: 0 0 -1px 0;
+		padding: 0 1rem 0.7rem 1rem;
+	}
 
+	.product-card img {
+		margin: 0 -1rem 2rem -1rem;
+		max-width: calc(100% + 2rem);
+	}
 	
+	.product-card p {
+		margin: 0;
+	}
+	
+	.card-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+.hero-image-wrapper {
+	background: linear-gradient(
+			to bottom,
+			var(--color-white) 0rem,
+			var(--color-white) 3rem,
+			var(--color-white) 3rem,
+			var(--color-white) 100%
+		);
+	border-color: var(--color-emphasis);
+	border-style: solid;
+	border-width: 1px 0;
+	margin: 0 -1rem;
+	position: relative;
+}
+
+	.image-underlay {
+		margin: 3rem 0 0 0;
+		width: 100%;
+	}
+	
+	.image-overlay {
+		left: 50%;
+		height: 130%;
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		z-index: 1;
+	}
+	
+	.starburst-wrapper {
+		display: none;
+	}
+
+/*
+
+	.multiImageContainer {
+		border: 5px solid var(--colorEmphasis);
+		box-shadow: 0 0 2px var(--colorEmphasis),
+			inset 0 0 2px var(--colorEmphasis);
+		box-sizing: border-box;
+		border-radius: 20px;
+		display: inline-block;
+		left: 50%;
+		margin: 0 calc(-50vw + 1rem) 1.4rem calc(-50vw + 1rem);
+		position: relative;
+		right: 50%;
+		width: calc(100vw - 2rem);
+	}
+	
+		.underlayImage {
+			display: block;
+			filter: drop-shadow(0 0 2px var(--colorEmphasis));
+			height: auto;
+			margin: 2rem 0 0 0;
+			opacity: .5;
+			width: 100%;
+		}
+		
+		.overlayImage {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: auto;
+			height: 130%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			pointer-events: none;
+		}
+
+*/	
 	
 
 /*
@@ -944,46 +1068,6 @@ div video {
 		margin: 0;
 	}
 	
-	.multiImageContainer {
-		background: linear-gradient(
-				to bottom,
-				var(--colorEmphasisFieldDarker) 0rem,
-				var(--colorEmphasisField) 2rem,
-				var(--colorEmphasisField) 2rem,
-				var(--colorEmphasisFieldDarker) 100%
-			);
-		border: 5px solid var(--colorEmphasis);
-		box-shadow: 0 0 2px var(--colorEmphasis),
-			inset 0 0 2px var(--colorEmphasis);
-		box-sizing: border-box;
-		border-radius: 20px;
-		display: inline-block;
-		left: 50%;
-		margin: 0 calc(-50vw + 1rem) 1.4rem calc(-50vw + 1rem);
-		position: relative;
-		right: 50%;
-		width: calc(100vw - 2rem);
-	}
-	
-		.underlayImage {
-			display: block;
-			filter: drop-shadow(0 0 2px var(--colorEmphasis));
-			height: auto;
-			margin: 2rem 0 0 0;
-			opacity: .5;
-			width: 100%;
-		}
-		
-		.overlayImage {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: auto;
-			height: 130%;
-			transform: translate(-50%, -50%);
-			z-index: 1;
-			pointer-events: none;
-		}
 
 
 .specs {
