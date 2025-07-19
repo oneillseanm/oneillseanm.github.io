@@ -533,7 +533,7 @@ p {
 	
 	
 	.hero-image-wrapper-test {
-		aspect-ratio: 1 / 1.5;
+		aspect-ratio: 1 / 2;
 		margin: 0 -1rem 3rem -1rem;
 		overflow: hidden;
 		position: relative;
