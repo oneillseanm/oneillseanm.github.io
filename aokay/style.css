@@ -104,7 +104,7 @@ a {
 	position: relative;
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
-	text-underline-offset: 0.15rem;
+	text-underline-offset: 0.2em;
 	transition: all 0.2s ease;
 }
 
@@ -134,7 +134,7 @@ a {
 	
 	p a,
 	dd a {
-		border-radius: 0.4em;
+		border-radius: 9999px;
 		display: inline-block;
 		line-height: 1.4rem;
 	}
@@ -146,101 +146,103 @@ a {
 		height: 100%;
 		justify-content: center;
 		padding: 0.3rem .7rem 0.2rem .7rem;
+		position: relative;
 		text-decoration: none;
 		width: 100%;
 	}
+	
+	nav li a::before {
+		content: "↓ ";
+		margin-right: 0.25em;
+		opacity: 0;
+		position: relative;
+		transition: all 0.2s ease;
+	}
+	
+	nav li a::after {
+		content: " ↓";
+		margin-left: 0.25em;
+		opacity: 0;
+		position: relative;
+		transition: all 0.2s ease;
+	}
 
+	nav li a:hover::before {
+		opacity: 1;
+	}
+	
 	a:hover,
 	.optionalParent .foot input:hover,
 	.key:hover {
-		background-color: var(--color-alert-lighter);
-		color: var(--color-alert);
 		cursor: pointer;
 	}
-
-	p a:hover,
-	dd a:hover,
-	.logo,
-	footer a {
-		border-radius: 0.3em;
-	}
-
-	p a:active,
-	dd a:active {
-		background-color: transparent;
-	}
 	
+		p a:hover,
+		dd a:hover,
+		li a:hover {
+			background-color: transparent;
+			text-underline-offset: 0.35em;
+		}
+		
+		.key:hover {
+			transform: rotate(-5deg);
+		}
+
 	a.product-card,
 	a.button {
 		background-color: var(--color-page-lighter);
 		border-color: var(--color-emphasis);
-		border-style: none;
+		border-style: solid;
 		display: block;
 		font-family: var(--font-sans);
 		font-weight: 400;
 		position: relative;
 		text-decoration: none;
 		transition: all 0.2s ease;
-		box-shadow:
-			0 0 0 1px var(--color-emphasis),
-			0 0 0 var(--color-emphasis-lighter);
 	}
 	
 		a.button {
 			border-radius: 9999px;
+			border-width: 1px;
 			margin: 0 1rem;
 			padding: 0.7rem 0;
 			text-align: center;
 			text-transform: uppercase;
 		}
 		
+		a.button::before {
+			content: "→";
+			margin-right: 0.5em;
+			opacity: 0;
+			position: relative;
+			transform: translate(0, -50%);
+			transition: all 0.2s ease;
+		}
+			
+		a.button::after {
+			content: "→";
+			margin-left: 0.5em;
+			opacity: 0;
+			position: relative;
+		}
+		
+		a.button:hover::before {
+			opacity: 1;
+		}
+		
 		.product-card {
+			border-width: 1px 0;
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 			margin: 0;
 			padding: 1rem;
 		}
-
-
 		
-	a.product-card:hover,
-	a.button:hover {
-		box-shadow:
-			0 0 0 1px var(--color-emphasis),
-			0 4px 0 var(--color-emphasis-lighter),
-			0 4px 0 1px var(--color-emphasis);
-		transform: translateY(-4px);
-	}
-	
-		a.button:hover {
-			background-color: var(--color-alert-lighter);
-		}
-	
-	nav a:active,
-	a.product-card:active,
-	a.button:active,
-	.optionalParent .foot input:active,
-	.key:active {
-		background-color: var(--color-white);
-	}
-		
-	a.product-card:active,
-	a.button:active {
-		box-shadow:
-			0 0 0 1px var(--color-emphasis),
-			0 2px 0 var(--color-emphasis-lighter),
-			0 2px 0 1px var(--color-emphasis);
-		transform: translateY(-2px);
-	}
-		
-		.top-link {
-			display: block;
-			align-self: stretch;
-			text-align: right;
-			width: 100%;
-		}
-		
+			.product-card + .product-card {
+				margin-top: -1px;
+			}
+			
 .italic {
 	font-style: italic;
 }
@@ -264,8 +266,8 @@ nav p,
 
 .data {
 	background-color: var(--color-page-lighter);
-	border-radius: 0.3em;
-	padding-inline: 0.3em;
+	border-radius: 9999px;
+	padding-inline: 0.5em;
 }
 
 ul,
@@ -464,12 +466,10 @@ article dl dd.layout-container div.keyboard-wrapper {
 		font-size: 40cqh;
 	}
 
-	.key:hover {
-		color: var(--color-alert);
-	}
-
 	.key:active {
-		transform: translate(0,1px);
+		transform:
+			rotate(-1deg)
+			translate(0,1px);
 	}
 
 	.key.empty {
@@ -534,12 +534,24 @@ footer > a {
 	flex: 1;
 	font-family: var(--font-sans);
 	justify-content: center;
+	position: relative;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 100%;
 }
-	
+
+footer > a::before {
+	content: "↑";
+	position: relative;
+	margin-right: 0.25em;
+	transition: all 0.2s ease;
+}
+
+footer > a:hover::before {
+	transform: translate(0, -0.4em);
+}
+
 header {
 	padding: 0;
 	position: relative;
@@ -584,9 +596,6 @@ p {
 
 .product-array {
 	background-color: var(--color-emphasis-lighter);
-	border-color: var(--color-emphasis);
-	border-style: solid;
-	border-width: 0 0 1px 0;
 	font-size: var(--font-size-small);
 	margin-inline: -1rem;
 }
@@ -634,27 +643,6 @@ p {
 		width: auto;
 	}
 	
-	.image-underlay {
-		margin: 3rem 0 0 0;
-		width: 100%;
-	}
-	
-	.image-overlay {
-		left: 50%;
-		height: 130%;
-		pointer-events: none;
-		position: absolute;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: auto;
-		z-index: 1;
-	}
-	
-	.starburst-wrapper {
-		display: none;
-	}
-
-
 /* MailChimp */
 
 #mc_embed_shell {
@@ -709,17 +697,20 @@ p {
 	color: var(--color-black);
 	font-family: var(--font-sans);
 	font-size: var(--font-size-caps);
+	position: relative;
 	text-transform: uppercase;
-	transition-property: background-color;
-	transition-duration: 0.1s;
+	transition: all 0.2s ease;
 }
 
 .optionalParent a {
 	opacity: 0.7;
 }
 
-.optionalParent a:hover {
-	background-color: transparent;
+.optionalParent .foot input:hover {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
 }
 
 .title-wrapper {
