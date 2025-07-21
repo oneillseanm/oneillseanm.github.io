@@ -1,19 +1,21 @@
 :root {
 	--color-black: #3c3c3c;
+	--color-black-field: #4a4a4a;
+	--color-black-field-lighter: #5c5c5c;
 	--color-emphasis: #ababab;
 	--color-emphasis-lighter: #cccccc;
-	--color-page: #e5e5e5;
-	--color-page-lighter: #f5f5f5;
+	--color-page: #dbdbdb;
 	--color-alert: #04884e;
-	--color-alert-lighter: #deeeff;
 	--color-white: #f5f5f5;
+	--color-white-shade: #f0f0f0;
 	--font-display: "Montserrat", sans-serif;
 	--font-sans: "IBM Plex Sans", sans-serif;
 	--font-serif: "Courier Prime", monospace;
-	--font-size-caps: 0.9em;
+	--font-size-caps: 0.95em;
 	--font-size-small: 0.8em;
 	--font-size-title: 3em;
 	--font-size-subtitle: 0.25em;
+	--radius-standard: 0.9rem;
 }
 
 html {
@@ -44,11 +46,12 @@ body {
 
 	#features,
 	#system {
-		background-color: var(--color-page-lighter);
+		background-color: var(--color-white);
 	}
 
 	footer {
-		background-color: var(--color-emphasis-lighter);
+		background-color: var(--color-black-field);
+		color: var(--color-white);
 	}
 
 a,
@@ -97,13 +100,21 @@ h3 {
 	.product-card h3 {
 		font-family: var(--font-display);
 		font-weight: 900;
+		transition: all 1s ease;
 	}
 	
-	.product-card:hover h3 {
-		text-decoration: underline;
-		text-decoration-style: wavy;
-		text-decoration-thickness: 2px;
-		text-underline-offset: 0.2em;
+	.product-card h3::after {
+		content: "←";
+		display: inline-block;
+		opacity: 0;
+		position: relative;
+		transform: translate(1em, -0.05em);
+		transition: all 0.2s ease;
+	}
+	
+	.product-card:hover h3::after {
+		opacity: 1;
+		transform: translate(0.5em, -0.05em);
 	}
 
 a {
@@ -124,19 +135,20 @@ a {
 		z-index: 2;
 	}
 	
-	header .logo {
-		margin: 1rem;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 1;
-	}
-	
+		header .logo {
+			margin: 1rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		
 	li a:not(nav a),
 	p a {
 		font-size: var(--font-size-caps);
-		letter-spacing: 0.05em;
+		letter-spacing: 0.03em;
 		text-transform: uppercase;
+		word-spacing: -0.2em;
 	}
 	
 	p a,
@@ -160,22 +172,23 @@ a {
 	
 	nav li a::before {
 		content: "↓ ";
-		margin-right: 0.25em;
 		opacity: 0;
 		position: relative;
+		transform: translate(-0.5em, 0);
 		transition: all 0.2s ease;
 	}
 	
 	nav li a::after {
 		content: " ↓";
-		margin-left: 0.25em;
 		opacity: 0;
 		position: relative;
+		transform: translate(-0.5em, 0);
 		transition: all 0.2s ease;
 	}
 
 	nav li a:hover::before {
 		opacity: 1;
+		transform: translate(-0.5em, 0.3em);
 	}
 	
 	a:hover,
@@ -192,14 +205,12 @@ a {
 		}
 		
 		.key:hover {
+			background-color: var(--color-white-shade);
 			transform: rotate(-5deg);
 		}
 
 	a.product-card,
 	a.button {
-		background-color: var(--color-page-lighter);
-		border-color: var(--color-emphasis);
-		border-style: solid;
 		display: block;
 		font-family: var(--font-sans);
 		font-weight: 400;
@@ -209,20 +220,20 @@ a {
 	}
 	
 		a.button {
+			background-color: var(--color-black-field);
 			border-radius: 9999px;
-			border-width: 1px;
+			color: var(--color-white);
 			margin: 0 1rem;
-			padding: 0.7rem 0;
+			padding: 0.9rem 0;
 			text-align: center;
-			text-transform: uppercase;
+			letter-spacing: 0.1em;
 		}
 		
 		a.button::before {
 			content: "→";
-			margin-right: 0.5em;
-			opacity: 0;
+			display: inline-block;
 			position: relative;
-			transform: translate(0, -50%);
+			transform: translate(-1em, -0.05em);
 			transition: all 0.2s ease;
 		}
 			
@@ -233,23 +244,40 @@ a {
 			position: relative;
 		}
 		
+		a.button:hover {
+			background-color: var(--color-black-field-lighter);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+		}
+
 		a.button:hover::before {
-			opacity: 1;
+			transform: translate(-0.5em, -0.05em);
 		}
 		
 		.product-card {
-			border-width: 1px 0;
-			display: flex;
-			flex-direction: column;
+			background-color: var(--color-page);
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			border-radius: var(--radius-standard);
+			box-shadow:
+				0 2px 6px rgba(0, 0, 0, 0.10),
+				0 1px 3px rgba(0, 0, 0, 0.04);
+			font-size: var(--font-size-small);
 			height: 100%;
-			margin: 0;
-			padding: 1rem;
+			margin: 3rem 0;
+			overflow: hidden;
+			padding: 0;
+			transition: all 0.2 ease;
 		}
 		
-			.product-card + .product-card {
-				margin-top: -1px;
-			}
-			
+		.product-card:hover {
+			box-shadow:
+				0 4px 12px rgba(0, 0, 0, 0.12),
+				0 2px 6px rgba(0, 0, 0, 0.06);
+		}
+		
+		.product-card:active {
+			transform: translateY(1px);
+		}
+
 .italic {
 	font-style: italic;
 }
@@ -272,33 +300,27 @@ nav p,
 }
 
 .data {
-	background-color: var(--color-page-lighter);
+	background-color: var(--color-white);
 	border-radius: 9999px;
-	padding-inline: 0.5em;
+	padding-inline: 0.8em;
 }
 
 	.product-card .data {
-		background-color: var(--color-page);
+		background-color: var(--color-white);
 	}
 
 ul,
 dl {
 	background-color: var(--color-white);
-	border-color: var(--color-emphasis);
-	border-style: solid;
-	border-width: 0 1px 1px 1px;
-	border-radius: 0 0 0.7rem 0.7rem;
+	border-radius: 0 0 var(--radius-standard) var(--radius-standard);
 	list-style-type: none;
 	overflow: hidden;
 	padding: 0;
 }
 
-	ul {
-		margin: 0;
-	}
-	
+	ul,
 	dl {
-		margin: -1px 0 0 0;
+		margin: 0;
 	}
 	
 	nav ul {
@@ -315,34 +337,33 @@ dd,
 .mc-field-group *,
 .optionalParent {
 	background-color: var(--color-white);
-	border-color: var(--color-emphasis);
-	border-style: solid;
+	border-top: 1px solid var(--color-emphasis-lighter);
 	margin: 0;
 }
 
 	dt {
 		border-width: 1px 0 0 0;
-		padding: 0.7rem 0.7rem 0.2rem 0.7rem;
+		margin: 0.9rem 0 0 0;
+		padding: 0.9rem 0.9rem 0.2rem 0.9rem;
 	}
 	
-		dd + dt {
-			margin: 0.7em 0 0 0;
+		dt:first-child {
+			margin: 0;
 		}
-		
+	
 	dd {
 		border-width: 0;
-		padding: 0 0.7rem 0 0.7rem;
+		padding: 0 0.9rem;
 	}
-	
+		
 		dd:last-child {
-			margin: 0 0 calc(0.7em * 0.9) 0;
+			margin: 0 0 0.9rem 0;
 		}
 	
 	li,
 	.mc-field-group *,
 	.optionalParent {
 		border-width: 1px 0 0 0;
-		margin: -1px 0 0 0;
 	}
 	
 		nav li {
@@ -355,19 +376,18 @@ dd,
 	#specs li,
 	.mc-field-group *,
 	input {
-		padding: 0.7rem;
+		padding: 0.9rem;
 	}
 	
 	nav p,
 	#specs h3,
 	#connect h3 {
-		background-color: var(--color-emphasis-lighter);
-		border: 1px solid var(--color-emphasis);
-		border-radius: 0.7rem 0.7rem 0 0;
+		background-color: var(--color-white);
+		border-radius: var(--radius-standard) var(--radius-standard) 0 0;
 		color: var(--color-black);
 		font-weight: 600;
 		margin: 0;
-		padding: 0.3rem .7rem 0.2rem .7rem;
+		padding: 0.5rem .7rem 0.4rem .7rem;
 		text-align: center;
 		text-transform: uppercase;
 	}
@@ -401,7 +421,7 @@ img {
 }
 
 	figure img {
-		border-radius: 0.7rem;
+		border-radius: var(--radius-standard);
 	}
 	
 		figure img + img {
@@ -409,10 +429,8 @@ img {
 			width: 75%;
 		}
 	
-	.image-wrapper {
-	}
-	
 	.product-card img {
+		border-radius: 0;
 		padding: 3rem;
 		width: 100%;
 	}
@@ -420,7 +438,7 @@ img {
 dd.layout-container {
 	display: block;
 	overflow: hidden;
-	padding: 2.1rem 0.7rem 2.8rem 0.7rem;
+	padding: 2.1rem 0.9rem 2.8rem 0.9rem;
 	width: 100%;
 }
 
@@ -468,9 +486,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 	overflow: hidden;
 	padding: 0.4em 0.2em 0.2em 0.2em;
 	text-align: center;
-	transition-property: background-color;
-	transition-duration: 0.1s;
-	transition: transform 0.1s ease;
+	transition: all 0.2s ease;
 }
 
 	.bottom-row .key {
@@ -480,7 +496,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 	.key:active {
 		transform:
 			rotate(-1deg)
-			translate(0,1px);
+			translate(0, 1px);
 	}
 
 	.key.empty {
@@ -503,10 +519,6 @@ article {
 	scroll-margin-top: -4rem;
 }
 
-	article#system {
-		padding-bottom: 0;
-	}
-
 article > :first-child {
 	margin-top: 0;
 }
@@ -519,8 +531,15 @@ section {
 	margin: 3rem 0;
 }
 
-
-
+	#specs section {
+		border-radius: var(--radius-standard);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		transition: all 0.2s ease;
+	}
+	
+	#specs section:hover {
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	}
 
 footer {
 	align-items: stretch;
@@ -549,18 +568,23 @@ footer > a {
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
+	transition: all 0.2s ease;
 	width: 100%;
 }
 
 footer > a::before {
 	content: "↑";
 	position: relative;
-	margin-right: 0.25em;
+	transform: translate(-0.5em, 0);
 	transition: all 0.2s ease;
 }
 
+footer > a:hover {
+	background-color: var(--color-black-field-lighter);
+}
+
 footer > a:hover::before {
-	transform: translate(0, -0.4em);
+	transform: translate(-0.5em, -0.4em);
 }
 
 header {
@@ -569,8 +593,29 @@ header {
 }
 
 nav {
-	margin: 1rem 1rem 3rem 1rem;
+	border-radius: var(--radius-standard);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	margin: 1rem;
+	background-color: var(--color-emphasis-lighter);
 }
+
+
+
+								nav ul {
+									background-color: transparent;
+									border-top: 1px solid var(--color-emphasis-lighter);
+									gap: 1px;
+								}
+								
+								
+								nav li {
+									border: none;
+									transition: all 0.2s ease;
+								}
+								
+								nav li:hover {
+									background-color: var(--color-white-shade);
+								}
 
 figure {
 	margin: 5rem 0;
@@ -586,6 +631,10 @@ figure {
 
 	figcaption.right {
 		margin-inline: auto 0;
+	}
+	
+	.product-card figcaption {
+		margin: 0 1rem 1rem 1rem;
 	}
 
 figcaption :last-child {
@@ -605,15 +654,13 @@ p {
 		margin: 0.8rem 0 0.3rem 0;
 	}
 
-.product-array {
-	background-color: var(--color-emphasis-lighter);
-	font-size: var(--font-size-small);
-	margin-inline: -1rem;
-}
-
 	.product-card p {
 		margin: 0;
 		text-decoration: none;
+	}
+	
+	footer p {
+		margin: 0.2rem 0;
 	}
 	
 	.card-footer {
@@ -660,7 +707,7 @@ p {
 #mc_embed_shell {
 	background-color: var(--color-white);
 	border: 1px solid var(--color-emphasis);
-	border-radius: 0 0 0.7rem 0.7rem;
+	border-radius: 0 0 var(--radius-standard) var(--radius-standard);
 	margin: -1px 0 0 0;
 }
 
@@ -676,7 +723,7 @@ p {
 
 .mc-field-group input {
 	border-style: none;
-	color: var(--color-alert);
+	color: var(--color-black);
 	font-size: inherit;
 	line-height: 1.4;
 	transition: all 0.2s ease;
@@ -709,8 +756,9 @@ p {
 	color: var(--color-black);
 	font-family: var(--font-sans);
 	font-size: var(--font-size-caps);
+	font-weight: 400;
+	letter-spacing: 0.1em;
 	position: relative;
-	text-transform: uppercase;
 	transition: all 0.2s ease;
 }
 
@@ -732,6 +780,7 @@ p {
 	gap: 0.3rem;
 	line-height: 1em;
 	margin: 3rem 0;
+	color: var(--color-black-field);
 }
 
 	.subtitle {
