@@ -5,6 +5,7 @@
 	--color-emphasis: #ababab;
 	--color-emphasis-lighter: #cccccc;
 	--color-page: #dbdbdb;
+	--color-input-field: #e8e8e8;
 	--color-alert: #006642;
 	--color-alert-hover: #008053;
 	--color-alert-2: #914a30;
@@ -20,6 +21,7 @@
 	--font-size-small: 0.8em;
 	--font-size-title: 3em;
 	--font-size-subtitle: 0.25em;
+	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
 }
 
@@ -78,12 +80,52 @@ a.button {
 }
 
 h1 {
+	display: inline-block;
+	flex: 0 0 auto;
 	font-family: var(--font-display);
 	font-size: 1em;
 	font-weight: 900;
 	letter-spacing: -.03em;
 	margin: 0;
+	width: fit-content;
 }
+
+	.knob {
+		display: inline-block;
+		position: relative;
+		width: 0.7ch;
+		height: 1em;
+		vertical-align: baseline;
+		font-size: inherit;
+		line-height: 1;
+		margin-right: -0.25em;
+	}
+
+/*	.knob::before {
+		content: '';
+		position: absolute;
+		top: 74.7%;
+		left: 32%;
+		width: 2px;
+		height: 2px;
+		background: hotpink;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+		pointer-events: none;
+	}
+*/
+	.needle {
+		position: absolute;
+		top: 63%;
+		left: 33%;
+		width: 1px;
+		height: 11%;
+		background: var(--color-page);
+		transform-origin: bottom center;
+		transform: translate(-50%, 0%) rotate(0deg) translateY(-35%);
+		z-index: 2;
+	}
 
 .subtitle {
 	font-family: var(--font-display);
@@ -110,19 +152,27 @@ h3 {
 	}
 	
 	.product-card h3::after {
-		content: "\2197";
+		content: "\279c";
 		display: inline-block;
 		font-family: var(--font-serif);
-		font-weight: 600;
+		font-weight: 100;
 		position: relative;
-		transform: translate(0.5em, 0);
+		transform: translate(0.5em, 0) rotate(-45deg);
 		transition:
 			transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s;
 	}
 	
 	.product-card:hover h3::after {
-		transform: translate(1em, -0.5em);
+		transform: translate(1em, -0.5em) rotate(-45deg);
 	}
+
+h3.headline,
+p.headline {
+	font-size: var(--font-size-headline);
+	font-weight: 700;
+	line-height: 1.1em;
+	margin: 1rem 0 2rem 0;
+}
 
 a {
 	color: inherit;
@@ -240,7 +290,6 @@ a {
 	
 	p a,
 	dd a {
-		border-radius: 9999px;
 		color: var(--color-alert-2);
 		display: inline-block;
 		line-height: 1.4rem;
@@ -259,21 +308,21 @@ a {
 	}
 	
 	nav li a::before {
-		content: "\2193";
+		content: "\279c";
 		font-family: var(--font-serif);
-		font-weight: 600;
+		font-weight: 100;
 		opacity: 0;
 		position: relative;
-		transform: translate(-0.5em, 0);
+		transform: translate(-0.1em, -0.5em);
 	}
 	
 	nav li a::after {
-		content: "\2193";
+		content: "\279c";
 		font-family: var(--font-serif);
-		font-weight: 600;
+		font-weight: 100;
 		opacity: 0;
 		position: relative;
-		transform: translate(0.5em, 0);
+		transform: translate(0.1em, -0.5em) rotate(90deg);
 		transition:
 			transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
 			opacity 0.2s ease;
@@ -281,7 +330,7 @@ a {
 
 	nav li a:hover::after {
 		opacity: 1;
-		transform: translate(0.5em, 0.3em);
+		transform: translate(0.1em, 0) rotate(90deg);
 	}
 	
 	a:hover,
@@ -321,17 +370,17 @@ a {
 			height: 3rem;
 			justify-content: center;
 			letter-spacing: 0.1em;
-			margin: 0 1rem;
+			margin: 0 auto;
 			text-align: center;
+			width: 50%;
 		}
 		
 		a.button::after {
-			content: "\2197";
+			content: "\279c";
 			display: inline-block;
-			font-family: var(--font-serif);
-			font-weight: 600;
+			font-weight: 100;
 			position: relative;
-			transform: translate(0.5em, 0.1em);
+			transform: translate(0.3em, 0) rotate(-45deg);
 			transition:
 				transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
 				opacity 0.2s ease;
@@ -343,7 +392,7 @@ a {
 		}
 
 		a.button:hover::after {
-			transform: translate(1em, -0.4em);
+			transform: translate(0.8em, -0.5em) rotate(-45deg);
 		}
 		
 		.product-card {
@@ -353,7 +402,6 @@ a {
 			box-shadow:
 				0 2px 6px rgba(0, 0, 0, 0.10),
 				0 1px 3px rgba(0, 0, 0, 0.04);
-			font-size: var(--font-size-small);
 			height: 100%;
 			margin: 3rem 0;
 			overflow: hidden;
@@ -394,7 +442,7 @@ nav p,
 
 .data {
 	background-color: var(--color-white);
-	border-radius: 9999px;
+	border-radius: 0.5lh 0.5lh 0.5lh 0.1lh;
 	padding-inline: 0.5em;
 }
 
@@ -467,11 +515,10 @@ dd,
 		}
 
 	#specs li,
-	.mc-field-group *,
-	input {
+	.mc-field-group * {
 		padding: 0.9rem;
 	}
-	
+
 	nav p,
 	#specs h3,
 	#connect h3 {
@@ -597,11 +644,11 @@ article dl dd.layout-container div.keyboard-wrapper {
 		visibility: hidden;
 	}
 
-	.u-1			{ grid-column: span 4; }
+	.u-1		{ grid-column: span 4; }
 	.u-1-25		{ grid-column: span 5; }
 	.u-1-5		{ grid-column: span 6; }
 	.u-1-75		{ grid-column: span 7; }
-	.u-2			{ grid-column: span 8; }
+	.u-2		{ grid-column: span 8; }
 	.u-2-25		{ grid-column: span 9; }
 	.u-2-5		{ grid-column: span 10; }
 	.u-2-75		{ grid-column: span 11; }
@@ -609,7 +656,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 article {
 	margin: 0;
-	padding: 5rem 1rem;
+	padding: 5rem 2rem;
 	scroll-margin-top: -4rem;
 }
 
@@ -626,8 +673,12 @@ article > :last-child {
 }
 
 section {
-	margin: 3rem 0;
+	margin: 5rem 0;
 }
+
+	section.newsletter-form {
+		margin: 2rem 0;
+	}
 
 	#specs section {
 		border-radius: var(--radius-standard);
@@ -671,11 +722,10 @@ footer > a {
 }
 
 footer > a::after {
-	content: "\2191";
-	font-family: var(--font-serif);
-	font-weight: 600;
+	content: "\279c";
+	font-weight: 100;
 	position: relative;
-	transform: translate(0.5em, 0);
+	transform: translate(0.3em, 0) rotate(-90deg);
 	transition:
 		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
 		opacity 0.2s ease;
@@ -686,7 +736,7 @@ footer > a:hover {
 }
 
 footer > a:hover::after {
-	transform: translate(0.5em, -0.4em);
+	transform: translate(0.3em, -0.5em) rotate(-90deg);
 }
 
 header {
@@ -697,7 +747,7 @@ header {
 nav {
 	border-radius: var(--radius-standard);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	margin: 1rem;
+	margin: 2rem;
 	background-color: var(--color-emphasis-lighter);
 }
 
@@ -720,7 +770,7 @@ nav {
 								}
 
 figure {
-	margin: 5rem 0;
+	margin: 1rem 0;
 }
 
 	.product-card figure {
@@ -745,7 +795,7 @@ figcaption :last-child {
 
 h3,
 p {
-	margin: 0.5rem 0;
+	margin: 0.7rem 0;
 }
 
 	figcaption > * {
@@ -838,6 +888,10 @@ p {
 	font-size: inherit;
 	line-height: 1.4;
 	transition: all 0.2s ease;
+	background-color: var(--color-input-field);
+	border-radius: 1.25rem 1.25rem 0.3rem 1.25rem;
+	margin: 0.2rem 0.9rem 0.9rem 0.9rem;
+	padding: 0.6rem 0.9rem 0.5rem 0.9rem;
 }
 
 	.mc-field-group input:focus-visible {
@@ -915,21 +969,28 @@ p {
 	align-items: stretch;
 	display: flex;
 	font-size: var(--font-size-title);
-	gap: 0.3rem;
+	flex-direction: column;
+
+	align-items: center;
+	justify-content: center;
 	line-height: 1em;
 	margin: 3rem 0;
-	color: var(--color-black-field);
+	width: 100%;
 }
 
-	.subtitle {
+.subtitle {
+	width: fit-content;
+	flex: 0 0 auto;
+}
+/*	.subtitle {
 		display: flex;
-		flex: 1;
+		flex: 0 1 auto;
 		flex-direction: column;
 		justify-content: space-between;
 		line-height: 1em;
 		padding: .45em 0;
 	}
-
+*/
 
 
 
