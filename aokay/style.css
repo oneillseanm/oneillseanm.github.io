@@ -19,8 +19,8 @@
 	--font-serif: "Courier Prime", monospace;
 	--font-size-caps: 0.95em;
 	--font-size-small: 0.8em;
-	--font-size-title: 3em;
-	--font-size-subtitle: 0.25em;
+	--font-size-title: 4em;
+	--font-size-subtitle: 1rem;
 	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
 }
@@ -83,10 +83,10 @@ h1 {
 	display: inline-block;
 	flex: 0 0 auto;
 	font-family: var(--font-display);
-	font-size: 1em;
+	font-size: var(--font-size-title);
 	font-weight: 900;
 	letter-spacing: -.03em;
-	margin: 0;
+	margin: 0 0 1rem 0;
 	width: fit-content;
 }
 
@@ -131,6 +131,9 @@ h1 {
 	font-family: var(--font-display);
 	font-size: var(--font-size-subtitle);
 	font-weight: 500;
+	line-height: 1.4rem;
+	flex: 0 0 auto;
+	word-spacing: -0.05em;
 }
 
 h2 {
@@ -219,49 +222,6 @@ a {
 	.bang.back {
 		transform: translateY(-100%);
 		transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
-	}
-
-	.logo:hover .bang.front {
-		transform: translateY(100%);
-	}
-
-	.logo:hover .bang.back {
-		transform: translateY(0%);
-	}
-		.logo {
-		display: inline-block;
-		font-family: var(--font-display);
-		font-size: 1rem;
-		font-weight: 900;
-		position: relative;
-		text-decoration: none;
-		z-index: 2;
-	}
-	
-	.bang-wrap {
-		position: relative;
-		display: inline-block;
-		overflow: hidden;
-		height: 1.4em;
-		width: 2em;
-		vertical-align: bottom;
-	}
-		
-	.bang {
-		position: absolute;
-		left: 0;
-		width: 100%;
-		text-align: left;
-		line-height: inherit;
-		font-family: inherit;
-	}
-	
-	.bang.front {
-		transform: translateY(0%);
-	}
-
-	.bang.back {
-		transform: translateY(-100%);
 	}
 
 	.logo:hover .bang.front {
@@ -406,7 +366,7 @@ a {
 			margin: 3rem 0;
 			overflow: hidden;
 			padding: 0;
-			transition: all 0.2 ease;
+			transition: all 0.2s ease;
 		}
 		
 		.product-card:hover {
@@ -565,8 +525,7 @@ img {
 	}
 	
 		figure img + img {
-			margin: 0.5rem 0 0.5rem auto;
-			width: 75%;
+			margin: 0.5rem 0;
 		}
 	
 	.product-card img {
@@ -617,7 +576,6 @@ article dl dd.layout-container div.keyboard-wrapper {
 	border: 1px solid var(--color-emphasis);
 	border-radius: 0.2rem;
 	box-sizing: border-box;
-	box-shadow:
 	color: var(--color-black);
 	display: flex;
 	font-size: 10cqh;
@@ -656,7 +614,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 article {
 	margin: 0;
-	padding: 5rem 2rem;
+	padding: 5rem 3rem;
 	scroll-margin-top: -4rem;
 }
 
@@ -747,7 +705,7 @@ header {
 nav {
 	border-radius: var(--radius-standard);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	margin: 2rem;
+	margin: 3rem;
 	background-color: var(--color-emphasis-lighter);
 }
 
@@ -777,14 +735,23 @@ figure {
 		margin: 0;
 	}
 
+#features .left,
+#features .right {
+	width: 75%;
+}
+
+#features .left {
+	margin-inline: 0 auto;
+}
+
+#features .right {
+	margin-inline: auto 0;
+}
+
 #features figcaption {
 	width: 75%;
 }
 
-	figcaption.right {
-		margin-inline: auto 0;
-	}
-	
 	.product-card figcaption {
 		margin: 0 1rem 1rem 1rem;
 	}
@@ -825,7 +792,7 @@ p {
 		aspect-ratio: 1 / 1.75;
 		height: auto;
 		margin: 0;
-		width: 100vw;
+		width: 100%;
 		top: 0;
 		left: 0;
 		pointer-events: none;
@@ -968,20 +935,13 @@ p {
 .title-wrapper {
 	align-items: stretch;
 	display: flex;
-	font-size: var(--font-size-title);
 	flex-direction: column;
-
 	align-items: center;
 	justify-content: center;
 	line-height: 1em;
-	margin: 3rem 0;
-	width: 100%;
+	margin: 3rem auto;
 }
 
-.subtitle {
-	width: fit-content;
-	flex: 0 0 auto;
-}
 /*	.subtitle {
 		display: flex;
 		flex: 0 1 auto;
