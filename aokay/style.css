@@ -14,6 +14,7 @@
 	--color-alert-4-hover: #006BAD;
 	--color-white: #f5f5f5;
 	--color-white-shade: #f0f0f0;
+	--color-white-shadow: #E3E3E3;
 	--font-display: "Montserrat", sans-serif;
 	--font-sans: "IBM Plex Sans", sans-serif;
 	--font-serif: "Courier Prime", monospace;
@@ -46,10 +47,9 @@ body, h1, h2, h3, a, li, p {
 body {
 	background-color: var(--color-page);
 	color: var(--color-black);
-	font-family: var(--font-sans);
-  margin: 0;
-  max-width: 100vw;
-  overflow-x: hidden;
+	margin: 0;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 	#features,
@@ -62,32 +62,103 @@ body {
 		color: var(--color-white);
 	}
 
-a,
-li,
-dd,
-.data,
-.mc-field-group input {
-	font-family: var(--font-serif);
-	font-weight: 400;
-}
+/* fonts */
 
-nav,
-#specs > :not(h2),
-footer,
-.newsletter-form,
-#features figure,
-a.button {
-	font-size: var(--font-size-small);
-}
+	body {
+		font-family: var(--font-sans);
+	}
+
+	h1 {
+		font-family: var(--font-display);
+	}
+
+	a,
+	li,
+	dd,
+	.data,
+	.mc-field-group input {
+		font-family: var(--font-serif);
+	}
+
+	.key {
+		font-family: var(--font-sans);
+		font-weight: 600;
+	}
+
+/* end fonts */
+
+
+/* font sizes */
+
+	nav,
+	footer,
+	#specs section,
+	.newsletter-form,
+	#features figure,
+	a.button {
+		font-size: var(--font-size-small);
+	}
+
+	.key {
+		font-size: 8cqh;
+	}
+	
+	.bottom-row .key {
+		font-size: 36cqh;
+	}
+
+	nav p,
+	#specs h3,
+	#connect h3,
+	#specs dt,
+	.mc-field-group label {
+		font-size: var(--font-size-caps);
+	}
+
+/* end font sizes */
+
+
+/* horizontal control */
+
+	article {
+		padding-inline: 1rem;
+	}
+
+	h2,
+	article p,
+	#features > * {
+		margin-inline: 0;
+	}
+
+	main > .button {
+		margin-inline: 4rem;
+	}
+
+	#specs section,
+	.product-card {
+		margin-inline: 0;
+	}
+
+	#specs li,
+	#specs dt,
+	#specs dd {
+		padding-inline: 1rem;
+	}
+
+	.mc-field-group label {
+		padding-inline: 2rem;
+	}
+
+/* end horizontal control */
+
 
 h1 {
 	display: inline-block;
 	flex: 0 0 auto;
-	font-family: var(--font-display);
 	font-size: var(--font-size-title);
 	font-weight: 900;
 	letter-spacing: -.03em;
-	margin: 0 0 1rem 0;
+	margin: 0;
 	width: fit-content;
 }
 
@@ -102,20 +173,6 @@ h1 {
 		margin-right: -0.25em;
 	}
 
-/*	.knob::before {
-		content: '';
-		position: absolute;
-		top: 74.7%;
-		left: 32%;
-		width: 2px;
-		height: 2px;
-		background: hotpink;
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 3;
-		pointer-events: none;
-	}
-*/
 	.needle {
 		position: absolute;
 		top: 63%;
@@ -134,13 +191,14 @@ h1 {
 	font-weight: 600;
 	line-height: 1.4rem;
 	flex: 0 0 auto;
-	word-spacing: -0.075em;
+	letter-spacing: -0.01em;
+	margin-block: 0;
 }
 
 h2 {
 	font-size: inherit;
 	font-weight: 800;
-	margin: 1rem 0;
+	margin-block: 1rem;
 }
 
 h3 {
@@ -249,6 +307,7 @@ a {
 	p a {
 		font-size: var(--font-size-caps);
 		letter-spacing: 0.03em;
+		overflow-wrap: anywhere;
 		text-transform: uppercase;
 		word-spacing: -0.2em;
 	}
@@ -309,11 +368,6 @@ a {
 			text-underline-offset: 0.35em;
 		}
 		
-		.key:hover {
-			background-color: var(--color-white-shade);
-			transform: rotate(-5deg);
-		}
-
 	a.product-card,
 	a.button {
 		display: block;
@@ -334,6 +388,15 @@ a {
 			justify-content: center;
 			letter-spacing: 0.1em;
 			text-align: center;
+		}
+		
+		a.button::before {
+			content: "\279c";
+			display: inline-block;
+			font-weight: 100;
+			opacity: 0;
+			position: relative;
+			transform: translate(-0.2em, 0.5em) rotate(-45deg);
 		}
 		
 		a.button::after {
@@ -366,7 +429,7 @@ a {
 				0 2px 6px rgba(0, 0, 0, 0.10),
 				0 1px 3px rgba(0, 0, 0, 0.04);
 			height: 100%;
-			margin: 3rem 0;
+			margin-block: 3rem;
 			overflow: hidden;
 			padding: 0;
 			transition: all 0.2s ease;
@@ -394,14 +457,6 @@ a {
 	.list-wrapper:not(:first-of-type) {
 		margin: -2px 0 0 0;
 	}
-
-nav p,
-#specs h3,
-#connect h3,
-#specs dt,
-.mc-field-group label {
-	font-size: var(--font-size-caps);
-}
 
 .data {
 	background-color: var(--color-white);
@@ -448,7 +503,7 @@ dd,
 	dt {
 		border-width: 1px 0 0 0;
 		margin: 0.9rem 0 0 0;
-		padding: 1rem 2rem 0.2rem 2rem;
+		padding-block: 1rem 0.2rem;
 	}
 	
 		dt:first-child {
@@ -457,7 +512,6 @@ dd,
 	
 	dd {
 		border-width: 0;
-		padding: 0 2rem;
 	}
 		
 		dd:last-child {
@@ -479,7 +533,7 @@ dd,
 
 	#specs li,
 	.mc-field-group * {
-		padding: 1rem 2rem;
+		padding-block: 1rem;
 	}
 
 	nav p,
@@ -490,7 +544,7 @@ dd,
 		color: var(--color-black);
 		font-weight: 600;
 		margin: 0;
-		padding: 0.5rem .7rem 0.4rem .7rem;
+		padding: 0.5rem 3rem;
 		text-align: center;
 		text-transform: uppercase;
 	}
@@ -565,7 +619,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 	container-type: size;
 	container-name: keyboard;
 	font-size: 1rem;
-	gap: 2px;
+	gap: 0.2cqw;
 	height: 100%;
 	grid-auto-rows: 1fr;
 	grid-template-columns: repeat(48, 1fr);
@@ -575,13 +629,13 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 .key {
 	align-items: center;
-	background-color: var(--color-white);
+	background-color: transparent;
 	border: 1px solid var(--color-black);
-	border-radius: 0.2rem;
+	border-radius: 0.2em;
+	box-shadow: inset 0 0 0 0.3em var(--color-page);
 	box-sizing: border-box;
-	color: var(--color-black);
+	color: var(--color-emphasis);
 	display: flex;
-	font-size: 10cqh;
 	justify-content: center;
 	line-height: 1em;
 	margin: 0;
@@ -591,14 +645,14 @@ article dl dd.layout-container div.keyboard-wrapper {
 	transition: all 0.2s ease;
 }
 
-	.bottom-row .key {
-		font-size: 40cqh;
+	.key:hover {
+		color: var(--color-black-field-lighter);
+		transform: scale(100%);
 	}
 
 	.key:active {
 		transform:
-			rotate(-1deg)
-			translate(0, 1px);
+			scale(97%)
 	}
 
 	.key.empty {
@@ -617,7 +671,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 article {
 	margin: 0;
-	padding: 5rem 1rem;
+	padding-block: 5rem;
 	scroll-margin-top: -4rem;
 }
 
@@ -625,17 +679,6 @@ article {
 		padding-top: 0;
 	}
 
-	h2,
-	article p,
-	#features > *,
-	.product-card { /* things that bump in to the narrower margin */
-		margin-inline: 2rem;
-	}
-
-	main > .button {
-		margin-inline: 4rem;
-	}
-	
 article > :first-child {
 	margin-top: 0;
 }
@@ -725,23 +768,21 @@ nav {
 	background-color: var(--color-emphasis-lighter);
 }
 
+nav ul {
+	background-color: transparent;
+	border-top: 1px solid var(--color-emphasis-lighter);
+	gap: 1px;
+}
 
 
-								nav ul {
-									background-color: transparent;
-									border-top: 1px solid var(--color-emphasis-lighter);
-									gap: 1px;
-								}
-								
-								
-								nav li {
-									border: none;
-									transition: all 0.2s ease;
-								}
-								
-								nav li:hover {
-									background-color: var(--color-white-shade);
-								}
+nav li {
+	border: none;
+	transition: all 0.2s ease;
+}
+
+nav li:hover {
+	background-color: var(--color-white-shade);
+}
 
 figure {
 	margin: 1rem 0;
@@ -753,7 +794,7 @@ figure {
 
 #features .left,
 #features .right {
-	width: 75%;
+	width: 100%;
 }
 
 #features .left {
@@ -765,7 +806,7 @@ figure {
 }
 
 #features figcaption {
-	width: 75%;
+	width: 100%;
 }
 
 	.product-card figcaption {
@@ -776,9 +817,8 @@ figcaption :last-child {
 	margin-bottom: 0;
 }
 
-h3,
 p {
-	margin: 0.7rem 0;
+	margin-block: 0.7rem;
 }
 
 	figcaption > * {
@@ -854,7 +894,11 @@ p {
 .newsletter-form:hover {
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
-	
+
+.connect h3 {
+	padding-inline: 3rem;
+}
+
 #mc_embed_shell {
 	background-color: var(--color-white);
 	border-radius: 0 0 var(--radius-standard) var(--radius-standard);
@@ -964,23 +1008,127 @@ p {
 	margin: 3rem auto;
 }
 
-/*	.subtitle {
+
+/* breakpoint debug */
+
+	/* Breakpoint Visualizer Base Styles */
+	.debug .breakpoint-debug {
+		position: fixed;
+		top: 30px;
+		right: 0;
+		z-index: 99999;
 		display: flex;
-		flex: 0 1 auto;
 		flex-direction: column;
-		justify-content: space-between;
-		line-height: 1em;
-		padding: .45em 0;
+		gap: 0.1rem;
+		font-family: sans-serif;
+		font-size: 0.7rem;
+		line-height: 1;
+		background: rgba(0,0,0,0.03);
+		padding: 0.3rem 0.4rem;
+		border-radius: 0 0 0 0.3rem;
+		pointer-events: none;
 	}
-*/
+
+	.debug .breakpoint-debug div {
+		background: #aaa;
+		color: white;
+		padding: 0.1rem 0.4rem;
+		border-radius: 0.2rem;
+		opacity: 0.5;
+		transition: all 0.2s ease;
+	}
+
+	/* Default: base breakpoint active */
+	.debug .breakpoint-debug .bp-0 {
+		background: limegreen;
+		opacity: 1;
+	}
+
+	/* Scoped Media Queries */
+	@media (min-width: 480px) {
+		.debug .breakpoint-debug .bp-480 {
+			background: limegreen;
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.debug .breakpoint-debug .bp-768 {
+			background: limegreen;
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.debug .breakpoint-debug .bp-1024 {
+			background: limegreen;
+			opacity: 1;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.debug .breakpoint-debug .bp-1280 {
+			background: limegreen;
+			opacity: 1;
+		}
+	}
+	
+/* end breakpoint debug */
+
+
+
+@media (min-width: 480px) {
+
+/* horizontal control */
+
+	article {
+	}
+
+	h2,
+	article p,
+	#features > * {
+		margin-inline: 2rem;
+	}
+
+	main > .button {
+		margin-inline: 4rem;
+	}
+
+	#specs section,
+	.product-card {
+		margin-inline: 1rem;
+	}
+
+	#specs li,
+	#specs dt,
+	#specs dd {
+		padding-inline: 1rem;
+	}
+
+	.mc-field-group label {
+		padding-inline: 2rem;
+	}
+
+/* end horizontal control */
+
+}
 
 
 
 @media (min-width: 640px) {			/* sm; small tablets, large phones (landscape); < 480 would be for smaller phones */
 }
+
+
+
 @media (min-width: 768px) {			/* md; tablets, small desktops; "start with these two" */
 }
+
+
+
 @media (min-width: 1024px) {		/* lg; laptops, large tablets (landscape); "start with these two" */
 }
+
+
+
 @media (min-width: 1280px) {		/* xl; desktops, high-res laptops */
 }

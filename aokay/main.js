@@ -1,3 +1,5 @@
+// knob rotation animation
+
 const title = document.getElementById('title');
 const needle = document.querySelector('.needle');
 
@@ -29,4 +31,14 @@ title.addEventListener('mouseenter', () => {
 
 title.addEventListener('mouseleave', () => {
   spinning = false;
+});
+
+
+
+// debug toggle: shift + b
+
+document.addEventListener('keydown', e => {
+  if (e.shiftKey && e.key.toLowerCase() === 'b') {
+    document.body.classList.toggle('debug');
+  }
 });
