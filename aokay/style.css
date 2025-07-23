@@ -21,6 +21,7 @@
 	--font-size-small: 0.8em;
 	--font-size-title: 4em;
 	--font-size-subtitle: 1rem;
+	--font-size-product-card-title: 1.3em;
 	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
 }
@@ -130,10 +131,10 @@ h1 {
 .subtitle {
 	font-family: var(--font-display);
 	font-size: var(--font-size-subtitle);
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.4rem;
 	flex: 0 0 auto;
-	word-spacing: -0.05em;
+	word-spacing: -0.075em;
 }
 
 h2 {
@@ -150,6 +151,7 @@ h3 {
 	.product-card h3 {
 		color: var(--color-alert-3);
 		font-family: var(--font-display);
+		font-size: var(--font-size-product-card-title);
 		font-weight: 900;
 		transition: all 1s ease;
 	}
@@ -158,15 +160,18 @@ h3 {
 		content: "\279c";
 		display: inline-block;
 		font-family: var(--font-serif);
-		font-weight: 100;
+		font-weight: 400;
+		font-size: 0.8em;
+		opacity: 0;
 		position: relative;
-		transform: translate(0.5em, 0) rotate(-45deg);
+		transform: translate(0, 0.4em) rotate(-45deg);
 		transition:
 			transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s;
 	}
 	
 	.product-card:hover h3::after {
-		transform: translate(1em, -0.5em) rotate(-45deg);
+		opacity: 1;
+		transform: translate(0.5em, -0.1em) rotate(-45deg);
 	}
 
 h3.headline,
@@ -174,7 +179,7 @@ p.headline {
 	font-size: var(--font-size-headline);
 	font-weight: 700;
 	line-height: 1.1em;
-	margin: 1rem 0 2rem 0;
+	margin-block: 1rem 3rem;
 }
 
 a {
@@ -268,18 +273,16 @@ a {
 	}
 	
 	nav li a::before {
-		content: "\279c";
+		content: "\2192";
 		font-family: var(--font-serif);
-		font-weight: 100;
 		opacity: 0;
 		position: relative;
 		transform: translate(-0.1em, -0.5em);
 	}
 	
 	nav li a::after {
-		content: "\279c";
+		content: "\2192";
 		font-family: var(--font-serif);
-		font-weight: 100;
 		opacity: 0;
 		position: relative;
 		transform: translate(0.1em, -0.5em) rotate(90deg);
@@ -330,17 +333,16 @@ a {
 			height: 3rem;
 			justify-content: center;
 			letter-spacing: 0.1em;
-			margin: 0 auto;
 			text-align: center;
-			width: 50%;
 		}
 		
 		a.button::after {
 			content: "\279c";
 			display: inline-block;
 			font-weight: 100;
+			opacity: 0;
 			position: relative;
-			transform: translate(0.3em, 0) rotate(-45deg);
+			transform: translate(-0.2em, 0.5em) rotate(-45deg);
 			transition:
 				transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
 				opacity 0.2s ease;
@@ -352,7 +354,8 @@ a {
 		}
 
 		a.button:hover::after {
-			transform: translate(0.8em, -0.5em) rotate(-45deg);
+			opacity: 1;
+			transform: translate(0.3em, 0) rotate(-45deg);
 		}
 		
 		.product-card {
@@ -445,7 +448,7 @@ dd,
 	dt {
 		border-width: 1px 0 0 0;
 		margin: 0.9rem 0 0 0;
-		padding: 0.9rem 0.9rem 0.2rem 0.9rem;
+		padding: 1rem 2rem 0.2rem 2rem;
 	}
 	
 		dt:first-child {
@@ -454,11 +457,11 @@ dd,
 	
 	dd {
 		border-width: 0;
-		padding: 0 0.9rem;
+		padding: 0 2rem;
 	}
 		
 		dd:last-child {
-			margin: 0 0 0.9rem 0;
+			margin: 0 0 1rem 0;
 		}
 	
 	li,
@@ -476,7 +479,7 @@ dd,
 
 	#specs li,
 	.mc-field-group * {
-		padding: 0.9rem;
+		padding: 1rem 2rem;
 	}
 
 	nav p,
@@ -537,7 +540,7 @@ img {
 dd.layout-container {
 	display: block;
 	overflow: hidden;
-	padding: 2.1rem 0.9rem 2.8rem 0.9rem;
+	padding: 2rem;
 	width: 100%;
 }
 
@@ -573,7 +576,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 .key {
 	align-items: center;
 	background-color: var(--color-white);
-	border: 1px solid var(--color-emphasis);
+	border: 1px solid var(--color-black);
 	border-radius: 0.2rem;
 	box-sizing: border-box;
 	color: var(--color-black);
@@ -614,7 +617,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 article {
 	margin: 0;
-	padding: 5rem 3rem;
+	padding: 5rem 1rem;
 	scroll-margin-top: -4rem;
 }
 
@@ -622,6 +625,17 @@ article {
 		padding-top: 0;
 	}
 
+	h2,
+	article p,
+	#features > *,
+	.product-card { /* things that bump in to the narrower margin */
+		margin-inline: 2rem;
+	}
+
+	main > .button {
+		margin-inline: 4rem;
+	}
+	
 article > :first-child {
 	margin-top: 0;
 }
@@ -682,8 +696,9 @@ footer > a {
 footer > a::after {
 	content: "\279c";
 	font-weight: 100;
+	opacity: 0;
 	position: relative;
-	transform: translate(0.3em, 0) rotate(-90deg);
+	transform: translate(0.3em, 0.5em) rotate(-90deg);
 	transition:
 		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
 		opacity 0.2s ease;
@@ -694,7 +709,8 @@ footer > a:hover {
 }
 
 footer > a:hover::after {
-	transform: translate(0.3em, -0.5em) rotate(-90deg);
+	opacity: 1;
+	transform: translate(0.3em, 0) rotate(-90deg);
 }
 
 header {
@@ -705,7 +721,7 @@ header {
 nav {
 	border-radius: var(--radius-standard);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	margin: 3rem;
+	margin: 1rem;
 	background-color: var(--color-emphasis-lighter);
 }
 
@@ -783,8 +799,14 @@ p {
 	}
 	
 	.card-footer {
+		align-items: bottom;
 		display: flex;
+		gap: 1em;
 		justify-content: space-between;
+	}
+
+	.card-footer .data {
+		align-self: flex-end;
 	}
 
 	.hero-spacer,
@@ -857,7 +879,7 @@ p {
 	transition: all 0.2s ease;
 	background-color: var(--color-input-field);
 	border-radius: 1.25rem 1.25rem 0.3rem 1.25rem;
-	margin: 0.2rem 0.9rem 0.9rem 0.9rem;
+	margin: 0.2rem 1rem 1rem 1rem;
 	padding: 0.6rem 0.9rem 0.5rem 0.9rem;
 }
 
