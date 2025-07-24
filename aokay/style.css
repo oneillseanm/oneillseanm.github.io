@@ -82,7 +82,7 @@ body {
 
 	.key {
 		font-family: var(--font-sans);
-		font-weight: 600;
+		font-weight: 400;
 	}
 
 /* end fonts */
@@ -396,7 +396,7 @@ a {
 			font-weight: 100;
 			opacity: 0;
 			position: relative;
-			transform: translate(-0.2em, 0.5em) rotate(-45deg);
+			transform: translate(0.2em, 0.5em) rotate(-45deg);
 		}
 		
 		a.button::after {
@@ -594,9 +594,13 @@ img {
 dd.layout-container {
 	display: block;
 	overflow: hidden;
-	padding: 2rem;
+	padding-block: 2rem;
 	width: 100%;
 }
+
+	dd.layout-container + dd.layout-container {
+		padding-top: 0;
+	}
 
 article dl dd.layout-container div.keyboard-wrapper {
 	width: 100%;
@@ -657,6 +661,11 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 	.key.empty {
 		visibility: hidden;
+	}
+
+	.key.optional {
+		background-color: var(--color-page);
+		border-color: var(--color-emphasis);
 	}
 
 	.u-1		{ grid-column: span 4; }
@@ -734,6 +743,14 @@ footer > a {
 	text-transform: uppercase;
 	transition: all 0.2s ease;
 	width: 100%;
+}
+
+footer > a::before {
+	content: "\279c";
+	font-weight: 100;
+	opacity: 0;
+	position: relative;
+	transform: translate(-0.3em, 0.5em) rotate(-90deg);
 }
 
 footer > a::after {
