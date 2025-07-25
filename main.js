@@ -42,3 +42,15 @@ document.addEventListener('keydown', e => {
     document.body.classList.toggle('debug');
   }
 });
+
+
+
+// debug viewport width
+
+  function updateViewportWidth() {
+    const el = document.getElementById('viewport-width');
+    if (el) el.textContent = `${window.innerWidth}px`;
+  }
+
+  window.addEventListener('resize', updateViewportWidth);
+  window.addEventListener('DOMContentLoaded', updateViewportWidth);
