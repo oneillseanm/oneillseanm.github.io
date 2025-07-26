@@ -115,7 +115,9 @@ body {
 	#specs section,
 	.newsletter-form,
 	#features figure,
-	a.button {
+	a.button,
+	#design figure,
+	.product-card p {
 		font-size: var(--font-size-small);
 	}
 
@@ -160,16 +162,11 @@ body {
 		margin-inline: 0;
 	}
 
-	.product-card figcaption {
-		margin-inline: 1rem;
-	}
-
 	main > .button {
 		margin-inline: 4rem;
 	}
 
-	#specs section,
-	.product-card {
+	#specs section {
 		margin-inline: 0;
 	}
 
@@ -461,7 +458,7 @@ a {
 			height: 100%;
 			margin-block: 3rem;
 			overflow: hidden;
-			padding: 0;
+			padding: 1rem;
 			transition: all 0.2s ease;
 		}
 		
@@ -591,9 +588,13 @@ dt,
 img {
 	display: block;
 	height: auto;
-	max-width: 100%;
+	width: 100%;
 }
 
+	.divider-image img {
+		width: 100%;
+	}
+	
 	figure img {
 		border-radius: var(--radius-standard);
 	}
@@ -604,8 +605,7 @@ img {
 	
 	.product-card img {
 		border-radius: 0;
-		margin: 3rem;
-		width: calc(100% - 6rem);
+		width: 100%;
 	}
 	
 dd.layout-container {
@@ -764,10 +764,15 @@ article > :last-child {
 	margin-bottom: 0;
 }
 
-section {
+section,
+#design figure {
 	margin: 5rem 0;
 }
 
+	#design figure:last-child {
+		margin-block: 5rem 0;
+	}
+	
 	section.newsletter-form {
 		margin-block: 2rem;
 	}
@@ -933,7 +938,7 @@ figcaption {
 }
 
 	.product-card figcaption {
-		margin-block: 1rem;
+		margin-block: 2rem 0;
 	}
 
 p {
@@ -1122,6 +1127,38 @@ p {
 	margin: 3rem auto;
 }
 
+.view-placeholder {
+	background: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0.06) 0%,
+			rgba(255, 255, 255, 0.13) 100%
+		), var(--color-black);
+	border-radius: 1vw;
+	margin-inline: auto;
+	width: 100%;
+}
+
+.view-placeholder.bottom {
+	aspect-ratio: 12 / 7;
+}
+
+.view-placeholder.front {
+	aspect-ratio: 12 / 1;
+}
+
+.view-placeholder.top {
+	aspect-ratio: 12 / 7;
+}
+
+.view-placeholder.back {
+	aspect-ratio: 12 / 1;
+}
+
+.view-placeholder.side {
+	aspect-ratio: 7 / 1;
+	width: calc(100% * 7 / 12);
+}
+
 
 /* breakpoint debug */
 
@@ -1209,7 +1246,8 @@ p {
 
 	h2,
 	article > p,
-	#features > * {
+	#features > *,
+	#design figure {
 		margin-inline: 2rem;
 	}
 
@@ -1257,13 +1295,14 @@ p {
 	
 	h2,
 	article > p,
-	#features > * {
+	#features > *,
+	#design figure {
 		margin-inline: 0;
 	}
 
 	main > .button {
 		margin-inline: auto;
-		width: 33.333%;
+		width: 50vw;
 	}
 
 	#specs section,
@@ -1271,13 +1310,8 @@ p {
 		margin-inline: -2rem;
 	}
 
-	.product-card img {
-		margin: 4rem;
-		width: calc(100% - 8rem);
-	}
-	
-	.product-card figcaption {
-		margin-inline: 2rem;
+	.product-card {
+		padding: 2rem;
 	}
 
 	#specs li,
@@ -1290,20 +1324,93 @@ p {
 		margin-inline: -2rem;
 	}
 
+	#features figcaption,
+	#design figcaption {
+		width: 66.666%;
+	}
+
 /* end horizontal control */
 
 }
 
 
 @media (min-width: 768px) {			/* md; tablets, small desktops; "start with these two" */
+
+	#specs h2 {
+		margin-bottom: 0;
+	}
+	
+	.specs-grid {
+		align-items: start;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem 1rem;
+		margin: 5rem -10vw;
+	}
+
+	#specs section {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	#specs li,
+	#specs dt,
+	#specs dd {
+		padding-inline: 1rem;
+	}
+	
+	.product-array {
+		align-items: stretch;
+		display: flex;
+		gap: 1rem;
+		justify-content: space-between;
+		margin-inline: -10vw;
+	}
+
+	.product-card {
+		height: auto;
+		margin-inline: 0;
+		padding: 1rem;
+	}
+	
+	.newsletter-form {
+		margin-inline: auto;
+		width: 50vw;
+	}
+
 }
 
 
 
 @media (min-width: 1024px) {		/* lg; laptops, large tablets (landscape); "start with these two" */
+
+	article,
+	footer {
+		padding-inline: calc((100vw - 960px) / 2);
+	}
+
+	h2,
+	article > p,
+	#features > *,
+	#design figure {
+		margin-inline: 6rem;
+	}
+
+	.specs-grid,
+	.product-array {
+		margin-inline: 0;
+	}
+
+	main > .button {
+		margin-inline: calc((100vw - 960px) / 2);
+		width: auto;
+	}
+
 }
 
 
 
 @media (min-width: 1280px) {		/* xl; desktops, high-res laptops */
+
+	
 }
