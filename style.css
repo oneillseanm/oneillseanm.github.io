@@ -169,10 +169,6 @@ nav p,
 	padding-inline: 1rem;
 }
 
-.button-wrapper .button {
-	margin-inline: 4rem;
-}
-
 #specs li,
 #specs dt,
 #specs dd {
@@ -419,6 +415,7 @@ a.button {
 	border-radius: 1.5rem 0.3rem 1.5rem 1.5rem;
 	color: var(--color-white);
 	height: 3rem;
+	margin-inline: 1rem;
 	justify-content: center;
 	letter-spacing: 0.1em;
 	text-align: center;
@@ -1321,6 +1318,10 @@ p {
 		width: 75%;
 	}
 
+	a.button {
+		margin-inline: 2rem;
+	}
+
 }
 
 
@@ -1336,9 +1337,9 @@ p {
 		margin-inline: 0;
 	}
 
-	main > .button {
+	a.button {
 		margin-inline: auto;
-		width: 50vw;
+		width: 70%;
 	}
 
 	nav,
@@ -1376,11 +1377,6 @@ p {
 	footer {
 		max-width: 620px;
 		margin-inline: auto;
-	}
-	
-	.button-wrapper .button {
-		margin-inline: auto;
-		width: 70%;
 	}
 	
 	.specs-grid dl:not(.specs-grid :first-child dl),
@@ -1466,11 +1462,15 @@ p {
 		margin-inline: -4rem;
 	}
 
-	.button-wrapper .button {
-		width: 50%;
+	.button-wrapper {
+		margin-inline: calc((100vw - 960px) / 2);
+		padding-inline: 0;
 	}
 
-	.hero-spacer,
+	.button {
+		max-width: calc(620px * 0.7);
+	}
+
 	.hero-image-wrapper {
 		margin-inline: calc((100vw - 960px) / 2);
 		max-width: 960px;
