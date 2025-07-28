@@ -149,13 +149,6 @@ a.button,
 	font-size: 16cqh;
 }
 
-#specs h3,
-#connect h3,
-#specs dt,
-.mc-field-group label {
-	font-size: var(--font-size-small);
-}
-
 .title-wrapper {
 	font-size: var(--font-size-title);
 }
@@ -825,7 +818,7 @@ footer {
 	justify-content:space-between;
 	display: flex;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 8rem 0;
 }
 
 .footer-info {
@@ -841,20 +834,6 @@ footer {
 	justify-content: flex-start;
 }
 
-.footer-top-link {
-	align-items: center;
-	display: flex;
-	border-color: var(--color-emphasis);
-	border-inline: 1px solid var(--color-emphasis);
-	flex: 1;
-	flex-direction: column;
-	justify-content: start;
-	padding-top: 1rem;
-	text-align: center;
-	text-decoration: none;
-	transition: all 0.2s ease;
-	width: 100%;
-}
 
 
 
@@ -872,22 +851,6 @@ footer {
 
 
 
-
-.footer-top-link-text {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	gap: 0.25em;
-	position: relative;
-	height: auto;
-	line-height: 1;
-	overflow: hidden;
-	text-align: center;
-	transition:
-		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
-		opacity 0.2s ease;
-	vertical-align: bottom;
-}
 
 
 
@@ -931,14 +894,6 @@ footer {
 	transition: transform 0.3s ease;
 }
 
-.footer-top-link:hover {
-
-
-
-/*	background-color: var(--color-black-field-lighter); */
-
-
-}
 
 .top-link.arrow.front {
 	display: inline-block;
@@ -1142,7 +1097,6 @@ p {
 		width: 100%;
 		top: 0;
 		left: 0;
-		pointer-events: none;
 	}
 	
 	.hero-spacer {
@@ -1337,6 +1291,17 @@ p {
 	width: calc(100% * 7 / 12);
 }
 
+.product-card:focus-visible,
+.button-wrapper .button:focus-visible,
+.optionalParent .foot input:focus-visible {
+	outline-offset: 4px;
+}
+
+nav a:focus-visible {
+	border-radius: var(--radius-standard);
+	outline-offset: -4px;
+}
+
 
 /*											breakpoint debug */
 
@@ -1446,6 +1411,10 @@ p {
 
 	a.button {
 		margin-inline: 2rem;
+	}
+
+	footer {
+		padding: 0 0 6rem 0;
 	}
 
 }

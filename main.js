@@ -105,3 +105,13 @@ window.addEventListener('resize', markRowStarts);
 
 markRowStarts(); // Call this after adding/removing classes like .mobile-hidden
 
+
+// viewport width display
+
+function updateViewportWidth() {
+  const el = document.getElementById('viewport-width');
+  if (el) el.textContent = `${window.innerWidth}px`;
+}
+
+window.addEventListener('resize', updateViewportWidth);
+updateViewportWidth(); // run once on page load
