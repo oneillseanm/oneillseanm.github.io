@@ -6,12 +6,12 @@
 	--color-emphasis-lighter: #cccccc;
 	--color-page: #eaeaea;
 	--color-input-field: #e8e8e8;
-	--color-alert: #006642;
-	--color-alert-hover: #008053;
-	--color-alert-2: #914a30;
-	--color-alert-3: #510094;
-	--color-alert-4: #005E99;
-	--color-alert-4-hover: #006BAD;
+	--color-alert-green: #006642;
+	--color-alert-green-hover: #008053;
+	--color-alert-orange: #914a30;
+	--color-alert-purple: #510094;
+	--color-alert-blue: #005E99;
+	--color-alert-blue-hover: #006BAD;
 	--color-white: #f5f5f5;
 	--color-white-shade: #f0f0f0;
 	--color-white-shadow: #e3e3e3;
@@ -22,7 +22,7 @@
 	--font-display: "Montserrat", sans-serif;
 	--font-sans: "IBM Plex Sans", sans-serif;
 	--font-serif: "IBM Plex Mono", monospace;
-	--font-arrow: "Noto Sans Symbols 2", sans-serif;
+	--font-symbol: "Noto Sans Symbols 2", sans-serif;
 	--font-size-caps: 0.95em;
 	--font-size-small: 0.8em;
 	--font-size-title: 4em;
@@ -101,6 +101,7 @@ body {
 }
 
 a,
+.nav-header a
 li,
 dd,
 .data,
@@ -109,13 +110,13 @@ dd,
 }
 
 .key,
-.footer-top-link a {
+.top-link a {
 	font-family: var(--font-sans);
 	font-weight: 300;
 }
 
 .arrow {
-	font-family: var(--font-arrow);
+	font-family: var(--font-symbol);
 	font-weight: 400;
 	font-style: normal;
 }
@@ -181,6 +182,10 @@ a.button,
 	padding-inline: 2rem;
 }
 
+nav {
+	margin-inline: 1rem;
+}
+
 /*											end horizontal control */
 
 h1 {
@@ -240,7 +245,7 @@ h3 {
 }
 
 	.product-card h3 {
-		color: var(--color-alert-3);
+		color: var(--color-alert-purple);
 		font-family: var(--font-display);
 		font-size: var(--font-size-product-card-title);
 		font-weight: 900;
@@ -250,7 +255,7 @@ h3 {
 .product-card h3::after {
 	content: "🡵";
 	display: inline-block;
-	font-family: var(--font-arrow);
+	font-family: var(--font-symbol);
 	font-size: 0.8em;
 	font-weight: 400;
 	opacity: 0;
@@ -329,7 +334,7 @@ a {
 }
 
 header .logo {
-	margin: 1rem;
+	margin: 1rem 0 0 2rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -344,7 +349,7 @@ p a {
 
 p a,
 dd a {
-	color: var(--color-alert-2);
+	color: var(--color-alert-orange);
 	display: inline-block;
 	line-height: 1.4rem;
 }
@@ -355,37 +360,43 @@ nav li a {
 	flex: 1;
 	height: 100%;
 	justify-content: center;
-	padding: 0.5rem .7rem;
+	padding: 0.5rem 1rem;
 	position: relative;
 	text-decoration: none;
 	width: 100%;
 }
 
+
 nav li a::before {
-	content: "🡣";
-	font-family: var(--font-arrow);
-	font-weight: 400;
+	content: ".";
+	font-family: var(--font-display);
+	font-weight: 900;
 	opacity: 0;
 	position: relative;
-	transform: translate(-0.2em, -0.3em);
+
+	
+					transform: translate(-0.3em, -0.1em);
+							transition: opacity 0.2s ease;
+
 }
 
 nav li a::after {
-	content: "🡣";
-	font-family: var(--font-arrow);
-	font-weight: 400;
+	content: ".";
+	font-family: var(--font-display);
+	font-weight: 900;
 	opacity: 0;
 	position: relative;
-	transform: translate(0.2em, -0.3em);
-	transition:
-		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
-		opacity 0.2s ease;
+
+
+	transform: translate(0.3em, -0.1em);
+
 }
 
-nav li a:hover::after {
+nav li a.active::before,
+nav li a:hover::before {
 	opacity: 1;
-	transform: translate(0.2em, 0.2em);
 }
+
 
 a:hover,
 .optionalParent .foot input:hover,
@@ -413,7 +424,7 @@ a.button {
 a.button {
 	display: flex;
 	align-items: center;
-	background-color: var(--color-alert);
+	background-color: var(--color-alert-green);
 	border-radius: 1.5rem 0.3rem 1.5rem 1.5rem;
 	color: var(--color-white);
 	height: 3rem;
@@ -426,7 +437,7 @@ a.button {
 a.button::before {
 	content: "🡥";
 	display: inline-block;
-	font-family: var(--font-arrow);
+	font-family: var(--font-symbol);
 	opacity: 0;
 	position: relative;
 	transform: translate(0.2em, 0.7em);
@@ -435,7 +446,7 @@ a.button::before {
 a.button::after {
 	content: "🡥";
 	display: inline-block;
-	font-family: var(--font-arrow);
+	font-family: var(--font-symbol);
 	opacity: 0;
 	position: relative;
 	transform: translate(-0.2em, 0.7em);
@@ -445,7 +456,7 @@ a.button::after {
 }
 
 a.button:hover {
-	background-color: var(--color-alert-hover);
+	background-color: var(--color-alert-green-hover);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -784,7 +795,7 @@ article dl dd.layout-container div.keyboard-wrapper {
 
 article {
 	margin: 0;
-	scroll-margin-top: -4rem;
+	scroll-margin-top: 1rem;
 }
 
 article :first-child {
@@ -967,7 +978,9 @@ nav {
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
 
-	margin: 0 1rem 1rem 1rem;
+	margin-block: 0 0.5rem;
+
+	line-height: 1;
 
 }
 
@@ -1003,7 +1016,7 @@ nav p,
 	
 	
 	
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	margin: 0;
 	z-index: 12;
 
@@ -1012,26 +1025,48 @@ nav p,
 
 }
 
+
+.nav-header a {
+
+
+	border-left: 1px solid var(--color-emphasis-lighter);
+}
+
+
 nav ul {
 	background-color: transparent;
-	border-top: 1px solid var(--color-emphasis-lighter);
-	gap: 1px;
 }
 
 
 nav li {
-	border: none;
 	transition: all 0.2s ease;
+
+
+
+
+	border-left: 1px solid var(--color-emphasis-lighter);
+	border-top: 1px solid var(--color-emphasis-lighter);
+
+	z-index: 12;
+
 }
+
+li.mobile-hidden {
+	display: none;
+}
+
+nav li.row-start {
+	border-left: none;
+}
+
+
 
 nav li a.active {
 
 
 
 
-	background-color: var(--color-debug) !important;
-	color: var(--color-debug) !important;
-
+	background-color: var(--color-white);
 
 
 
@@ -1166,7 +1201,7 @@ p {
 
 .mc-field-group input {
 	border-style: none;
-	color: var(--color-alert-4);
+	color: var(--color-alert-blue);
 	font-size: inherit;
 	line-height: 1.4;
 	transition: all 0.2s ease;
@@ -1198,7 +1233,7 @@ p {
 }
 
 .optionalParent .foot input {
-	background-color: var(--color-alert-4);
+	background-color: var(--color-alert-blue);
 	border-radius: 0.3rem 1.5rem 1.5rem;
 	border-style: none;
 	box-shadow: none;
@@ -1239,7 +1274,7 @@ p {
 }
 
 .optionalParent .foot input:hover {
-	background-color: var(--color-alert-4-hover);
+	background-color: var(--color-alert-blue-hover);
 	text-decoration: underline;
 	text-decoration-style: wavy;
 	text-decoration-thickness: 1px;
@@ -1389,9 +1424,6 @@ p {
 		padding-inline: 2rem;
 	}
 
-	nav {
-	}
-
 	.specs-grid,
 	.product-array,
 	.newsletter-form {
@@ -1429,6 +1461,10 @@ p {
 	article > p,
 	#design figure {
 		margin-inline: 0;
+	}
+
+	li.mobile-hidden {
+		display: flex;
 	}
 
 	a.button {

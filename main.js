@@ -52,6 +52,8 @@ const navLinks = document.querySelectorAll(".nav-wrapper a");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
+    console.log("Now visible:", entry.target.id, entry.isIntersecting);
+
     if (entry.isIntersecting) {
       navLinks.forEach((link) => link.classList.remove("active"));
 
@@ -61,11 +63,13 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.25, // fires when 25% of the section is visible
-  rootMargin: "-40% 0px -55% 0px" // triggers when section top is around middle of screen
+threshold: 0.01,
+rootMargin: "-10% 0px -60% 0px"
 });
 
+// ✅ ACTUALLY START OBSERVING:
 sections.forEach((section) => observer.observe(section));
+
 
 
 
@@ -74,3 +78,30 @@ sections.forEach((section) => observer.observe(section));
 window.addEventListener('scroll', () => {
   document.querySelector('nav').classList.toggle('blurred', window.scrollY > 10);
 });
+
+
+
+// nav border control
+
+function markRowStarts() {
+  const items = [...document.querySelectorAll('nav li')]
+    .filter(item => item.offsetParent !== null); // skip display:none
+
+  let currentTop = null;
+
+  items.forEach((item) => {
+    item.classList.remove('row-start');
+
+    const top = Math.round(item.offsetTop);
+    if (top !== currentTop) {
+      item.classList.add('row-start');
+      currentTop = top;
+    }
+  });
+}
+
+window.addEventListener('load', markRowStarts);
+window.addEventListener('resize', markRowStarts);
+
+markRowStarts(); // Call this after adding/removing classes like .mobile-hidden
+
