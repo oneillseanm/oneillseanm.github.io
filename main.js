@@ -47,10 +47,30 @@ document.addEventListener('keydown', e => {
 
 // debug viewport width
 
-  function updateViewportWidth() {
-    const el = document.getElementById('viewport-width');
-    if (el) el.textContent = `${window.innerWidth}px`;
-  }
+const sections = document.querySelectorAll("article[id]");
+const navLinks = document.querySelectorAll(".nav-wrapper a");
 
-  window.addEventListener('resize', updateViewportWidth);
-  window.addEventListener('DOMContentLoaded', updateViewportWidth);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      const targetId = entry.target.id;
+      const activeLink = document.querySelector(`.nav-wrapper a[href="#${targetId}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.25, // fires when 25% of the section is visible
+  rootMargin: "-40% 0px -55% 0px" // triggers when section top is around middle of screen
+});
+
+sections.forEach((section) => observer.observe(section));
+
+
+
+// menu blur on scroll
+
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('blurred', window.scrollY > 10);
+});
