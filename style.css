@@ -363,11 +363,8 @@ nav li a::before {
 	font-weight: 900;
 	opacity: 0;
 	position: relative;
-
-	
-					transform: translate(-0.3em, -0.1em);
-							transition: opacity 0.2s ease;
-
+	transform: translate(-0.3em, -0.1em);
+	transition: opacity 0.2s ease;
 }
 
 nav li a::after {
@@ -376,10 +373,7 @@ nav li a::after {
 	font-weight: 900;
 	opacity: 0;
 	position: relative;
-
-
 	transform: translate(0.3em, -0.1em);
-
 }
 
 nav li a.active::before,
@@ -831,44 +825,30 @@ footer {
 	justify-content: flex-start;
 }
 
+.top-link {
+	align-items: center;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	justify-content: start;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
 
-
-
-
-
-				.top-link {
-					align-items: center;
-					display: flex;
-					flex: 0 0 auto;
-					flex-direction: column;
-					justify-content: start;
-					text-decoration: none;
-					transition: all 0.2s ease;
-				}
-
-
-
-
-
-
-						.top-link-text {
-							align-items: center;
-							display: flex;
-							flex-direction: row;
-							gap: 0.25em;
-							position: relative;
-							height: auto;
-							overflow: hidden;
-							text-align: center;
-							transition:
-								transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
-								opacity 0.2s ease;
-							vertical-align: bottom;
-						}
-
-
-
-
+.top-link-text {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	gap: 0.25em;
+	position: relative;
+	height: auto;
+	overflow: hidden;
+	text-align: center;
+	transition:
+		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s,
+		opacity 0.2s ease;
+	vertical-align: bottom;
+}
 
 .top-arrow-wrap {
 	align-items: center;
@@ -890,7 +870,6 @@ footer {
 	line-height: 1;
 	transition: transform 0.3s ease;
 }
-
 
 .top-link.arrow.front {
 	display: inline-block;
@@ -916,15 +895,12 @@ header {
 	position: relative;
 }
 
-
-
 .top-level-wrapper.nav-wrapper {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	z-index: 11;
-
 }
 
 .nav-pseudo-article {
@@ -937,21 +913,14 @@ nav {
 	border-radius: var(--radius-standard);
 	box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 	background-color: var(--color-emphasis-nav);
-
-
-
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
-
-
 	line-height: 1;
-
 }
 
 nav::before {
 	content: "";
-		border-radius: var(--radius-standard);
-
+	border-radius: var(--radius-standard);
 	position: absolute;
 	inset: 0;
 	background: var(--color-nav-back);
@@ -962,31 +931,15 @@ nav::before {
 .nav-header {
 	display: flex;
 	flex-direction: row;
-
-
-
-
 	align-items: center;
 	justify-content: space-between;
-	
-	
-	
-	
-
 }
 
 nav p,
 .nav-header a  {
-	
-	
-	
 	padding: 0.5rem 1rem;
 	margin: 0;
 	z-index: 12;
-
-
-
-
 }
 
 nav p {
@@ -1014,28 +967,16 @@ nav p:hover .dot-blink {
   }
 }
 
-
-
 .nav-header a {
-
-
 	border-left: 1px solid var(--color-emphasis-lighter);
 }
-
-
 
 nav li {
 	background-color: transparent;
 	transition: all 0.2s ease;
-
-
-
-
 	border-left: 1px solid var(--color-emphasis-lighter);
 	border-top: 1px solid var(--color-emphasis-lighter);
-
 	z-index: 12;
-
 }
 
 li.mobile-hidden {
@@ -1046,18 +987,8 @@ nav li.row-start {
 	border-left: none;
 }
 
-
-
 nav li a.active {
-
-
-
-
 	background-color: var(--color-white);
-
-
-
-
 }
 
 nav li:hover {
@@ -1340,7 +1271,6 @@ nav a:focus-visible {
 	outline-offset: -4px;
 }
 
-
 /*											breakpoint debug */
 
 	/*										Breakpoint Visualizer Base Styles */
@@ -1463,6 +1393,7 @@ nav a:focus-visible {
 }
 
 
+
 @media (min-width: 640px) {					/* sm; small tablets, large phones (landscape); < 480 would be for smaller phones */
 
 	.top-level-wrapper {
@@ -1514,6 +1445,7 @@ nav a:focus-visible {
 	}
 
 }
+
 
 
 @media (min-width: 768px) {					/* md; tablets, small desktops; "start with these two" */
@@ -1604,6 +1536,7 @@ nav a:focus-visible {
 }
 
 
+
 @media (min-width: 1024px) {				/* lg; laptops, large tablets (landscape); "start with these two" */
 
 	.specs-grid,
@@ -1646,7 +1579,6 @@ nav a:focus-visible {
 }
 
 
-@media (min-width: 1280px) {				/* xl; desktops, high-res laptops */
 
-	
+@media (min-width: 1280px) {				/* xl; desktops, high-res laptops */
 }
