@@ -1000,6 +1000,7 @@ nav p {
   transition: none;
 }
 
+nav li:hover a::before,
 nav p:hover .dot-blink {
   animation: blink 1s steps(1, start) infinite;
 }
