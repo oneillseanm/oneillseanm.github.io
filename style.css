@@ -66,21 +66,8 @@ body {
 		color: var(--color-white);
 	}
 
-.top-level-wrapper {
-	padding-block: 8rem;
-}
-
-	.connect-wrapper {
+	.top-level-wrapper.connect-wrapper {
 		padding-top: 0;
-	}
-	
-	.button-wrapper,
-	.footer-wrapper {
-		padding-block: 0;
-	}
-
-	.nav-wrapper {
-		padding-block: 1rem 0;
 	}
 	
 /*											fonts */
@@ -162,8 +149,22 @@ a.button,
 /*											horizontal control */
 
 .top-level-wrapper {
-	padding-inline: 1rem;
+	padding: 8rem 1rem;
 }
+
+	.top-level-wrapper:first-child {
+		padding-top: 3rem;
+	}
+	
+	.button-wrapper,
+	.footer-wrapper {
+		padding-block: 0;
+	}
+
+	.nav-wrapper {
+		padding-block: 0 0.5rem;
+	}
+
 
 #specs li,
 #specs dt,
@@ -173,10 +174,6 @@ a.button,
 
 .mc-field-group label {
 	padding-inline: 2rem;
-}
-
-nav {
-	margin-inline: 1rem;
 }
 
 /*											end horizontal control */
@@ -539,6 +536,7 @@ dl {
 	}
 	
 	nav ul {
+		background-color: transparent;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
@@ -547,10 +545,9 @@ dl {
 li,
 dt,
 dd,
-#specs p,
 .mc-field-group *,
 .optionalParent {
-/*	background-color: var(--color-white); */
+	background-color: var(--color-white);
 	border-top: 1px solid var(--color-emphasis-lighter);
 	margin: 0;
 }
@@ -919,21 +916,33 @@ header {
 	position: relative;
 }
 
+
+
+.top-level-wrapper.nav-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 11;
+
+}
+
+.nav-pseudo-article {
+	position: relative;
+		width: 100%;
+		margin-inline: auto;
+}
+
 nav {
 	border-radius: var(--radius-standard);
 	box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 	background-color: var(--color-emphasis-nav);
 
 
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	z-index: 11;
 
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
 
-	margin-block: 0 0.5rem;
 
 	line-height: 1;
 
@@ -980,6 +989,31 @@ nav p,
 
 }
 
+nav p {
+	flex: 1;
+}
+
+
+.dot-blink {
+  display: inline-block;
+  opacity: 1;
+  transition: none;
+}
+
+nav p:hover .dot-blink {
+  animation: blink 1s steps(1, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
 
 .nav-header a {
 
@@ -988,12 +1022,9 @@ nav p,
 }
 
 
-nav ul {
-	background-color: transparent;
-}
-
 
 nav li {
+	background-color: transparent;
 	transition: all 0.2s ease;
 
 
@@ -1200,10 +1231,18 @@ p {
 	letter-spacing: 0.1em;
 	padding: 0.6rem 2rem;
 	margin: 1rem;
+	max-width: 50%;
 	transition: all 0.2s ease;
 	width: fit-content;
 	flex: 1 1 auto;
 	transition: all 0.2s ease;
+}
+
+.optionalParent .foot p span img {
+	height: auto;
+	max-width: 180px;
+	padding-inline: 1rem;
+	width: 100%;
 }
 
 .optionalParent a {
@@ -1214,9 +1253,7 @@ p {
 	display: inline-flex;
 	flex: 0 1 auto;
 	height: fit-content;
-	width: fit-content;
 	margin: 0;
-	padding: 0 0.5rem;
 }
 
 .optionalParent .foot p a {
@@ -1256,7 +1293,7 @@ p {
 	justify-content: center;
 	line-height: 1em;
 	margin-inline: auto;
-	margin-block: 0 3rem;
+	margin-block: 0 2rem;
 }
 
 .view-placeholder {
@@ -1389,10 +1426,15 @@ nav a:focus-visible {
 		padding-inline: 2rem;
 	}
 
+	nav,
 	.specs-grid,
 	.product-array,
 	.newsletter-form {
 		margin-inline: -1rem;
+	}
+
+	nav li a {
+		padding-inline: 1.5rem;
 	}
 
 	#specs li,
@@ -1425,11 +1467,15 @@ nav a:focus-visible {
 	.top-level-wrapper {
 		padding-inline: 15%
 	}
-	
+
 	h2,
 	article > p,
 	#design figure {
 		margin-inline: 0;
+	}
+
+	nav li a {
+		padding-inline: 1rem;
 	}
 
 	li.mobile-hidden {
@@ -1441,6 +1487,7 @@ nav a:focus-visible {
 		width: 70%;
 	}
 
+	nav,
 	.specs-grid,
 	.product-array {
 		margin-inline: -2rem;
@@ -1470,13 +1517,17 @@ nav a:focus-visible {
 
 @media (min-width: 768px) {					/* md; tablets, small desktops; "start with these two" */
 
+	.nav-pseudo-article,
 	article,
-	.pseudo-article,
 	footer {
 		max-width: 620px;
 		margin-inline: auto;
 	}
-	
+
+	nav li a {
+		padding-inline: 1.5rem;
+	}
+
 	.specs-grid dl:not(.specs-grid :first-child dl),
 	.specs-grid ul {
 		display: grid;
@@ -1559,6 +1610,14 @@ nav a:focus-visible {
 		margin-inline: -4rem;
 	}
 
+	nav {
+		margin-inline: -4rem;
+	}
+
+	nav li a {
+		padding-inline: 2rem;
+	}
+
 	.button-wrapper {
 		margin-inline: calc((100vw - 960px) / 2);
 		padding-inline: 0;
@@ -1568,6 +1627,7 @@ nav a:focus-visible {
 		max-width: calc(620px * 0.7);
 	}
 
+	.hero-spacer,
 	.hero-image-wrapper {
 		margin-inline: calc((100vw - 960px) / 2);
 		max-width: 960px;
