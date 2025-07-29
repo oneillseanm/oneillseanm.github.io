@@ -356,6 +356,9 @@ nav li a {
 	width: 100%;
 }
 
+nav li a:hover {
+	background-color: var(--color-white);
+}
 
 nav li a::before {
 	content: ".";
@@ -987,12 +990,10 @@ nav li.row-start {
 	border-left: none;
 }
 
+
+nav li a:hover,
 nav li a.active {
 	background-color: var(--color-white);
-}
-
-nav li:hover {
-	background-color: var(--color-white-shade);
 }
 
 figure {
