@@ -214,7 +214,6 @@ h1 {
 
 .subtitle {
 	flex: 0 0 auto;
-	letter-spacing: -0.01em;
 	line-height: 1em;
 	margin-block: 0;
 }
@@ -281,13 +280,19 @@ a {
 	height: fit-content;
 	padding: 0.5rem 1rem;
 	position: relative;
+	text-decoration: none;
+	width: fit-content;
 	z-index: 2;
 }
 
-.nav-header .logo a {
-	text-decoration: none;
-	padding: 0;
-}
+	.nav-header .logo a {
+		text-decoration: none;
+		padding: 0;
+	}
+
+	footer .logo {
+		padding: 0 0 0.5rem 0;
+	}
 
 .bang-wrap {
 	display: inline-block;
@@ -361,10 +366,11 @@ nav li a {
 	flex: 1;
 	height: 100%;
 	justify-content: center;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 0.5rem;
 	position: relative;
 	text-decoration: none;
 	width: 100%;
+	transition: background-color .4s ease;
 }
 
 nav li a:hover {
@@ -375,7 +381,7 @@ nav li a::before,
 nav li a::after {
 	opacity: 0;
 	position: relative;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.4s ease;
 }
 
 nav li a::before {
@@ -568,7 +574,7 @@ dt {
 		margin: 0;
 	}
 
-	#specs section:nth-of-type(1) dt {
+	#specs section.spec-layouts dt {
 		padding-top: 2rem;
 	}
 
@@ -828,7 +834,7 @@ footer {
 	display: flex;
 	flex: 2;
 	flex-direction: column;
-	padding-block: 1rem 2rem;
+	padding-block: 2rem;
 }
 
 .footer-copy {
@@ -963,21 +969,6 @@ nav p {
   display: inline-block;
   opacity: 1;
   transition: none;
-}
-
-nav li:hover a::before,
-nav li:hover a::after,
-nav p:hover .dot-blink {
-  animation: blink 1s steps(1, start) infinite;
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
 }
 
 .nav-header a.top-link {
@@ -1375,9 +1366,6 @@ nav a:focus-visible {
 		margin-inline: -1rem;
 	}
 
-	nav li a {
-	}
-
 	#specs li,
 	#specs dt,
 	#specs dd {
@@ -1414,9 +1402,6 @@ nav a:focus-visible {
 	article > p,
 	#design figure {
 		margin-inline: 0;
-	}
-
-	nav li a {
 	}
 
 	li.mobile-hidden {
@@ -1467,6 +1452,10 @@ nav a:focus-visible {
 	}
 
 	nav li a {
+		padding-inline: 1rem;
+	}
+
+
 	}
 
 	.specs-grid dl:not(.specs-grid :first-child dl),
