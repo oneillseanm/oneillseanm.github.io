@@ -1065,7 +1065,7 @@ p {
 
 	.hero-spacer,
 	.hero-image-wrapper {
-		aspect-ratio: 1 / 1.75;
+		aspect-ratio: 1.75 / 1;
 		height: auto;
 		margin: 0;
 		width: 100%;
@@ -1084,16 +1084,16 @@ p {
 	}
 	
 	.hero-image-wrapper img {
+		object-fit: cover;
+		object-position: center center;
 		height: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		max-width: none;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: auto;
+		width: 100%;
+		margin: 0;
+		transform: none;
+		position: relative;
+		top: auto;
+		bottom: auto;
+		left: auto;
 	}
 	
 /* MailChimp */
@@ -1527,16 +1527,16 @@ nav a:focus-visible {
 	}
 
 	.hero-image-wrapper img {
-		object-fit: cover;
-		object-position: center center;
 		height: 100%;
-		width: 100%;
-		margin: 0;
-		transform: none;
-		position: relative;
-		top: auto;
-		bottom: auto;
-		left: auto;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
 	}
 
 }
