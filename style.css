@@ -537,7 +537,7 @@ a.button:hover::after {
 
 .data {
 	background-color: var(--color-white);
-	border-radius: 0.5lh 0.5lh 0.5lh 0.1lh;
+	border-radius: 0.5lh;
 	padding-inline: 0.5em;
 }
 
