@@ -66,6 +66,18 @@ body {
 		color: var(--color-white);
 	}
 
+	.split-foreground-background {
+		background-image: linear-gradient(to bottom, var(--color-white) 50%, var(--color-page) 50%);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+
+	.split-background-foreground {
+		background-image: linear-gradient(to bottom, var(--color-page) 50%, var(--color-white) 50%);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+
 	.top-level-wrapper.connect-wrapper {
 		padding-top: 0;
 	}
@@ -649,12 +661,6 @@ img {
 	align-items: stretch;
 }
 
-	.divider-image.split {
-		background-image: linear-gradient(to bottom, var(--color-white) 50%, var(--color-page) 50%);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-	}
-
 .divider-image-inner {
 	width: 100%;
 		aspect-ratio: 3 / 1;
@@ -795,9 +801,12 @@ article dl dd.layout-container div.keyboard-wrapper {
 	.u-2-75		{ grid-column: span 11; }
 	.u-7-0		{ grid-column: span 28; }
 
+.top-level-wrapper {
+	scroll-margin-top: -7rem;
+}
+
 article {
 	margin: 0;
-	scroll-margin-top: 1rem;
 }
 
 article :first-child {
@@ -1549,8 +1558,8 @@ nav a:focus-visible {
 	}
 
 	.button-wrapper {
-		margin-inline: calc((100vw - 960px) / 2);
-		padding-inline: 0;
+		margin-inline: 0;
+		padding-inline: calc((100vw - 960px) / 2);
 	}
 
 	.button {

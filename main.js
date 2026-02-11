@@ -34,7 +34,6 @@ title.addEventListener('mouseleave', () => {
 });
 
 
-
 // debug toggle: shift + b
 
 document.addEventListener('keydown', e => {
@@ -47,7 +46,7 @@ document.addEventListener('keydown', e => {
 
 // debug viewport width
 
-const sections = document.querySelectorAll("article[id]");
+const sections = document.querySelectorAll(".top-level-wrapper[id]");
 const navLinks = document.querySelectorAll(".nav-wrapper a");
 
 const observer = new IntersectionObserver((entries) => {
@@ -115,3 +114,5 @@ function updateViewportWidth() {
 
 window.addEventListener('resize', updateViewportWidth);
 updateViewportWidth(); // run once on page load
+
+
