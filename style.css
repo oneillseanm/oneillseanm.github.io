@@ -180,6 +180,9 @@ a.button,
 		padding-block: 0 0.5rem;
 	}
 
+article > .button-wrapper {
+	padding-block: 2rem;
+}
 
 #specs li,
 #specs dt,
@@ -1641,7 +1644,7 @@ body.has-ticker {
 	nav li a {
 	}
 
-	.button-wrapper {
+	main > .button-wrapper {
 		margin-inline: 0;
 		padding-inline: calc((100vw - 960px) / 2);
 	}
