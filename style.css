@@ -31,6 +31,7 @@
 	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
 	--ticker-height: 2rem;
+	--ticker-speed: 100s;
 }
 
 html {
@@ -1323,22 +1324,26 @@ body.has-ticker {
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker-scroll var(--ticker-speed, 40s) linear infinite;
+  animation: ticker-scroll var(--ticker-speed) linear infinite;
 }
 
 .ticker-group {
   display: flex;
   flex-shrink: 0;
+  align-items: center;
 }
 
-.ticker-group span {
+.ticker-item {
   display: inline-block;
-  padding-inline: 3rem;
+  padding-inline: 0;
 }
 
-.ticker-group span::after {
-  content: " /";
-  margin-left: 3rem;
+.ticker-separator {
+  display: inline-flex;
+  width: 4rem;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0;
 }
 
 @keyframes ticker-scroll {
@@ -1360,6 +1365,7 @@ body.has-ticker {
     animation: none;
   }
 }
+
 /*											breakpoint debug */
 
 	/*										Breakpoint Visualizer Base Styles */
