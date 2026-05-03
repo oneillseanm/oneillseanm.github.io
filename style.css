@@ -10,8 +10,8 @@
 	--color-alert-green-hover: #008053;
 	--color-alert-orange: #914a30;
 	--color-alert-purple: #510094;
-	--color-alert-blue: #005E99;
-	--color-alert-blue-hover: #006BAD;
+	--color-alert-blue: #46afe3;
+	--color-alert-blue-hover: #2D9ED3;
 	--color-white: #f5f5f5;
 	--color-white-shade: #f0f0f0;
 	--color-white-shadow: #e3e3e3;
@@ -30,6 +30,7 @@
 	--font-size-product-card-title: 1.3em;
 	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
+	--ticker-height: 2rem;
 }
 
 html {
@@ -247,7 +248,7 @@ h3 {
 }
 
 	.product-card h3 {
-		color: var(--color-alert-purple);
+		color: var(--color-alert-blue);
 		font-family: var(--font-display);
 		font-size: var(--font-size-product-card-title);
 		font-weight: 900;
@@ -362,7 +363,7 @@ p a {
 
 p a,
 dd a {
-	color: var(--color-alert-orange);
+	color: var(--color-alert-blue);
 	display: inline-block;
 	line-height: 1.4rem;
 	text-decoration: underline;
@@ -438,8 +439,8 @@ a.button {
 a.button {
 	display: flex;
 	align-items: center;
-	background-color: var(--color-alert-green);
-	border-radius: 1.5rem 0.3rem 1.5rem 1.5rem;
+	background-color: var(--color-alert-blue);
+	border-radius: 1.5rem;
 	color: var(--color-white);
 	height: 3rem;
 	margin-inline: 1rem;
@@ -470,7 +471,7 @@ a.button::after {
 }
 
 a.button:hover {
-	background-color: var(--color-alert-green-hover);
+	background-color: var(--color-alert-blue-hover);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -569,7 +570,7 @@ dl {
 li,
 dt,
 dd,
-.mc-field-group *,
+.mc-field-group,
 .optionalParent {
 	background-color: var(--color-white);
 	border-top: 1px solid var(--color-emphasis-lighter);
@@ -611,7 +612,7 @@ li,
 }
 
 #specs h3,
-#connect h3 {
+#updates h3 {
 	background-color: var(--color-white);
 	border-radius: var(--radius-standard) var(--radius-standard) 0 0;
 	color: var(--color-black);
@@ -663,12 +664,15 @@ img {
 
 .divider-image-inner {
 	width: 100%;
-		aspect-ratio: 3 / 1;
+	aspect-ratio: 3 / 1;
 	overflow: hidden;
-
 	height: 100%;
 	padding-inline: 0;
 	box-sizing: border-box;
+}
+
+.divider-image-inner.bottom-align img {
+	object-position: center 75%;
 }
 
 .divider-image img {
@@ -927,7 +931,7 @@ header {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	z-index: 11;
+	z-index: 12;
 }
 
 .nav-pseudo-article {
@@ -1134,8 +1138,8 @@ p {
 	line-height: 1.4;
 	transition: all 0.2s ease;
 	background-color: var(--color-input-field);
-	border-radius: 1.25rem 1.25rem 0.3rem 1.25rem;
-	margin: 0.2rem 1rem 1rem 1rem;
+	border-radius: 1.25rem;
+	margin: 1rem;
 	padding: 0.6rem 0.9rem 0.5rem 0.9rem;
 }
 
@@ -1162,7 +1166,7 @@ p {
 
 .optionalParent .foot input {
 	background-color: var(--color-alert-blue);
-	border-radius: 0.3rem 1.5rem 1.5rem;
+	border-radius: 1.5rem;
 	border-style: none;
 	box-shadow: none;
 	color: var(--color-white);
@@ -1282,6 +1286,80 @@ nav a:focus-visible {
 	outline-offset: -4px;
 }
 
+/* bottom ticker */
+
+
+.has-ticker .top-level-wrapper.nav-wrapper {
+  bottom: var(--ticker-height);
+}
+
+.ticker-banner {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--ticker-height);
+  z-index: 11;
+
+  overflow: hidden;
+  background: var(--color-alert-blue);
+  color: var(--color-white);
+  border-top: none;
+
+  font-family: var(--font-serif, monospace);
+  font-size: var(--font-size-small);
+  line-height: var(--ticker-height);
+  white-space: nowrap;
+}
+
+body:not(.has-ticker) .ticker-banner {
+  display: none;
+}
+
+body.has-ticker {
+  padding-bottom: calc(var(--nav-height, 6rem) + var(--ticker-height));
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll var(--ticker-speed, 40s) linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.ticker-group span {
+  display: inline-block;
+  padding-inline: 3rem;
+}
+
+.ticker-group span::after {
+  content: " /";
+  margin-left: 3rem;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-banner:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
 /*											breakpoint debug */
 
 	/*										Breakpoint Visualizer Base Styles */

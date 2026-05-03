@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="/style.css?v=13">
+		<link rel="stylesheet" type="text/css" href="style.css?v=13">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@600;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -27,15 +27,49 @@
 		gtag('config', 'G-1P9XD0NMPQ');
 	</script>
 
-	<body id="top" class="project debug">
+	<body id="top" class="project debug has-ticker">
 
 		<header class="foreground">
 			<div class="hero-image-wrapper" role="img">
 				
-				<img src="/images/mid1/mid-1-hero.webp" alt="Black keyboard sitting on a grey background">
+				<img src="images/mid1/mid1-07.webp" alt="Black keyboard sitting on a grey background">
 			</div>
 			<div class="hero-spacer"></div>
 		</header>
+
+		<div class="top-level-wrapper nav-wrapper">
+			<div class="nav-pseudo-article">
+				<nav>
+					<div class="nav-header">
+						<div class="logo">
+							<a href="index.html">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a><span class="dot-blink">.</span><span class="product-name">MID.1</span>
+						</div>
+						<a class="top-link" href="#top">
+							<span class="top-link-text">
+								<span class="top-arrow-wrap">
+									<span class="top-link arrow front">🡡</span>
+									<span class="top-link arrow back">🡡</span>
+								</span>
+								<span>Top</span>
+							</span>
+						</a>
+					</div>
+					<div class="list-wrapper">
+						<ul>
+							<li class="mobile-hidden"><a href="#availability">Availability</a></li>
+							<li><a href="#products">Products</a></li>
+							<li><a href="#keyboard">Keyboard</a></li>
+							<li><a href="#lid">Lid</a></li>
+							<li><a href="#deskTray">Desk tray</a></li>
+							<li><a href="#support">Support</a></li>
+							<li><a href="#specs">Specs</a></li>
+							<li><a href="#updates">Updates</a></li>
+							<li><a href="#about">About</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
 
 		<main>
 
@@ -49,11 +83,585 @@
 				</article>
 			</div>
 			
+			<div class="top-level-wrapper button-wrapper split-foreground-background">
+				<a class="button" href="#" onclick="event.preventDefault()">Reserve for $20</a>
+			</div>
+
 			<div id="availability" class="top-level-wrapper">
 				<article>
 					<h2>Availability</h2>
-					<p class="headline">Coming very soon</p>
-					<p>In early 2026 I'll be running a small, reservation-based, in-stock sale. You'll be able to reserve your spot during a reservation window for a <span class="data">$20</span> deposit. Then, purchase a ready-to-ship unit once production wraps. Think of it like a group buy, but without the upfront payment or risk.</p>
+					<p class="headline">Reservations start May 3</p>
+					<p>Reserve your spot to purchase a MID.1 for <span class="data">$20</span>. Once production wraps, purchase an in-stock unit that's ready to ship. The deposit applies to your purchase and is refundable anytime if you change your mind.</p>
+					<p>Reservations will be open through May 17. Reserve accessory products for <span class="data">$5</span> each.</p>
+				</article>
+			</div>
+
+			<div class="divider-image split-background-foreground">
+				<div class="divider-image-inner">
+					<img src="images/mid1/mid1-12.webp" alt="" loading="lazy">
+				</div>
+			</div>
+
+			<div id="products" class="top-level-wrapper foreground">
+				<article>
+					<h2>Products</h2>
+					<p class="headline">Meet the family</p>
+					<div class="product-array">
+						<a class="product-card" href="#" onclick="event.preventDefault()">
+							<figure>
+								<img src="images/mid1/mid1-card.webp" alt="" loading="lazy">
+								<figcaption>
+									<h3><span class="underline">MID.1</span></h3>
+									<div class="card-footer">
+										<p>Manual Input Device</p>
+										<p class="data">$425</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+						<a class="product-card" href="#" onclick="event.preventDefault()">
+							<figure>
+								<img src="images/mid1/mid1lid-card.webp" alt="" loading="lazy">
+								<figcaption>
+									<h3><span class="underline">MID.1.LID</span></h3>
+									<div class="card-footer">
+										<p>Latching Input Deflector</p>
+										<p class="data">$195</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+						<a class="product-card" href="mid1dtc.html">
+							<figure>
+								<img src="images/mid1/mid1pet-01.webp" alt="" loading="lazy">
+								<figcaption>
+									<h3><span class="underline">MID.1.PET</span></h3>
+									<div class="card-footer">
+										<p>Personal Effects Tray</p>
+										<p class="data">$55</p>
+									</div>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+					<p>MID.1 is supported by a pair of optional accessories built around the same materials and design language. MID.1.LID protects the keyboard and can double as a wrist rest, while MID.1.PET keeps small items organized nearby.</p>
+					<div class="feature-set-wrapper">
+						<section>
+							<figure>
+								<img src="images/mid1/mid1family-01.webp" alt="" loading="lazy">
+							</figure>
+						</section>
+					</div>
+				</article>
+			</div>
+
+			<div class="top-level-wrapper button-wrapper split-foreground-background">
+				<a class="button" href="#" onclick="event.preventDefault()">Reserve for $20</a>
+			</div>
+
+			<div id="keyboard" class="top-level-wrapper">
+				<article>
+					<h2>The keyboard</h2>
+					<p class="headline">MID.1 Manual Input Device</p>
+					<div class="feature-set-wrapper">
+						<section>
+							<figure>
+								<img src="images/mid1/mid1-08.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>Structure-first. Industrial materials. Visible hardware. You can see how it’s put together, and take it apart the same way. Its DNA includes grandpa's toolbox, midcentury desk lamp, and technical control panel. Like typing on industrial equipment, but friendlier.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>So metal</h3>
+							<figure>
+								<img src="images/mid1/mid1-16.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>Folded stainless steel gives MID.1 its unique balance of crisp edges, soft bends, and the heft of a solid CNC-milled board. All finished in a clean matte black powder coat.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Shapeable sound</h3>
+							<figure>
+								<img src="images/mid1/mid1-25.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>An open interior gives MID.1 a big, resonant sound out of the box, with room to add your own acoustic materials to tune it further. You can start with the included custom-cut wool felt acoustic pad.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Layout options</h3>
+							<figure>
+								<img src="images/mid1/mid1-13.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>MID.1 supports multiple bottom-row layouts through a flexible PCB and two matching case-top options. The standard top gives you a full bottom row; the corner-blocker top blocks the outer corners for a more compact layout. Both accept three different spacebar splits.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Glow, not glare</h3>
+							<figure>
+								<img src="images/mid1/mid1-11.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>MID.1’s lighting is inspired by the glow of a small desk lamp. An internal lighting module bounces light through the case before it escapes through the top grille. The result is softer and more atmospheric than typical underglow.</p>
+								</figcaption>
+								<img src="images/mid1/mid1-21.webp" alt="" loading="lazy">
+							</figure>
+						</section>
+						<section>
+							<h3>PCB</h3>
+							<figure>
+								<img src="images/mid1/mid1-22.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>MID.1's custom PCB is built for flexibility and serviceability, with Kailh hotswap sockets, dual rotary encoders, three different spacebar options, and a Unified Daughterboard.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Built to be fixed</h3>
+							<figure>
+								<img src="images/mid1/mid1-23.webp" alt="Close-up of detail on corner of keyboard" loading="lazy">
+								<figcaption>
+									<p>MID.1 is made almost entirely from off-the-shelf components. Aside from the case and PCB, parts can be replaced without hunting down proprietary hardware. No adhesives. No sealed assemblies. Just visible fasteners and teardown-friendly construction.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Adjustable typing angle</h3>
+							<figure>
+								<img src="images/mid1/mid1-17.webp" alt="" loading="lazy">
+								<img src="images/mid1/mid1-18.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>When you want a little lift, the included screw-in rear feet give MID.1 a 4-degree typing angle. They install like hardware and are easily removed when you want things flat.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>It has <span class="italic">two</span> knobs</h3>
+							<figure>
+								<img src="images/mid1/mid1-06.webp" alt="Close-up of detail on corner of keyboard" loading="lazy">
+								<figcaption>
+									<p>Two rotary encoders, because one felt a little lonely. Use for volume, scrolling, media, lighting, or custom functions, depending on how you set things up.</p>
+								</figcaption>
+							</figure>
+						</section>
+					</div>
+				</article>
+			</div>
+
+			<div id="lid" class="top-level-wrapper foreground">
+				<article>
+					<h2>The lid</h2>
+					<p class="headline">MID.1.LID Latching Input Deflector</p>
+					<div class="feature-set-wrapper">
+						<section>
+							<figure>
+								<img src="images/mid1/mid1lid-03.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>MID.1.LID is an optional cover designed to make MID.1 easier to store, carry, and live with. It protects the keyboard when not in use, adds a handle when you're taking it somewhere, and turns into a wrist rest when it's back on your desk. Built with the same powder-coated stainless steel and visible, serviceable hardware.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<figure>
+								<h3>Ready for the road</h3>
+								<img src="images/mid1/mid1pluslid-03.webp" alt="" loading="lazy">
+								<img src="images/mid1/mid1pluslid-05.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>Pack up MID.1 by securing MID.1.LID in place with stainless steel latches. Carry it by the soft Horween Dublin veg-tanned leather strap handle.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>For the hazards of real desks</h3>
+							<figure>
+								<img src="images/mid1/mid1pluslid-07.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>Some of the best reasons for a cover are not especially technical: dust, clutter, paws, and the ordinary hazards of a desk that actually gets used. MID.1.LID keeps the keyboard a little less vulnerable between sessions.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Rest your wrists</h3>
+							<figure>
+								<img src="images/mid1/mid1pluslid-06.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
+								<figcaption>
+									<p>When MID.1 is in use, MID.1.LID doesn’t have to disappear. Set it in front of the keyboard for a properly sized wrist rest. The ultra-low-profile hardware and recessed strap handle keep the top surface smooth.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Tools travel with it</h3>
+							<figure>
+								<img src="images/mid1/mid1lid-06.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
+								<figcaption>
+									<p>The underside of MID.1.LID is fitted with dedicated storage for the tools and small parts that support MID.1. The essentials stay with the keyboard instead of drifting into a drawer. Adjustments and maintenance are part of the object, not an afterthought. </p>
+								</figcaption>
+							</figure>
+						</section>
+					</div>
+				</article>
+			</div>
+
+			<div id="deskTray" class="top-level-wrapper">
+				<article>
+					<h2>The desk tray</h2>
+					<p class="headline">MID.1.PET Personal Effects Tray</p>
+					<div class="feature-set-wrapper">
+						<section>
+							<figure>
+								<img src="images/mid1/mid1pet-02.webp" alt="" loading="lazy">
+								<figcaption>
+									<p>MID.1.PET is an optional desk tray for the small stuff that never quite has a home: keycaps, switches, tools, notepads, and earbuds.</p>
+								</figcaption>
+							</figure>
+						</section>
+						<section>
+							<h3>Shared construction</h3>
+							<figure>
+								<img src="images/mid1/mid1petplusmid1-01.webp" alt="" loading="lazy">
+								<img src="images/mid1/mid1pet-05.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
+								<figcaption>
+									<p>Same folded, powder-coated stainless steel as MID.1. Same crisp, simple edges.</p>
+								</figcaption>
+							</figure>
+						</section>
+					</div>
+				</article>
+			</div>
+
+			<div class="top-level-wrapper button-wrapper split-background-foreground">
+				<a class="button" href="#" onclick="event.preventDefault()">Reserve for $20</a>
+			</div>
+
+			<div id="support" class="top-level-wrapper foreground">
+				<article>
+					<h2>Support</h2>
+					<p class="headline">Built to last, and backed accordingly</p>
+					<div class="feature-set-wrapper">
+						<section>
+							<figure>
+								<img src="images/mid1/mid1-24.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
+								<figcaption>
+									<p>MID.1 is designed for long-term ownership. It’s built from durable materials, assembled with serviceability in mind, and backed by a one-year limited warranty against defects in materials and workmanship. If you need support, email me at <a>hello@aokay.com</a>.</p>
+								</figcaption>
+							</figure>
+						</section>
+					</div>
+				</article>
+			</div>
+
+			<div class="divider-image split-foreground-background">
+				<div class="divider-image-inner bottom-align">
+					<img src="images/mid1/mid1-20.webp" alt="" loading="lazy">
+				</div>
+			</div>
+
+			<div id="specs" class="top-level-wrapper">
+				<article>
+				
+					<h2>Tech specs</h2>
+				
+					<div class="specs-grid">
+						<section class="spec-layouts">
+							<h3>Supported layouts</h3>
+							<dl>
+								<dt>Standard 12-unit</dt>
+								<dd class="layout-container">
+									<div class="keyboard-wrapper all-rows">
+										<div class="keyboard">
+											<!-- row 4 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">Q</div>
+											<div class="key u-1">W</div>
+											<div class="key u-1">E</div>
+											<div class="key u-1">R</div>
+											<div class="key u-1">T</div>
+											<div class="key u-1">Y</div>
+											<div class="key u-1">U</div>
+											<div class="key u-1">I</div>
+											<div class="key u-1">O</div>
+											<div class="key u-1">P</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 3 -->
+											<div class="key u-1-25 modifier">1.25</div>
+											<div class="key u-1">A</div>
+											<div class="key u-1">S</div>
+											<div class="key u-1">D</div>
+											<div class="key u-1">F</div>
+											<div class="key u-1">G</div>
+											<div class="key u-1">H</div>
+											<div class="key u-1">J</div>
+											<div class="key u-1">K</div>
+											<div class="key u-1">L</div>
+											<div class="key u-1-75 modifier">1.75</div>
+											<!-- row 2 -->
+											<div class="key u-1-75 modifier">1.75</div>
+											<div class="key u-1">Z</div>
+											<div class="key u-1">X</div>
+											<div class="key u-1">C</div>
+											<div class="key u-1">V</div>
+											<div class="key u-1">B</div>
+											<div class="key u-1">N</div>
+											<div class="key u-1">M</div>
+											<div class="key u-1">, &lt;</div>
+											<div class="key u-1">. &gt;</div>
+											<div class="key u-1-25 modifier">1.25</div>
+											<!-- row 1 -->
+											<div class="key u-1-5 modifier">1.5</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-2-75 modifier">2.75</div>
+											<div class="key u-2-25 modifier">2.25</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1-5 modifier">1.5</div>
+										</div>
+									</div>
+								</dd>
+							<dt>corner blocker (with alternate top case)</dt>
+							<dd class="layout-container">
+								<div class="keyboard-wrapper all-rows">
+									<div class="keyboard">
+										<!-- row 4 -->
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-1">Q</div>
+										<div class="key u-1">W</div>
+										<div class="key u-1">E</div>
+										<div class="key u-1">R</div>
+										<div class="key u-1">T</div>
+										<div class="key u-1">Y</div>
+										<div class="key u-1">U</div>
+										<div class="key u-1">I</div>
+										<div class="key u-1">O</div>
+										<div class="key u-1">P</div>
+										<div class="key u-1 modifier">1.0</div>
+										<!-- row 3 -->
+										<div class="key u-1-25 modifier">1.25</div>
+										<div class="key u-1">A</div>
+										<div class="key u-1">S</div>
+										<div class="key u-1">D</div>
+										<div class="key u-1">F</div>
+										<div class="key u-1">G</div>
+										<div class="key u-1">H</div>
+										<div class="key u-1">J</div>
+										<div class="key u-1">K</div>
+										<div class="key u-1">L</div>
+										<div class="key u-1-75 modifier">1.75</div>
+										<!-- row 2 -->
+										<div class="key u-1-75 modifier">1.75</div>
+										<div class="key u-1">Z</div>
+										<div class="key u-1">X</div>
+										<div class="key u-1">C</div>
+										<div class="key u-1">V</div>
+										<div class="key u-1">B</div>
+										<div class="key u-1">N</div>
+										<div class="key u-1">M</div>
+										<div class="key u-1">, &lt;</div>
+										<div class="key u-1">. &gt;</div>
+										<div class="key u-1-25 modifier">1.25</div>
+										<!-- row 1 -->
+										<div class="key u-1-5 empty"></div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-2-75 modifier">2.75</div>
+										<div class="key u-2-25 modifier">2.25</div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-1-5 empty"></div>
+									</div>
+								</div>
+							</dd>
+							<dt>7-unit spacebar</dt>
+							<dd class="layout-container">
+								<div class="keyboard-wrapper bottom-row">
+									<div class="keyboard">
+										<!-- ghost row -->
+										<div class="key u-1-75 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1-25 ghost"></div>
+										<!-- row 1 -->
+										 <div class="key u-1-5 optional"></div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-7-0 modifier">7.0</div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-1-5 optional"></div>
+									</div>
+								</div>
+							</dd>
+							<dt>Triple split spacebar</dt>
+							<dd class="layout-container">
+								<div class="keyboard-wrapper bottom-row">
+									<div class="keyboard">
+										<!-- ghost row -->
+										<div class="key u-1-75 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1 ghost"></div>
+										<div class="key u-1-25 ghost"></div>
+										<!-- row 1 -->
+										<div class="key u-1-5 optional"></div>
+										<div class="key u-1-5 modifier">1.5</div>
+										<div class="key u-2-75 modifier">2.75</div>
+										<div class="key u-1 modifier">1.0</div>
+										<div class="key u-2-25 modifier">2.25</div>
+										<div class="key u-1-5 modifier">1.5</div>
+										<div class="key u-1-5 optional"></div>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						</section>
+				
+						<section>
+							<h3>What's in the box: MID.1</h3>
+							<ul>
+								<li>powder coated stainless steel bottom case</li>
+								<li>matching top case with either standard or corner blocker layout</li>
+								<li>matching stainless steel plate</li>
+								<li>custom hotswap PCB with dual rotary encoders and auxiliary lighting module</li>
+								<li>fasteners</li>
+								<li>feet for flat and 4° typing angle</li>
+								<li>PCB gaskets</li>
+								<li>rotary encoder knobs</li>
+								<li>wool felt acoustic pad</li>
+								<li>hex keys</li>
+							</ul>
+						</section>
+				
+						<section>
+							<h3>What's in the box: MID.1.LID</h3>
+							<ul>
+								<li>powder coated stainless steel case and frame</li>
+								<li>fasteners</li>
+								<li>feet</li>
+								<li>leather strap handle</li>
+								<li>leather tool sleeve</li>
+								<li>latches (for retrofitting MID.1)</li>
+							</ul>
+						</section>
+
+						<section>
+							<h3>Dimensions</h3>
+							<dl>
+								<dt>typing angle</dt>
+								<dd>flat or 4°</dd>
+								<dt>width</dt>
+								<dd>236&nbsp;mm (9&nbsp;5/16")</dd>
+								<dt>length</dt>
+								<dd>142&nbsp;mm (5&nbsp;5/8")</dd>
+								<dt>front height (including feet)</dt>
+								<dd>21&nbsp;mm (13/16")</dd>
+								<dt>overall height (to top of case)</dt>
+								<dd>23&nbsp;mm (15/16")</dd>
+								<dt>overall height (including knob)</dt>
+								<dd>32&nbsp;mm (1&nbsp;1/4")</dd>
+								<dt>weight</dt>
+								<dd>985&nbsp;g (2.17&nbsp;lbs)</dd>
+							</dl>
+						</section>
+				
+						<section>
+							<h3>The PCB</h3>
+							<dl>
+								<dt>thickness</dt>
+								<dd>1.6 mm</dd>
+								<dt>connectivity</dt>
+								<dd>USB-C<br>
+								no wireless option</dd>
+								<dt>switch connection</dt>
+								<dd>Kailh hot swap sockets<br>
+								supports MX switches only</dd>
+								<dt>mounting</dt>
+								<dd>tray mount with rubber gaskets</dd>
+								<dt>flex</dt>
+								<dd>no flex cuts</dd>
+								<dt>firmware</dt>
+								<dd>built with QMK, VIA pre-installed</dd>
+								<dt>Designed by</dt>
+								<dd>A.Okay!</dd>
+							</dl>
+						</section>
+				
+						<section>
+							<h3>Materials</h3>
+							<dl>
+								<dt>bottom and top case</dt>
+								<dd>stainless steel</dd>
+								<dt>plate</dt>
+								<dd>stainless steel</dd>
+								<dt>fasteners</dt>
+								<dd>stainless steel</dd>
+								<dt>feet and PCB gaskets</dt>
+								<dd>synthetic rubber</dd>
+								<dt>PCB</dt>
+								<dd>standard FR4 with ENIG finish</dd>
+								<dt>packaging</dt>
+								<dd>100% cardboard and paper, except foil PCB bag</dd>
+							</dl>
+						</section>
+					</div>
+				
+				</article>
+			</div>
+
+			<div id="updates" class="top-level-wrapper foreground">
+				<article>
+					<h2>Updates</h2>
+					<p>Sign up to receive launch updates, reservation announcements, and future MID.1 news by email. No spam. Unsubscribe anytime. For questions, email <a href="mailto:heyheyaokay.com">hello@aokay.cool</a>.</p>
+				
+					<section class="newsletter-form">
+						<h3>Sign up</h3>
+						<div id="mc_embed_shell">
+							<div id="mc_embed_signup">
+								<form action="https://github.us14.list-manage.com/subscribe/post?u=7b932c33d3116b7057ef4ab37&amp;id=f9db2e8c7b&amp;f_id=002bcbe0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+									<div id="mc_embed_signup_scroll">
+										<div class="mc-field-group">
+											<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="Enter your email here">
+										</div>
+										<div id="mce-responses" class="clear foot">
+											<div class="response" id="mce-error-response" style="display: none;"></div>
+											<div class="response" id="mce-success-response" style="display: none;"></div>
+										</div>
+										<div aria-hidden="true" style="position: absolute; left: -5000px;">
+											<label for="mailchimp-bot-field" class="visually-hidden">Do not fill this out</label>
+											<input type="text" name="b_7b932c33d3116b7057ef4ab37_f9db2e8c7b" id="mailchimp-bot-field" tabindex="-1" value="">
+										</div>
+										<div class="optionalParent">
+											<div class="clear foot">
+												<input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+												<p><a href="http://eepurl.com/iV4X2I" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="display: flex; justify-content: center; align-items: center;" loading="lazy"></span></a></p>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</section>
+				
+				</article>
+			</div>
+
+			<div id="about" class="top-level-wrapper background">
+				<article>
+					<h2>About</h2>
+					<p>Hey, I’m Sean. For my day job, I run a residential architecture studio. Some of my work has been featured in <span class="italic">Dwell</span> and a couple coffee table books.</p>
+					<p>A.Okay! is a side project and creative outlet where I make the quirky kinds of things I want to see in the world and actually use myself.</p>
 				</article>
 			</div>
 
@@ -76,8 +684,24 @@
 			</footer>
 		</div>
 
-		<script src="/main.js"></script>
+		<script src="main.js"></script>
 
+		<div class="ticker-banner" aria-label="Site announcement">
+			<div class="ticker-track">
+				<div class="ticker-group">
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				</div>
+
+				<div class="ticker-group" aria-hidden="true">
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				<span>Launch weekend special: through May 5, reserve as many products as you like for a single deposit.</span>
+				</div>
+			</div>
+		</div>
+		
 	</body>
 
 </html>
