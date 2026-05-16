@@ -176,8 +176,17 @@ a.button,
 		padding-block: 0 0.5rem;
 	}
 
+	.notice-card-wrapper {
+		padding-top: 0rem;
+		margin-top: -2rem;
+	}
+
 article > .button-wrapper {
 	padding-block: 2rem;
+}
+
+.notice-card .button-wrapper {
+	padding-top: 1rem;
 }
 
 #specs li,
@@ -514,6 +523,21 @@ a.button:hover::after {
 
 .italic {
 	font-style: italic;
+}
+
+.notice-card {
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: var(--radius-standard);
+	box-shadow:
+		0 2px 6px rgba(0, 0, 0, 0.10),
+		0 1px 3px rgba(0, 0, 0, 0.04);
+	transition: all 0.2s ease;
+	background-color: var(--color-white);
+	padding: 2rem 1rem;
+}
+
+.notice-card:hover {
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .design-figure-wrapper,
@@ -1454,6 +1478,7 @@ body.has-ticker {
 	nav,
 	.specs-grid,
 	.product-array,
+	.notice-card,
 	.newsletter-form {
 		margin-inline: -1rem;
 	}
@@ -1507,11 +1532,13 @@ body.has-ticker {
 
 	nav,
 	.specs-grid,
-	.product-array {
+	.notice-card,
+	.product-array{
 		margin-inline: -2rem;
 	}
 
-	.product-card {
+	.product-card,
+	.notice-card {
 		padding: 2rem;
 	}
 
