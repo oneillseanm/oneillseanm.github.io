@@ -525,6 +525,10 @@ a.button:hover::after {
 	font-style: italic;
 }
 
+.strikethrough {
+	text-decoration: line-through;
+}
+
 .notice-card {
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	border-radius: var(--radius-standard);
@@ -1059,7 +1063,7 @@ figure {
 	margin-inline: auto 0;
 }
 
-figcaption {
+figcaption, figcaption p {
 	margin-block: 1rem;
 }
 
