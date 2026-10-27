@@ -1114,12 +1114,14 @@ p {
 		z-index: -1;
 	}
 
-	.hero-image-wrapper {
+	.hero-image-wrapper,
+	.product-hero {
 		overflow: hidden;
 		position: absolute;
 	}
 	
-	.hero-image-wrapper img {
+	.hero-image-wrapper img,
+	.product-hero img {
 		object-fit: cover;
 		object-position: center center;
 		height: 100%;
