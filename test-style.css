@@ -27,7 +27,7 @@
 	--font-size-small: 0.8em;
 	--font-size-title: 4em;
 	--font-size-subtitle: 1rem;
-	--font-size-product-card-title: 1.3em;
+	--font-size-large: 1.3em;
 	--font-size-headline: 2em;
 	--radius-standard: 0.9rem;
 	--ticker-height: 2rem;
@@ -118,7 +118,7 @@ dd,
 .key,
 .top-link a {
 	font-family: var(--font-sans);
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .arrow {
@@ -260,15 +260,15 @@ h3 {
 	font-weight: 600;
 }
 
-	.product-card h3 {
+	.product-card :is(h2, h3) {
 		color: var(--color-alert-blue);
 		font-family: var(--font-display);
-		font-size: var(--font-size-product-card-title);
+		font-size: var(--font-size-large);
 		font-weight: 900;
 		transition: all 1s ease;
 	}
 	
-.product-card h3::after {
+.product-card :is(h2, h3)::after {
 	content: "🡵";
 	display: inline-block;
 	font-family: var(--font-symbol);
@@ -281,7 +281,7 @@ h3 {
 		transform 0.35s cubic-bezier(0.33, 1.65, 0.6, 1.15) 0.05s;
 }
 
-.product-card:hover h3::after {
+.product-card:hover :is(h2, h3)::after {
 	opacity: 1;
 	transform: translate(0.5em, -0.1em);
 }
@@ -507,6 +507,10 @@ a.button:hover::after {
 	gap: 3rem;
 	justify-content: space-between;
 	margin-block: 4rem;
+}
+
+.product-index > .product-array {
+	margin-top: 0;
 }
 
 .product-card {
@@ -1458,6 +1462,13 @@ body.has-ticker {
 	line-height: 1.05;
 }
 
+.product-page .product-subtitle {
+	display: block;
+	font-family: var(--font-display);
+	font-size: var(--font-size-subtitle);
+	font-weight: 300;
+}
+
 .product-page .product-purchase {
 	display: grid;
 	gap: 1rem;
@@ -1490,8 +1501,14 @@ body.has-ticker {
 }
 
 .product-page .product-price {
+	font-size: var(--font-size-large);
 	font-weight: 400;
 	line-height: 1.4;
+	width: fit-content;
+}
+
+.product-page .product-availability {
+	font-size: var(--font-size-small);
 	width: fit-content;
 }
 
@@ -1510,11 +1527,22 @@ body.has-ticker {
 
 .product-page .product-features .feature-set-wrapper > section h3 {
 	font-size: var(--font-size-headline);
+	line-height: 1.1;
 	margin-bottom: 1rem;
 	text-wrap: balance;
 }
 
 /* Standalone information pages */
+
+.info-page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100svh;
+}
+
+.info-page .footer-wrapper {
+	flex-grow: 1;
+}
 
 .info-page .page-title {
 	display: block;
