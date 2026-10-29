@@ -1,10 +1,18 @@
 const shopifyStorefront = {
   apiVersion: '2026-07',
   domain: 'uthryk-xm.myshopify.com',
-  storefrontAccessToken: '99637cebc018e475b6ba131fa424a1e7'
+  storefrontAccessToken: 'e5e16a3d0bec1f53ac5765d1989309db',
+  products: {
+    mid1: '15461691654331',
+    mid1Lid: '15461362794683',
+    mid1Pet: '15461363646651',
+    mid1TopCase: '15461451169979',
+    mid1Pcb: '15461439275195',
+    mid1ServiceKit: '15461451792571'
+  }
 };
 
-const productPurchase = document.querySelector('[data-shopify-product-id]');
+const productPurchase = document.querySelector('[data-shopify-product]');
 
 if (productPurchase) {
   initializeShopifyProduct(productPurchase);
@@ -17,7 +25,13 @@ async function initializeShopifyProduct(purchase) {
   const addToCart = purchase.querySelector('.product-add-to-cart');
 
   try {
-    const product = await fetchShopifyProduct(purchase.dataset.shopifyProductId);
+    const productId = shopifyStorefront.products[purchase.dataset.shopifyProduct];
+
+    if (!productId) {
+      throw new Error('Shopify product is not configured');
+    }
+
+    const product = await fetchShopifyProduct(productId);
 
     if (!product) {
       throw new Error('Shopify product not found');
@@ -113,7 +127,7 @@ function renderProductOptions(options, selectedOptions, container, variants, onC
       fieldset.className = 'product-option';
 
       const legend = document.createElement('legend');
-      legend.textContent = option.name;
+      legend.textContent = formatOptionName(option.name);
       fieldset.append(legend);
 
       const values = document.createElement('div');
@@ -135,7 +149,7 @@ function renderProductOptions(options, selectedOptions, container, variants, onC
 
         button.addEventListener('click', () => {
           selectedOptions[option.name] = optionValue.name;
-          updateOptionButtons(container, selectedOptions);
+          updateOptionButtons(container, selectedOptions, variants);
           onChange();
         });
 
@@ -146,14 +160,25 @@ function renderProductOptions(options, selectedOptions, container, variants, onC
       container.append(fieldset);
     });
 
-  updateOptionButtons(container, selectedOptions);
+  updateOptionButtons(container, selectedOptions, variants);
 }
 
-function updateOptionButtons(container, selectedOptions) {
+function updateOptionButtons(container, selectedOptions, variants) {
   container.querySelectorAll('[data-option-name]').forEach(button => {
     const isSelected = selectedOptions[button.dataset.optionName] === button.dataset.optionValue;
+    const candidateOptions = {
+      ...selectedOptions,
+      [button.dataset.optionName]: button.dataset.optionValue
+    };
+
     button.setAttribute('aria-pressed', String(isSelected));
+    button.disabled = !variants.some(variant => variantMatches(variant, candidateOptions));
   });
+}
+
+function formatOptionName(name) {
+  const componentOption = name.match(/^MID\.1\s+(.+?)\s+\((.+)\)$/i);
+  return componentOption ? `${componentOption[1]} ${componentOption[2]}` : name;
 }
 
 function updateSelectedVariant(purchase, variants, selectedOptions, price, availability, addToCart) {
