@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=13">
+		<link rel="stylesheet" type="text/css" href="test-style.css?v=16">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 		gtag('config', 'G-1P9XD0NMPQ');
 	</script>
 
-	<body id="top" class="product-page">
+	<body id="top" class="product-page product-layout-v2">
 		<!-- Add class="has-ticker" to body to enable launch ticker -->
 		<!-- Add class="debug" to body to enable viewport debug tool -->
 
@@ -61,17 +61,21 @@
 
 		<main>
 
-			<article id="mid1" class="product top-level-wrapper">
+			<article id="mid1" class="product-layout">
 
-				<header class="product-overview">
+				<header class="product-overview product-section">
+					<div class="section-content section-content--wide">
 					<figure class="product-hero">
 						<img src="images/mid1/mid1-08.webp" alt="Black MID.1 keyboard on a grey background">
 					</figure>
 
 					<div class="product-summary">
 						<h1 class="headline">MID.1<span class="product-subtitle">Manual Input Device</span></h1>
-						<section class="product-purchase" aria-label="Purchase information">
+						<section class="product-purchase" aria-label="Purchase information" data-shopify-product-id="15461362172091">
 							<p class="product-price data">$450</p>
+							<div class="product-options" data-shopify-options aria-live="polite">
+								<p class="product-options-status">loading options</p>
+							</div>
 							<p class="product-availability data" data-shopify-availability aria-live="polite">in stock</p>
 							<button class="product-add-to-cart" type="button">add to cart</button>
 						</section>
@@ -81,10 +85,11 @@
 							<p>Keycaps, switches, and stabilizers are not included with MID.1. It is shown wearing PBS Black on Black keycaps, by Keyreative. A fine set, and arguably the chef's kiss on MID.1.</p>
 						</div>
 					</div>
+					</div>
 				</header>
 
-				<div class="product-section-band top-level-wrapper foreground">
-					<section class="product-features">
+				<section class="product-features product-section foreground">
+					<div class="section-content">
 						<h2>About this thing</h2>
 						<div class="feature-set-wrapper">
 						<section class="product-feature">
@@ -195,12 +200,51 @@
 							</figure>
 						</section>
 						</div>
-					</section>
-				</div>
-			</article>
+					</div>
+				</section>
+
+				<section class="product-family product-section">
+					<div class="section-content">
+						<h2>Accessories</h2>
+						<div class="feature-set-wrapper">
+							<section class="product-feature">
+								<h3>Meet the family</h3>
+								<p>MID.1 has a lid, because everything is better with a lid. There’s also a tray made from the same materials and details.</p>
+
+								<div class="product-array">
+									<a class="product-card" href="test-mid1lid.html">
+										<figure>
+											<img src="images/mid1/mid1lid-card.webp" alt="MID.1.LID keyboard lid" loading="lazy">
+											<figcaption>
+												<h3><span class="underline">MID.1.LID</span></h3>
+												<div class="card-footer">
+													<p>Latching Input Deflector</p>
+													<p class="data">$195</p>
+												</div>
+											</figcaption>
+										</figure>
+									</a>
+
+									<a class="product-card" href="test-mid1pet.html">
+										<figure>
+											<img src="images/mid1/mid1pet-01.webp" alt="MID.1.PET desk tray" loading="lazy">
+											<figcaption>
+												<h3><span class="underline">MID.1.PET</span></h3>
+												<div class="card-footer">
+													<p>Personal Effects Tray</p>
+													<p class="data">$69</p>
+												</div>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
 			
-			<div id="support" class="top-level-wrapper">
-				<article>
+			<section id="support" class="product-support product-section foreground">
+				<div class="section-content">
 					<h2>Support</h2>
 					<div class="feature-set-wrapper">
 						<section class="product-feature">
@@ -213,8 +257,8 @@
 							</figure>
 						</section>
 					</div>
-				</article>
-			</div>
+				</div>
+			</section>
 
 			<div class="divider-image split-foreground-background">
 				<div class="divider-image-inner bottom-align">
@@ -222,8 +266,8 @@
 				</div>
 			</div>
 
-			<div id="specs" class="top-level-wrapper">
-				<article>
+			<section id="specs" class="product-specs product-section">
+				<div class="section-content">
 				
 					<h2>Specs</h2>
 				
@@ -498,8 +542,10 @@
 						</section>
 					</div>
 				
-				</article>
-			</div>
+				</div>
+			</section>
+
+			</article>
 
 		</main>
 
@@ -526,6 +572,7 @@
 			</footer>
 		</div>
 
+		<script src="test-shopify.js"></script>
 		<script src="main.js"></script>
 
 	</body>
