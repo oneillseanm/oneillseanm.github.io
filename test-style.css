@@ -17,7 +17,8 @@
 	--font-size-small: 0.8em;
 	--font-size-subtitle: 1rem;
 	--font-size-large: 1.3em;
-	--font-size-headline: 2em;
+	--font-size-headline: 1.7rem;
+	--font-size-h1: 1.7rem;
 	--radius-standard: 0.9rem;
 	--ticker-height: 2rem;
 	--ticker-speed: 100s;
@@ -165,7 +166,7 @@ h1 {
 
 h2 {
 	font-size: inherit;
-	font-weight: 800;
+	font-weight: 600;
 	margin-block: 0;
 }
 
@@ -1103,7 +1104,7 @@ body.has-ticker {
 .product-page .product-summary h1.headline {
 	display: block;
 	font-family: var(--font-display);
-	font-size: var(--font-size-headline);
+	font-size: var(--font-size-h1);
 	font-weight: 900;
 	line-height: 1.05;
 }
@@ -1171,8 +1172,9 @@ body.has-ticker {
 	width: 100vw;
 }
 
-.product-page .product-features .feature-set-wrapper > section h3 {
+.product-page .product-feature > h3 {
 	font-size: var(--font-size-headline);
+	font-weight: 300;
 	line-height: 1.1;
 	margin-bottom: 1rem;
 	text-wrap: balance;
@@ -1193,7 +1195,7 @@ body.has-ticker {
 .info-page .page-title {
 	display: block;
 	font-family: var(--font-display);
-	font-size: var(--font-size-headline);
+	font-size: var(--font-size-h1);
 	font-weight: 900;
 	line-height: 1.05;
 	margin-bottom: 2rem;
