@@ -38,7 +38,10 @@ async function initializeShopifyProduct(purchase) {
     }
 
     const variants = product.variants.nodes;
-    const initialVariant = variants.find(variant => variant.availableForSale) || variants[0];
+    const requestedVariant = new URLSearchParams(window.location.search).get('variant');
+    const initialVariant = findRequestedVariant(variants, requestedVariant)
+      || variants.find(variant => variant.availableForSale)
+      || variants[0];
     const selectedOptions = Object.fromEntries(
       initialVariant.selectedOptions.map(option => [option.name, option.value])
     );
@@ -57,6 +60,27 @@ async function initializeShopifyProduct(purchase) {
       addToCart.disabled = true;
     }
   }
+}
+
+function findRequestedVariant(variants, requestedVariant) {
+  if (!requestedVariant) return null;
+
+  const requestedValue = normalizeOptionValue(requestedVariant);
+
+  return variants.find(variant =>
+    variant.selectedOptions.some(option => {
+      const optionValue = normalizeOptionValue(option.value);
+      return optionValue === requestedValue || optionValue.startsWith(`${requestedValue}-`);
+    })
+  );
+}
+
+function normalizeOptionValue(value) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
 
 async function fetchShopifyProduct(productId) {

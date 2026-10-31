@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=20">
+		<link rel="stylesheet" type="text/css" href="test-style.css?v=44">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -25,28 +25,32 @@
 	</script>
 
 	<body id="top" class="info-page">
+		<header class="site-header">
+			<div class="site-header-inner site-header-inner--standard top-level-wrapper">
+				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
+			</div>
+		</header>
+
+
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
-				<nav>
+				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
-						<div class="logo">
-							<a href="test-index.html">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-						</div>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
-						<a class="top-link" href="#top">
-							<span class="top-link-text">
-								<span class="top-arrow-wrap">
-									<span class="top-link arrow front">🡡</span>
-									<span class="top-link arrow back">🡡</span>
-								</span>
-								<span>Top</span>
-							</span>
-						</a>
+						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div class="list-wrapper">
-						<ul>
-							<li class="row-start"><a href="test-index.html">Products</a></li>
+					<div id="site-menu" class="nav-drawer" hidden>
+						<ul class="nav-drawer-primary">
+							<li><a href="test-index.html">Products</a></li>
 							<li><a href="test-about.html">About</a></li>
+							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-shipping-returns.html">Shipping + returns</a></li>
+						</ul>
+						<ul class="nav-drawer-secondary">
+							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+							<li><a href="test-policies.html">Policies</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -60,6 +64,14 @@
 					<div class="page-sections">
 						<section>
 							<h2>Get in touch</h2>
+							<p>If you need support, email <a href="mailto:hello@aokay.cool">hello@aokay.cool</a>.</p>
+						</section>
+						<section>
+							<h2>Build instructions</h2>
+							<p>If you need support, email <a href="mailto:hello@aokay.cool">hello@aokay.cool</a>.</p>
+						</section>
+						<section>
+							<h2>Firmware</h2>
 							<p>If you need support, email <a href="mailto:hello@aokay.cool">hello@aokay.cool</a>.</p>
 						</section>
 					</div>
@@ -90,6 +102,7 @@
 			</footer>
 		</div>
 
+		<script src="test-navigation.js?v=2"></script>
 		<script src="main.js"></script>
 	</body>
 </html>

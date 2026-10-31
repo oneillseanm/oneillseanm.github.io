@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=20">
+		<link rel="stylesheet" type="text/css" href="test-style.css?v=44">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -31,28 +31,32 @@
 		<!-- Add class="has-ticker" to body to enable launch ticker -->
 		<!-- Add class="debug" to body to enable viewport debug tool -->
 
+		<header class="site-header">
+			<div class="site-header-inner section-content section-content--wide">
+				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
+			</div>
+		</header>
+
+
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
-				<nav>
+				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
-						<div class="logo">
-							<a href="test-index.html">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-						</div>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
-						<a class="top-link" href="#top">
-							<span class="top-link-text">
-								<span class="top-arrow-wrap">
-									<span class="top-link arrow front">🡡</span>
-									<span class="top-link arrow back">🡡</span>
-								</span>
-								<span>Top</span>
-							</span>
-						</a>
+						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div class="list-wrapper">
-						<ul>
-							<li class="row-start"><a href="test-index.html">Products</a></li>
+					<div id="site-menu" class="nav-drawer" hidden>
+						<ul class="nav-drawer-primary">
+							<li><a href="test-index.html">Products</a></li>
 							<li><a href="test-about.html">About</a></li>
+							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-shipping-returns.html">Shipping + returns</a></li>
+						</ul>
+						<ul class="nav-drawer-secondary">
+							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+							<li><a href="test-policies.html">Policies</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -75,7 +79,10 @@
 						
 						<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1Pet">
 							<p class="product-price data">$69</p>
-							<p class="product-availability data" data-shopify-availability aria-live="polite">in stock</p>
+							<div class="product-status">
+								<p class="product-status-label">availability</p>
+								<p class="product-availability data" data-shopify-availability aria-live="polite">in stock</p>
+							</div>
 							<button class="product-add-to-cart" type="button">add to cart</button>
 						</section>
 
@@ -89,24 +96,24 @@
 
 				<section class="product-features product-section foreground">
 					<div class="section-content">
-						<h2>About this thing</h2>
+						<h2>Features</h2>
 
 						<div class="feature-set-wrapper">
 							<section class="product-feature">
-								<h3>How big the tray is</h3>
+								<h3>Made for MID.1</h3>
 								<figure>
 									<img src="images/mid1/mid1petplusmid1-01.webp" alt="" loading="lazy">
 									<figcaption>
-										<p>But how big is the tray? you might be wondering. Well, it's exactly as deep as MID.1, about 140 millimeters, or just under 6 inches. It's square, too, and exactly as tall. Cut from the same cloth, so to speak, except in this case the cloth is stainless steel.</p>
+										<p>With dimensions that perfectly match MID.1, MID.1.PET compliments it whether it's side by side and also complements the look elsewhere on your desk.</p>
 									</figcaption>
 								</figure>
 							</section>
 							<section class="product-feature">
-								<h3>Little Notches™</h3>
+								<h3>Design details</h3>
 								<figure>
 									<img src="images/mid1/mid1pet-05.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
 									<figcaption>
-										<p>All the details are identical, down to the feet and these little notches. You see these? They’re relief cuts, and they’re part of how you make sheet metal behave when subjected to bending.</p>
+										<p>All the details are identical, down to the stainless steel shaping and the feet.</p>
 									</figcaption>
 								</figure>
 							</section>
@@ -145,18 +152,14 @@
 						<section>
 							<h3>Materials</h3>
 							<dl>
-								<dt>bottom and top case</dt>
-								<dd>304 stainless steel</dd>
-								<dt>plate</dt>
-								<dd>304 stainless steel</dd>
-								<dt>fasteners</dt>
-								<dd>304 and 316 stainless steel</dd>
-								<dt>feet and PCB gaskets</dt>
+								<dt>tray</dt>
+								<dd>powder coated 304 stainless steel</dd>
+								<dt>liner</dt>
+								<dd>Horween Dublin vegetable-tanned leather and neoprene</dd>
+								<dt>feet</dt>
 								<dd>synthetic rubber</dd>
-								<dt>PCB</dt>
-								<dd>standard FR4 with ENIG finish</dd>
 								<dt>packaging</dt>
-								<dd>100% cardboard and paper, except foil PCB bag</dd>
+								<dd>100% cardboard and paper</dd>
 							</dl>
 						</section>
 
@@ -165,12 +168,11 @@
 							<dl>
 								<dt>designed by</dt>
 								<dd>A.Okay! in Seattle</dd>
-								<dt>sheet metal</dt>
+								<dt>sheet metal and neoprene</dt>
 								<dd>fabricated in the US (cut, bent, and powder coated)</dd>
 								<dt>hardware</dt>
 								<dd>sourced from US and international suppliers</dd>
-								<dt>leather parts</dt>
-								<dd>cut, sewn, and finished by A.Okay! using Horween leather from Chicago</dd>
+								<dt>leather parts</dt><dd>cut, sewn, and finished by A.Okay! using Horween leather from Chicago</dd>
 								<dt>packaging</dt>
 								<dd>designed by A.Okay!, manufactured in San Francisco</dd>
 								<dt>final kit prep</dt>
@@ -208,7 +210,8 @@
 			</footer>
 		</div>
 
-		<script src="test-shopify.js?v=1"></script>
+		<script src="test-shopify.js?v=2"></script>
+		<script src="test-navigation.js?v=2"></script>
 		<script src="main.js"></script>
 
 	</body>

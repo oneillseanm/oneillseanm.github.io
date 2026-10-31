@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=20">
+		<link rel="stylesheet" type="text/css" href="test-style.css?v=44">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -29,28 +29,32 @@
 		<!-- Add class="has-ticker" to body to enable launch ticker -->
 		<!-- Add class="debug" to body to enable viewport debug tool -->
 
+		<header class="site-header">
+			<div class="site-header-inner section-content section-content--wide">
+				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
+			</div>
+		</header>
+
+
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
-				<nav>
+				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
-						<div class="logo">
-							<a href="test-index.html">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-						</div>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
-						<a class="top-link" href="#top">
-							<span class="top-link-text">
-								<span class="top-arrow-wrap">
-									<span class="top-link arrow front">🡡</span>
-									<span class="top-link arrow back">🡡</span>
-								</span>
-								<span>Top</span>
-							</span>
-						</a>
+						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div class="list-wrapper">
-						<ul>
-							<li class="row-start"><a href="test-index.html">Products</a></li>
+					<div id="site-menu" class="nav-drawer" hidden>
+						<ul class="nav-drawer-primary">
+							<li><a href="test-index.html">Products</a></li>
 							<li><a href="test-about.html">About</a></li>
+							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-shipping-returns.html">Shipping + returns</a></li>
+						</ul>
+						<ul class="nav-drawer-secondary">
+							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+							<li><a href="test-policies.html">Policies</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -70,13 +74,15 @@
 
 					<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1Lid">
 							<p class="product-price data">$195</p>
-							<p class="product-availability data" data-shopify-availability aria-live="polite">in stock</p>
+							<div class="product-status">
+								<p class="product-status-label">availability</p>
+								<p class="product-availability data" data-shopify-availability aria-live="polite">in stock</p>
+							</div>
 							<button class="product-add-to-cart" type="button">add to cart</button>
 						</section>
 
 						<div class="product-description">
-							<p>There’s a known, though arguably under-documented, principle surrounding, well, most all objects: everything is better with a lid and a handle. It’s true. Just try to imagine a toolbox without them. Or — <span class="italic">or</span> — try to imagine a keyboard <span class="italic">with</span> them.</p>
-							<p>Here you go.</p>
+							<p>Complete your MID.1 with the multifunctional lid. A protective cover on your desk, a handle on the go, and a wrist rest when in use.</p>
 						</div>
 					</div>
 					</div>
@@ -84,7 +90,7 @@
 
 				<section class="product-features product-section foreground">
 					<div class="section-content">
-						<h2>About this thing</h2>
+						<h2>Features</h2>
 
 						<div class="feature-set-wrapper">
 							<section class="product-feature">
@@ -97,10 +103,10 @@
 							</section>
 
 							<section class="product-feature">
-								<h3>Why there is a lid</h3>
+								<h3>As a cover</h3>
 								<figure>
 									<img src="images/mid1/mid1pluslid-07.webp" alt="" loading="lazy">
-									<figcaption><p>Here's the origin story of the lid. One day, my cat vomited on my keyboard. And here we are. That's it, that's the story.</p></figcaption>
+									<figcaption><p>Equally useful as a protective cover for your MID.1 when not in use.</p></figcaption>
 								</figure>
 							</section>
 
@@ -109,17 +115,16 @@
 								<figure>
 									<img src="images/mid1/mid1pluslid-06.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
 									<figcaption>
-										<p>Remember us talking about how flat the screws are? Well, when you use the lid as a wrist rest, there are two screws on top that hold the handle in place and are located exactly where you will inevitably rest your wrists. You can imagine, I’m sure, the discomfort, were these average screws. Awful. These being <span class="italic">ultra flat</span>, however, you likely wouldn’t register their presence at all, were it not for the fact that, against the matte black powder coat, they look quite nice.</p>
-										<p>Anyway, you can use the lid as a wrist rest. How about that?</p>
+										<p>Designed to pair perfectly with MID.1 when in use. Ultra-flat exposed hardware and the recessed handle provide a smooth suface for your palms.</p>
 									</figcaption>
 								</figure>
 							</section>
 
 							<section class="product-feature">
-								<h3>But can it store things?</h3>
+								<h3>Storage</h3>
 								<figure>
 									<img src="images/mid1/mid1lid-06.webp" alt="Keyboard standing on-end on a table next to a lamp, bottom side facing viewer" loading="lazy">
-									<figcaption><p>Given the overall resemblance of the lidded MID.1 to a toolbox, it would be a shame if you weren't able to store things inside it in some capacity. And so, there's a little storage on the underside of the lid. To one side are sockets for the riser feet when they're not in use. To the other is a small leather tool sleeve, made of the same Horween Dublin, to store the two hex keys used to assemble and disassemble the keyboard. Like the handle, I make it in-house, too.</p></figcaption>
+									<figcaption><p>On the underside, storage for both the MID.1 riser feet and the wrenches used for assembly. The wrenches tuck into a leather tool sleeve made in-house.</p></figcaption>
 								</figure>
 							</section>
 						</div>
@@ -145,10 +150,8 @@
 						<section>
 							<h3>Dimensions</h3>
 							<dl>
-								<dt>typing angle</dt><dd>flat or 4°</dd>
 								<dt>width</dt><dd>236&nbsp;mm (9&nbsp;5/16")</dd>
 								<dt>length</dt><dd>142&nbsp;mm (5&nbsp;5/8")</dd>
-								<dt>front height (including feet)</dt><dd>21&nbsp;mm (13/16")</dd>
 								<dt>overall height (to top of case)</dt><dd>23&nbsp;mm (15/16")</dd>
 								<dt>overall height (including knob)</dt><dd>32&nbsp;mm (1&nbsp;1/4")</dd>
 								<dt>weight</dt><dd>985&nbsp;g (2.17&nbsp;lbs)</dd>
@@ -158,12 +161,11 @@
 						<section>
 							<h3>Materials</h3>
 							<dl>
-								<dt>bottom and top case</dt><dd>304 stainless steel</dd>
-								<dt>plate</dt><dd>304 stainless steel</dd>
+								<dt>case</dt><dd>powder coated 304 stainless steel</dd>
 								<dt>fasteners</dt><dd>304 and 316 stainless steel</dd>
-								<dt>feet and PCB gaskets</dt><dd>synthetic rubber</dd>
-								<dt>PCB</dt><dd>standard FR4 with ENIG finish</dd>
-								<dt>packaging</dt><dd>100% cardboard and paper, except foil PCB bag</dd>
+								<dt>handle and tool sleeve</dt><dd>Horween Dublin vegetable-tanned leather</dd>
+								<dt>feet</dt><dd>synthetic rubber</dd>
+								<dt>packaging</dt><dd>100% cardboard and paper</dd>
 							</dl>
 						</section>
 
@@ -172,7 +174,7 @@
 							<dl>
 								<dt>designed by</dt><dd>A.Okay! in Seattle</dd>
 								<dt>sheet metal</dt><dd>fabricated in the US (cut, bent, and powder coated)</dd>
-								<dt>hardware / electronics</dt><dd>sourced from US and international suppliers</dd>
+								<dt>hardware</dt><dd>sourced from US and international suppliers</dd>
 								<dt>leather parts</dt><dd>cut, sewn, and finished by A.Okay! using Horween leather from Chicago</dd>
 								<dt>packaging</dt><dd>designed by A.Okay!, manufactured in San Francisco</dd>
 								<dt>print materials</dt><dd>designed by A.Okay! and printed in Seattle</dd>
@@ -208,7 +210,8 @@
 			</footer>
 		</div>
 
-		<script src="test-shopify.js?v=1"></script>
+		<script src="test-shopify.js?v=2"></script>
+		<script src="test-navigation.js?v=2"></script>
 		<script src="main.js"></script>
 	</body>
 </html>
