@@ -91,7 +91,7 @@ a,
 li,
 dd,
 .data {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 }
 
 .key,
@@ -180,9 +180,9 @@ h3 {
 }
 
 	.product-card :is(h2, h3) {
-		color: var(--color-alert-blue);
+		color: var(--color-black);
 		font-family: var(--font-display);
-		font-size: var(--font-size-large);
+		font-size: var(--font-size-small);
 		font-weight: 900;
 	}
 
@@ -370,14 +370,6 @@ a.product-card {
 	margin-top: 0;
 }
 
-.product-index > h2 + .product-array {
-	margin-top: 4rem;
-}
-
-#products + #parts-extras {
-	padding-top: 0;
-}
-
 .product-card {
 	background-color: var(--color-white);
 	border: 1px solid rgba(0, 0, 0, 0.05);
@@ -386,8 +378,10 @@ a.product-card {
 		0 2px 6px rgba(0, 0, 0, 0.10),
 		0 1px 3px rgba(0, 0, 0, 0.04);
 	height: 100%;
+	font-size: var(--font-size-small);
 	overflow: hidden;
 	padding: 1rem;
+	text-align: left;
 	transition: all 0.2s ease;
 }
 
@@ -429,12 +423,18 @@ a.product-card {
 
 .data {
 	background-color: var(--color-white);
-	border-radius: 0.5lh;
-	padding-inline: 0.5em;
+	border-radius: calc(0.5lh + 0.2rem);
+	padding-block: 0.2rem;
+	padding-inline: 1rem;
 }
 
 .product-card .data {
-	background-color: var(--color-page);
+	background-color: transparent;
+	border-radius: 0;
+	font-family: var(--font-sans);
+	font-weight: 400;
+	padding-block: 0;
+	padding-inline: 0;
 }
 
 ul,
@@ -535,7 +535,10 @@ img {
 		}
 	
 	.product-card img {
+		aspect-ratio: 4 / 3;
 		border-radius: 0;
+		display: block;
+		object-fit: cover;
 		width: 100%;
 	}
 
@@ -986,7 +989,10 @@ figcaption, figcaption p {
 }
 
 	.product-card figcaption {
-		margin-block: 1rem 0;
+		display: flex;
+		flex-direction: column;
+		margin-block: 0.5rem 0;
+		width: 100%;
 	}
 
 p {
@@ -998,6 +1004,8 @@ p {
 	}
 	
 	.product-card p {
+		font-family: var(--font-sans);
+		font-weight: 400;
 		margin: 0;
 		text-decoration: none;
 	}
@@ -1007,18 +1015,19 @@ p {
 	}
 	
 	.card-footer {
-		align-items: baseline;
+		align-items: flex-start;
 		display: flex;
-		gap: 1em;
-		justify-content: space-between;
+		flex-direction: column;
+		width: 100%;
 	}
 
 	.card-footer .data {
-		align-self: flex-end;
+		align-self: flex-start;
 	}
 
 	.product-card-subtitle {
-		font-family: var(--font-display);
+		font-family: var(--font-sans);
+		font-weight: 400;
 	}
 
 .visually-hidden {
@@ -1107,7 +1116,7 @@ nav button:focus-visible {
   color: var(--color-white);
   border-top: none;
 
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-sans);
   font-size: var(--font-size-small);
   line-height: var(--ticker-height);
   white-space: nowrap;
@@ -1260,12 +1269,11 @@ body.has-ticker {
 	border: 0;
 	color: inherit;
 	cursor: pointer;
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: inherit;
 	font-weight: inherit;
 	line-height: 1.4;
 	margin: 0;
-	padding-block: 0;
 	width: 100%;
 }
 
@@ -1298,9 +1306,9 @@ body.has-ticker {
 }
 
 .product-page .product-feature > h3 {
-	font-size: var(--font-size-large);
-	font-weight: 300;
-	line-height: 1.1;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.4;
 	margin-bottom: 1rem;
 	text-wrap: balance;
 }
@@ -1315,6 +1323,15 @@ body.has-ticker {
 
 .site-header {
 	padding-block: 1rem 2rem;
+}
+
+.index-page .site-header {
+	aspect-ratio: 4 / 3;
+	background-image: url("images/mid1/mid1family-01.webp");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 2rem;
 }
 
 .site-header .top-level-wrapper {
@@ -1602,7 +1619,7 @@ body .site-header > .site-header-inner {
 	nav,
 	.specs-grid,
 	.product-array{
-		margin-inline: -2rem;
+		margin-inline: -1rem;
 	}
 
 	.product-card {
@@ -1624,6 +1641,11 @@ body .site-header > .site-header-inner {
 
 
 @media (min-width: 768px) {					/* md; tablets, small desktops; "start with these two" */
+
+	.index-page .site-header {
+		aspect-ratio: auto;
+		height: 576px;
+	}
 
 	.site-header-inner--standard {
 		margin-inline: auto;
@@ -1652,10 +1674,6 @@ body .site-header > .site-header-inner {
 		width: 100%;
 	}
 
-	.product-index > h2 {
-		margin-inline: 1rem;
-	}
-
 	.nav-pseudo-article,
 	article,
 	footer {
@@ -1668,7 +1686,7 @@ body .site-header > .site-header-inner {
 	}
 
 	.product-layout-v2 .nav-pseudo-article {
-		max-width: calc(620px + 4rem);
+		max-width: calc(620px + 2rem);
 	}
 
 	.nav-header > .logo a,

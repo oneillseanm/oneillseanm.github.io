@@ -12,11 +12,15 @@ const shopifyStorefront = {
   }
 };
 
+const shopifyProductCache = new Map();
 const productPurchase = document.querySelector('[data-shopify-product]');
+const productCards = document.querySelectorAll('[data-shopify-card-product]');
 
 if (productPurchase) {
   initializeShopifyProduct(productPurchase);
 }
+
+productCards.forEach(initializeShopifyCard);
 
 async function initializeShopifyProduct(purchase) {
   const optionsContainer = purchase.querySelector('[data-shopify-options]');
@@ -25,17 +29,7 @@ async function initializeShopifyProduct(purchase) {
   const addToCart = purchase.querySelector('.product-add-to-cart');
 
   try {
-    const productId = shopifyStorefront.products[purchase.dataset.shopifyProduct];
-
-    if (!productId) {
-      throw new Error('Shopify product is not configured');
-    }
-
-    const product = await fetchShopifyProduct(productId);
-
-    if (!product) {
-      throw new Error('Shopify product not found');
-    }
+    const product = await getShopifyProduct(purchase.dataset.shopifyProduct);
 
     const variants = product.variants.nodes;
     const requestedVariant = new URLSearchParams(window.location.search).get('variant');
@@ -60,6 +54,48 @@ async function initializeShopifyProduct(purchase) {
       addToCart.disabled = true;
     }
   }
+}
+
+async function initializeShopifyCard(card) {
+  const price = card.querySelector('[data-shopify-card-price]');
+  if (!price) return;
+
+  try {
+    const product = await getShopifyProduct(card.dataset.shopifyCardProduct);
+    const variants = product.variants.nodes;
+    const requestedVariant = new URL(card.href).searchParams.get('variant');
+    const variant = findRequestedVariant(variants, requestedVariant)
+      || variants.find(candidate => candidate.availableForSale)
+      || variants[0];
+
+    if (!variant) {
+      throw new Error('Shopify product has no variants');
+    }
+
+    price.textContent = formatPrice(variant.price);
+  } catch (error) {
+    console.error('Unable to load Shopify card price.', error);
+  }
+}
+
+function getShopifyProduct(productKey) {
+  const productId = shopifyStorefront.products[productKey];
+
+  if (!productId) {
+    return Promise.reject(new Error('Shopify product is not configured'));
+  }
+
+  if (!shopifyProductCache.has(productKey)) {
+    shopifyProductCache.set(
+      productKey,
+      fetchShopifyProduct(productId).then(product => {
+        if (!product) throw new Error('Shopify product not found');
+        return product;
+      })
+    );
+  }
+
+  return shopifyProductCache.get(productKey);
 }
 
 function findRequestedVariant(variants, requestedVariant) {
@@ -218,12 +254,7 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, avail
   purchase.dataset.shopifyVariantId = variant.id;
 
   if (price) {
-    price.textContent = new Intl.NumberFormat(undefined, {
-      style: 'currency',
-      currency: variant.price.currencyCode,
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(Number(variant.price.amount));
+    price.textContent = formatPrice(variant.price);
   }
 
   if (availability) {
@@ -233,6 +264,15 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, avail
   if (addToCart) {
     addToCart.disabled = !variant.availableForSale;
   }
+}
+
+function formatPrice(price) {
+  return new Intl.NumberFormat(undefined, {
+    style: 'currency',
+    currency: price.currencyCode,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  }).format(Number(price.amount));
 }
 
 function variantMatches(variant, selectedOptions) {
