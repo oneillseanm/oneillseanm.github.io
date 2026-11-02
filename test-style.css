@@ -1167,7 +1167,7 @@ body.has-ticker {
 }
 
 .product-page .product-hero {
-	aspect-ratio: 1 / 1;
+	aspect-ratio: 4 / 3;
 	overflow: hidden;
 	position: relative;
 }
@@ -1361,12 +1361,78 @@ body.has-ticker {
 	display: block;
 	height: 100%;
 	object-fit: cover;
+	object-position: center 40%;
 	width: 100%;
 }
 
 .index-hero-inner {
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 3 / 1;
 	overflow: hidden;
+}
+
+body.lightbox-open {
+	overflow: hidden;
+}
+
+.lightbox-dialog {
+	background: transparent;
+	border: 0;
+	max-height: calc(100dvh - 1rem);
+	max-width: 960px;
+	overflow: visible;
+	padding: 0;
+	width: calc(100vw - 2rem);
+}
+
+.lightbox-dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-image {
+	border-radius: var(--radius-standard);
+	display: block;
+	height: auto;
+	max-height: calc(100dvh - 1rem);
+	object-fit: contain;
+	width: 100%;
+}
+
+.lightbox-close {
+	background-color: color-mix(
+		in srgb,
+		var(--color-white) 50%,
+		transparent
+	);
+	border: 0;
+	border-radius: 0.4rem;
+	color: var(--color-black);
+	cursor: pointer;
+	font: inherit;
+	font-size: var(--font-size-small);
+	opacity: 1;
+	padding: 1rem 1.5rem;
+	position: absolute;
+	right: 0.5rem;
+	top: 0.5rem;
+}
+
+.lightbox-close:hover {
+	background-color: var(--color-white);
+}
+
+.lightbox-close:is(:hover, :focus-visible) {
+  background-color: var(--color-white);
+}
+
+@media (min-width: 640px) {
+	img[data-lightbox-image] {
+		cursor: zoom-in;
+	}
+
+	img[data-lightbox-image]:focus-visible {
+		outline: 2px solid var(--color-alert-blue);
+		outline-offset: 4px;
+	}
 }
 
 .site-header .top-level-wrapper {
