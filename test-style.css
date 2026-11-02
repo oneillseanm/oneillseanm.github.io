@@ -542,6 +542,15 @@ img {
 		width: 100%;
 	}
 
+.media-band {
+	width: 100%;
+}
+
+.media-band-inner {
+	margin-inline: auto;
+	width: 100%;
+}
+
 .divider-image {
 	width: 100vw;
 	overflow: hidden;
@@ -769,10 +778,14 @@ footer {
 	text-decoration: none;
 }
 
+.footer-links > a[href^="https://discord.gg"],
+.footer-legal {
+	margin-top: 0.7rem;
+}
+
 .footer-legal {
 	display: flex;
 	flex-direction: column;
-	margin-top: 0.7rem;
 }
 
 header {
@@ -847,12 +860,20 @@ nav::before {
 }
 
 .disclosure-nav .nav-drawer-primary {
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.disclosure-nav .nav-drawer-primary li {
+	grid-column: span 3;
+}
+
+.disclosure-nav .nav-drawer-primary li:nth-child(n + 3) {
+	grid-column: span 2;
 }
 
 .disclosure-nav .nav-drawer-secondary {
 	border-bottom: 1px solid var(--color-emphasis-lighter);
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .disclosure-nav .nav-drawer li {
@@ -861,7 +882,8 @@ nav::before {
 	min-width: 0;
 }
 
-.disclosure-nav .nav-drawer-primary li:nth-child(odd),
+.disclosure-nav .nav-drawer-primary li:first-child,
+.disclosure-nav .nav-drawer-primary li:nth-child(3),
 .disclosure-nav .nav-drawer-secondary li:first-child {
 	border-left: 0;
 }
@@ -1322,16 +1344,29 @@ body.has-ticker {
 }
 
 .site-header {
-	padding-block: 1rem 2rem;
+	padding-block: 0.7rem;
 }
 
 .index-page .site-header {
-	aspect-ratio: 4 / 3;
-	background-image: url("images/mid1/mid1family-01.webp");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-color: var(--color-white);
+	margin-bottom: 0;
+}
+
+.index-hero {
 	margin-bottom: 2rem;
+	width: 100%;
+}
+
+.index-hero img {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.index-hero-inner {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
 }
 
 .site-header .top-level-wrapper {
@@ -1439,6 +1474,24 @@ body .site-header > .site-header-inner {
 	font-size: 1rem;
 	font-weight: 600;
 	line-height: 1.4;
+	margin-block: 2rem 1rem;
+}
+
+.shopify-policy-body {
+	display: flex;
+	flex-direction: column;
+}
+
+.shopify-policy-body > * {
+	margin-block: 0;
+}
+
+.shopify-policy-body > * + * {
+	margin-top: 1rem;
+}
+
+.shopify-policy-body > h3 + * {
+	margin-top: 0;
 }
 
 .ticker-track {
@@ -1642,11 +1695,6 @@ body .site-header > .site-header-inner {
 
 @media (min-width: 768px) {					/* md; tablets, small desktops; "start with these two" */
 
-	.index-page .site-header {
-		aspect-ratio: auto;
-		height: 576px;
-	}
-
 	.site-header-inner--standard {
 		margin-inline: auto;
 		max-width: 620px;
@@ -1759,10 +1807,6 @@ body .site-header > .site-header-inner {
 		grid-template-columns: minmax(0, 3fr) minmax(15rem, 2fr);
 	}
 
-	.product-page .product-summary {
-		padding-top: 0.5rem;
-	}
-
 	.product-layout-v2 .section-content {
 		max-width: calc(620px + 4rem);
 		padding-inline: 2rem;
@@ -1815,6 +1859,14 @@ body .site-header > .site-header-inner {
 
 @media (min-width: 1024px) {				/* lg; laptops, large tablets (landscape); "start with these two" */
 
+	.media-band {
+		padding-inline: 2rem;
+	}
+
+	.media-band-inner {
+		max-width: 960px;
+	}
+
 	.specs-grid,
 	.product-array {
 		margin-inline: -4rem;
@@ -1822,15 +1874,6 @@ body .site-header > .site-header-inner {
 
 	nav {
 		margin-inline: -4rem;
-	}
-
-	.divider-image {
-		padding-inline: calc((100vw - 960px) / 2);
-	}
-
-	.divider-image img {
-		width: 100%;
-		height: 100%;
 	}
 
 }

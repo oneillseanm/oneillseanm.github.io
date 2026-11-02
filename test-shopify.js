@@ -15,12 +15,14 @@ const shopifyStorefront = {
 const shopifyProductCache = new Map();
 const productPurchase = document.querySelector('[data-shopify-product]');
 const productCards = document.querySelectorAll('[data-shopify-card-product]');
+const policySections = document.querySelectorAll('[data-shopify-policy]');
 
 if (productPurchase) {
   initializeShopifyProduct(productPurchase);
 }
 
 productCards.forEach(initializeShopifyCard);
+policySections.forEach(initializeShopifyPolicy);
 
 async function initializeShopifyProduct(purchase) {
   const optionsContainer = purchase.querySelector('[data-shopify-options]');
@@ -76,6 +78,75 @@ async function initializeShopifyCard(card) {
   } catch (error) {
     console.error('Unable to load Shopify card price.', error);
   }
+}
+
+async function initializeShopifyPolicy(section) {
+  const title = section.querySelector('[data-shopify-policy-title]');
+  const body = section.querySelector('[data-shopify-policy-body]');
+
+  try {
+    const policy = await fetchShopifyPolicy(section.dataset.shopifyPolicy);
+
+    if (!policy) {
+      throw new Error('Shopify policy is not configured');
+    }
+
+    if (title) title.textContent = policy.title;
+    if (body) body.innerHTML = policy.body;
+  } catch (error) {
+    console.error('Unable to load Shopify policy.', error);
+  } finally {
+    section.removeAttribute('aria-busy');
+  }
+}
+
+async function fetchShopifyPolicy(policyField) {
+  const allowedPolicyFields = new Set([
+    'privacyPolicy',
+    'refundPolicy',
+    'shippingPolicy',
+    'termsOfService'
+  ]);
+
+  if (!allowedPolicyFields.has(policyField)) {
+    throw new Error('Shopify policy is not supported');
+  }
+
+  const query = `
+    query PolicyForAOkay {
+      shop {
+        ${policyField} {
+          body
+          title
+          url
+        }
+      }
+    }
+  `;
+
+  const response = await fetch(
+    `https://${shopifyStorefront.domain}/api/${shopifyStorefront.apiVersion}/graphql.json`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': shopifyStorefront.storefrontAccessToken
+      },
+      body: JSON.stringify({ query })
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Shopify request failed with status ${response.status}`);
+  }
+
+  const result = await response.json();
+
+  if (result.errors) {
+    throw new Error(result.errors.map(error => error.message).join('; '));
+  }
+
+  return result.data.shop[policyField];
 }
 
 function getShopifyProduct(productKey) {
