@@ -26,7 +26,6 @@ policySections.forEach(initializeShopifyPolicy);
 
 async function initializeShopifyProduct(purchase) {
   const optionsContainer = purchase.querySelector('[data-shopify-options]');
-  const availability = purchase.querySelector('[data-shopify-availability]');
   const price = purchase.querySelector('.product-price');
   const addToCart = purchase.querySelector('.product-add-to-cart');
 
@@ -43,10 +42,10 @@ async function initializeShopifyProduct(purchase) {
     );
 
     renderProductOptions(product.options, selectedOptions, optionsContainer, variants, () => {
-      updateSelectedVariant(purchase, variants, selectedOptions, price, availability, addToCart);
+      updateSelectedVariant(purchase, variants, selectedOptions, price, addToCart);
     });
 
-    updateSelectedVariant(purchase, variants, selectedOptions, price, availability, addToCart);
+    updateSelectedVariant(purchase, variants, selectedOptions, price, addToCart);
   } catch (error) {
     console.error('Unable to load Shopify product options.', error);
     if (optionsContainer) {
@@ -54,6 +53,7 @@ async function initializeShopifyProduct(purchase) {
     }
     if (addToCart) {
       addToCart.disabled = true;
+      addToCart.textContent = 'unavailable';
     }
   }
 }
@@ -75,13 +75,19 @@ async function initializeShopifyCard(card) {
     }
 
     price.textContent = formatPrice(variant.price);
+
+    if (!variant.availableForSale) {
+      const soldOutTag = document.createElement('span');
+      soldOutTag.className = 'product-card-status';
+      soldOutTag.textContent = 'sold out';
+      card.append(soldOutTag);
+    }
   } catch (error) {
     console.error('Unable to load Shopify card price.', error);
   }
 }
 
 async function initializeShopifyPolicy(section) {
-  const title = section.querySelector('[data-shopify-policy-title]');
   const body = section.querySelector('[data-shopify-policy-body]');
 
   try {
@@ -91,7 +97,6 @@ async function initializeShopifyPolicy(section) {
       throw new Error('Shopify policy is not configured');
     }
 
-    if (title) title.textContent = policy.title;
     if (body) body.innerHTML = policy.body;
   } catch (error) {
     console.error('Unable to load Shopify policy.', error);
@@ -117,7 +122,6 @@ async function fetchShopifyPolicy(policyField) {
       shop {
         ${policyField} {
           body
-          title
           url
         }
       }
@@ -312,13 +316,15 @@ function formatOptionName(name) {
   return componentOption ? `${componentOption[1]} ${componentOption[2]}` : name;
 }
 
-function updateSelectedVariant(purchase, variants, selectedOptions, price, availability, addToCart) {
+function updateSelectedVariant(purchase, variants, selectedOptions, price, addToCart) {
   const variant = variants.find(candidate => variantMatches(candidate, selectedOptions));
 
   if (!variant) {
     delete purchase.dataset.shopifyVariantId;
-    if (availability) availability.textContent = 'unavailable';
-    if (addToCart) addToCart.disabled = true;
+    if (addToCart) {
+      addToCart.disabled = true;
+      addToCart.textContent = 'unavailable';
+    }
     return;
   }
 
@@ -328,12 +334,9 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, avail
     price.textContent = formatPrice(variant.price);
   }
 
-  if (availability) {
-    availability.textContent = variant.availableForSale ? 'in stock' : 'sold out';
-  }
-
   if (addToCart) {
     addToCart.disabled = !variant.availableForSale;
+    addToCart.textContent = variant.availableForSale ? 'add to cart' : 'sold out';
   }
 }
 

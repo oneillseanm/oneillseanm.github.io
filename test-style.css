@@ -131,7 +131,7 @@ footer,
 /*											horizontal control */
 
 .top-level-wrapper {
-	padding: 8rem 1rem;
+	padding: 6rem 1rem;
 }
 
 	.top-level-wrapper:first-child {
@@ -165,13 +165,13 @@ h1 {
 }
 
 h2 {
-	font-size: var(--font-size-headline);
-	font-weight: 300;
+	font-size: var(--font-size-large);
+	font-weight: 400;
 	margin-block: 0;
 }
 
 	#specs h2 {
-		margin-bottom: 4rem;
+		margin-bottom: 3rem;
 	}
 
 h3 {
@@ -363,7 +363,7 @@ a.product-card {
 	flex-direction: column;
 	gap: 1rem;
 	justify-content: space-between;
-	margin-block: 4rem;
+	margin-block: 3rem;
 }
 
 .product-index > .product-array {
@@ -395,6 +395,17 @@ a.product-card {
 	transform: translateY(1px);
 }
 
+.product-card-status {
+	background-color: var(--color-page);
+	border-radius: calc(0.5lh + 0.2rem);
+	font-size: var(--font-size-small);
+	font-weight: 400;
+	padding: 0.2rem 1rem;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.5rem;
+}
+
 .italic {
 	font-style: italic;
 }
@@ -408,7 +419,7 @@ a.product-card {
 	flex-direction: column;
 	gap: 4rem;
 	justify-content: space-between;
-	margin-block: 4rem;
+	margin-block: 3rem;
 }
 
 .specs-grid {
@@ -736,7 +747,7 @@ footer {
 	justify-content:space-between;
 	display: flex;
 	margin: 0;
-	padding: 0 0 8rem 0;
+	padding: 0 0 6rem 0;
 }
 
 .footer-info {
@@ -1163,7 +1174,7 @@ body.has-ticker {
 .product-page .product-overview {
 	display: grid;
 	gap: 2rem;
-	padding-bottom: 8rem;
+	padding-bottom: 6rem;
 }
 
 .product-page .product-hero {
@@ -1194,14 +1205,15 @@ body.has-ticker {
 
 .product-page .product-subtitle {
 	display: block;
-	font-family: var(--font-display);
+	font-family: var(--font-sans);
 	font-size: var(--font-size-subtitle);
 	font-weight: 400;
+	letter-spacing: 0;
 }
 
 .product-page .product-purchase {
 	display: grid;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .product-page .product-add-to-cart {
@@ -1225,6 +1237,12 @@ body.has-ticker {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.product-page .product-add-to-cart:disabled {
+	background-color: var(--color-emphasis);
+	box-shadow: none;
+	cursor: default;
+}
+
 .product-page .product-add-to-cart:focus-visible {
 	outline: 3px solid var(--color-alert-blue);
 	outline-offset: 3px;
@@ -1237,14 +1255,9 @@ body.has-ticker {
 	width: fit-content;
 }
 
-.product-page .product-availability {
-	font-size: var(--font-size-small);
-	width: fit-content;
-}
-
 .product-page .product-options {
 	display: grid;
-	gap: 1rem;
+	gap: 0.5rem;
 }
 
 .product-page .product-option {
@@ -1262,22 +1275,6 @@ body.has-ticker {
 	font-weight: 400;
 	margin-bottom: 0.2rem;
 	padding: 0;
-}
-
-.product-page .product-status {
-	display: grid;
-	gap: 0.2rem;
-	justify-items: start;
-}
-
-.product-page .product-status-label {
-	font-size: var(--font-size-small);
-	font-weight: 400;
-	margin: 0;
-}
-
-.product-page .product-status .product-availability {
-	margin: 0;
 }
 
 .product-page .product-option-values {
@@ -1319,7 +1316,7 @@ body.has-ticker {
 }
 
 .product-page .product-specs {
-	padding-block: 8rem;
+	padding-block: 6rem;
 }
 
 .product-page .product-section-band {
@@ -1327,12 +1324,8 @@ body.has-ticker {
 	width: 100vw;
 }
 
-.product-page .product-feature > h3 {
-	font-size: 1rem;
-	font-weight: 600;
-	line-height: 1.4;
+.product-page .product-feature > h2 {
 	margin-bottom: 1rem;
-	text-wrap: balance;
 }
 
 /* Refactored product layout pilot */
@@ -1344,7 +1337,7 @@ body.has-ticker {
 }
 
 .site-header {
-	padding-block: 0.7rem;
+	padding-block: 1rem;
 }
 
 .index-page .site-header {
@@ -1404,7 +1397,7 @@ body.lightbox-open {
 		transparent
 	);
 	border: 0;
-	border-radius: 0.4rem;
+	border-radius: 0.6rem;
 	color: var(--color-black);
 	cursor: pointer;
 	font: inherit;
@@ -1412,8 +1405,8 @@ body.lightbox-open {
 	opacity: 1;
 	padding: 1rem 1.5rem;
 	position: absolute;
-	right: 0.5rem;
-	top: 0.5rem;
+	right: 0.3rem;
+	top: 0.3rem;
 }
 
 .lightbox-close:hover {
@@ -1461,7 +1454,7 @@ body .site-header > .site-header-inner {
 }
 
 .product-layout-v2 .product-section {
-	padding-block: 8rem;
+	padding-block: 6rem;
 }
 
 .product-layout-v2 #specs + .product-parts {
@@ -1516,7 +1509,7 @@ body .site-header > .site-header-inner {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
-	margin-top: 4rem;
+	margin-top: 3rem;
 }
 
 .info-page .page-sections section {
@@ -1556,7 +1549,11 @@ body .site-header > .site-header-inner {
 	margin-top: 1rem;
 }
 
-.shopify-policy-body > h3 + * {
+.shopify-policy-body > h2 {
+	margin-block: 2rem 1rem;
+}
+
+.shopify-policy-body > h2 + * {
 	margin-top: 0;
 }
 
