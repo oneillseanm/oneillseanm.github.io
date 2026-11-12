@@ -32,9 +32,17 @@
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
 						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div id="site-menu" class="nav-drawer" hidden>
-						<ul class="nav-drawer-primary"><li><a href="test-index.html">Products</a></li><li><a href="test-about.html">About</a></li><li><a href="test-support.html">Support</a></li><li><a href="test-shipping.html">Shipping</a></li><li><a href="test-returns.html">Returns</a></li></ul>
-						<ul class="nav-drawer-secondary"><li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li><li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li></ul>
+<div id="site-menu" class="nav-drawer" hidden>
+						<ul class="nav-drawer-primary">
+							<li><a href="test-index.html">Products</a></li>
+							<li><a href="test-about.html">About</a></li>
+							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-warranty.html">Warranty</a></li>
+							<li><a href="test-shipping.html">Shipping</a></li>
+							<li><a href="test-returns.html">Returns</a></li>
+							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+						</ul>
 					</div>
 				</nav>
 			</div>
@@ -44,9 +52,18 @@
 			<article id="mid1-service-kit" class="product-layout">
 				<header class="product-overview product-section">
 					<div class="section-content section-content--wide">
-						<figure class="product-hero">
-							<img src="images/mid1/mid1-17.webp" alt="MID.1 hardware arranged on a grey background">
-						</figure>
+						<section class="product-gallery" aria-label="Product images" data-product-gallery>
+							<figure class="product-hero">
+								<img src="images/mid1/mid1-17.webp" alt="MID.1 hardware arranged on a grey background" data-gallery-slide>
+								<!-- Temporary duplicate: replace src and alt when the second product image is ready. -->
+								<img src="images/mid1/mid1-17.webp" alt="" data-gallery-slide data-gallery-placeholder hidden>
+							</figure>
+							<div class="product-gallery-controls">
+								<button class="product-gallery-control data" type="button" aria-label="Previous product image" data-gallery-previous>previous</button>
+								<p class="product-gallery-status data" aria-live="polite" aria-atomic="true">1 of 2</p>
+								<button class="product-gallery-control data" type="button" aria-label="Next product image" data-gallery-next>next</button>
+							</div>
+						</section>
 						<div class="product-summary">
 							<h1 class="headline">MID.1 service kit<span class="product-subtitle">Extra hardware</span></h1>
 							<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1ServiceKit">
@@ -65,15 +82,16 @@
 				<div class="footer-info">
 					<a class="logo" href="test-index.html">A.Okay!</a>
 					<div class="footer-copy"><p>Designed and built in Seattle.</p><p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p></div>
-					<div class="footer-links"><a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a><div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div></div>
+					<div class="footer-links"><a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-warranty.html">Warranty</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a><div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div></div>
 					<p class="footer-copyright">&copy; 2026 A.Okay!</p>
 				</div>
 			</footer>
 		</div>
 
-		<script src="test-shopify.js?v=6"></script>
+		<script src="test-shopify.js?v=7"></script>
 		<script src="test-navigation.js?v=2"></script>
-		<script src="test-lightbox.js?v=1"></script>
+		<script src="test-gallery.js?v=3"></script>
+		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>
 	</body>
 </html>

@@ -4,10 +4,12 @@ const shopifyStorefront = {
   storefrontAccessToken: 'e5e16a3d0bec1f53ac5765d1989309db',
   products: {
     mid1: '15461691654331',
+    mid1Ortholinear: '15487916638395',
     mid1Lid: '15461362794683',
     mid1Pet: '15461363646651',
     mid1TopCase: '15461451169979',
     mid1Pcb: '15461439275195',
+    mid1Plate: '15487895568571',
     mid1ServiceKit: '15461451792571'
   }
 };
@@ -30,6 +32,11 @@ async function initializeShopifyProduct(purchase) {
   const addToCart = purchase.querySelector('.product-add-to-cart');
 
   try {
+    if (purchase.dataset.shopifyProduct === 'mid1') {
+      await initializeMid1Product(purchase, optionsContainer, price, addToCart);
+      return;
+    }
+
     const product = await getShopifyProduct(purchase.dataset.shopifyProduct);
 
     const variants = product.variants.nodes;
@@ -56,6 +63,135 @@ async function initializeShopifyProduct(purchase) {
       addToCart.textContent = 'unavailable';
     }
   }
+}
+
+async function initializeMid1Product(purchase, optionsContainer, price, addToCart) {
+  const [staggeredProduct, ortholinearProduct] = await Promise.all([
+    getShopifyProduct('mid1'),
+    getShopifyProduct('mid1Ortholinear')
+  ]);
+  const staggeredVariants = staggeredProduct.variants.nodes;
+  const ortholinearVariant = ortholinearProduct.variants.nodes[0];
+
+  if (!staggeredVariants.length || !ortholinearVariant) {
+    throw new Error('MID.1 bundle variants are not configured');
+  }
+
+  const optionNames = {
+    layout: 'PCB layout',
+    topCase: 'top case format'
+  };
+  const optionValues = {
+    staggered: 'staggered (hotswap)',
+    ortholinear: 'ortholinear (soldered)',
+    standard: 'standard',
+    cornerBlocker: 'corner blocker'
+  };
+  const selectedOptions = {
+    layout: optionValues.staggered,
+    topCase: optionValues.standard
+  };
+
+  const updateMid1Selection = () => {
+    const isOrtholinear = selectedOptions.layout === optionValues.ortholinear;
+    const selectedVariant = isOrtholinear
+      ? ortholinearVariant
+      : staggeredVariants.find(variant =>
+          variant.selectedOptions.some(option => option.value === selectedOptions.topCase)
+        );
+
+    if (isOrtholinear) {
+      selectedOptions.topCase = optionValues.standard;
+    }
+
+    updateMid1OptionButtons(optionsContainer, selectedOptions, optionValues);
+    updateSelectedVariant(
+      purchase,
+      selectedVariant ? [selectedVariant] : [],
+      {},
+      price,
+      addToCart
+    );
+  };
+
+  renderMid1Options(
+    optionsContainer,
+    optionNames,
+    optionValues,
+    selectedOptions,
+    updateMid1Selection
+  );
+  updateMid1Selection();
+}
+
+function renderMid1Options(container, optionNames, optionValues, selectedOptions, onChange) {
+  if (!container) return;
+
+  container.replaceChildren();
+
+  const optionGroups = [
+    {
+      key: 'layout',
+      label: optionNames.layout,
+      values: [optionValues.staggered, optionValues.ortholinear]
+    },
+    {
+      key: 'topCase',
+      label: optionNames.topCase,
+      values: [optionValues.standard, optionValues.cornerBlocker]
+    }
+  ];
+
+  optionGroups.forEach(option => {
+    const fieldset = document.createElement('fieldset');
+    fieldset.className = 'product-option';
+
+    const legend = document.createElement('legend');
+    legend.textContent = option.label;
+    fieldset.append(legend);
+
+    const values = document.createElement('div');
+    values.className = 'product-option-values';
+
+    option.values.forEach(value => {
+      const button = document.createElement('button');
+      button.className = 'data';
+      button.type = 'button';
+      button.textContent = value;
+      button.dataset.mid1Option = option.key;
+      button.dataset.optionValue = value;
+
+      button.addEventListener('click', () => {
+        selectedOptions[option.key] = value;
+        if (option.key === 'layout' && value === optionValues.ortholinear) {
+          selectedOptions.topCase = optionValues.standard;
+        }
+        onChange();
+      });
+
+      values.append(button);
+    });
+
+    fieldset.append(values);
+    container.append(fieldset);
+  });
+}
+
+function updateMid1OptionButtons(container, selectedOptions, optionValues) {
+  if (!container) return;
+
+  const isOrtholinear = selectedOptions.layout === optionValues.ortholinear;
+
+  container.querySelectorAll('[data-mid1-option]').forEach(button => {
+    const optionName = button.dataset.mid1Option;
+    const isSelected = selectedOptions[optionName] === button.dataset.optionValue;
+    const isIncompatibleTop = optionName === 'topCase'
+      && button.dataset.optionValue === optionValues.cornerBlocker
+      && isOrtholinear;
+
+    button.setAttribute('aria-pressed', String(isSelected));
+    button.disabled = isIncompatibleTop;
+  });
 }
 
 async function initializeShopifyCard(card) {
@@ -338,6 +474,11 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, addTo
     addToCart.disabled = !variant.availableForSale;
     addToCart.textContent = variant.availableForSale ? 'add to cart' : 'sold out';
   }
+
+  purchase.dispatchEvent(new CustomEvent('shopify:variant-change', {
+    bubbles: true,
+    detail: { variant }
+  }));
 }
 
 function formatPrice(price) {

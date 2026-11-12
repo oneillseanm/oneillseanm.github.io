@@ -100,6 +100,10 @@ dd,
 	font-weight: 300;
 }
 
+strong {
+	font-weight: 600;
+}
+
 .arrow {
 	font-family: var(--font-symbol);
 	font-weight: 400;
@@ -268,7 +272,6 @@ header .logo {
 li a:not(nav a),
 p a {
 	overflow-wrap: anywhere;
-	word-spacing: -0.2em;
 }
 
 p a,
@@ -871,6 +874,7 @@ nav::before {
 }
 
 .disclosure-nav .nav-drawer-primary {
+	border-bottom: 1px solid var(--color-emphasis-lighter);
 	grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
@@ -882,11 +886,6 @@ nav::before {
 	grid-column: span 2;
 }
 
-.disclosure-nav .nav-drawer-secondary {
-	border-bottom: 1px solid var(--color-emphasis-lighter);
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .disclosure-nav .nav-drawer li {
 	border-left: 1px solid var(--color-emphasis-lighter);
 	border-top: 1px solid var(--color-emphasis-lighter);
@@ -895,16 +894,12 @@ nav::before {
 
 .disclosure-nav .nav-drawer-primary li:first-child,
 .disclosure-nav .nav-drawer-primary li:nth-child(3),
-.disclosure-nav .nav-drawer-secondary li:first-child {
+.disclosure-nav .nav-drawer-primary li:nth-child(6) {
 	border-left: 0;
 }
 
 .disclosure-nav .nav-drawer a {
 	min-height: 2.5rem;
-}
-
-.disclosure-nav .nav-drawer-secondary a {
-	font-size: var(--font-size-small);
 }
 
 nav p {
@@ -1179,6 +1174,7 @@ body.has-ticker {
 
 .product-page .product-hero {
 	aspect-ratio: 4 / 3;
+	border-radius: var(--radius-standard);
 	overflow: hidden;
 	position: relative;
 }
@@ -1187,6 +1183,58 @@ body.has-ticker {
 	height: 100%;
 	object-fit: cover;
 	width: 100%;
+}
+
+.product-gallery {
+	align-content: start;
+	align-self: start;
+	display: grid;
+	gap: 0.5rem;
+	margin: 0;
+	min-width: 0;
+}
+
+.product-gallery [data-gallery-slide] {
+	margin-block: 0;
+}
+
+[data-gallery-slide][hidden] {
+	display: none;
+}
+
+.product-gallery-controls {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-gallery-control,
+.product-gallery-status {
+	border: 0;
+	color: inherit;
+	font-family: var(--font-sans);
+	font-size: var(--font-size-small);
+	font-weight: 400;
+	line-height: 1.4;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.product-gallery-control {
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+}
+
+.product-gallery-control:disabled {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+
+.product-gallery-control:not(:disabled):hover {
+	background-color: var(--color-alert-blue-hover);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	color: var(--color-white);
 }
 
 .product-page .product-summary {
@@ -1293,7 +1341,14 @@ body.has-ticker {
 	font-weight: inherit;
 	line-height: 1.4;
 	margin: 0;
+	transition: all 0.2s ease-in;
 	width: 100%;
+}
+
+.product-page .product-option button:not(:disabled):hover {
+	background-color: var(--color-alert-blue-hover);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	color: var(--color-white);
 }
 
 .product-page .product-option button[aria-pressed="true"] {
@@ -1388,6 +1443,23 @@ body.lightbox-open {
 	max-height: calc(100dvh - 1rem);
 	object-fit: contain;
 	width: 100%;
+}
+
+.lightbox-dialog--gallery[open] {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.lightbox-dialog--gallery .lightbox-image {
+	max-height: calc(100dvh - 5rem);
+}
+
+.lightbox-gallery-controls {
+	width: 100%;
+}
+
+.lightbox-gallery-controls[hidden] {
+	display: none;
 }
 
 .lightbox-close {
@@ -1549,12 +1621,41 @@ body .site-header > .site-header-inner {
 	margin-top: 1rem;
 }
 
-.shopify-policy-body > h2 {
+.shopify-policy-body :where(div, p, ul, ol, h2) + :where(div, p, ul, ol, h2) {
+	margin-top: 1rem;
+}
+
+.shopify-policy-body h2 {
 	margin-block: 2rem 1rem;
 }
 
-.shopify-policy-body > h2 + * {
+.shopify-policy-body h2 + * {
 	margin-top: 0;
+}
+
+.info-page .page-sections ul {
+	border-radius: var(--radius-standard);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	font-size: var(--font-size-small);
+	overflow: hidden;
+	transition: box-shadow 0.2s ease;
+}
+
+.info-page .page-sections ul:hover {
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.info-page .page-sections ul li {
+	padding: 0.5rem 1rem;
+}
+
+.info-page .page-sections ul li:first-child {
+	border-radius: var(--radius-standard) var(--radius-standard) 0 0;
+	border-top: 0;
+}
+
+.info-page .page-sections ul li:last-child {
+	border-radius: 0 0 var(--radius-standard) var(--radius-standard);
 }
 
 .ticker-track {
@@ -1762,6 +1863,10 @@ body .site-header > .site-header-inner {
 		margin-inline: auto;
 		max-width: 620px;
 		padding-inline: 0;
+	}
+
+	.info-page .site-header-inner--standard {
+		width: 70%;
 	}
 
 	.site-header-inner--wide {

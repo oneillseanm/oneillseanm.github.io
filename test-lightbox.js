@@ -7,7 +7,12 @@ if (lightboxImages.length) {
   const dialog = document.createElement('dialog');
   const dialogImage = document.createElement('img');
   const closeButton = document.createElement('button');
+  const galleryControls = document.createElement('div');
+  const previousButton = document.createElement('button');
+  const galleryStatus = document.createElement('p');
+  const nextButton = document.createElement('button');
   let activeTrigger = null;
+  let activeGallery = null;
 
   dialog.className = 'lightbox-dialog';
   dialog.setAttribute('aria-label', 'Enlarged product image');
@@ -18,7 +23,25 @@ if (lightboxImages.length) {
   closeButton.type = 'button';
   closeButton.textContent = 'Close';
 
-  dialog.append(dialogImage, closeButton);
+  galleryControls.className = 'product-gallery-controls lightbox-gallery-controls';
+  galleryControls.hidden = true;
+
+  previousButton.className = 'product-gallery-control data';
+  previousButton.type = 'button';
+  previousButton.setAttribute('aria-label', 'Previous product image');
+  previousButton.textContent = 'previous';
+
+  galleryStatus.className = 'product-gallery-status data';
+  galleryStatus.setAttribute('aria-live', 'polite');
+  galleryStatus.setAttribute('aria-atomic', 'true');
+
+  nextButton.className = 'product-gallery-control data';
+  nextButton.type = 'button';
+  nextButton.setAttribute('aria-label', 'Next product image');
+  nextButton.textContent = 'next';
+
+  galleryControls.append(previousButton, galleryStatus, nextButton);
+  dialog.append(dialogImage, galleryControls, closeButton);
   document.body.append(dialog);
 
   function imageLabel(image) {
@@ -34,11 +57,44 @@ if (lightboxImages.length) {
     if (!lightboxBreakpoint.matches) return;
 
     activeTrigger = image;
-    dialogImage.src = image.currentSrc || image.src;
-    dialogImage.alt = image.alt;
+    activeGallery = image.closest('[data-product-gallery]')?.productGallery || null;
+
+    if (activeGallery) {
+      const imageIndex = activeGallery.slides.indexOf(image);
+      if (imageIndex >= 0) activeGallery.showSlide(imageIndex, false);
+      updateLightboxGallery();
+    } else {
+      dialog.classList.remove('lightbox-dialog--gallery');
+      galleryControls.hidden = true;
+      dialogImage.src = image.currentSrc || image.src;
+      dialogImage.alt = image.alt;
+    }
+
     document.body.classList.add('lightbox-open');
     dialog.showModal();
     closeButton.focus();
+  }
+
+  function updateLightboxGallery() {
+    if (!activeGallery) return;
+
+    const currentIndex = activeGallery.getCurrentIndex();
+    const currentImage = activeGallery.slides[currentIndex];
+
+    dialog.classList.add('lightbox-dialog--gallery');
+    galleryControls.hidden = false;
+    dialogImage.src = currentImage.currentSrc || currentImage.src;
+    dialogImage.alt = currentImage.alt;
+    previousButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === activeGallery.slides.length - 1;
+    galleryStatus.textContent = `${currentIndex + 1} of ${activeGallery.slides.length}`;
+  }
+
+  function changeLightboxSlide(offset) {
+    if (!activeGallery) return;
+
+    activeGallery.showSlide(activeGallery.getCurrentIndex() + offset, false);
+    updateLightboxGallery();
   }
 
   function closeLightbox() {
@@ -76,6 +132,22 @@ if (lightboxImages.length) {
   });
 
   closeButton.addEventListener('click', closeLightbox);
+  previousButton.addEventListener('click', () => changeLightboxSlide(-1));
+  nextButton.addEventListener('click', () => changeLightboxSlide(1));
+
+  dialog.addEventListener('keydown', (event) => {
+    if (!activeGallery) return;
+
+    if (event.key === 'ArrowLeft' && !previousButton.disabled) {
+      event.preventDefault();
+      changeLightboxSlide(-1);
+    }
+
+    if (event.key === 'ArrowRight' && !nextButton.disabled) {
+      event.preventDefault();
+      changeLightboxSlide(1);
+    }
+  });
 
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) closeLightbox();
@@ -85,7 +157,17 @@ if (lightboxImages.length) {
     document.body.classList.remove('lightbox-open');
     dialogImage.removeAttribute('src');
 
-    if (activeTrigger && lightboxBreakpoint.matches) activeTrigger.focus();
+    if (lightboxBreakpoint.matches) {
+      const returnTarget = activeGallery
+        ? activeGallery.slides[activeGallery.getCurrentIndex()]
+        : activeTrigger;
+      activeGallery?.updateStatus();
+      returnTarget?.focus();
+    }
+
+    dialog.classList.remove('lightbox-dialog--gallery');
+    galleryControls.hidden = true;
+    activeGallery = null;
     activeTrigger = null;
   });
 

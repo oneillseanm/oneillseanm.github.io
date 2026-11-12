@@ -32,12 +32,16 @@
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
 						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div id="site-menu" class="nav-drawer" hidden>
+<div id="site-menu" class="nav-drawer" hidden>
 						<ul class="nav-drawer-primary">
-							<li><a href="test-index.html">Products</a></li><li><a href="test-about.html">About</a></li><li><a href="test-support.html">Support</a></li><li><a href="test-shipping.html">Shipping</a></li><li><a href="test-returns.html">Returns</a></li>
-						</ul>
-						<ul class="nav-drawer-secondary">
-							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li><li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+							<li><a href="test-index.html">Products</a></li>
+							<li><a href="test-about.html">About</a></li>
+							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-warranty.html">Warranty</a></li>
+							<li><a href="test-shipping.html">Shipping</a></li>
+							<li><a href="test-returns.html">Returns</a></li>
+							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -48,9 +52,18 @@
 			<article id="mid1-pcb" class="product-layout">
 				<header class="product-overview product-section">
 					<div class="section-content section-content--wide">
-						<figure class="product-hero">
-							<img src="images/mid1/mid1-22.webp" alt="MID.1 printed circuit board on a grey background">
-						</figure>
+						<section class="product-gallery" aria-label="Product images" data-product-gallery>
+							<figure class="product-hero">
+								<img src="images/mid1/mid1-22.webp" alt="MID.1 printed circuit board on a grey background" data-gallery-slide>
+								<!-- Temporary duplicate: replace src and alt when the second product image is ready. -->
+								<img src="images/mid1/mid1-22.webp" alt="" data-gallery-slide data-gallery-placeholder hidden>
+							</figure>
+							<div class="product-gallery-controls">
+								<button class="product-gallery-control data" type="button" aria-label="Previous product image" data-gallery-previous>previous</button>
+								<p class="product-gallery-status data" aria-live="polite" aria-atomic="true">1 of 2</p>
+								<button class="product-gallery-control data" type="button" aria-label="Next product image" data-gallery-next>next</button>
+							</div>
+						</section>
 						<div class="product-summary">
 							<h1 class="headline">MID.1 PCB<span class="product-subtitle">Additional PCB</span></h1>
 							<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1Pcb">
@@ -59,12 +72,205 @@
 								<button class="product-add-to-cart" type="button">add to cart</button>
 							</section>
 							<div class="product-description">
-								<p>An additional PCB for MID.1. This is not a complete MID.1 kit.</p>
-								<p>The ortholinear PCB is compatible with the standard top case only.</p>
+								<p>The custom MID.1 PCB, available in two versions.</p>
+								<p>The staggered PCB features hotswap sockets and is compatible with both the standard and corner blocker top cases. Requires a staggered plate.</p>
+								<p>The ortholinear PCB requires soldered switches and is compatible with the standard top case only. Offers both full-grid and alphastagger layouts, each with its own switch plate.</p>
+								<p>See <a href="test-mid1-plate.html">MID.1 product page</a> for all layout options.</p>
+								<p>PCB only; plate sold separately.</p>
 							</div>
 						</div>
 					</div>
 				</header>
+				<section id="specs" class="product-specs product-section">
+					<div class="section-content">
+
+						<h2>specs</h2>
+
+						<div class="specs-grid">
+						<section class="spec-layouts">
+							<h3>staggered PCB: standard layout</h3>
+							<dl>
+								<dt>standard 12-unit</dt>
+								<dd class="layout-container">
+									<div class="keyboard-wrapper all-rows">
+										<div class="keyboard">
+											<!-- row 4 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">Q</div>
+											<div class="key u-1">W</div>
+											<div class="key u-1">E</div>
+											<div class="key u-1">R</div>
+											<div class="key u-1">T</div>
+											<div class="key u-1">Y</div>
+											<div class="key u-1">U</div>
+											<div class="key u-1">I</div>
+											<div class="key u-1">O</div>
+											<div class="key u-1">P</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 3 -->
+											<div class="key u-1-25 modifier">1.25</div>
+											<div class="key u-1">A</div>
+											<div class="key u-1">S</div>
+											<div class="key u-1">D</div>
+											<div class="key u-1">F</div>
+											<div class="key u-1">G</div>
+											<div class="key u-1">H</div>
+											<div class="key u-1">J</div>
+											<div class="key u-1">K</div>
+											<div class="key u-1">L</div>
+											<div class="key u-1-75 modifier">1.75</div>
+											<!-- row 2 -->
+											<div class="key u-1-75 modifier">1.75</div>
+											<div class="key u-1">Z</div>
+											<div class="key u-1">X</div>
+											<div class="key u-1">C</div>
+											<div class="key u-1">V</div>
+											<div class="key u-1">B</div>
+											<div class="key u-1">N</div>
+											<div class="key u-1">M</div>
+											<div class="key u-1">, &lt;</div>
+											<div class="key u-1">. &gt;</div>
+											<div class="key u-1-25 modifier">1.25</div>
+											<!-- row 1 -->
+											<div class="key u-1-5 modifier">1.5</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-2-75 modifier">2.75</div>
+											<div class="key u-2-25 modifier">2.25</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1-5 modifier">1.5</div>
+										</div>
+									</div>
+								</dd>
+							</dl>
+						</section>
+
+						<section class="spec-layouts">
+							<h3>ortholinear PCB: standard layouts</h3>
+							<dl>
+								<dt>full grid</dt>
+								<dd class="layout-container">
+									<div class="keyboard-wrapper all-rows">
+										<div class="keyboard">
+											<!-- row 4 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">Q</div>
+											<div class="key u-1">W</div>
+											<div class="key u-1">E</div>
+											<div class="key u-1">R</div>
+											<div class="key u-1">T</div>
+											<div class="key u-1">Y</div>
+											<div class="key u-1">U</div>
+											<div class="key u-1">I</div>
+											<div class="key u-1">O</div>
+											<div class="key u-1">P</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 3 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">A</div>
+											<div class="key u-1">S</div>
+											<div class="key u-1">D</div>
+											<div class="key u-1">F</div>
+											<div class="key u-1">G</div>
+											<div class="key u-1">H</div>
+											<div class="key u-1">J</div>
+											<div class="key u-1">K</div>
+											<div class="key u-1">L</div>
+											<div class="key u-1">;</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 2 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">Z</div>
+											<div class="key u-1">X</div>
+											<div class="key u-1">C</div>
+											<div class="key u-1">V</div>
+											<div class="key u-1">B</div>
+											<div class="key u-1">N</div>
+											<div class="key u-1">M</div>
+											<div class="key u-1">, &lt;</div>
+											<div class="key u-1">. &gt;</div>
+											<div class="key u-1">/ ?</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 1 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+										</div>
+									</div>
+								</dd>
+								<dt>alphastagger</dt>
+								<dd class="layout-container">
+									<div class="keyboard-wrapper all-rows">
+										<div class="keyboard">
+											<!-- row 4 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">Q</div>
+											<div class="key u-1">W</div>
+											<div class="key u-1">E</div>
+											<div class="key u-1">R</div>
+											<div class="key u-1">T</div>
+											<div class="key u-1">Y</div>
+											<div class="key u-1">U</div>
+											<div class="key u-1">I</div>
+											<div class="key u-1">O</div>
+											<div class="key u-1">P</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 3 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1">A</div>
+											<div class="key u-1">S</div>
+											<div class="key u-1">D</div>
+											<div class="key u-1">F</div>
+											<div class="key u-1">G</div>
+											<div class="key u-1">H</div>
+											<div class="key u-1">J</div>
+											<div class="key u-1">K</div>
+											<div class="key u-1">L</div>
+											<div class="key u-1">;</div>
+											<div class="key u-1 modifier">1.0</div>
+											<!-- row 2 -->
+											<div class="key u-1-5 modifier">1.5</div>
+											<div class="key u-1">Z</div>
+											<div class="key u-1">X</div>
+											<div class="key u-1">C</div>
+											<div class="key u-1">V</div>
+											<div class="key u-1">B</div>
+											<div class="key u-1">N</div>
+											<div class="key u-1">M</div>
+											<div class="key u-1">, &lt;</div>
+											<div class="key u-1">. &gt;</div>
+											<div class="key u-1-5 modifier">1.5</div>
+											<!-- row 1 -->
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+											<div class="key u-1 modifier">1.0</div>
+										</div>
+									</div>
+								</dd>
+							</dl>
+						</section>
+						</div>
+					</div>
+				</section>
 			</article>
 		</main>
 
@@ -73,15 +279,16 @@
 				<div class="footer-info">
 					<a class="logo" href="test-index.html">A.Okay!</a>
 					<div class="footer-copy"><p>Designed and built in Seattle.</p><p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p></div>
-					<div class="footer-links"><a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a><div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div></div>
+					<div class="footer-links"><a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-warranty.html">Warranty</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a><div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div></div>
 					<p class="footer-copyright">&copy; 2026 A.Okay!</p>
 				</div>
 			</footer>
 		</div>
 
-		<script src="test-shopify.js?v=6"></script>
+		<script src="test-shopify.js?v=7"></script>
 		<script src="test-navigation.js?v=2"></script>
-		<script src="test-lightbox.js?v=1"></script>
+		<script src="test-gallery.js?v=3"></script>
+		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>
 	</body>
 </html>

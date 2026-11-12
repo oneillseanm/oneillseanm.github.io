@@ -32,15 +32,14 @@
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
 						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div id="site-menu" class="nav-drawer" hidden>
+<div id="site-menu" class="nav-drawer" hidden>
 						<ul class="nav-drawer-primary">
 							<li><a href="test-index.html">Products</a></li>
 							<li><a href="test-about.html">About</a></li>
 							<li><a href="test-support.html">Support</a></li>
+							<li><a href="test-warranty.html">Warranty</a></li>
 							<li><a href="test-shipping.html">Shipping</a></li>
 							<li><a href="test-returns.html">Returns</a></li>
-						</ul>
-						<ul class="nav-drawer-secondary">
 							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
 							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
 						</ul>
@@ -53,9 +52,18 @@
 			<article id="mid1-top-case" class="product-layout">
 				<header class="product-overview product-section">
 					<div class="section-content section-content--wide">
-						<figure class="product-hero">
-							<img src="images/mid1/mid1-13.webp" alt="Two black MID.1 top case styles on a grey background">
-						</figure>
+						<section class="product-gallery" aria-label="Product images" data-product-gallery>
+							<figure class="product-hero">
+								<img src="images/mid1/mid1-13.webp" alt="Standard and corner-blocker MID.1 top cases on a grey background" data-gallery-slide>
+								<img src="images/mid1/mid1-15.webp" alt="Standard MID.1 top case on a grey background" data-gallery-slide data-gallery-variant="standard" hidden>
+								<img src="images/mid1/mid1-14.webp" alt="Corner-blocker MID.1 top case on a grey background" data-gallery-slide data-gallery-variant="corner blocker" hidden>
+							</figure>
+							<div class="product-gallery-controls">
+								<button class="product-gallery-control data" type="button" aria-label="Previous product image" data-gallery-previous>previous</button>
+								<p class="product-gallery-status data" aria-live="polite" aria-atomic="true">1 of 3</p>
+								<button class="product-gallery-control data" type="button" aria-label="Next product image" data-gallery-next>next</button>
+							</div>
+						</section>
 						<div class="product-summary">
 							<h1 class="headline">MID.1 top case<span class="product-subtitle">Additional top case</span></h1>
 							<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1TopCase">
@@ -66,8 +74,11 @@
 								<button class="product-add-to-cart" type="button">add to cart</button>
 							</section>
 							<div class="product-description">
-								<p>An additional top case for MID.1. This is not a complete MID.1 kit.</p>
-								<p>The corner-blocker top case is not compatible with the ortholinear PCB.</p>
+								<p>The custom MID.1 top case, available in two formats.</p>
+								<p>Additional top cases can replace an existing top case or let you to switch between different layouts.</p>
+								<p>The standard top case accommodates four full 12-unit rows of keys and is compatible with both the staggered and ortholinear PCBs.</p>
+								<p>The corner blocker top case adds 1.5-unit blockers at the bottom corners and is compatible with the staggered PCB only.</p>
+								<p></p>
 							</div>
 						</div>
 					</div>
@@ -81,7 +92,7 @@
 					<a class="logo" href="test-index.html">A.Okay!</a>
 					<div class="footer-copy"><p>Designed and built in Seattle.</p><p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p></div>
 					<div class="footer-links">
-						<a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
+						<a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-warranty.html">Warranty</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
 						<div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div>
 					</div>
 					<p class="footer-copyright">&copy; 2026 A.Okay!</p>
@@ -89,9 +100,10 @@
 			</footer>
 		</div>
 
-		<script src="test-shopify.js?v=6"></script>
+		<script src="test-shopify.js?v=8"></script>
 		<script src="test-navigation.js?v=2"></script>
-		<script src="test-lightbox.js?v=1"></script>
+		<script src="test-gallery.js?v=3"></script>
+		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>
 	</body>
 </html>
