@@ -15,6 +15,7 @@ const shopifyStorefront = {
 };
 
 const shopifyProductCache = new Map();
+const shopifyPurchasingIsLive = window.aokayStorefront?.isPurchasingLive === true;
 const productPurchase = document.querySelector('[data-shopify-product]');
 const productCards = document.querySelectorAll('[data-shopify-card-product]');
 const policySections = document.querySelectorAll('[data-shopify-policy]');
@@ -59,8 +60,7 @@ async function initializeShopifyProduct(purchase) {
       optionsContainer.innerHTML = '<p class="product-options-status">options unavailable</p>';
     }
     if (addToCart) {
-      addToCart.disabled = true;
-      addToCart.textContent = 'unavailable';
+      updatePurchaseAction(addToCart, null, 'unavailable');
     }
   }
 }
@@ -460,27 +460,44 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, addTo
   if (!variant) {
     delete purchase.dataset.shopifyVariantId;
     if (addToCart) {
-      addToCart.disabled = true;
-      addToCart.textContent = 'unavailable';
+      updatePurchaseAction(addToCart, null, 'unavailable');
     }
     return;
   }
 
-  purchase.dataset.shopifyVariantId = variant.id;
+  if (shopifyPurchasingIsLive) {
+    purchase.dataset.shopifyVariantId = variant.id;
+  } else {
+    delete purchase.dataset.shopifyVariantId;
+  }
 
   if (price) {
     price.textContent = formatPrice(variant.price);
   }
 
   if (addToCart) {
-    addToCart.disabled = !variant.availableForSale;
-    addToCart.textContent = variant.availableForSale ? 'add to cart' : 'sold out';
+    updatePurchaseAction(addToCart, variant);
   }
 
   purchase.dispatchEvent(new CustomEvent('shopify:variant-change', {
     bubbles: true,
     detail: { variant }
   }));
+}
+
+function updatePurchaseAction(action, variant, unavailableLabel = 'unavailable') {
+  if (!shopifyPurchasingIsLive) {
+    action.disabled = true;
+    action.setAttribute('aria-disabled', 'true');
+    action.textContent = 'Available soon';
+    return;
+  }
+
+  action.removeAttribute('aria-disabled');
+  action.disabled = !variant?.availableForSale;
+  action.textContent = variant
+    ? (variant.availableForSale ? 'add to cart' : 'sold out')
+    : unavailableLabel;
 }
 
 function formatPrice(price) {

@@ -978,6 +978,17 @@ nav p {
 	background-color: var(--color-white);
 }
 
+.nav-header > .storefront-unavailable,
+.nav-header > .storefront-unavailable:hover {
+	background-color: transparent;
+	cursor: default;
+}
+
+.nav-header a.storefront-unavailable::before,
+.nav-header a.storefront-unavailable::after {
+	display: none;
+}
+
 nav p {
 	flex: 1;
 }
