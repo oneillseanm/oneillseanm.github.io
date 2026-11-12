@@ -3,7 +3,11 @@ document.querySelectorAll('[data-product-gallery]').forEach((gallery) => {
   const previousButton = gallery.querySelector('[data-gallery-previous]');
   const nextButton = gallery.querySelector('[data-gallery-next]');
   const status = gallery.querySelector('.product-gallery-status');
+  const swipeThreshold = 50;
   let currentIndex = 0;
+  let suppressClickUntil = 0;
+  let touchStartX = null;
+  let touchStartY = null;
 
   if (!slides.length || !previousButton || !nextButton || !status) return;
 
@@ -32,6 +36,52 @@ document.querySelectorAll('[data-product-gallery]').forEach((gallery) => {
 
   previousButton.addEventListener('click', () => showSlide(currentIndex - 1));
   nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
+
+  gallery.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1 || !event.target.closest('[data-gallery-slide]')) {
+      touchStartX = null;
+      touchStartY = null;
+      return;
+    }
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  }, { passive: true });
+
+  gallery.addEventListener('touchend', (event) => {
+    if (touchStartX === null || touchStartY === null || !event.changedTouches.length) return;
+
+    const horizontalDistance = event.changedTouches[0].clientX - touchStartX;
+    const verticalDistance = event.changedTouches[0].clientY - touchStartY;
+
+    touchStartX = null;
+    touchStartY = null;
+
+    if (
+      Math.abs(horizontalDistance) < swipeThreshold ||
+      Math.abs(horizontalDistance) <= Math.abs(verticalDistance)
+    ) return;
+
+    suppressClickUntil = Date.now() + 500;
+
+    if (horizontalDistance < 0) {
+      showSlide(currentIndex + 1);
+    } else {
+      showSlide(currentIndex - 1);
+    }
+  }, { passive: true });
+
+  gallery.addEventListener('touchcancel', () => {
+    touchStartX = null;
+    touchStartY = null;
+  });
+
+  gallery.addEventListener('click', (event) => {
+    if (Date.now() >= suppressClickUntil) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
 
   showSlide(0);
 });

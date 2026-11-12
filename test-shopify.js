@@ -226,6 +226,8 @@ async function initializeShopifyCard(card) {
 async function initializeShopifyPolicy(section) {
   const body = section.querySelector('[data-shopify-policy-body]');
 
+  section.setAttribute('aria-busy', 'true');
+
   try {
     const policy = await fetchShopifyPolicy(section.dataset.shopifyPolicy);
 
