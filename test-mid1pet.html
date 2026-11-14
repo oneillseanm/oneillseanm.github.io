@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=80">
+		<link rel="stylesheet" type="text/css" href="test-style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -32,35 +32,58 @@
 		<!-- Add class="debug" to body to enable viewport debug tool -->
 
 		<header class="site-header">
-			<div class="site-header-inner section-content section-content--wide">
-				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-			</div>
-		</header>
-
-
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
 				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
+						<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
-						<a class="top-link" href="#top">Top</a>
 					</div>
-<div id="site-menu" class="nav-drawer" hidden>
-						<ul class="nav-drawer-primary">
-							<li><a href="test-index.html">Products</a></li>
-							<li><a href="test-about.html">About</a></li>
-							<li><a href="test-support.html">Support</a></li>
-							<li><a href="test-warranty.html">Warranty</a></li>
-							<li><a href="test-shipping.html">Shipping</a></li>
-							<li><a href="test-returns.html">Returns</a></li>
-							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
-							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+					<div id="site-menu" class="nav-drawer">
+						<ul class="nav-groups">
+							<li class="nav-group">
+								<details>
+									<summary>Products</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-mid1.html">MID.1</a></li>
+										<li><a href="test-mid1lid.html">MID.1.LID</a></li>
+										<li><a href="test-mid1pet.html">MID.1.PET</a></li>
+										<li><a href="test-mid1-top-case.html">MID.1 top case</a></li>
+										<li><a href="test-mid1-pcb.html">MID.1 PCB</a></li>
+										<li><a href="test-mid1-plate.html">MID.1 plate</a></li>
+										<li><a href="test-mid1-service-kit.html">MID.1 service kit</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Studio</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-about.html">About</a></li>
+										<li><a href="test-contact.html">Contact</a></li>
+										<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+										<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Support</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-product-resources.html">Product resources</a></li>
+										<li><a href="test-warranty.html">Warranty</a></li>
+										<li><a href="test-shipping.html">Shipping</a></li>
+										<li><a href="test-returns.html">Returns</a></li>
+									</ul>
+								</details>
+							</li>
 						</ul>
 					</div>
 				</nav>
 			</div>
 		</div>
+		</header>
 
 		<main>
 
@@ -103,11 +126,12 @@
 					</div>
 				</header>
 
-				<div class="product-features product-section foreground">
+				<section class="product-features product-section foreground">
 					<div class="section-content">
+						<h2>Features</h2>
 						<div class="feature-set-wrapper">
 							<section class="product-feature">
-								<h2>Shared construction</h2>
+								<h3>Shared construction</h3>
 								<figure>
           <img src="images/mid1/mid1petplusmid1-01.webp" alt="MID.1.PET tray and MID.1 keyboard side by side, showing their matching folded-steel construction" loading="lazy">
 									<figcaption>
@@ -116,7 +140,7 @@
 								</figure>
 							</section>
 							<section class="product-feature">
-								<h2>Design details</h2>
+								<h3>Design details</h3>
 								<figure>
           <img src="images/mid1/mid1pet-05.webp" alt="Close view of MID.1.PET's folded corners, rubber feet, and black interior liner" loading="lazy">
 									<figcaption>
@@ -125,7 +149,7 @@
 								</figure>
 							</section>
 							<section class="product-feature">
-								<h2>Soft leather liner</h2>
+								<h3>Soft leather liner</h3>
 								<figure>
           <img src="images/mid1/mid1pet-05.webp" alt="Close view of MID.1.PET's folded corners, rubber feet, and black interior liner" loading="lazy">
 									<figcaption>
@@ -135,15 +159,15 @@
 							</section>
 						</div>
 					</div>
-				</div>
+				</section>
 
 				<section id="specs" class="product-specs product-section">
 					<div class="section-content">
-						<h2>specs</h2>
+						<h2>Specs</h2>
 
 						<div class="specs-grid">
 						<section>
-							<h3>what's in the box</h3>
+							<h3>What's in the box</h3>
 							<ul>
 								<li>powder coated stainless steel tray</li>
 								<li>leather and neoprene liner</li>
@@ -152,47 +176,47 @@
 						</section>
 
 						<section>
-							<h3>dimensions</h3>
+							<h3>Dimensions</h3>
 							<dl>
-								<dt>width</dt>
+								<dt>Width</dt>
 								<dd>142&nbsp;mm (5&nbsp;5/8")</dd>
-								<dt>length</dt>
+								<dt>Length</dt>
 								<dd>142&nbsp;mm (5&nbsp;5/8")</dd>
-								<dt>height</dt>
+								<dt>Height</dt>
 								<dd>23&nbsp;mm (15/16")</dd>
-								<dt>weight</dt>
+								<dt>Weight</dt>
 								<dd>985&nbsp;g (2.17&nbsp;lbs)</dd>
 							</dl>
 						</section>
 
 						<section>
-							<h3>materials</h3>
+							<h3>Materials</h3>
 							<dl>
-								<dt>tray</dt>
-								<dd>powder coated 304 stainless steel</dd>
-								<dt>liner</dt>
+								<dt>Tray</dt>
+								<dd>Powder coated 304 stainless steel</dd>
+								<dt>Liner</dt>
 								<dd>Horween Dublin vegetable-tanned leather and neoprene</dd>
-								<dt>feet</dt>
-								<dd>synthetic rubber</dd>
-								<dt>packaging</dt>
+								<dt>Feet</dt>
+								<dd>Synthetic rubber</dd>
+								<dt>Packaging</dt>
 								<dd>100% cardboard and paper</dd>
 							</dl>
 						</section>
 
 						<section>
-							<h3>origin and assembly</h3>
+							<h3>Origin and assembly</h3>
 							<dl>
-								<dt>designed by</dt>
+								<dt>Designed by</dt>
 								<dd>A.Okay! in Seattle</dd>
-								<dt>sheet metal</dt>
-								<dd>fabricated in the US (cut, bent, and powder coated)</dd>
-								<dt>hardware</dt>
-								<dd>sourced from US and international suppliers</dd>
-								<dt>liner</dt><dd>cut, sewn, and finished by A.Okay! using Horween leather from Chicago and neoprene from US suppliers</dd>
-								<dt>packaging</dt>
-								<dd>designed by A.Okay!, manufactured in San Francisco</dd>
-								<dt>final kit prep</dt>
-								<dd>parts inspected, fit checked, assembled, and packed by A.Okay! in Seattle</dd>
+								<dt>Sheet metal</dt>
+								<dd>Fabricated in the US (cut, bent, and powder coated)</dd>
+								<dt>Hardware</dt>
+								<dd>Sourced from US and international suppliers</dd>
+								<dt>Liner</dt><dd>Cut, sewn, and finished by A.Okay! using Horween leather from Chicago and neoprene from US suppliers</dd>
+								<dt>Packaging</dt>
+								<dd>Designed by A.Okay!, manufactured in San Francisco</dd>
+								<dt>Final kit prep</dt>
+								<dd>Parts inspected, fit checked, assembled, and packed by A.Okay! in Seattle</dd>
 							</dl>
 						</section>
 						</div>
@@ -206,33 +230,54 @@
 		<div class="top-level-wrapper footer-wrapper far-background">
 			<footer>
 				<div class="footer-info">
-					<a class="logo" href="test-index.html">A.Okay!</a>
-					<div class="footer-copy">
+					<div class="footer-group footer-company">
+						<a class="logo" href="test-index.html">A.Okay!</a>
 						<p>Designed and built in Seattle.</p>
-						<p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p>
+						<a href="mailto:hello@aokay.cool">hello@aokay.cool</a>
+						<p>&copy; 2026 A.Okay!</p>
 					</div>
-					<div class="footer-links">
-						<a href="test-index.html">Products</a>
-						<a href="test-about.html">About</a>
-						<a href="test-support.html">Support</a>
-						<a href="test-warranty.html">Warranty</a>
-						<a href="test-shipping.html">Shipping</a>
-						<a href="test-returns.html">Returns</a>
-						<a href="https://discord.gg/SrYtaAgzF8">Discord</a>
-						<a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
-						<div class="footer-legal">
+
+					<section class="footer-group" aria-labelledby="footer-products-heading">
+						<h2 id="footer-products-heading" class="footer-heading">Products</h2>
+						<div class="footer-group-links">
+							<a href="test-mid1.html">MID.1</a>
+							<a href="test-mid1lid.html">MID.1.LID</a>
+							<a href="test-mid1pet.html">MID.1.PET</a>
+							<a href="test-mid1-top-case.html">MID.1 top case</a>
+							<a href="test-mid1-pcb.html">MID.1 PCB</a>
+							<a href="test-mid1-plate.html">MID.1 plate</a>
+							<a href="test-mid1-service-kit.html">MID.1 service kit</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-studio-heading">
+						<h2 id="footer-studio-heading" class="footer-heading">Studio</h2>
+						<div class="footer-group-links">
+							<a href="test-about.html">About</a>
+							<a href="test-contact.html">Contact</a>
+							<a href="https://discord.gg/SrYtaAgzF8">Discord</a>
+							<a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-support-heading">
+						<h2 id="footer-support-heading" class="footer-heading">Support</h2>
+						<div class="footer-group-links">
+							<a href="test-product-resources.html">Product resources</a>
+							<a href="test-warranty.html">Warranty</a>
+							<a href="test-shipping.html">Shipping</a>
+							<a href="test-returns.html">Returns</a>
 							<a href="test-terms.html">Terms of Service</a>
 							<a href="test-privacy.html">Privacy</a>
 						</div>
-					</div>
-					<p class="footer-copyright">© 2026 A.Okay!</p>
+					</section>
 				</div>
 			</footer>
 		</div>
 
-		<script src="test-storefront.js?v=1"></script>
+		<script src="test-storefront.js"></script>
 		<script src="test-shopify.js?v=9"></script>
-		<script src="test-navigation.js?v=2"></script>
+		<script src="test-navigation.js"></script>
 		<script src="test-gallery.js?v=4"></script>
 		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>

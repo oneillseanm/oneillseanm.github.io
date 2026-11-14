@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=80">
+		<link rel="stylesheet" type="text/css" href="test-style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -19,34 +19,58 @@
 
 	<body id="top" class="product-page product-layout-v2">
 		<header class="site-header">
-			<div class="site-header-inner section-content section-content--wide">
-				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-			</div>
-		</header>
-
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
 				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
+						<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
-						<a class="top-link" href="#top">Top</a>
 					</div>
-<div id="site-menu" class="nav-drawer" hidden>
-						<ul class="nav-drawer-primary">
-							<li><a href="test-index.html">Products</a></li>
-							<li><a href="test-about.html">About</a></li>
-							<li><a href="test-support.html">Support</a></li>
-							<li><a href="test-warranty.html">Warranty</a></li>
-							<li><a href="test-shipping.html">Shipping</a></li>
-							<li><a href="test-returns.html">Returns</a></li>
-							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
-							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+					<div id="site-menu" class="nav-drawer">
+						<ul class="nav-groups">
+							<li class="nav-group">
+								<details>
+									<summary>Products</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-mid1.html">MID.1</a></li>
+										<li><a href="test-mid1lid.html">MID.1.LID</a></li>
+										<li><a href="test-mid1pet.html">MID.1.PET</a></li>
+										<li><a href="test-mid1-top-case.html">MID.1 top case</a></li>
+										<li><a href="test-mid1-pcb.html">MID.1 PCB</a></li>
+										<li><a href="test-mid1-plate.html">MID.1 plate</a></li>
+										<li><a href="test-mid1-service-kit.html">MID.1 service kit</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Studio</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-about.html">About</a></li>
+										<li><a href="test-contact.html">Contact</a></li>
+										<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+										<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Support</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-product-resources.html">Product resources</a></li>
+										<li><a href="test-warranty.html">Warranty</a></li>
+										<li><a href="test-shipping.html">Shipping</a></li>
+										<li><a href="test-returns.html">Returns</a></li>
+									</ul>
+								</details>
+							</li>
 						</ul>
 					</div>
 				</nav>
 			</div>
 		</div>
+		</header>
 
 		<main>
 			<article id="mid1-pcb" class="product-layout">
@@ -68,7 +92,10 @@
 							<h1 class="headline">MID.1 PCB<span class="product-subtitle">Additional PCB</span></h1>
 							<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1Pcb">
 								<p class="product-price">$69</p>
-								<div class="product-options" data-shopify-options aria-live="polite"><p class="product-options-status">loading options</p></div>
+								<div class="product-options">
+									<h2 class="product-options-heading">Options</h2>
+									<div data-shopify-options aria-live="polite"><p class="product-options-status">loading options</p></div>
+								</div>
 								<button class="product-add-to-cart" type="button">add to cart</button>
 							</section>
 							<div class="product-description">
@@ -87,13 +114,13 @@
 				<section id="specs" class="product-specs product-section">
 					<div class="section-content">
 
-						<h2>specs</h2>
+						<h2>Specs</h2>
 
 						<div class="specs-grid">
 						<section class="spec-layouts">
-							<h3>staggered PCB: standard layout</h3>
+							<h3>Staggered PCB: standard layout</h3>
 							<dl>
-								<dt>standard 12-unit</dt>
+								<dt>Standard 12-unit</dt>
 								<dd class="layout-container">
 									<div class="keyboard-wrapper all-rows">
 										<div class="keyboard">
@@ -150,9 +177,9 @@
 						</section>
 
 						<section class="spec-layouts">
-							<h3>ortholinear PCB: standard layouts</h3>
+							<h3>Ortholinear PCB: standard layouts</h3>
 							<dl>
-								<dt>full grid</dt>
+								<dt>Full grid</dt>
 								<dd class="layout-container">
 									<div class="keyboard-wrapper all-rows">
 										<div class="keyboard">
@@ -211,7 +238,7 @@
 										</div>
 									</div>
 								</dd>
-								<dt>alphastagger</dt>
+								<dt>Alphastagger</dt>
 								<dd class="layout-container">
 									<div class="keyboard-wrapper all-rows">
 										<div class="keyboard">
@@ -280,17 +307,54 @@
 		<div class="top-level-wrapper footer-wrapper far-background">
 			<footer>
 				<div class="footer-info">
-					<a class="logo" href="test-index.html">A.Okay!</a>
-					<div class="footer-copy"><p>Designed and built in Seattle.</p><p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p></div>
-					<div class="footer-links"><a href="test-index.html">Products</a><a href="test-about.html">About</a><a href="test-support.html">Support</a><a href="test-warranty.html">Warranty</a><a href="test-shipping.html">Shipping</a><a href="test-returns.html">Returns</a><a href="https://discord.gg/SrYtaAgzF8">Discord</a><a href="https://www.instagram.com/aokay.aokay/">Instagram</a><div class="footer-legal"><a href="test-terms.html">Terms of Service</a><a href="test-privacy.html">Privacy</a></div></div>
-					<p class="footer-copyright">&copy; 2026 A.Okay!</p>
+					<div class="footer-group footer-company">
+						<a class="logo" href="test-index.html">A.Okay!</a>
+						<p>Designed and built in Seattle.</p>
+						<a href="mailto:hello@aokay.cool">hello@aokay.cool</a>
+						<p>&copy; 2026 A.Okay!</p>
+					</div>
+
+					<section class="footer-group" aria-labelledby="footer-products-heading">
+						<h2 id="footer-products-heading" class="footer-heading">Products</h2>
+						<div class="footer-group-links">
+							<a href="test-mid1.html">MID.1</a>
+							<a href="test-mid1lid.html">MID.1.LID</a>
+							<a href="test-mid1pet.html">MID.1.PET</a>
+							<a href="test-mid1-top-case.html">MID.1 top case</a>
+							<a href="test-mid1-pcb.html">MID.1 PCB</a>
+							<a href="test-mid1-plate.html">MID.1 plate</a>
+							<a href="test-mid1-service-kit.html">MID.1 service kit</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-studio-heading">
+						<h2 id="footer-studio-heading" class="footer-heading">Studio</h2>
+						<div class="footer-group-links">
+							<a href="test-about.html">About</a>
+							<a href="test-contact.html">Contact</a>
+							<a href="https://discord.gg/SrYtaAgzF8">Discord</a>
+							<a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-support-heading">
+						<h2 id="footer-support-heading" class="footer-heading">Support</h2>
+						<div class="footer-group-links">
+							<a href="test-product-resources.html">Product resources</a>
+							<a href="test-warranty.html">Warranty</a>
+							<a href="test-shipping.html">Shipping</a>
+							<a href="test-returns.html">Returns</a>
+							<a href="test-terms.html">Terms of Service</a>
+							<a href="test-privacy.html">Privacy</a>
+						</div>
+					</section>
 				</div>
 			</footer>
 		</div>
 
-		<script src="test-storefront.js?v=1"></script>
+		<script src="test-storefront.js"></script>
 		<script src="test-shopify.js?v=9"></script>
-		<script src="test-navigation.js?v=2"></script>
+		<script src="test-navigation.js"></script>
 		<script src="test-gallery.js?v=4"></script>
 		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>

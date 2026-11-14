@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="test-style.css?v=80">
+		<link rel="stylesheet" type="text/css" href="test-style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
@@ -32,34 +32,58 @@
 		<!-- Add class="debug" to body to enable viewport debug tool -->
 
 		<header class="site-header">
-			<div class="site-header-inner section-content section-content--wide">
-				<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
-			</div>
-		</header>
-
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
 				<nav class="disclosure-nav" aria-label="Primary" data-disclosure-nav>
 					<div class="nav-header">
+						<a class="logo" href="test-index.html" aria-label="A.Okay! home">A.Okay<span class="bang-wrap"><span class="bang front">!</span><span class="bang back">!</span></span></a>
 						<a class="cart-link" href="cart.html" data-cart-link>Cart <span data-cart-count aria-live="polite">(0)</span></a>
 						<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
-						<a class="top-link" href="#top">Top</a>
 					</div>
-					<div id="site-menu" class="nav-drawer" hidden>
-						<ul class="nav-drawer-primary">
-							<li><a href="test-index.html">Products</a></li>
-							<li><a href="test-about.html">About</a></li>
-							<li><a href="test-support.html">Support</a></li>
-							<li><a href="test-warranty.html">Warranty</a></li>
-							<li><a href="test-shipping.html">Shipping</a></li>
-							<li><a href="test-returns.html">Returns</a></li>
-							<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
-							<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+					<div id="site-menu" class="nav-drawer">
+						<ul class="nav-groups">
+							<li class="nav-group">
+								<details>
+									<summary>Products</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-mid1.html">MID.1</a></li>
+										<li><a href="test-mid1lid.html">MID.1.LID</a></li>
+										<li><a href="test-mid1pet.html">MID.1.PET</a></li>
+										<li><a href="test-mid1-top-case.html">MID.1 top case</a></li>
+										<li><a href="test-mid1-pcb.html">MID.1 PCB</a></li>
+										<li><a href="test-mid1-plate.html">MID.1 plate</a></li>
+										<li><a href="test-mid1-service-kit.html">MID.1 service kit</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Studio</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-about.html">About</a></li>
+										<li><a href="test-contact.html">Contact</a></li>
+										<li><a href="https://discord.gg/SrYtaAgzF8">Discord</a></li>
+										<li><a href="https://www.instagram.com/aokay.aokay/">Instagram</a></li>
+									</ul>
+								</details>
+							</li>
+							<li class="nav-group">
+								<details>
+									<summary>Support</summary>
+									<ul class="nav-group-links">
+										<li><a href="test-product-resources.html">Product resources</a></li>
+										<li><a href="test-warranty.html">Warranty</a></li>
+										<li><a href="test-shipping.html">Shipping</a></li>
+										<li><a href="test-returns.html">Returns</a></li>
+									</ul>
+								</details>
+							</li>
 						</ul>
 					</div>
 				</nav>
 			</div>
 		</div>
+		</header>
 
 		<main>
 
@@ -89,8 +113,11 @@
 						<h1 class="headline">MID.1<span class="product-subtitle">Manual Input Device</span></h1>
 						<section class="product-purchase" aria-label="Purchase information" data-shopify-product="mid1">
 							<p class="product-price">$450</p>
-							<div class="product-options" data-shopify-options aria-live="polite">
-								<p class="product-options-status">loading options</p>
+							<div class="product-options">
+								<h2 class="product-options-heading">Options</h2>
+								<div data-shopify-options aria-live="polite">
+									<p class="product-options-status">loading options</p>
+								</div>
 							</div>
 							<button class="product-add-to-cart" type="button">add to cart</button>
 						</section>
@@ -106,11 +133,12 @@
 					</div>
 				</header>
 
-				<div class="product-features product-section foreground">
+				<section class="product-features product-section foreground">
 					<div class="section-content">
+						<h2>Features</h2>
 						<div class="feature-set-wrapper">
 						<section class="product-feature">
-							<h2>folded stainless steel</h2>
+							<h3>Folded stainless steel case</h3>
 							<figure>
           <img src="images/mid1/mid1-16.webp" alt="MID.1 standing on edge, showing its folded stainless-steel underside" loading="lazy">
 								<figcaption>
@@ -119,16 +147,16 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>exposed hardware</h2>
+							<h3>Exposed, accessible hardware</h3>
 							<figure>
           <img src="images/mid1/mid1-03.webp" alt="Low front view of the MID.1 case and its exposed stainless-steel fasteners" loading="lazy">
 								<figcaption>
-									<p>Exposed screws and other hardware are selected for their low profiles, keeping protrusions and snag points to a minimum.</p>
+									<p>Hardware is exposed and easy to work on when you need to. Screws and other components are selected for their low profiles, keeping protrusions and snag points to a minimum.</p>
 								</figcaption>
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>big, shapeable sound</h2>
+							<h3>Big, shapeable sound</h3>
 							<figure>
           <img src="images/mid1/mid1-25.webp" alt="MID.1 with its top case removed, exposing the keyboard assembly and sound chamber" loading="lazy">
 								<figcaption>
@@ -137,7 +165,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>swappable tops</h2>
+							<h3>Swappable tops</h3>
 							<figure>
           <img src="images/mid1/mid1-13.webp" alt="MID.1 beside its interchangeable standard and corner-blocker top cases" loading="lazy">
 								<figcaption>
@@ -147,7 +175,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>indirect lighting system</h2>
+							<h3>Soft, indirect lighting</h3>
 							<figure>
           <img src="images/mid1/mid1-21.webp" alt="MID.1 with its lighting module, diffuser, screws, and hex key removed" loading="lazy">
 								<figcaption>
@@ -160,7 +188,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>the PCB</h2>
+							<h3>Custom PCB with layout options</h3>
 							<figure>
           <img src="images/mid1/mid1-22.webp" alt="Bare MID.1 printed circuit board with switch sockets, rotary encoders, and lighting connections" loading="lazy">
 								<figcaption>
@@ -169,7 +197,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>construction</h2>
+							<h3>Buy It For Life construction</h3>
 							<figure>
           <img src="images/mid1/mid1-23.webp" alt="Disassembled MID.1 showing its steel case, plate, printed circuit board, and felt liner" loading="lazy">
 								<figcaption>
@@ -178,7 +206,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>adjustable typing angle</h2>
+							<h3>Adjustable typing angle</h3>
 							<figure>
           <img src="images/mid1/mid1-17.webp" alt="Underside of MID.1 showing its four rubber feet and two threaded angle-adjustment points" loading="lazy">
           <img src="images/mid1/mid1-18.webp" alt="Hand threading an adjustable foot into the underside of MID.1" loading="lazy">
@@ -188,7 +216,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>dual knobs</h2>
+							<h3>Dual knobs</h3>
 							<figure>
           <img src="images/mid1/mid1-07.webp" alt="Rear view of MID.1 showing its two large aluminum control knobs" loading="lazy">
 								<figcaption>
@@ -197,7 +225,7 @@
 							</figure>
 						</section>
 						<section class="product-feature">
-							<h2>designed and assembled in Seattle</h2>
+							<h3>Designed and assembled in Seattle</h3>
 							<figure>
           <img src="images/mid1/mid1-19.webp" alt="MID.1 keyboard assembly and lower case separated to show the internal construction" loading="lazy">
 								<figcaption>
@@ -207,7 +235,7 @@
 						</section>
 						</div>
 					</div>
-				</div>
+				</section>
 
 				<div class="divider-image media-band split-foreground-background">
 					<div class="divider-image-inner media-band-inner bottom-align">
@@ -217,7 +245,7 @@
 
 				<section class="product-family product-section">
 					<div class="section-content">
-						<h2>accessories</h2>
+						<h2>Accessories</h2>
 						<div class="feature-set-wrapper">
 							<section class="product-feature">
 
@@ -252,17 +280,43 @@
 						</div>
 					</div>
 				</section>
+
+				<section class="product-in-the-wild product-section background">
+					<div class="section-content">
+						<h2>Community reviews</h2>
+						<div class="linked-media-array">
+							<a class="linked-media-card-link" href="https://www.youtube.com/watch?v=tJfuReYK6_U&amp;t=146s">
+								<figure class="linked-media-card">
+									<img src="https://i.ytimg.com/vi/tJfuReYK6_U/hqdefault.jpg" alt="" loading="lazy">
+									<figcaption>
+										<h3>alexotos review</h3>
+										<p>An independent look at the MID.1 production prototype.</p>
+									</figcaption>
+								</figure>
+							</a>
+							<a class="linked-media-card-link" href="https://www.youtube.com/watch?v=TZKXfECUZIc">
+								<figure class="linked-media-card">
+									<img src="https://i.ytimg.com/vi/TZKXfECUZIc/hqdefault.jpg" alt="" loading="lazy">
+									<figcaption>
+										<h3>alexotos full build stream</h3>
+										<p>A full-length MID.1 build and hands-on exploration.</p>
+									</figcaption>
+								</figure>
+							</a>
+						</div>
+					</div>
+				</section>
 			
 			<section id="support" class="product-support product-section foreground">
 				<div class="section-content">
-					<h2>support</h2>
+					<h2>Support</h2>
 					<div class="feature-set-wrapper">
 						<section class="product-feature">
 							<figure>
           <img src="images/mid1/mid1-24.webp" alt="MID.1 standing on edge beside a lamp, with its underside and rubber feet visible" loading="lazy">
 								<figcaption>
 									<p>MID.1 is designed for long-term use and easy maintenance and repair. It comes with a one-year limited warranty against defects in materials and workmanship.</p>
-									<p>See <a href="test-warranty.html">warranty details</a> for more information.</p>
+									<p class="text-small">See <a href="test-warranty.html">warranty details</a> for more information.</p>
 								</figcaption>
 							</figure>
 						</section>
@@ -279,12 +333,12 @@
 			<section id="specs" class="product-specs product-section">
 				<div class="section-content">
 				
-					<h2>specs</h2>
+					<h2>Specs</h2>
 				
 					<div class="specs-grid">
 
 						<section class="spec-layouts">
-							<h3>staggered MID.1 PCB (hotswap): layout options</h3>
+							<h3>Staggered MID.1 PCB (hotswap): layout options</h3>
 							<dl>
 								<dt>Standard 12-unit</dt>
 								<dd class="layout-container">
@@ -339,7 +393,7 @@
 										</div>
 									</div>
 								</dd>
-								<dt>corner-blocker (requires corner-blocker top case)</dt>
+								<dt>Corner-blocker (requires corner-blocker top case)</dt>
 								<dd class="layout-container">
 									<div class="keyboard-wrapper all-rows">
 										<div class="keyboard">
@@ -449,9 +503,9 @@
 						</section>
 					
 						<section class="spec-layouts">
-							<h3>ortholinear MID.1 PCB (soldered): layout options</h3>
+							<h3>Ortholinear MID.1 PCB (soldered): layout options</h3>
 							<dl>
-								<dt>full grid 12-unit</dt>
+								<dt>Full grid 12-unit</dt>
 								<dd class="layout-container">
 									<div class="keyboard-wrapper all-rows">
 										<div class="keyboard">
@@ -682,99 +736,99 @@
 
 
 						<section>
-							<h3>what's in the box</h3>
+							<h3>What's in the box</h3>
 							<ul>
-								<li>bottom case</li>
-								<li>top case in either standard or corner blocker format</li>
-								<li>plate</li>
+								<li>Bottom case</li>
+								<li>Top case in either standard or corner blocker format</li>
+								<li>Plate</li>
 								<li>PCB with lighting module</li>
-								<li>fasteners</li>
-								<li>feet for flat and 4° typing angle</li>
+								<li>Fasteners</li>
+								<li>Feet for flat and 4° typing angle</li>
 								<li>PCB gaskets</li>
-								<li>rotary encoder knobs</li>
-								<li>wool felt acoustic pad</li>
-								<li>hex keys</li>
+								<li>Rotary encoder knobs</li>
+								<li>Wool felt acoustic pad</li>
+								<li>Hex keys</li>
 							</ul>
 						</section>
 				
 
 						<section>
-							<h3>dimensions</h3>
+							<h3>Dimensions</h3>
 							<dl>
-								<dt>typing angle</dt>
-								<dd>flat or 4°</dd>
-								<dt>width</dt>
+								<dt>Typing angle</dt>
+								<dd>Flat or 4°</dd>
+								<dt>Width</dt>
 								<dd>236&nbsp;mm (9&nbsp;5/16")</dd>
-								<dt>length</dt>
+								<dt>Length</dt>
 								<dd>142&nbsp;mm (5&nbsp;5/8")</dd>
-								<dt>front height (including feet)</dt>
+								<dt>Front height (including feet)</dt>
 								<dd>21&nbsp;mm (13/16")</dd>
-								<dt>overall height (to top of case)</dt>
+								<dt>Overall height (to top of case)</dt>
 								<dd>23&nbsp;mm (15/16")</dd>
-								<dt>overall height (including knob)</dt>
+								<dt>Overall height (including knob)</dt>
 								<dd>32&nbsp;mm (1&nbsp;1/4")</dd>
-								<dt>weight</dt>
+								<dt>Weight</dt>
 								<dd>985&nbsp;g (2.17&nbsp;lbs)</dd>
 							</dl>
 						</section>
 				
 						<section>
-							<h3>the PCB</h3>
+							<h3>The PCB</h3>
 							<dl>
-								<dt>thickness</dt>
+								<dt>Thickness</dt>
 								<dd>1.6 mm</dd>
-								<dt>connectivity</dt>
+								<dt>Connectivity</dt>
 								<dd>USB-C;<br>
-									no wireless option</dd>
-								<dt>switch connection</dt>
-								<dd>staggered PCB: Kailh hotswap sockets;<br>
-									ortholinear PCB: soldered;<br>
-									supports MX switches only</dd>
-								<dt>mounting</dt>
-								<dd>tray mount with rubber gaskets</dd>
-								<dt>flex</dt>
-								<dd>no flex cuts</dd>
-								<dt>firmware</dt>
-								<dd>built with QMK, VIA pre-installed</dd>
+									No wireless option</dd>
+								<dt>Switch connection</dt>
+								<dd>Staggered PCB: Kailh hotswap sockets;<br>
+									Ortholinear PCB: soldered;<br>
+									Supports MX switches only</dd>
+								<dt>Mounting</dt>
+								<dd>Tray mount with rubber gaskets</dd>
+								<dt>Flex</dt>
+								<dd>No flex cuts</dd>
+								<dt>Firmware</dt>
+								<dd>Built with QMK, VIA pre-installed</dd>
 								<dt>Designed by</dt>
 								<dd>A.Okay!</dd>
 							</dl>
 						</section>
 				
 						<section>
-							<h3>materials</h3>
+							<h3>Materials</h3>
 							<dl>
-								<dt>case and plate</dt>
-								<dd>powder coated 304 stainless steel</dd>
-								<dt>fasteners</dt>
+								<dt>Case and plate</dt>
+								<dd>Powder coated 304 stainless steel</dd>
+								<dt>Fasteners</dt>
 								<dd>304 and 316 stainless steel</dd>
-								<dt>feet and PCB gaskets</dt>
-								<dd>synthetic rubber</dd>
+								<dt>Feet and PCB gaskets</dt>
+								<dd>Synthetic rubber</dd>
 								<dt>PCB</dt>
-								<dd>standard FR4 with ENIG finish</dd>
-								<dt>packaging</dt>
-								<dd>cardboard boxing, glassine hardware bags, and paper manuals;<br>
-									all recyclable, except foil PCB bag</dd>
+								<dd>Standard FR4 with ENIG finish</dd>
+								<dt>Packaging</dt>
+								<dd>Cardboard boxing, glassine hardware bags, and paper manuals;<br>
+									All recyclable, except foil PCB bag</dd>
 							</dl>
 						</section>
 
 						<section>
-							<h3>origin and assembly</h3>
+							<h3>Origin and assembly</h3>
 							<dl>
-								<dt>designed by</dt>
+								<dt>Designed by</dt>
 								<dd>A.Okay! in Seattle</dd>
-								<dt>sheet metal</dt>
-								<dd>fabricated in the US (cut, bent, and powder coated)</dd>
+								<dt>Sheet metal</dt>
+								<dd>Fabricated in the US (cut, bent, and powder coated)</dd>
 								<dt>PCB</dt>
-								<dd>designed by A.Okay!, fabricated in China</dd>
-								<dt>hardware / electronics</dt>
-								<dd>sourced from US and international suppliers</dd>
-								<dt>packaging</dt>
-								<dd>designed by A.Okay!, manufactured in San Francisco</dd>
-								<dt>print materials</dt>
-								<dd>designed by A.Okay! and printed in Seattle</dd>
-								<dt>final kit prep</dt>
-								<dd>case fastening hardware installed; parts inspected, fit checked, assembled, kitted, and packed by A.Okay! in Seattle</dd>
+								<dd>Designed by A.Okay!, fabricated in China</dd>
+								<dt>Hardware / electronics</dt>
+								<dd>Sourced from US and international suppliers</dd>
+								<dt>Packaging</dt>
+								<dd>Designed by A.Okay!, manufactured in San Francisco</dd>
+								<dt>Print materials</dt>
+								<dd>Designed by A.Okay! and printed in Seattle</dd>
+								<dt>Final kit prep</dt>
+								<dd>Case fastening hardware installed; parts inspected, fit checked, assembled, kitted, and packed by A.Okay! in Seattle</dd>
 							</dl>
 						</section>
 					</div>
@@ -784,7 +838,7 @@
 
 			<section id="parts-extras" class="product-parts product-section background">
 				<div class="section-content">
-					<h2>parts + extras</h2>
+					<h2>Parts + extras</h2>
 					<div class="product-array">
 						<a class="product-card" href="test-mid1-top-case.html?variant=standard" data-shopify-card-product="mid1TopCase">
 							<figure>
@@ -893,33 +947,54 @@
 		<div class="top-level-wrapper footer-wrapper far-background">
 			<footer>
 				<div class="footer-info">
-					<a class="logo" href="test-index.html">A.Okay!</a>
-					<div class="footer-copy">
+					<div class="footer-group footer-company">
+						<a class="logo" href="test-index.html">A.Okay!</a>
 						<p>Designed and built in Seattle.</p>
-						<p><a href="mailto:hello@aokay.cool">hello@aokay.cool</a></p>
+						<a href="mailto:hello@aokay.cool">hello@aokay.cool</a>
+						<p>&copy; 2026 A.Okay!</p>
 					</div>
-					<div class="footer-links">
-						<a href="test-index.html">Products</a>
-						<a href="test-about.html">About</a>
-						<a href="test-support.html">Support</a>
-						<a href="test-warranty.html">Warranty</a>
-						<a href="test-shipping.html">Shipping</a>
-						<a href="test-returns.html">Returns</a>
-						<a href="https://discord.gg/SrYtaAgzF8">Discord</a>
-						<a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
-						<div class="footer-legal">
+
+					<section class="footer-group" aria-labelledby="footer-products-heading">
+						<h2 id="footer-products-heading" class="footer-heading">Products</h2>
+						<div class="footer-group-links">
+							<a href="test-mid1.html">MID.1</a>
+							<a href="test-mid1lid.html">MID.1.LID</a>
+							<a href="test-mid1pet.html">MID.1.PET</a>
+							<a href="test-mid1-top-case.html">MID.1 top case</a>
+							<a href="test-mid1-pcb.html">MID.1 PCB</a>
+							<a href="test-mid1-plate.html">MID.1 plate</a>
+							<a href="test-mid1-service-kit.html">MID.1 service kit</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-studio-heading">
+						<h2 id="footer-studio-heading" class="footer-heading">Studio</h2>
+						<div class="footer-group-links">
+							<a href="test-about.html">About</a>
+							<a href="test-contact.html">Contact</a>
+							<a href="https://discord.gg/SrYtaAgzF8">Discord</a>
+							<a href="https://www.instagram.com/aokay.aokay/">Instagram</a>
+						</div>
+					</section>
+
+					<section class="footer-group" aria-labelledby="footer-support-heading">
+						<h2 id="footer-support-heading" class="footer-heading">Support</h2>
+						<div class="footer-group-links">
+							<a href="test-product-resources.html">Product resources</a>
+							<a href="test-warranty.html">Warranty</a>
+							<a href="test-shipping.html">Shipping</a>
+							<a href="test-returns.html">Returns</a>
 							<a href="test-terms.html">Terms of Service</a>
 							<a href="test-privacy.html">Privacy</a>
 						</div>
-					</div>
-					<p class="footer-copyright">© 2026 A.Okay!</p>
+					</section>
 				</div>
 			</footer>
 		</div>
 
-		<script src="test-storefront.js?v=1"></script>
+		<script src="test-storefront.js"></script>
 		<script src="test-shopify.js?v=9"></script>
-		<script src="test-navigation.js?v=2"></script>
+		<script src="test-navigation.js"></script>
 		<script src="test-gallery.js?v=4"></script>
 		<script src="test-lightbox.js?v=2"></script>
 		<script src="main.js"></script>

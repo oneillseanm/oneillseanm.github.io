@@ -30,17 +30,10 @@
 
 	function applyPreviewMode(root = document) {
 		root.querySelectorAll?.(purchaseActionSelector).forEach(disablePurchaseAction);
-
-		root.querySelectorAll?.('[data-cart-link]').forEach(cartLink => {
-			cartLink.removeAttribute('href');
-			cartLink.setAttribute('aria-disabled', 'true');
-			cartLink.classList.add('storefront-unavailable');
-			cartLink.textContent = 'Available soon';
-		});
 	}
 
 	document.addEventListener('click', event => {
-		if (event.target.closest(`${purchaseActionSelector}, [data-cart-link]`)) {
+		if (event.target.closest(purchaseActionSelector)) {
 			event.preventDefault();
 		}
 	}, true);
