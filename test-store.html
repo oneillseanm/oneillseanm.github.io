@@ -64,12 +64,23 @@
 		</header>
 
 		<div class="local-nav-wrapper">
-			<nav class="local-nav" aria-label="Store categories">
+			<nav class="local-nav store-local-nav" aria-label="Store categories" data-store-local-nav>
 				<div class="local-nav-inner">
 					<a class="local-nav-location" href="test-store.html">Store</a>
-					<a href="test-store.html" aria-current="page">All products</a>
-					<a href="test-store-desk-objects.html">Desk objects</a>
-					<a href="test-store-keyboards.html">Keyboards</a>
+					<div class="store-local-desktop-links">
+						<a href="test-store.html" aria-current="page">All products</a>
+						<a href="test-store-desk-objects.html">Desk objects</a>
+						<a href="test-store-keyboards.html">Keyboards</a>
+					</div>
+					<button class="store-local-toggle" type="button" aria-expanded="false" aria-controls="store-category-menu" aria-label="Choose store category; current category: All products">
+						<span>All products</span>
+						<span class="store-local-arrow" aria-hidden="true">▾</span>
+					</button>
+				</div>
+				<div id="store-category-menu" class="store-local-menu">
+						<a href="test-store.html" aria-current="page">All products</a>
+						<a href="test-store-desk-objects.html">Desk objects</a>
+						<a href="test-store-keyboards.html">Keyboards</a>
 				</div>
 			</nav>
 		</div>

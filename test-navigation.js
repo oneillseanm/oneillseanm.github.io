@@ -1,5 +1,16 @@
 const NAV_PAGE_BLUR_ENABLED = true;
 
+function syncNavigationPageBlur() {
+	const primaryMenuIsOpen = document.querySelector('.menu-toggle[aria-expanded="true"]');
+	const primaryGroupIsOpen = document.querySelector('[data-disclosure-nav] .nav-group details[open]');
+	const storeMenuIsOpen = document.querySelector('.store-local-menu.is-open');
+
+	document.body.classList.toggle(
+		'nav-page-blur-active',
+		NAV_PAGE_BLUR_ENABLED && Boolean(primaryMenuIsOpen || primaryGroupIsOpen || storeMenuIsOpen)
+	);
+}
+
 const disclosureNav = document.querySelector('[data-disclosure-nav]');
 
 if (disclosureNav) {
@@ -33,12 +44,7 @@ if (disclosureNav) {
 	}
 
 	function syncPageBlur() {
-		const menuIsOpen = menuButton.getAttribute('aria-expanded') === 'true';
-		const groupIsOpen = groupDetails.some((details) => details.open);
-		document.body.classList.toggle(
-			'nav-page-blur-active',
-			NAV_PAGE_BLUR_ENABLED && (menuIsOpen || groupIsOpen)
-		);
+		syncNavigationPageBlur();
 	}
 
 	function setMenuOpen(isOpen, returnFocus = false) {
@@ -142,4 +148,42 @@ if (productLocalNav) {
 			}
 		});
 	}
+}
+
+const storeLocalNav = document.querySelector('[data-store-local-nav]');
+
+if (storeLocalNav) {
+	const categoryToggle = storeLocalNav.querySelector('.store-local-toggle');
+	const categoryMenu = storeLocalNav.querySelector(`#${categoryToggle.getAttribute('aria-controls')}`);
+	const categoryArrow = categoryToggle.querySelector('.store-local-arrow');
+	const desktopStoreNavigation = window.matchMedia('(min-width: 640px)');
+
+	function setStoreCategoryMenuOpen(isOpen, returnFocus = false) {
+		categoryToggle.setAttribute('aria-expanded', String(isOpen));
+		categoryMenu.classList.toggle('is-open', isOpen);
+		syncNavigationPageBlur();
+		categoryArrow.textContent = isOpen ? '▴' : '▾';
+
+		if (returnFocus) categoryToggle.focus();
+	}
+
+	categoryToggle.addEventListener('click', () => {
+		setStoreCategoryMenuOpen(categoryToggle.getAttribute('aria-expanded') !== 'true');
+	});
+
+	categoryMenu.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', () => setStoreCategoryMenuOpen(false));
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && categoryToggle.getAttribute('aria-expanded') === 'true') {
+			setStoreCategoryMenuOpen(false, true);
+		}
+	});
+
+	document.addEventListener('pointerdown', (event) => {
+		if (!storeLocalNav.contains(event.target)) setStoreCategoryMenuOpen(false);
+	});
+
+	desktopStoreNavigation.addEventListener('change', () => setStoreCategoryMenuOpen(false));
 }
