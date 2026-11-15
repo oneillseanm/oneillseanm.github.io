@@ -1,3 +1,5 @@
+const NAV_PAGE_BLUR_ENABLED = true;
+
 const disclosureNav = document.querySelector('[data-disclosure-nav]');
 
 if (disclosureNav) {
@@ -30,6 +32,15 @@ if (disclosureNav) {
 		}
 	}
 
+	function syncPageBlur() {
+		const menuIsOpen = menuButton.getAttribute('aria-expanded') === 'true';
+		const groupIsOpen = groupDetails.some((details) => details.open);
+		document.body.classList.toggle(
+			'nav-page-blur-active',
+			NAV_PAGE_BLUR_ENABLED && (menuIsOpen || groupIsOpen)
+		);
+	}
+
 	function setMenuOpen(isOpen, returnFocus = false) {
 		menuButton.setAttribute('aria-expanded', String(isOpen));
 		menuDrawer.classList.toggle('is-open', isOpen);
@@ -43,6 +54,8 @@ if (disclosureNav) {
 		if (returnFocus) {
 			menuButton.focus();
 		}
+
+		syncPageBlur();
 	}
 
 	menuButton.addEventListener('click', () => {
@@ -54,6 +67,7 @@ if (disclosureNav) {
 		details.addEventListener('toggle', () => {
 			if (details.open) closeGroups(details);
 			syncExpandedGroupHeight();
+			syncPageBlur();
 		});
 	});
 
@@ -76,6 +90,7 @@ if (disclosureNav) {
 		if (disclosureNav.contains(event.target)) return;
 
 		closeGroups();
+		syncPageBlur();
 		if (!desktopNavigation.matches && menuButton.getAttribute('aria-expanded') === 'true') {
 			setMenuOpen(false);
 		}
@@ -84,7 +99,47 @@ if (disclosureNav) {
 	desktopNavigation.addEventListener('change', () => {
 		setMenuOpen(false);
 		syncExpandedGroupHeight();
+		syncPageBlur();
 	});
 
 	window.addEventListener('resize', syncExpandedGroupHeight);
+	syncPageBlur();
+}
+
+const productLocalNav = document.querySelector('[data-local-nav]');
+
+if (productLocalNav) {
+	const sectionLinks = [...productLocalNav.querySelectorAll('a:not(.local-nav-location)[href^="#"]')];
+
+	function syncLocalNavigationCurrent(hash = window.location.hash) {
+		const currentHash = sectionLinks.some((link) => link.getAttribute('href') === hash)
+			? hash
+			: '';
+
+		sectionLinks.forEach((link) => {
+			if (link.getAttribute('href') === currentHash) {
+				link.setAttribute('aria-current', 'location');
+			} else {
+				link.removeAttribute('aria-current');
+			}
+		});
+	}
+
+	sectionLinks.forEach((link) => {
+		link.addEventListener('click', () => syncLocalNavigationCurrent(link.getAttribute('href')));
+	});
+
+	window.addEventListener('hashchange', () => syncLocalNavigationCurrent());
+	syncLocalNavigationCurrent();
+
+	const localBuy = productLocalNav.querySelector('[data-local-buy]');
+	const primaryBuy = document.querySelector('.product-add-to-cart');
+
+	if (localBuy && primaryBuy) {
+		localBuy.addEventListener('click', () => {
+			if (!localBuy.disabled && localBuy.getAttribute('aria-disabled') !== 'true') {
+				primaryBuy.click();
+			}
+		});
+	}
 }

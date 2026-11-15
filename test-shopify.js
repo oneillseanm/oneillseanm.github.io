@@ -59,9 +59,7 @@ async function initializeShopifyProduct(purchase) {
     if (optionsContainer) {
       optionsContainer.innerHTML = '<p class="product-options-status">options unavailable</p>';
     }
-    if (addToCart) {
-      updatePurchaseAction(addToCart, null, 'unavailable');
-    }
+    updateProductPurchaseActions(addToCart, null, 'unavailable');
   }
 }
 
@@ -459,9 +457,7 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, addTo
 
   if (!variant) {
     delete purchase.dataset.shopifyVariantId;
-    if (addToCart) {
-      updatePurchaseAction(addToCart, null, 'unavailable');
-    }
+    updateProductPurchaseActions(addToCart, null, 'unavailable');
     return;
   }
 
@@ -475,14 +471,23 @@ function updateSelectedVariant(purchase, variants, selectedOptions, price, addTo
     price.textContent = formatPrice(variant.price);
   }
 
-  if (addToCart) {
-    updatePurchaseAction(addToCart, variant);
-  }
+  updateProductPurchaseActions(addToCart, variant);
 
   purchase.dispatchEvent(new CustomEvent('shopify:variant-change', {
     bubbles: true,
     detail: { variant }
   }));
+}
+
+function updateProductPurchaseActions(primaryAction, variant, unavailableLabel = 'unavailable') {
+  const actions = [
+    primaryAction,
+    ...document.querySelectorAll('[data-local-buy]')
+  ].filter(Boolean);
+
+  [...new Set(actions)].forEach(action => {
+    updatePurchaseAction(action, variant, unavailableLabel);
+  });
 }
 
 function updatePurchaseAction(action, variant, unavailableLabel = 'unavailable') {
@@ -496,7 +501,9 @@ function updatePurchaseAction(action, variant, unavailableLabel = 'unavailable')
   action.removeAttribute('aria-disabled');
   action.disabled = !variant?.availableForSale;
   action.textContent = variant
-    ? (variant.availableForSale ? 'add to cart' : 'sold out')
+    ? (variant.availableForSale
+      ? (action.matches('[data-local-buy]') ? 'Buy' : 'add to cart')
+      : 'sold out')
     : unavailableLabel;
 }
 

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="test-style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@400;900&family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
 		<meta name="description" content="Additional PCBs for the A.Okay! MID.1 mechanical keyboard.">
 		<title>A.Okay! . MID.1 PCB</title>
 		<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -17,7 +17,7 @@
 		<link rel="preload" as="image" href="/images/mid1/mid1-22.webp" type="image/webp">
 	</head>
 
-	<body id="top" class="product-page product-layout-v2">
+	<body id="top" class="product-page product-layout-v2 has-local-nav">
 		<header class="site-header">
 		<div class="top-level-wrapper nav-wrapper">
 			<div class="nav-pseudo-article">
@@ -31,15 +31,11 @@
 						<ul class="nav-groups">
 							<li class="nav-group">
 								<details>
-									<summary>Products</summary>
+									<summary>Store</summary>
 									<ul class="nav-group-links">
-										<li><a href="test-mid1.html">MID.1</a></li>
-										<li><a href="test-mid1lid.html">MID.1.LID</a></li>
-										<li><a href="test-mid1pet.html">MID.1.PET</a></li>
-										<li><a href="test-mid1-top-case.html">MID.1 top case</a></li>
-										<li><a href="test-mid1-pcb.html">MID.1 PCB</a></li>
-										<li><a href="test-mid1-plate.html">MID.1 plate</a></li>
-										<li><a href="test-mid1-service-kit.html">MID.1 service kit</a></li>
+										<li><a href="test-store.html">All products</a></li>
+										<li><a href="test-store-desk-objects.html">Desk objects</a></li>
+										<li><a href="test-store-keyboards.html">Keyboards</a></li>
 									</ul>
 								</details>
 							</li>
@@ -72,9 +68,19 @@
 		</div>
 		</header>
 
+		<div class="local-nav-wrapper">
+			<nav class="local-nav" aria-label="On this product page" data-local-nav>
+				<div class="local-nav-inner">
+					<a class="local-nav-location" href="#top">MID.1 PCB</a>
+					<a href="#specs">Specs</a>
+					<button class="local-nav-buy" type="button" data-local-buy data-storefront-purchase-action aria-label="Buy MID.1 PCB" disabled>Buy</button>
+				</div>
+			</nav>
+		</div>
+
 		<main>
 			<article id="mid1-pcb" class="product-layout">
-				<header class="product-overview product-section">
+				<header id="overview" class="product-overview product-section">
 					<div class="section-content section-content--wide">
 						<section class="product-gallery" aria-label="Product images" data-product-gallery>
 							<figure class="product-hero">
@@ -314,16 +320,12 @@
 						<p>&copy; 2026 A.Okay!</p>
 					</div>
 
-					<section class="footer-group" aria-labelledby="footer-products-heading">
-						<h2 id="footer-products-heading" class="footer-heading">Products</h2>
+					<section class="footer-group" aria-labelledby="footer-store-heading">
+						<h2 id="footer-store-heading" class="footer-heading">Store</h2>
 						<div class="footer-group-links">
-							<a href="test-mid1.html">MID.1</a>
-							<a href="test-mid1lid.html">MID.1.LID</a>
-							<a href="test-mid1pet.html">MID.1.PET</a>
-							<a href="test-mid1-top-case.html">MID.1 top case</a>
-							<a href="test-mid1-pcb.html">MID.1 PCB</a>
-							<a href="test-mid1-plate.html">MID.1 plate</a>
-							<a href="test-mid1-service-kit.html">MID.1 service kit</a>
+							<a href="test-store.html">All products</a>
+							<a href="test-store-desk-objects.html">Desk objects</a>
+							<a href="test-store-keyboards.html">Keyboards</a>
 						</div>
 					</section>
 
